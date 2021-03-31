@@ -16,9 +16,12 @@ struct SortAlgorithmsMenu: View {
                 Text("Insertion Sort")
                 //Label("Insertion Sort", systemImage: "minus.slash.plus")
             }
-            
+        
             Text("Selection Sort")
         }
+        
+        
+        
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Sort", displayMode: .inline)
     }

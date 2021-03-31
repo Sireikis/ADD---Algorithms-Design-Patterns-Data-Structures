@@ -18,6 +18,8 @@
 		7B0774292613B3A100FEDB85 /* InsertionSortImplementor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774282613B3A100FEDB85 /* InsertionSortImplementor.swift */; };
 		7B07742D2613B57900FEDB85 /* AlgorithmTemplateAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07742C2613B57900FEDB85 /* AlgorithmTemplateAbstraction.swift */; };
 		7B0774382613BC0C00FEDB85 /* AlgorithmTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774372613BC0C00FEDB85 /* AlgorithmTabView.swift */; };
+		7B3BC7C8261519E20005266C /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC7C7261519E20005266C /* AttributedText.swift */; };
+		7B3BC7CF26151D8B0005266C /* InsertionSortSummary_1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7B3BC7CE26151D8B0005266C /* InsertionSortSummary_1.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		7B0774282613B3A100FEDB85 /* InsertionSortImplementor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSortImplementor.swift; sourceTree = "<group>"; };
 		7B07742C2613B57900FEDB85 /* AlgorithmTemplateAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmTemplateAbstraction.swift; sourceTree = "<group>"; };
 		7B0774372613BC0C00FEDB85 /* AlgorithmTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmTabView.swift; sourceTree = "<group>"; };
+		7B3BC7C7261519E20005266C /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
+		7B3BC7CE26151D8B0005266C /* InsertionSortSummary_1.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = InsertionSortSummary_1.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				7B0773F72613ADA100FEDB85 /* Assets.xcassets */,
 				7B0773FC2613ADA100FEDB85 /* Info.plist */,
 				7B0773F92613ADA100FEDB85 /* Preview Content */,
+				7B3BC7CE26151D8B0005266C /* InsertionSortSummary_1.rtf */,
 			);
 			path = ADD;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			children = (
 				7B0774482613D34F00FEDB85 /* Protocols */,
 				7B0774372613BC0C00FEDB85 /* AlgorithmTabView.swift */,
+				7B3BC7C7261519E20005266C /* AttributedText.swift */,
 			);
 			path = ViewTemplates;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			files = (
 				7B0773FB2613ADA100FEDB85 /* Preview Assets.xcassets in Resources */,
 				7B0773F82613ADA100FEDB85 /* Assets.xcassets in Resources */,
+				7B3BC7CF26151D8B0005266C /* InsertionSortSummary_1.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3BC7C8261519E20005266C /* AttributedText.swift in Sources */,
 				7B07742D2613B57900FEDB85 /* AlgorithmTemplateAbstraction.swift in Sources */,
 				7B0774262613B35D00FEDB85 /* AlgorithmImplementor.swift in Sources */,
 				7B0774382613BC0C00FEDB85 /* AlgorithmTabView.swift in Sources */,

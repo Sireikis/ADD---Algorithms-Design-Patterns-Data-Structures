@@ -16,7 +16,7 @@ class InsertionSortImplementor: AlgorithmImplementor {
         self.instance = i
     }
     
-    func summary() -> String {
+    func summary() -> NSAttributedString {
         return instance.getSummary()
     }
     

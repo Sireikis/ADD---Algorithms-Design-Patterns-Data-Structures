@@ -19,11 +19,30 @@ struct AlgorithmTabView: View, AlgorithmTemplateAbstraction {
     
     var body: some View {
         TabView {
-            ScrollView {
-                VStack {
-                    Text(implementor.summary())
-                    
-                    Text(implementor.bigO())
+            VStack {
+                // Horizontal scrollable section that will link to alternate
+                // summaries, explanations, code snippets, examples, etc when clicked.
+                ScrollView(.horizontal) {
+                    HStack {
+                        Spacer()
+                        ForEach((1...5), id: \.self) { number in
+                            Text("\(number)")
+                                .foregroundColor(.blue).padding(5)
+                        }
+                    }
+                }
+                
+                // Summary Content
+                ScrollView {
+                    VStack {
+                        //Text(implementor.summary())
+                        
+                        //Text(implementor.bigO())
+                        
+                        //Text(implementor.text)
+                        
+                        AttributedText(implementor.summary())
+                    }
                 }
             }
             .tabItem {
@@ -44,13 +63,9 @@ struct AlgorithmTabView: View, AlgorithmTemplateAbstraction {
                 .tabItem {
                     Label("Examples", systemImage: "info")
                 }
-            // can use plus, folders, line.horizontal.3.circle.fill, archive, doc.text.fill, scroll, info
         }
     }
 }
-
-
-
 
 
 struct AlgorithmTabView_Previews: PreviewProvider {
