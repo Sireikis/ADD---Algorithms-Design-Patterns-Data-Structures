@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Can be used to convert RTF files with appropriate tags into
+// Text() views, if Text() can modify that text the same way.
 
  struct AttributedTextBlock {
      let content: String
@@ -59,7 +61,6 @@ import SwiftUI
      }
  }
  
-
 
 
  struct AttributedText_Previews: PreviewProvider {

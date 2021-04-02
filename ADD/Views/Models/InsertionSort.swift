@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+// Change this so that summary, bigO, etc point to .html files.
+// They should be strings and are just filenames.
+
 // Adaptee
 // Acts as a model?
 class InsertionSort {
@@ -31,12 +34,19 @@ class InsertionSort {
         return bigO
     }
     
+    // File loaded on init, and NOT cached. Need to change.
+    // Need to have a Model that holds cached info.
+    // Factory?
+    // Check if CachedModel is nil, loadHTML, else retreive cached info.
     init() {
-        loadHTML(file: "InsertionSortSummary_1")
+        //loadRTF(file: "InsertionSortSummary_1")
+        loadRTF(file: "InsertionSortExplained_1")
+        //loadRTF(file: "TestHTML")
     }
     
     // Causes a cycle error
-    func loadHTML(file: String) {
+    // Need to delete
+    func loadRTF(file: String) {
         if let rtfPath = Bundle.main.url(forResource: file, withExtension: "rtf") {
             DispatchQueue.main.async {
                 do {
@@ -44,11 +54,9 @@ class InsertionSort {
                         try NSAttributedString(url: rtfPath,
                                                options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf],
                                                documentAttributes: nil)
-                    //let htmlData = attributedStringWithRTF.string.data(using: .utf8)
                     let htmlString = attributedStringWithRTF.string
                     if let htmlData = htmlString.data(using:.utf8) {
                         let finalAttributedString = try NSAttributedString(data: htmlData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-                        
                         
                         self.summary = finalAttributedString
                     }
@@ -60,12 +68,4 @@ class InsertionSort {
             print("File not found.")
         }
     }
-    
-    /*
-     let rtfPath = Bundle.main.url(forResource: "SampleHTML", withExtension: "rtf")
-     let attributedStringWithRtf: NSAttributedString = NSAttributedString(url: rtfPath, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil)
-     let htmlString = attributedStringWithRtf.string
-     let htmlData = htmlString.data(using:.utf8)
-     let attributedString: NSAttributedString = NSAttributedString(data: htmlData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-     */
 }

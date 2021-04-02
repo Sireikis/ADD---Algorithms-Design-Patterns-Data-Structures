@@ -16,6 +16,17 @@ struct AlgorithmTabView: View, AlgorithmTemplateAbstraction {
     init(_ i: AlgorithmImplementor) {
         implementor = i
     }
+    // Test displays the actual HTML code.
+    //let testHTML = Bundle.main.url(forResource: "www/Test", withExtension: "html")
+    
+    // TestHTML displays proper HTML.
+    //let testHTML = Bundle.main.url(forResource: "www/TestHTML", withExtension: "html")
+    
+    // Images doesn't load, but it works!
+    //let testHTML = Bundle.main.url(forResource: "www/ImageFile", withExtension: "html")
+    
+    // Images also don't load and there are some issues with the coloring of the table.
+    let testHTML = Bundle.main.url(forResource: "www/ComplicatedTest", withExtension: "html")
     
     var body: some View {
         TabView {
@@ -33,17 +44,19 @@ struct AlgorithmTabView: View, AlgorithmTemplateAbstraction {
                 }
                 
                 // Summary Content
-                ScrollView {
-                    VStack {
-                        //Text(implementor.summary())
-                        
-                        //Text(implementor.bigO())
-                        
-                        //Text(implementor.text)
-                        
-                        AttributedText(implementor.summary())
-                    }
-                }
+                WebView(request: URLRequest(url: testHTML!))
+                /*
+                 // Summary Content
+                 ScrollView {
+                     //Text(implementor.summary())
+                     
+                     //Text(implementor.bigO())
+                     
+                     //Text(implementor.text)
+
+                 WebView(request: URLRequest(url: testHTML!))
+                 }
+                 */
             }
             .tabItem {
                 Label("Summary", systemImage: "note.text")
