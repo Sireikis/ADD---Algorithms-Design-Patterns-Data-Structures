@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MainMenu: View {
     var body: some View {
         NavigationView {
@@ -22,8 +23,9 @@ struct MainMenu: View {
             .navigationBarItems(trailing: Text("Settings"))
             .navigationBarTitle("ADD", displayMode: .inline)
         }
+        // Fixes the grey buttons on backtrack, but gives lots of errors.
+        //.navigationViewStyle(DefaultNavigationViewStyle())
         .navigationViewStyle(StackNavigationViewStyle())
-        
     }
 }
 

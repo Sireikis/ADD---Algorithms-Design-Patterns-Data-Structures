@@ -1,0 +1,21 @@
+ //
+ //  FileChoiceEnum.swift
+ //  ADD
+ //
+ //  Created by Ignas Sireikis on 4/2/21.
+ //
+ 
+ import Foundation
+ 
+
+ enum FileNumber: Int, CaseIterable {
+    case one = 1, two, three, four, five, six
+ }
+ 
+/*
+  // explanation(s), example(s)? S or no s?
+  enum Page: String {
+     case Summary, Explanations, Code, Examples
+  }
+
+  */

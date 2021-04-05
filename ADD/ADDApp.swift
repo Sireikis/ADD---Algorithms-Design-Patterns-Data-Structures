@@ -12,6 +12,7 @@ struct ADDApp: App {
     var body: some Scene {
         WindowGroup {
             MainMenu()
+                .environmentObject(SingleWebView())
         }
     }
 }

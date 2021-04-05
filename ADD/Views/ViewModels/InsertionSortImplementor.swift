@@ -9,6 +9,7 @@ import Foundation
 
 // Concrete Implementor + Adapter
 // Acts as a ViewModel?
+// Can act as proxy?
 class InsertionSortImplementor: AlgorithmImplementor {
     let instance: InsertionSort
     
@@ -16,20 +17,16 @@ class InsertionSortImplementor: AlgorithmImplementor {
         self.instance = i
     }
     
-    func summary() -> NSAttributedString {
+    func summary() -> URLRequest {
         return instance.getSummary()
-    }
-    
-    func bigO() -> String {
-        return instance.getBigO()
     }
     
     func codeExample() {
         
     }
     
-    func explanation() {
-        
+    func explanation() -> URLRequest {
+        return instance.getExplanation()
     }
     
     func exampleProblem() {

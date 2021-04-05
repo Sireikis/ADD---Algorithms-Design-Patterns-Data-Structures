@@ -10,18 +10,13 @@ import SwiftUI
 struct SortAlgorithmsMenu: View {
     var body: some View {
         Form {
-            //Text("Hello, Sort!")
-            
-            NavigationLink(destination: AlgorithmTabView(InsertionSortImplementor(InsertionSort()))) {
+            NavigationLink(destination: AlgorithmTabView(InsertionSortImplementorProxy())) {
                 Text("Insertion Sort")
                 //Label("Insertion Sort", systemImage: "minus.slash.plus")
             }
-        
+            
             Text("Selection Sort")
         }
-        
-        
-        
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Sort", displayMode: .inline)
     }

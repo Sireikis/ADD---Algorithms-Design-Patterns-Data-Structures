@@ -10,11 +10,12 @@ import Foundation
 // Acts as the Implementor of an AlgorithmTemplateAbstraction.
 // Acts as the ITarget of an Adapter for some Algorithm (Adaptee)
 protocol AlgorithmImplementor {
-    func summary() -> NSAttributedString
-    func bigO() -> String
+    func summary() -> URLRequest
     func codeExample()
-    func explanation()
+    func explanation() -> URLRequest
     func exampleProblem()
+    
+    //func getExplanationIn(file: FileNumber) -> URLRequest
     
     // Added temporarily to test .rtf
    // var htmlText: NSAttributedString? { get set }
