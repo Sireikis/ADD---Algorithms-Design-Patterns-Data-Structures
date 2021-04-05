@@ -16,70 +16,91 @@ import SwiftUI
 class InsertionSort {
     private var filePath: String = "www/Algorithms/Sort/InsertionSort/"
     
-    private var summary: URLRequest?
-    private var explanation: URLRequest?
-    
     private var summaries = [FileNumber:URLRequest]()
+    private var explanations = [FileNumber:URLRequest]()
+    private var codeExamples = [FileNumber:URLRequest]()
+    private var exampleProblems = [FileNumber:URLRequest]()
     
-    private let codeExamples: [String] = ["Test codeExamples"]
-    private let explanations: [String] = ["Test Explanations"]
-    private let exampleProblems: [String] = ["Test exampleProblems"]
     
-
     // Factory Pattern?
     init() {
-        loadSummary()
-        loadExplanation()
-        
-        // test
         loadSummaries()
+        loadExplanations()
+        loadCodeExamples()
+        loadExampleProblems()
     }
     
-    func getSummary() -> URLRequest {
-        return summary!
-    }
-    
-    func getExplanation() -> URLRequest {
-        return explanation!
-    }
-
-    func loadSummary() {
-        let summaryFile = filePath + "Summary/InsertionSortSummary_1"
-        if let summaryURL = Bundle.main.url(forResource: summaryFile, withExtension: "html") {
-            self.summary = URLRequest(url: summaryURL)
+    func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
+        switch page {
+        case .Summary:
+            return summaries[file] != nil
+        case .Explanation:
+            return explanations[file] != nil
+        case .Code:
+            return codeExamples[file] != nil
+        case .Example:
+            return exampleProblems[file] != nil
         }
     }
     
-    func loadExplanation() {
-        let explanationFile = filePath + "Explanation/InsertionSortExplanation_1"
-        if let explanationURL = Bundle.main.url(forResource: explanationFile, withExtension: "html") {
-            self.explanation = URLRequest(url: explanationURL)
-        }
-    }
-    
-    // ----------------------------------------------------
-    // Trying [FileNumber:URLRequest]() for Alternate Pages
-    
+    // Can refactor get functions?
     func getSummaryFor(file: FileNumber) -> URLRequest {
         guard let urlRequest = summaries[file] else { fatalError() }
         return urlRequest
     }
     
+    func getExplanationFor(file: FileNumber) -> URLRequest {
+        guard let urlRequest = explanations[file] else { fatalError() }
+        return urlRequest
+    }
+    
+    func getCodeExampleFor(file: FileNumber) -> URLRequest {
+        guard let urlRequest = codeExamples[file] else { fatalError() }
+        return urlRequest
+    }
+    
+    func getExampleProblemFor(file: FileNumber) -> URLRequest {
+        guard let urlRequest = exampleProblems[file] else { fatalError() }
+        return urlRequest
+    }
+    
+    
+    // Can refactor Load functions?
     func loadSummaries() {
         for file in FileNumber.allCases {
-            /*
-             print("Printing (file): \(file)")
-             print("Printing (type(of: file)): \(type(of: file))")
-             print("Printing (file.rawValue): \(file.rawValue)")
-             print("Printing (type(of: file.rawValue)): \(type(of: file.rawValue))")
-             */
             
             let summaryFile = filePath + "Summary/InsertionSortSummary_" + String(file.rawValue)
             if let summaryURL = Bundle.main.url(forResource: summaryFile, withExtension: "html") {
                 summaries[file] = URLRequest(url: summaryURL)
             }
         }
-        //print("loadSummaries of Insertion Sort: \(summaries)")
+    }
+    
+    func loadExplanations() {
+        for file in FileNumber.allCases {
+            let explanationFile = filePath + "Explanation/InsertionSortExplanation_" + String(file.rawValue)
+            if let explanationURL = Bundle.main.url(forResource: explanationFile, withExtension: "html") {
+                explanations[file] = URLRequest(url: explanationURL)
+            }
+        }
+    }
+    
+    func loadCodeExamples() {
+        for file in FileNumber.allCases {
+            let codeExampleFile = filePath + "Code/InsertionSortCode_" + String(file.rawValue)
+            if let codeExampleURL = Bundle.main.url(forResource: codeExampleFile, withExtension: "html") {
+                codeExamples[file] = URLRequest(url: codeExampleURL)
+            }
+        }
+    }
+    
+    func loadExampleProblems() {
+        for file in FileNumber.allCases {
+            let exampleProblemFile = filePath + "Example/InsertionSortExample_" + String(file.rawValue)
+            if let exampleProblemURL = Bundle.main.url(forResource: exampleProblemFile, withExtension: "html") {
+                exampleProblems[file] = URLRequest(url: exampleProblemURL)
+            }
+        }
     }
 }
 

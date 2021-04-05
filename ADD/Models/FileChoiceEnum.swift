@@ -12,10 +12,9 @@
     case one = 1, two, three, four, five, six
  }
  
-/*
+
   // explanation(s), example(s)? S or no s?
   enum Page: String {
-     case Summary, Explanations, Code, Examples
+     case Summary, Explanation, Code, Example
   }
 
-  */

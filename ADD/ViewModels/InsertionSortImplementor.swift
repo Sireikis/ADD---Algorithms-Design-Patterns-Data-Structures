@@ -17,19 +17,23 @@ class InsertionSortImplementor: AlgorithmImplementor {
         self.instance = i
     }
     
-    func summary() -> URLRequest {
-        return instance.getSummary()
+    func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
+        return instance.isFileAvailable(file, for: page)
     }
     
-    func codeExample() {
-        
+    func getSummaryFor(file: FileNumber) -> URLRequest {
+        return instance.getSummaryFor(file: file)
     }
     
-    func explanation() -> URLRequest {
-        return instance.getExplanation()
+    func getExplanationFor(file: FileNumber) -> URLRequest {
+        return instance.getExplanationFor(file: file)
     }
     
-    func exampleProblem() {
-        
+    func getCodeExampleFor(file: FileNumber) -> URLRequest {
+        return instance.getCodeExampleFor(file: file)
+    }
+    
+    func getExampleProblemFor(file: FileNumber) -> URLRequest {
+        return instance.getExampleProblemFor(file: file)
     }
 }

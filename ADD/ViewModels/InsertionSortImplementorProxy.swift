@@ -11,43 +11,48 @@ import Foundation
 class InsertionSortImplementorProxy: AlgorithmImplementor {
     var implementor: InsertionSortImplementor?
     
-    func summary() -> URLRequest {
+    func getSummaryFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
             implementor = InsertionSortImplementor(InsertionSort())
-            return implementor!.summary()
+            return implementor!.getSummaryFor(file: file)
         } else {
-            return implementor!.summary()
+            return implementor!.getSummaryFor(file: file)
         }
     }
     
-    func codeExample() {
-        
-    }
-    
-    func explanation() -> URLRequest {
+    func getExplanationFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
             implementor = InsertionSortImplementor(InsertionSort())
-            return implementor!.explanation()
+            return implementor!.getExplanationFor(file: file)
         } else {
-            return implementor!.explanation()
+            return implementor!.getExplanationFor(file: file)
         }
     }
     
-    /*
-     func getExplanationIn(file: FileNumber) -> URLRequest {
-         if implementor == nil {
-             implementor = InsertionSortImplementor(InsertionSort())
-             return implementor!.getExplanationIn(file: file)
-         } else {
-             return implementor!.getExplanationIn(file: file)
-         }
-     }
-     */
-    
-    func exampleProblem() {
-        
+    func getCodeExampleFor(file: FileNumber) -> URLRequest {
+        if implementor == nil {
+            implementor = InsertionSortImplementor(InsertionSort())
+            return implementor!.getCodeExampleFor(file: file)
+        } else {
+            return implementor!.getCodeExampleFor(file: file)
+        }
     }
     
+    func getExampleProblemFor(file: FileNumber) -> URLRequest {
+        if implementor == nil {
+            implementor = InsertionSortImplementor(InsertionSort())
+            return implementor!.getExampleProblemFor(file: file)
+        } else {
+            return implementor!.getExampleProblemFor(file: file)
+        }
+    }
     
-    
+    func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
+        if implementor == nil {
+            implementor = InsertionSortImplementor(InsertionSort())
+            return implementor!.isFileAvailable(file, for: page)
+        } else {
+            return implementor!.isFileAvailable(file, for: page)
+        }
+    }
 }
