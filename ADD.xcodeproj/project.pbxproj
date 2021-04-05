@@ -77,6 +77,8 @@
 			children = (
 				7B0773F32613ADA100FEDB85 /* ADDApp.swift */,
 				7B0774032613B08400FEDB85 /* Views */,
+				7B07744A2613D37800FEDB85 /* ViewModels */,
+				7B07744C2613D38000FEDB85 /* Models */,
 				7B0773F72613ADA100FEDB85 /* Assets.xcassets */,
 				7B0773FC2613ADA100FEDB85 /* Info.plist */,
 				7B0773F92613ADA100FEDB85 /* Preview Content */,
@@ -98,8 +100,6 @@
 				7B07740D2613B24200FEDB85 /* MainMenu.swift */,
 				7B0774142613B27B00FEDB85 /* AlgorithmTypesView */,
 				7B0774462613D33200FEDB85 /* ViewTemplates */,
-				7B07744A2613D37800FEDB85 /* ViewModels */,
-				7B07744C2613D38000FEDB85 /* Models */,
 			);
 			path = Views;
 			sourceTree = "<group>";
