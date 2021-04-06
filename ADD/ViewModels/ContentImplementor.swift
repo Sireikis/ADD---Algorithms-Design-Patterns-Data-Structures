@@ -1,5 +1,5 @@
 //
-//  InsertionSortImplementor.swift
+//  ContentImplementor.swift
 //  ADD
 //
 //  Created by Ignas Sireikis on 3/30/21.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-// Concrete Implementor + Adapter
-// Acts as a ViewModel?
-class InsertionSortImplementor: AlgorithmImplementor {
-    let instance: InsertionSort
+
+// ViewModel, Concrete Implementor + Adapter
+class ContentImplementor: Implementor {
+    private let instance: Content
     
-    init(_ i: InsertionSort) {
+    init(_ i: Content) {
         self.instance = i
     }
     

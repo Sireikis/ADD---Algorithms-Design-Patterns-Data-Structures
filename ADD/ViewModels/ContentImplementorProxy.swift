@@ -1,5 +1,5 @@
 //
-//  InsertionSortImplementorProxy.swift
+//  ContentImplementorProxy.swift
 //  ADD
 //
 //  Created by Ignas Sireikis on 4/2/21.
@@ -8,12 +8,12 @@
 import Foundation
 
 
-class InsertionSortImplementorProxy: AlgorithmImplementor {
-    var implementor: InsertionSortImplementor?
+class ContentImplementorProxy: Implementor {
+    private var implementor: ContentImplementor?
     
     func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
         if implementor == nil {
-            implementor = InsertionSortImplementor(InsertionSort())
+            implementor = ContentImplementor(InsertionSort())
             return implementor!.isFileAvailable(file, for: page)
         } else {
             return implementor!.isFileAvailable(file, for: page)
@@ -22,7 +22,7 @@ class InsertionSortImplementorProxy: AlgorithmImplementor {
     
     func getSummaryFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
-            implementor = InsertionSortImplementor(InsertionSort())
+            implementor = ContentImplementor(InsertionSort())
             return implementor!.getSummaryFor(file: file)
         } else {
             return implementor!.getSummaryFor(file: file)
@@ -31,7 +31,7 @@ class InsertionSortImplementorProxy: AlgorithmImplementor {
     
     func getExplanationFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
-            implementor = InsertionSortImplementor(InsertionSort())
+            implementor = ContentImplementor(InsertionSort())
             return implementor!.getExplanationFor(file: file)
         } else {
             return implementor!.getExplanationFor(file: file)
@@ -40,7 +40,7 @@ class InsertionSortImplementorProxy: AlgorithmImplementor {
     
     func getCodeExampleFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
-            implementor = InsertionSortImplementor(InsertionSort())
+            implementor = ContentImplementor(InsertionSort())
             return implementor!.getCodeExampleFor(file: file)
         } else {
             return implementor!.getCodeExampleFor(file: file)
@@ -49,7 +49,7 @@ class InsertionSortImplementorProxy: AlgorithmImplementor {
     
     func getExampleProblemFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
-            implementor = InsertionSortImplementor(InsertionSort())
+            implementor = ContentImplementor(InsertionSort())
             return implementor!.getExampleProblemFor(file: file)
         } else {
             return implementor!.getExampleProblemFor(file: file)

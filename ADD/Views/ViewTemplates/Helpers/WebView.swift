@@ -8,10 +8,6 @@
  import WebKit
  
  
- // Singleton?
- // I should probably make this a Singleton officially
- // Reavaluate why this should be a singlton and which methods should be static.
- // Should I really do EnvironmentObject anywhere? Like i do in AlgorithmTabView?
  class SingleWebView: ObservableObject {
     private var webView: WebView?
     
@@ -21,14 +17,16 @@
         loadDefaultPage()
     }
     
-    public func webViewWithURL(_ url: URLRequest) -> WebView {
+    // The webViewWithURL method returns a WebView, which is a WkWebView in UIViewRepresentable.
+    // Each WKWebView displays the contents of a single .html file, which are cached.
+    func webViewWithURL(_ url: URLRequest) -> WebView {
         webView?.changeRequestTo(url)
         return webView!
     }
     
     // Maybe I should preload all summary pages?
+    // Change it to loadSummaryPages()?
     private func loadDefaultPage() {
-        //print("Performing Pre-load")
         let defaultFile = "www/Algorithms/Sort/InsertionSort/Summary/InsertionSortSummary_1"
         if let summaryURL = Bundle.main.url(forResource: defaultFile, withExtension: "html") {
             let defaultPage = URLRequest(url: summaryURL)
@@ -39,10 +37,6 @@
  }
  
  // Displays .html files inside of ViewTemplates
- 
- // The issue with this method is that preload is gone. I only 'preloaded'
- // one page, which I call the default page (InsertionSortSummary_1).
- // I need to re-evaluate when I pre-load and what i should preload.
  struct WebView: UIViewRepresentable {
     var request: URLRequest
     

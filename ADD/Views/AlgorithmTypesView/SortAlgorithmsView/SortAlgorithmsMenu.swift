@@ -10,7 +10,7 @@ import SwiftUI
 struct SortAlgorithmsMenu: View {
     var body: some View {
         Form {
-            NavigationLink(destination: AlgorithmTabView(InsertionSortImplementorProxy())) {
+            NavigationLink(destination: DefaultTabView(ContentImplementorProxy())) {
                 Text("Insertion Sort")
                 //Label("Insertion Sort", systemImage: "minus.slash.plus")
             }

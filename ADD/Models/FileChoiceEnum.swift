@@ -9,11 +9,10 @@
  
  
  enum FileNumber: Int, CaseIterable {
-    case one = 1, two, three, four, five, six
+    case one = 1, two, three, four
  }
  
  
  enum Page: String {
     case Summary, Explanation, Code, Example
  }
- 
