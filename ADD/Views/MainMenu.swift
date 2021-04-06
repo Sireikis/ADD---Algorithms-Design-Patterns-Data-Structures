@@ -16,9 +16,13 @@ struct MainMenu: View {
                     Text("Algorithms")
                 }
                 
-                Text("Design Patterns")
+                NavigationLink(destination: DesignPatternsMenu()) {
+                    Text("Design Patterns")
+                }
                 
-                Text("Data Structures")
+                NavigationLink(destination: DataStructuresMenu()) {
+                    Text("Data Structures")
+                }
             }
             .navigationBarItems(trailing: Text("Settings"))
             .navigationBarTitle("ADD", displayMode: .inline)
