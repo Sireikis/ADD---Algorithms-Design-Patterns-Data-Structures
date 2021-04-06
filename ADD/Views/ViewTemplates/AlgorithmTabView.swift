@@ -4,7 +4,6 @@
 //
 //  Created by Ignas Sireikis on 3/30/21.
 //
-
 import SwiftUI
 
 
@@ -71,8 +70,6 @@ struct PagesBar: View {
                             if implementor.isFileAvailable(page, for: pageContent) {
                                 Button(action: {
                                     pageSelected = page
-                                    print("\(page.rawValue)")
-                                    print("\(pageSelected)")
                                 }) {
                                     Text("\(page.rawValue)")
                                         .foregroundColor(.blue).padding(5)

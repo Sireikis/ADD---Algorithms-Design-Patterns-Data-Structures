@@ -11,6 +11,15 @@ import Foundation
 class InsertionSortImplementorProxy: AlgorithmImplementor {
     var implementor: InsertionSortImplementor?
     
+    func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
+        if implementor == nil {
+            implementor = InsertionSortImplementor(InsertionSort())
+            return implementor!.isFileAvailable(file, for: page)
+        } else {
+            return implementor!.isFileAvailable(file, for: page)
+        }
+    }
+    
     func getSummaryFor(file: FileNumber) -> URLRequest {
         if implementor == nil {
             implementor = InsertionSortImplementor(InsertionSort())
@@ -44,15 +53,6 @@ class InsertionSortImplementorProxy: AlgorithmImplementor {
             return implementor!.getExampleProblemFor(file: file)
         } else {
             return implementor!.getExampleProblemFor(file: file)
-        }
-    }
-    
-    func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
-        if implementor == nil {
-            implementor = InsertionSortImplementor(InsertionSort())
-            return implementor!.isFileAvailable(file, for: page)
-        } else {
-            return implementor!.isFileAvailable(file, for: page)
         }
     }
 }

@@ -27,9 +27,8 @@
     }
     
     // Maybe I should preload all summary pages?
-    // Dispatch.main.async?
     private func loadDefaultPage() {
-        print("Performing Pre-load")
+        //print("Performing Pre-load")
         let defaultFile = "www/Algorithms/Sort/InsertionSort/Summary/InsertionSortSummary_1"
         if let summaryURL = Bundle.main.url(forResource: defaultFile, withExtension: "html") {
             let defaultPage = URLRequest(url: summaryURL)
@@ -52,7 +51,7 @@
     }
     
     func makeUIView(context: Context) -> WKWebView {
-        // Caching WkWebViews, which each contain their own .html file.
+        // Caching WkWebViews, each containing a single .html file.
         guard let url = request.url else { fatalError() }
         
         if let webView = SingleWebView.cache[url] {
@@ -60,9 +59,7 @@
         }
         
         let webView = WKWebView()
-        //print("Added \(webView) to cache.")
         SingleWebView.cache[url] = webView
-        //print("Returning newly Cached view.")
 
         return webView
     }

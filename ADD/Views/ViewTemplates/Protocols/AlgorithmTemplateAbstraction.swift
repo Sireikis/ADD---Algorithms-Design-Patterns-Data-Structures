@@ -9,7 +9,6 @@ import Foundation
 
 
 // Client + Abstraction
-// Do I want set here?
 protocol AlgorithmTemplateAbstraction {
     var implementor: AlgorithmImplementor { get set }
 }

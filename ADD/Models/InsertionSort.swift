@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-// Change this so that summary, bigO, etc point to .html files.
-// They should be strings and are just filenames.
 
 // Adaptee
 // Acts as a model?
@@ -24,10 +22,10 @@ class InsertionSort {
     
     // Factory Pattern?
     init() {
-        loadSummaries()
-        loadExplanations()
-        loadCodeExamples()
-        loadExampleProblems()
+        loadHTMLContentFor(path: "Summary/InsertionSortSummary_", content: .Summary)
+        loadHTMLContentFor(path: "Explanation/InsertionSortExplanation_", content: .Explanation)
+        loadHTMLContentFor(path: "Code/InsertionSortCode_", content: .Code)
+        loadHTMLContentFor(path: "Example/InsertionSortExample_", content: .Example)
     }
     
     func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
@@ -43,62 +41,37 @@ class InsertionSort {
         }
     }
     
-    // Can refactor get functions?
-    func getSummaryFor(file: FileNumber) -> URLRequest {
-        guard let urlRequest = summaries[file] else { fatalError() }
-        return urlRequest
-    }
-    
-    func getExplanationFor(file: FileNumber) -> URLRequest {
-        guard let urlRequest = explanations[file] else { fatalError() }
-        return urlRequest
-    }
-    
-    func getCodeExampleFor(file: FileNumber) -> URLRequest {
-        guard let urlRequest = codeExamples[file] else { fatalError() }
-        return urlRequest
-    }
-    
-    func getExampleProblemFor(file: FileNumber) -> URLRequest {
-        guard let urlRequest = exampleProblems[file] else { fatalError() }
-        return urlRequest
-    }
-    
-    
-    // Can refactor Load functions?
-    func loadSummaries() {
-        for file in FileNumber.allCases {
-            
-            let summaryFile = filePath + "Summary/InsertionSortSummary_" + String(file.rawValue)
-            if let summaryURL = Bundle.main.url(forResource: summaryFile, withExtension: "html") {
-                summaries[file] = URLRequest(url: summaryURL)
-            }
+    func getContentIn(file: FileNumber, for content: Page) -> URLRequest {
+        switch content {
+        case .Summary:
+            guard let urlRequest = summaries[file] else { fatalError() }
+            return urlRequest
+        case .Explanation:
+            guard let urlRequest = explanations[file] else { fatalError() }
+            return urlRequest
+        case .Code:
+            guard let urlRequest = codeExamples[file] else { fatalError() }
+            return urlRequest
+        case .Example:
+            guard let urlRequest = exampleProblems[file] else { fatalError() }
+            return urlRequest
         }
     }
     
-    func loadExplanations() {
+    func loadHTMLContentFor(path: String, content: Page) {
         for file in FileNumber.allCases {
-            let explanationFile = filePath + "Explanation/InsertionSortExplanation_" + String(file.rawValue)
-            if let explanationURL = Bundle.main.url(forResource: explanationFile, withExtension: "html") {
-                explanations[file] = URLRequest(url: explanationURL)
-            }
-        }
-    }
-    
-    func loadCodeExamples() {
-        for file in FileNumber.allCases {
-            let codeExampleFile = filePath + "Code/InsertionSortCode_" + String(file.rawValue)
-            if let codeExampleURL = Bundle.main.url(forResource: codeExampleFile, withExtension: "html") {
-                codeExamples[file] = URLRequest(url: codeExampleURL)
-            }
-        }
-    }
-    
-    func loadExampleProblems() {
-        for file in FileNumber.allCases {
-            let exampleProblemFile = filePath + "Example/InsertionSortExample_" + String(file.rawValue)
-            if let exampleProblemURL = Bundle.main.url(forResource: exampleProblemFile, withExtension: "html") {
-                exampleProblems[file] = URLRequest(url: exampleProblemURL)
+            let fileName = self.filePath + path + String(file.rawValue)
+            if let fileURL = Bundle.main.url(forResource: fileName, withExtension: "html") {
+                switch content {
+                case .Summary:
+                    self.summaries[file] = URLRequest(url: fileURL)
+                case .Explanation:
+                    self.explanations[file] = URLRequest(url: fileURL)
+                case .Code:
+                    self.codeExamples[file] = URLRequest(url: fileURL)
+                case .Example:
+                    self.exampleProblems[file] = URLRequest(url: fileURL)
+                }
             }
         }
     }

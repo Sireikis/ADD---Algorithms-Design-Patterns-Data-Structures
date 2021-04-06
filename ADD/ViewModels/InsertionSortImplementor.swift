@@ -9,7 +9,6 @@ import Foundation
 
 // Concrete Implementor + Adapter
 // Acts as a ViewModel?
-// Can act as proxy?
 class InsertionSortImplementor: AlgorithmImplementor {
     let instance: InsertionSort
     
@@ -22,18 +21,18 @@ class InsertionSortImplementor: AlgorithmImplementor {
     }
     
     func getSummaryFor(file: FileNumber) -> URLRequest {
-        return instance.getSummaryFor(file: file)
+        return instance.getContentIn(file: file, for: .Summary)
     }
     
     func getExplanationFor(file: FileNumber) -> URLRequest {
-        return instance.getExplanationFor(file: file)
+        return instance.getContentIn(file: file, for: .Explanation)
     }
     
     func getCodeExampleFor(file: FileNumber) -> URLRequest {
-        return instance.getCodeExampleFor(file: file)
+        return instance.getContentIn(file: file, for: .Code)
     }
     
     func getExampleProblemFor(file: FileNumber) -> URLRequest {
-        return instance.getExampleProblemFor(file: file)
+        return instance.getContentIn(file: file, for: .Example)
     }
 }
