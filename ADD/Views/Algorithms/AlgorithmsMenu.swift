@@ -10,20 +10,33 @@ import SwiftUI
 // Using wiki Algo Types
 struct AlgorithmsMenu: View {
     var body: some View {
-        Form {
-            Section(header: Text("Alternate ways of ordering")) {
-                Text("By Design Paradigm")
-                
-                Text("By Implementation")
-                
-                Text("By Complexity")
+        List {
+            /*
+             // https://www.quora.com/What-is-a-list-of-the-eight-types-of-algorithms
+             Section(header: Text("Alternate ways of ordering")) {
+                 // Divide and conquer, dynamic, greedy, etc
+                 Text("By Design Paradigm")
+                 
+                 // Such as recursive vs iterative, logical vs procedural, serial vs parallel, etc.
+                 Text("By Implementation")
+                 
+                 // BigO
+                 Text("By Complexity")
+                 
+                 // Sort, Search, current method.
+                 Text("By Purpose")
+             }
+             */
+            
+            // Section, by purpose?
+            // However, there are infinitely many purposes
+            NavigationLink(destination: SearchAlgorithmsMenu()) {
+                NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
             }
             
             NavigationLink(destination: SortAlgorithmsMenu()) {
-                Text("Sort")
+                NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
             }
-            
-            Text("Search")
         }
         .navigationBarTitle("Algorithms", displayMode: .inline)
     }

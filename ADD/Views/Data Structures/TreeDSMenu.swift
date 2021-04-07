@@ -9,14 +9,10 @@ import SwiftUI
 
 struct TreeDSMenu: View {
     var body: some View {
-        Form {
-            // Binary Trees
-            Text("Binary Search Tree")
-            
-            Text("Binary Tree")
-            
-            // Heaps
-            Text("Heap")
+        List {
+            ForEach(TreeDS.allCases, id: \.self) { content in
+                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
+            }
         }
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Tree", displayMode: .inline)

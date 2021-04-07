@@ -9,10 +9,10 @@ import SwiftUI
 
 struct HashBasedDSMenu: View {
     var body: some View {
-        Form {
-            Text("Hash List")
-            
-            Text("Hash Table")
+        List {
+            ForEach(HashBasedDS.allCases, id: \.self) { content in
+                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
+            }
         }
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Hash-based", displayMode: .inline)

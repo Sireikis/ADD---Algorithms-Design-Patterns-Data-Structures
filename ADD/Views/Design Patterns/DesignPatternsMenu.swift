@@ -9,17 +9,17 @@ import SwiftUI
 
 struct DesignPatternsMenu: View {
     var body: some View {
-        Form {
+        List {
             NavigationLink(destination: BehavioralDPMenu()) {
-                Text("Behavioral")
+                NavigationButton(description: "Behavioral", image: "gearshape.2", imgForeground: .blue)
             }
             
             NavigationLink(destination: CreationalDPMenu()) {
-                Text("Creational")
+                NavigationButton(description: "Creational", image: "lightbulb", imgForeground: .blue)
             }
             
             NavigationLink(destination: StructuralDPMenu()) {
-                Text("Structural")
+                NavigationButton(description: "Structural", image: "square.grid.3x1.below.line.grid.1x2", imgForeground: .blue)
             }
         }
         .navigationBarTitle("Design Patterns", displayMode: .inline)

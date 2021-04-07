@@ -9,26 +9,10 @@ import SwiftUI
 
 struct BehavioralDPMenu: View {
     var body: some View {
-        Form {
-            Text("Chain of Responsibility")
-            
-            Text("Command")
-            
-            Text("Iterator")
-            
-            Text("Mediator")
-            
-            Text("Memento")
-            
-            Text("Observer")
-            
-            Text("State")
-            
-            Text("Strategy")
-            
-            Text("Template Method")
-            
-            Text("Visitor")
+        List {
+            ForEach(BehavioralDP.allCases, id: \.self) { content in
+                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
+            }
         }
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Behavioral", displayMode: .inline)

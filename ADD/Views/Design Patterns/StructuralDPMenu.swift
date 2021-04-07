@@ -11,20 +11,10 @@ import SwiftUI
 // DP stands for Design Pattern
 struct StructuralDPMenu: View {
     var body: some View {
-        Form {
-            Text("Adapter")
-            
-            Text("Bridge")
-            
-            Text("Composite")
-            
-            Text("Decorator")
-            
-            Text("Facade")
-            
-            Text("Flyweight")
-            
-            Text("Proxy")
+        List {
+            ForEach(StructuralDP.allCases, id: \.self) { content in
+                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
+            }
         }
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Structural", displayMode: .inline)

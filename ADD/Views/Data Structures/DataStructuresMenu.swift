@@ -9,21 +9,21 @@ import SwiftUI
 
 struct DataStructuresMenu: View {
     var body: some View {
-        Form {
+        List {
             NavigationLink(destination: LinearDSMenu()) {
-                Text("Linear")
+                NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
             }
             
             NavigationLink(destination: TreeDSMenu()) {
-                Text("Tree")
+                NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
             }
             
             NavigationLink(destination: HashBasedDSMenu()) {
-                Text("Hash-based")
+                NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
             }
             
             NavigationLink(destination: GraphDSMenu()) {
-                Text("Graph")
+                NavigationButton(description: "Graph", image: "squareshape.controlhandles.on.squareshape.controlhandles", imgForeground: .red)
             }
         }
         .navigationBarTitle("Data Structures", displayMode: .inline)

@@ -11,27 +11,31 @@ import SwiftUI
 struct MainMenu: View {
     var body: some View {
         NavigationView {
-            Form {
+            List {
                 NavigationLink(destination: AlgorithmsMenu()) {
-                    Text("Algorithms")
+                    NavigationButton(description: "Algorithms", txtColor: .green, image: "flowchart", imgForeground: .green)
                 }
                 
                 NavigationLink(destination: DesignPatternsMenu()) {
-                    Text("Design Patterns")
+                    NavigationButton(description: "Design Patterns", txtColor: .blue, image: "checkerboard.rectangle", imgForeground: .blue)
                 }
                 
                 NavigationLink(destination: DataStructuresMenu()) {
-                    Text("Data Structures")
+                    NavigationButton(description: "Data Structures", txtColor: .red, image: "building.columns", imgForeground: .red)
                 }
             }
             .navigationBarItems(trailing: Text("Settings"))
-            .navigationBarTitle("ADD", displayMode: .inline)
+            .navigationTitle("ADD")
         }
+        //.navigationTitle<V>(test())
         // Fixes the grey buttons on backtrack, but gives lots of errors.
+        // OS_ACTIVITY_MODE is disabled, so no errors.
         //.navigationViewStyle(DefaultNavigationViewStyle())
+        // Does however remove multi screen funcitonality in iPad
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
 
 struct MainMenu_Previews: PreviewProvider {
     static var previews: some View {

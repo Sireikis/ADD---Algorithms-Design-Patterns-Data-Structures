@@ -9,13 +9,17 @@ import SwiftUI
 
 struct SortAlgorithmsMenu: View {
     var body: some View {
-        Form {
-            NavigationLink(destination: DefaultTabView(ContentImplementorProxy(content: .insertionSort))) {
-                Text("Insertion Sort")
-                //Label("Insertion Sort", systemImage: "minus.slash.plus")
+        List {
+            ForEach(SortAlgorithm.allCases, id: \.self) { content in
+                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
             }
             
-            Text("Selection Sort")
+            Section(header: Text("Test HTML")) {
+                // Need to figure out how to ForEach NavigationLinks
+                NavigationLink(destination: DefaultTabView(ContentImplementorProxy(content: .insertionSort))) {
+                    NavigationButton(description: "Insertion Sort", image: "arrow.up.arrow.down", imgForeground: .green)
+                }
+            }
         }
         .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Sort", displayMode: .inline)

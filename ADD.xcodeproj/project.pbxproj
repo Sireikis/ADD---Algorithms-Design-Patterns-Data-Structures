@@ -21,6 +21,18 @@
 		7B1BDEA326166B3A00427505 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDEA226166B3A00427505 /* WebView.swift */; };
 		7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */; };
 		7B1FF1A02617CEB600F68656 /* ContentImplementorProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1FF19F2617CEB600F68656 /* ContentImplementorProxy.swift */; };
+		7B3BBF76261E08EA007207A3 /* SearchAlgorithmsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */; };
+		7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */; };
+		7B3BBF7E261E563B007207A3 /* SortContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF7D261E563B007207A3 /* SortContentFactory.swift */; };
+		7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF80261E5C91007207A3 /* SortAlgorithmEnum.swift */; };
+		7B3BBF85261E6482007207A3 /* SearchAlgorithmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF84261E6482007207A3 /* SearchAlgorithmEnum.swift */; };
+		7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF87261E6945007207A3 /* BehavioralDPEnum.swift */; };
+		7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF8A261E6B9B007207A3 /* CreationalDPEnum.swift */; };
+		7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF8D261E6D21007207A3 /* StructuralDPEnum.swift */; };
+		7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF90261E6DF7007207A3 /* LinearDSEnum.swift */; };
+		7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */; };
+		7B3BBF97261E6F9F007207A3 /* HashBasedDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */; };
+		7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */; };
 		7B5B91A526178D3B00C82B47 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7B5B91A426178D3B00C82B47 /* www */; };
 		7BB65CB8261CC34100369C00 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CB7261CC34100369C00 /* Content.swift */; };
 		7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */; };
@@ -53,6 +65,18 @@
 		7B1BDEA226166B3A00427505 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileChoiceEnum.swift; sourceTree = "<group>"; };
 		7B1FF19F2617CEB600F68656 /* ContentImplementorProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImplementorProxy.swift; sourceTree = "<group>"; };
+		7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmsMenu.swift; sourceTree = "<group>"; };
+		7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		7B3BBF7D261E563B007207A3 /* SortContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortContentFactory.swift; sourceTree = "<group>"; };
+		7B3BBF80261E5C91007207A3 /* SortAlgorithmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAlgorithmEnum.swift; sourceTree = "<group>"; };
+		7B3BBF84261E6482007207A3 /* SearchAlgorithmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmEnum.swift; sourceTree = "<group>"; };
+		7B3BBF87261E6945007207A3 /* BehavioralDPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioralDPEnum.swift; sourceTree = "<group>"; };
+		7B3BBF8A261E6B9B007207A3 /* CreationalDPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalDPEnum.swift; sourceTree = "<group>"; };
+		7B3BBF8D261E6D21007207A3 /* StructuralDPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuralDPEnum.swift; sourceTree = "<group>"; };
+		7B3BBF90261E6DF7007207A3 /* LinearDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearDSEnum.swift; sourceTree = "<group>"; };
+		7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDSEnum.swift; sourceTree = "<group>"; };
+		7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashBasedDSEnum.swift; sourceTree = "<group>"; };
+		7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSEnum.swift; sourceTree = "<group>"; };
 		7B5B91A426178D3B00C82B47 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		7BB65CB7261CC34100369C00 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignPatternsMenu.swift; sourceTree = "<group>"; };
@@ -122,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				7B07740D2613B24200FEDB85 /* MainMenu.swift */,
+				7B3BBF7B261E0FBC007207A3 /* Reusable UI Components */,
 				7B0774142613B27B00FEDB85 /* Algorithms */,
 				7BB65CC4261D0AD200369C00 /* Design Patterns */,
 				7BB65CED261D159000369C00 /* Data Structures */,
@@ -135,6 +160,7 @@
 			children = (
 				7B0774112613B27600FEDB85 /* AlgorithmsMenu.swift */,
 				7B0774192613B2B100FEDB85 /* SortAlgorithmsMenu.swift */,
+				7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -186,6 +212,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7B3BBF7B261E0FBC007207A3 /* Reusable UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */,
+			);
+			path = "Reusable UI Components";
+			sourceTree = "<group>";
+		};
 		7B5B91B12617971F00C82B47 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +252,15 @@
 			children = (
 				7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */,
 				7BB65CDA261D124D00369C00 /* ContentTypeEnum.swift */,
+				7B3BBF80261E5C91007207A3 /* SortAlgorithmEnum.swift */,
+				7B3BBF84261E6482007207A3 /* SearchAlgorithmEnum.swift */,
+				7B3BBF87261E6945007207A3 /* BehavioralDPEnum.swift */,
+				7B3BBF8A261E6B9B007207A3 /* CreationalDPEnum.swift */,
+				7B3BBF8D261E6D21007207A3 /* StructuralDPEnum.swift */,
+				7B3BBF90261E6DF7007207A3 /* LinearDSEnum.swift */,
+				7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */,
+				7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */,
+				7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -226,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				7BB65CE0261D12DA00369C00 /* ContentFactory.swift */,
+				7B3BBF7D261E563B007207A3 /* SortContentFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -314,20 +358,30 @@
 			files = (
 				7B07742D2613B57900FEDB85 /* TemplateAbstraction.swift in Sources */,
 				7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */,
+				7B3BBF7E261E563B007207A3 /* SortContentFactory.swift in Sources */,
 				7BB65D0A261D1C7500369C00 /* HashBasedDSMenu.swift in Sources */,
 				7B0774262613B35D00FEDB85 /* Implementor.swift in Sources */,
+				7B3BBF85261E6482007207A3 /* SearchAlgorithmEnum.swift in Sources */,
 				7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */,
+				7B3BBF97261E6F9F007207A3 /* HashBasedDSEnum.swift in Sources */,
 				7BB65CEB261D158800369C00 /* DataStructuresMenu.swift in Sources */,
 				7BB65CB8261CC34100369C00 /* Content.swift in Sources */,
 				7B1FF1A02617CEB600F68656 /* ContentImplementorProxy.swift in Sources */,
 				7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */,
+				7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */,
+				7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */,
+				7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */,
 				7B0774382613BC0C00FEDB85 /* DefaultTabView.swift in Sources */,
+				7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */,
 				7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */,
 				7B07740E2613B24200FEDB85 /* MainMenu.swift in Sources */,
 				7B1BDEA326166B3A00427505 /* WebView.swift in Sources */,
 				7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */,
+				7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */,
+				7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */,
 				7BB65CDB261D124D00369C00 /* ContentTypeEnum.swift in Sources */,
 				7BB65D01261D1A7D00369C00 /* TreeDSMenu.swift in Sources */,
+				7B3BBF76261E08EA007207A3 /* SearchAlgorithmsMenu.swift in Sources */,
 				7B0774232613B32400FEDB85 /* InsertionSort.swift in Sources */,
 				7BB65CF0261D169300369C00 /* LinearDSMenu.swift in Sources */,
 				7B0774122613B27600FEDB85 /* AlgorithmsMenu.swift in Sources */,
@@ -336,6 +390,8 @@
 				7BB65CCE261D0BE800369C00 /* CreationalDPMenu.swift in Sources */,
 				7B07741A2613B2B100FEDB85 /* SortAlgorithmsMenu.swift in Sources */,
 				7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */,
+				7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */,
+				7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
