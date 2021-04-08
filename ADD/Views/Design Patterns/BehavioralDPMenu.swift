@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// DP stands for Design Pattern
 struct BehavioralDPMenu: View {
     var body: some View {
         List {

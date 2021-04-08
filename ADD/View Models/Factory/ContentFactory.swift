@@ -8,11 +8,17 @@
 import Foundation
 
 
+// Factory
 class ContentFactory {
-    func getContent(_ contentType: ContentType) -> ContentImplementor {
+    func getSortContent(_ contentType: SortAlgorithm) -> ContentImplementor {
         switch contentType {
         case .insertionSort:
             return ContentImplementor(InsertionSort())
+        case .selectionSort:
+            return ContentImplementor(SelectionSort())
         }
     }
+    
+    // Methods that get other content types.
+    //func getSearchContent(_ contentType: SearchAlgorithm) -> ContentImplementor { }
 }

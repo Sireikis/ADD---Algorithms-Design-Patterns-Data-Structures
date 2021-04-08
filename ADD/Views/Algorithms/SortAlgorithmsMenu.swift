@@ -7,17 +7,15 @@
 
 import SwiftUI
 
+
 struct SortAlgorithmsMenu: View {
+    let factory: ContentFactory = ContentFactory()
+    
     var body: some View {
         List {
             ForEach(SortAlgorithm.allCases, id: \.self) { content in
-                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
-            }
-            
-            Section(header: Text("Test HTML")) {
-                // Need to figure out how to ForEach NavigationLinks
-                NavigationLink(destination: DefaultTabView(ContentImplementorProxy(content: .insertionSort))) {
-                    NavigationButton(description: "Insertion Sort", image: "arrow.up.arrow.down", imgForeground: .green)
+                NavigationLink(destination: LazyView(DefaultTabView(factory.getSortContent(content)))) {
+                    NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
                 }
             }
         }

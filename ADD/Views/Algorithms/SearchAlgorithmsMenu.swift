@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct SearchAlgorithmsMenu: View {
     var body: some View {
         List {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 // Using wiki Algo Types
 struct AlgorithmsMenu: View {
     var body: some View {

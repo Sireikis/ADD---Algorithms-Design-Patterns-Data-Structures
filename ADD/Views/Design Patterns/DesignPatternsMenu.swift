@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct DesignPatternsMenu: View {
     var body: some View {
         List {

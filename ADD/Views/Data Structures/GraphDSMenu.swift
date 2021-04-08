@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// DS stands for Data Structure
 struct GraphDSMenu: View {
     var body: some View {
         List {
