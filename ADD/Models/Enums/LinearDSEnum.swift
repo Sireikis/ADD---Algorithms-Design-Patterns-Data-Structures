@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum LinearDS: String, CaseIterable, Identifiable {
+    // Planned content
+    // case array, linkedList
+    
+    // Content to finish
+    // case array, linkedList
+    
     case array, linkedList
     
     var image: String {

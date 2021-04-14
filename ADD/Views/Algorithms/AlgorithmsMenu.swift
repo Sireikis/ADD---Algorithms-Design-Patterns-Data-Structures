@@ -10,6 +10,9 @@ import SwiftUI
 
 // Using wiki Algo Types
 struct AlgorithmsMenu: View {
+    let headingWidth: CGFloat = 216
+    let factory: ContentFactory
+    
     var body: some View {
         List {
             /*
@@ -28,15 +31,48 @@ struct AlgorithmsMenu: View {
                  Text("By Purpose")
              }
              */
-            
-            // Section, by purpose?
-            // However, there are infinitely many purposes
-            NavigationLink(destination: SearchAlgorithmsMenu()) {
-                NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
+            ScrollView(.horizontal) {
+                HStack {
+                    // Describes the intent of the app, as a reference mainly
+                    // Use Geometry Reader, not hardcoded
+                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreAlgorithms)))) {
+                        Topic(description: "What are Algorithms?",
+                              rectColor: .pink, txtColor: .white, rectWidth: headingWidth)
+                        
+                    }
+
+                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreClassifications)))) {
+                        Topic(description: "What are Classifications?",
+                              rectColor: .green, txtColor: .white, rectWidth: headingWidth)
+                        
+                    }
+                }
             }
             
-            NavigationLink(destination: SortAlgorithmsMenu()) {
-                NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
+            Section(header: Text("Classification")) {
+                NavigationLink(destination: SearchAlgorithmsMenu()) {
+                    NavigationButton(description: "By Design Paradigm", image: "arrow.triangle.branch", imgForeground: .green)
+                }
+                
+                NavigationLink(destination: SearchAlgorithmsMenu()) {
+                    NavigationButton(description: "By Implementation", image: "arrow.triangle.2.circlepath", imgForeground: .green)
+                }
+                
+                NavigationLink(destination: SearchAlgorithmsMenu()) {
+                    NavigationButton(description: "By Complexity", image: "circle", imgForeground: .green)
+                }
+            }
+            
+            Section(header: Text("By Purpose")) {
+                // Section, by purpose?
+                // However, there are infinitely many purposes
+                NavigationLink(destination: SearchAlgorithmsMenu()) {
+                    NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
+                }
+                
+                NavigationLink(destination: SortAlgorithmsMenu(factory: factory)) {
+                    NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
+                }
             }
         }
         .navigationBarTitle("Algorithms", displayMode: .inline)
@@ -47,6 +83,7 @@ struct AlgorithmsMenu: View {
 
 struct AlgorithmsMenu_Previews: PreviewProvider {
     static var previews: some View {
-        AlgorithmsMenu()
+        AlgorithmsMenu(factory: ContentFactory())
+            //.environmentObject(SingleWebView())
     }
 }

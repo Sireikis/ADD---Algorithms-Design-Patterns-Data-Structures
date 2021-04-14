@@ -9,7 +9,11 @@ import SwiftUI
 
 
 enum SortAlgorithm: String, CaseIterable, Identifiable {
-    //case bucketSort, countingSort, heapSort, insertionSort, mergeSort, quickSort, selectionSort
+    // Planned content
+    // case bucketSort, countingSort, heapSort, insertionSort, mergeSort, quickSort, selectionSort
+    
+    // Content to finish
+    // case insertionSort, mergeSort, quickSort, selectionSort
     
     case insertionSort, selectionSort
     

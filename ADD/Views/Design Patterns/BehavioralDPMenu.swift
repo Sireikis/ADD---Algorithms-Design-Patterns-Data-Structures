@@ -16,8 +16,8 @@ struct BehavioralDPMenu: View {
                 NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
             }
         }
-        .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Behavioral", displayMode: .inline)
+        .navigationBarItems(trailing: Text("Home"))
     }
 }
 

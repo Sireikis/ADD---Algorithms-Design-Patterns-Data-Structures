@@ -19,6 +19,29 @@ class ContentFactory {
         }
     }
     
+    func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
+        switch tidBit {
+        case .beginner:
+            return TidBitImplementor(Beginner())
+        case .glossary:
+            return TidBitImplementor(Glossary())
+        case .whatIsADD:
+            return TidBitImplementor(WhatIsADD())
+        case .whatAreAlgorithms:
+            return TidBitImplementor(WhatAreAlgorithms())
+        case .whatAreClassifications:
+            return TidBitImplementor(WhatAreClassifications())
+        case .whatAreDesignPatterns:
+            return TidBitImplementor(WhatAreDesignPatterns())
+        case .DPCategories:
+            return TidBitImplementor(DPCategories())
+        case .whatAreDataStructures:
+            return TidBitImplementor(WhatAreDataStructures())
+        case .DSCategories:
+            return TidBitImplementor(DSCategories())
+        }
+    }
+    
     // Methods that get other content types.
     //func getSearchContent(_ contentType: SearchAlgorithm) -> ContentImplementor { }
 }

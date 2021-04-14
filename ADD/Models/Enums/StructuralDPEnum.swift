@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum StructuralDP: String, CaseIterable, Identifiable {
+    // Planned content
+    // case adapter, bridge, composite, decorator, facade, flyweight, proxy
+    
+    // Content to finish
+    // case adapter, bridge, decorator, facade, proxy
+    
     case adapter, bridge, composite, decorator, facade, flyweight, proxy
     
     var image: String {

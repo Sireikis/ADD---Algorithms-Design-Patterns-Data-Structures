@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum GraphDS: String, CaseIterable, Identifiable {
+    // Planned content
+    // case adjacencyList, graph
+    
+    // Content to finish
+    // case adjacencyList, graph
+    
     case adjacencyList, graph
     
     var image: String {

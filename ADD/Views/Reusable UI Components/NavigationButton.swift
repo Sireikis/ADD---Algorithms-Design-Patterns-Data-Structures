@@ -25,7 +25,6 @@ struct NavigationButton: View {
                 .background(imgBackground)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 
-            
             Text(description)
                 .foregroundColor(txtColor)
         }

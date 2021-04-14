@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum CreationalDP: String, CaseIterable, Identifiable {
+    // Planned content
+    // case abstractFactory, builder, factoryMethod, prototype, singleton
+    
+    // Content to finish
+    // case abstractFactory, factoryMethod, singleton
+    
     case abstractFactory, builder, factoryMethod, prototype, singleton
     
     var image: String {

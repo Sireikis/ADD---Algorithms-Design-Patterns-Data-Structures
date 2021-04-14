@@ -1,0 +1,9 @@
+h1.title {
+  border-bottom: 10px solid blue;
+  border-left: 10px solid blue;
+}
+
+h2 {
+  border-bottom: 5px solid blue;
+}
+

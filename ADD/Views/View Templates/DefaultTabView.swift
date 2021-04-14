@@ -81,13 +81,13 @@ struct PagesBar: View {
     func getWebView() -> WebView {
         switch pageContent {
         case .Summary:
-            return singleWebView.webViewWithURL(implementor.getSummaryFor(file: pageSelected))
+            return singleWebView.webViewWithURL(implementor.get(.summary, in: pageSelected))
         case .Explanation:
-            return singleWebView.webViewWithURL(implementor.getExplanationFor(file: pageSelected))
+            return singleWebView.webViewWithURL(implementor.get(.explanation, in: pageSelected))
         case .Code:
-            return singleWebView.webViewWithURL(implementor.getCodeExampleFor(file: pageSelected))
+            return singleWebView.webViewWithURL(implementor.get(.codeExample, in: pageSelected))
         case .Example:
-            return singleWebView.webViewWithURL(implementor.getExampleProblemFor(file: pageSelected))
+            return singleWebView.webViewWithURL(implementor.get(.exampleProblem, in: pageSelected))
         }
     }
 }

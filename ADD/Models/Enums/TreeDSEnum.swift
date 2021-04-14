@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum TreeDS: String, CaseIterable, Identifiable {
+    // Planned content
+    // case binarySearchTree, binaryTree, heap
+    
+    // Content to finish
+    // case binarySearchTree, binaryTree, heap
+    
     case binarySearchTree, binaryTree, heap
     
     var image: String {

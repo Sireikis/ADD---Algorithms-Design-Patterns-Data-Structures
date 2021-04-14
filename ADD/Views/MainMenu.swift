@@ -9,73 +9,82 @@ import SwiftUI
 
 
 struct MainMenu: View {
+    let factory: ContentFactory = ContentFactory()
+    
     var body: some View {
-        NavigationView {
-            List {
-                ScrollView(.horizontal) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .foregroundColor(.pink)
-                            //.frame(height: 100)
-                            // Use GeometryReader
-                            .frame(width: 144, height: 144)
-                        //Rectangle().foregroundColor(.pink)
-                        Text("What is ADD?").foregroundColor(.black)
+        List {
+            ScrollView(.horizontal) {
+                HStack {
+                    // Describes the intent of the app, as a reference mainly
+                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatIsADD)))) {
+                        Topic(description: "What is ADD?",
+                              rectColor: .pink, txtColor: .white)
+                    }
+                    
+                    // Has a list of resources that I recommend someone should start with.
+                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.beginner)))) {
+                        Topic(description: "Beginner",
+                              rectColor: .green, txtColor: .white)
+                    }
+                    
+                    // A glossary that briefly explains the meaning of some commonly used terms
+                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.glossary)))) {
+                        Topic(description: "Glossary",
+                              rectColor: .blue, txtColor: .white)
                     }
                 }
-                
-                
-                
-                NavigationLink(destination: AlgorithmsMenu()) {
-                    NavigationButton(description: "Algorithms", txtColor: .green, image: "flowchart", imgForeground: .green)
-                }
-                
-                NavigationLink(destination: DesignPatternsMenu()) {
-                    NavigationButton(description: "Design Patterns", txtColor: .blue, image: "checkerboard.rectangle", imgForeground: .blue)
-                }
-                
-                NavigationLink(destination: DataStructuresMenu()) {
-                    NavigationButton(description: "Data Structures", txtColor: .red, image: "building.columns", imgForeground: .red)
-                }
             }
-            // These stay and don't move with the view.
-            // Is this intended?
-            //.navigationBarItems(trailing: SettingsIcon())
-            //.navigationBarItems(trailing: Label("Settings", systemImage: "gearshape"))
             
-            .navigationBarItems(trailing: Text("Settings"))
-            .navigationBarTitle("ADD", displayMode: .inline)
-            //.navigationTitle("ADD")
-            //.navigationBarTitle(Text("ADD"))
-            //.navigationBarItems(leading: Text("ADD"))
+            NavigationLink(destination: AlgorithmsMenu(factory: factory)) {
+                NavigationButton(description: "Algorithms", txtColor: .green, image: "flowchart", imgForeground: .green)
+            }
             
+            NavigationLink(destination: DesignPatternsMenu(factory: factory)) {
+                NavigationButton(description: "Design Patterns", txtColor: .blue, image: "checkerboard.rectangle", imgForeground: .blue)
+            }
+            
+            NavigationLink(destination: DataStructuresMenu(factory: factory)) {
+                NavigationButton(description: "Data Structures", txtColor: .red, image: "building.columns", imgForeground: .red)
+            }
         }
-        //.navigationTitle<V>(test())
+        .navigationTitle("ADD")
+        //.navigationBarTitle("ADD", displayMode: .inline)
+        
+        .navigationBarItems(trailing: Text("Settings"))
+        
         // Fixes the grey buttons on backtrack, but gives lots of errors.
         // OS_ACTIVITY_MODE is disabled, so no errors.
         //.navigationViewStyle(DefaultNavigationViewStyle())
         // Does however remove multi screen funcitonality in iPad
-        .navigationViewStyle(StackNavigationViewStyle())
+        
+        //.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
-struct SettingsIcon: View {
-    var body: some View {
-        /*
-         NavigationLink(destination: ()) {
-             Label("Settings", systemImage: "gearshape")
-                 .labelStyle(IconOnlyLabelStyle())
-         }
-         */
-        
-        Label("Settings", systemImage: "gearshape")
-            .labelStyle(IconOnlyLabelStyle())
-    }
-}
+
+/*
+ // Settings icon that links to settings page
+ // Necesary to have a settings page?
+ // Maybe for about, submit feedback, review.
+ struct SettingsIcon: View {
+     var body: some View {
+         /*
+          NavigationLink(destination: ()) {
+              Label("Settings", systemImage: "gearshape")
+                  .labelStyle(IconOnlyLabelStyle())
+          }
+          */
+         
+         Label("Settings", systemImage: "gearshape")
+             .labelStyle(IconOnlyLabelStyle())
+     }
+ }
+ */
 
 
 struct MainMenu_Previews: PreviewProvider {
     static var previews: some View {
         MainMenu()
+            .environmentObject(SingleWebView())
     }
 }

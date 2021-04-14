@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum SearchAlgorithm: String, CaseIterable, Identifiable {
+    // Planned content
+    // case binarySearch, breadthFirstSearch, depthFirstSearch
+    
+    // Content to finish
+    // case binarySearch, breadthFirstSearch, depthFirstSearch
+    
     case binarySearch, breadthFirstSearch, depthFirstSearch
     
     var image: String {

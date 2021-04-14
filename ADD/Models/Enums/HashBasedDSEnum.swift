@@ -9,6 +9,12 @@ import SwiftUI
 
 
 enum HashBasedDS: String, CaseIterable, Identifiable {
+    // Planned content
+    // case hashList, hashTable
+    
+    // Content to finish
+    // case hashList, hashTable
+    
     case hashList, hashTable
     
     var image: String {

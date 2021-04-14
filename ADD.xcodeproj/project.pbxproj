@@ -45,6 +45,21 @@
 		7BB65D01261D1A7D00369C00 /* TreeDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65D00261D1A7D00369C00 /* TreeDSMenu.swift */; };
 		7BB65D0A261D1C7500369C00 /* HashBasedDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65D09261D1C7500369C00 /* HashBasedDSMenu.swift */; };
 		7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65D0C261D1CDC00369C00 /* GraphDSMenu.swift */; };
+		7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */; };
+		7BE5424326276275000673E5 /* TidBitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424226276275000673E5 /* TidBitView.swift */; };
+		7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424526276544000673E5 /* TidBitEnum.swift */; };
+		7BE54249262765DB000673E5 /* WhatAreClassifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE54248262765DB000673E5 /* WhatAreClassifications.swift */; };
+		7BE5424F26276B0B000673E5 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424E26276B0A000673E5 /* Topic.swift */; };
+		7BE5425426276D6A000673E5 /* TidBitImplementor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425326276D6A000673E5 /* TidBitImplementor.swift */; };
+		7BE5425726276DA9000673E5 /* TidBit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425626276DA9000673E5 /* TidBit.swift */; };
+		7BE5425A26279214000673E5 /* ContentCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425926279214000673E5 /* ContentCategoryEnum.swift */; };
+		7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425F262798B2000673E5 /* WhatIsADD.swift */; };
+		7BE54263262798DD000673E5 /* Beginner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE54262262798DD000673E5 /* Beginner.swift */; };
+		7BE54266262798F6000673E5 /* Glossary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE54265262798F6000673E5 /* Glossary.swift */; };
+		7BE542692627A031000673E5 /* DPCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE542682627A031000673E5 /* DPCategories.swift */; };
+		7BE5426C2627A059000673E5 /* WhatAreDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */; };
+		7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */; };
+		7BE542732627A291000673E5 /* DSCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE542722627A291000673E5 /* DSCategories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +103,21 @@
 		7BB65D00261D1A7D00369C00 /* TreeDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDSMenu.swift; sourceTree = "<group>"; };
 		7BB65D09261D1C7500369C00 /* HashBasedDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashBasedDSMenu.swift; sourceTree = "<group>"; };
 		7BB65D0C261D1CDC00369C00 /* GraphDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSMenu.swift; sourceTree = "<group>"; };
+		7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreAlgorithms.swift; sourceTree = "<group>"; };
+		7BE5424226276275000673E5 /* TidBitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitView.swift; sourceTree = "<group>"; };
+		7BE5424526276544000673E5 /* TidBitEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitEnum.swift; sourceTree = "<group>"; };
+		7BE54248262765DB000673E5 /* WhatAreClassifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreClassifications.swift; sourceTree = "<group>"; };
+		7BE5424E26276B0A000673E5 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		7BE5425326276D6A000673E5 /* TidBitImplementor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitImplementor.swift; sourceTree = "<group>"; };
+		7BE5425626276DA9000673E5 /* TidBit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBit.swift; sourceTree = "<group>"; };
+		7BE5425926279214000673E5 /* ContentCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCategoryEnum.swift; sourceTree = "<group>"; };
+		7BE5425F262798B2000673E5 /* WhatIsADD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatIsADD.swift; sourceTree = "<group>"; };
+		7BE54262262798DD000673E5 /* Beginner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beginner.swift; sourceTree = "<group>"; };
+		7BE54265262798F6000673E5 /* Glossary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glossary.swift; sourceTree = "<group>"; };
+		7BE542682627A031000673E5 /* DPCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCategories.swift; sourceTree = "<group>"; };
+		7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDesignPatterns.swift; sourceTree = "<group>"; };
+		7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDataStructures.swift; sourceTree = "<group>"; };
+		7BE542722627A291000673E5 /* DSCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCategories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +198,7 @@
 			children = (
 				7B0774482613D34F00FEDB85 /* Protocols */,
 				7B0774372613BC0C00FEDB85 /* DefaultTabView.swift */,
+				7BE5424226276275000673E5 /* TidBitView.swift */,
 				7B5B91B12617971F00C82B47 /* Helpers */,
 			);
 			path = "View Templates";
@@ -186,6 +217,7 @@
 			children = (
 				7B07744E2613D39600FEDB85 /* Protocols */,
 				7B0774282613B3A100FEDB85 /* ContentImplementor.swift */,
+				7BE5425326276D6A000673E5 /* TidBitImplementor.swift */,
 				7BB65CE8261D133900369C00 /* Factory */,
 			);
 			path = "View Models";
@@ -195,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				7BB65CBA261CCACF00369C00 /* Protocols */,
+				7BE5425C2627958A000673E5 /* TidBits */,
 				7B0774222613B32400FEDB85 /* InsertionSort.swift */,
 				7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */,
 				7BB65CE4261D12EC00369C00 /* Enums */,
@@ -214,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */,
+				7BE5424E26276B0A000673E5 /* Topic.swift */,
 			);
 			path = "Reusable UI Components";
 			sourceTree = "<group>";
@@ -231,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				7BB65CB7261CC34100369C00 /* Content.swift */,
+				7BE5425626276DA9000673E5 /* TidBit.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -259,6 +294,8 @@
 				7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */,
 				7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */,
 				7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */,
+				7BE5424526276544000673E5 /* TidBitEnum.swift */,
+				7BE5425926279214000673E5 /* ContentCategoryEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -281,6 +318,22 @@
 				7BB65D0C261D1CDC00369C00 /* GraphDSMenu.swift */,
 			);
 			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		7BE5425C2627958A000673E5 /* TidBits */ = {
+			isa = PBXGroup;
+			children = (
+				7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */,
+				7BE54248262765DB000673E5 /* WhatAreClassifications.swift */,
+				7BE542682627A031000673E5 /* DPCategories.swift */,
+				7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */,
+				7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */,
+				7BE542722627A291000673E5 /* DSCategories.swift */,
+				7BE5425F262798B2000673E5 /* WhatIsADD.swift */,
+				7BE54262262798DD000673E5 /* Beginner.swift */,
+				7BE54265262798F6000673E5 /* Glossary.swift */,
+			);
+			path = TidBits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,21 +413,34 @@
 				7B0774262613B35D00FEDB85 /* Implementor.swift in Sources */,
 				7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */,
 				7B3BBF85261E6482007207A3 /* SearchAlgorithmEnum.swift in Sources */,
+				7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */,
 				7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */,
 				7B3BBF97261E6F9F007207A3 /* HashBasedDSEnum.swift in Sources */,
+				7BE5425A26279214000673E5 /* ContentCategoryEnum.swift in Sources */,
 				7BB65CEB261D158800369C00 /* DataStructuresMenu.swift in Sources */,
+				7BE54249262765DB000673E5 /* WhatAreClassifications.swift in Sources */,
+				7BE5425426276D6A000673E5 /* TidBitImplementor.swift in Sources */,
+				7BE5426C2627A059000673E5 /* WhatAreDesignPatterns.swift in Sources */,
 				7BB65CB8261CC34100369C00 /* Content.swift in Sources */,
+				7BE542692627A031000673E5 /* DPCategories.swift in Sources */,
+				7BE5424F26276B0B000673E5 /* Topic.swift in Sources */,
+				7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */,
 				7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */,
 				7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */,
+				7BE54263262798DD000673E5 /* Beginner.swift in Sources */,
+				7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */,
 				7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */,
 				7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */,
 				7B0774382613BC0C00FEDB85 /* DefaultTabView.swift in Sources */,
 				7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */,
+				7BE5425726276DA9000673E5 /* TidBit.swift in Sources */,
 				7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */,
 				7B07740E2613B24200FEDB85 /* MainMenu.swift in Sources */,
 				7B1BDEA326166B3A00427505 /* WebView.swift in Sources */,
+				7BE5424326276275000673E5 /* TidBitView.swift in Sources */,
 				7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */,
 				7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */,
+				7BE542732627A291000673E5 /* DSCategories.swift in Sources */,
 				7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */,
 				7BB65D01261D1A7D00369C00 /* TreeDSMenu.swift in Sources */,
 				7B3BBF76261E08EA007207A3 /* SearchAlgorithmsMenu.swift in Sources */,
@@ -388,6 +454,8 @@
 				7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */,
 				7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */,
 				7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */,
+				7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */,
+				7BE54266262798F6000673E5 /* Glossary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

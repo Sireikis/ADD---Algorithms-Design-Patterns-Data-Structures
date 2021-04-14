@@ -9,6 +9,14 @@ import SwiftUI
 
 
 enum BehavioralDP: String, CaseIterable, Identifiable {
+    // Planned content
+    // case chainOfResponsibility, command, iterator, mediator, memento,
+    // observer, state, strategy, templateMethod, visitor
+    
+    // Content to finish
+    // case command, observer, state, strategy
+    
+    
     case chainOfResponsibility, command, iterator, mediator, memento,
          observer, state, strategy, templateMethod, visitor
     

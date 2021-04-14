@@ -16,8 +16,8 @@ struct StructuralDPMenu: View {
                 NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
             }
         }
-        .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Structural", displayMode: .inline)
+        .navigationBarItems(trailing: Text("Home"))
     }
 }
 

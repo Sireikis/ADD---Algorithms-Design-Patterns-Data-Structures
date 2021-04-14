@@ -20,19 +20,19 @@ class ContentImplementor: Implementor {
         return instance.isFileAvailable(file, for: page)
     }
     
-    func getSummaryFor(file: FileNumber) -> URLRequest {
-        return instance.getContentIn(file: file, for: .Summary)
-    }
-    
-    func getExplanationFor(file: FileNumber) -> URLRequest {
-        return instance.getContentIn(file: file, for: .Explanation)
-    }
-    
-    func getCodeExampleFor(file: FileNumber) -> URLRequest {
-        return instance.getContentIn(file: file, for: .Code)
-    }
-    
-    func getExampleProblemFor(file: FileNumber) -> URLRequest {
-        return instance.getContentIn(file: file, for: .Example)
+    func get(_ contentCategory: ContentCategory, in file: FileNumber) -> URLRequest {
+        switch contentCategory {
+        case .summary:
+            return instance.getContentIn(file: file, for: .Summary)
+        case .explanation:
+            return instance.getContentIn(file: file, for: .Explanation)
+        case .codeExample:
+            return instance.getContentIn(file: file, for: .Code)
+        case .exampleProblem:
+            return instance.getContentIn(file: file, for: .Example)
+        default:
+            // Views that call unexpected content get InsertionSortSummary_1.html
+            return instance.getContentIn(file: .one, for: .Summary)
+        }
     }
 }

@@ -16,8 +16,8 @@ struct LinearDSMenu: View {
                 NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
             }
         }
-        .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Linear", displayMode: .inline)
+        .navigationBarItems(trailing: Text("Home"))
     }
 }
 

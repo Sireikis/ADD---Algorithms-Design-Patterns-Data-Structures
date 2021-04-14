@@ -15,8 +15,8 @@ struct SearchAlgorithmsMenu: View {
                 NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
             }
         }
-        .navigationBarItems(trailing: Text("Home"))
         .navigationBarTitle("Search", displayMode: .inline)
+        .navigationBarItems(trailing: Text("Home"))
     }
 }
 
