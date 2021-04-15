@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-<!-- link to css file-->
-<link rel="stylesheet" href="../../css/ContentStyle.css">
-<link rel="stylesheet" href="../../css/GreenStyle.css">
-</head>
-<body>
-<h1 class="title">Data Structure Categories</h1>
+    <head>
+        <!-- link to css files-->
+        <link rel="stylesheet" href="../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../css/GreenStyle.css">
+    </head>
+    <body>
+        <h1 class="title">Data Structure Categories</h1>
+        
+        <p>
+        The following structures are not an exhaustive list of the types of data structures that there are. Furthermore, hybrid structures can be formed by combining these concepts when the information being stored deems it appropriate.
+        </p>
+        
+        <h2>Linear</h2>
+        <p>
+        Linear data structures describe elements arranged in a sequential order, such that an element is connected to its previous and next element. The implementation of a linear data structure can vary in so far as how it utilizes memory and what operations are made more efficient as a result of the underlying structure. For example, in an array access is achieved in constant time O(1) while insertion and deletion are both O(n). Meanwhile, in a linked list access is O(n) and insertion and deletion are both constant time O(1). These are both linear data structures, but a linked list requires more space (memory) in order to store references to each element's next and previous element (in the case of a doubly-linked list).
+        </p>
+        
+        <p>
+        Using data structures involves making choices about which implementation to use based on our needs. Maybe we've decided that our data is represented well by a linear data structure. Now we must decide which of the many implementations we should use, do we need to maximize access, search, insertion, deletion? Do we need to minimize how much space we use per piece of data? This category describes different implementations that maintain a linear relationship between data while changing the time complexity of basic operations and the space complexity of its implementation.
+        </p>
+        
+        <h2>Tree</h2>
+        <p>
+        Tree data structures describe nodes arranged in hierachical order where a node may have connections to 0 or more other nodes but no connections to nodes that connect to it directly or indirectly (relationships flow in one direction). The implementation can vary widely, but typically a tree is accessed through a single node called the root which has no nodes that reference it. Trees are great for information that have one way relationships, such as a parent-child relationship.
+        </p>
+        
+        <p>
+        For example, a tree data structure is a great way to model a family tree. Let's say that our family tree consists of nodes where each node is a person. Each person can be the parent of multiple children, but none of that parent's children could ever become their parent's parent. Hence, such a tree could be refered to as being acyclic, where no path taken from one node will ever lead you back to that same node. In other words, "being someone's parent" is a one way relationship.
+        </p>
+        
+        <h2>Hash-based</h2>
+        <p>
+        A hash-based data structure describes relationships between pairs of data. Of these pairs, one piece of data is refered to as the key and the other as the value. Each key must be completely unique with regards to all other keys, no duplicates are allowed. Typically keys are important pieces of information that shouldn't be openly shared or stored, like passwords. A hash-based data structure utilizing a hash-function typically accepts a key as input in order to reference its associated value. However, the key is not stored, instead it is run through a hash function which produces a random output called a hash, which is then stored along with the value.
+        </p>
+        
+        <p>
+        An example would be a website attempting to authenticate a password. When a password is generate, the password is used as the input to a hash-function. The purpose of a good hash-function is to generate a completely random and unique output even when inputs may vary only slightly. Furthermore, the same exact input should generate the same output every time. Lastly, even if the output of a hash-function (the hash) is exposed, it should not be possible to use it to generate the original input.
+        </p>
+        
+        <p>
+        For example given the passwords 'Password' and 'password', the hash-function would generate two completely different and unique outputs (hashes). These outputs are then stored along with a username or some other information (the value). When a user attempts to login: the password is given to the hash-function, the function returns a hash, the hash is compared against a hash in the system and if there is a matching hash, returns the username. If the usernames match then the user is allowed access. The intent of the hash-function and the hash in this case is that even if the stored information is exposed, such as a username, the output of the hash-function cannot be used to reverse-engineer the password.
+        </p>
 
-<h2>Linear</h2>
-<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-<h2>Tree</h2>
-<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-<h2>Hash-based</h2>
-<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-<h2>Graph</h2>
-<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-</body>
+        <h2>Graph</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    </body>
 </html>
 
 

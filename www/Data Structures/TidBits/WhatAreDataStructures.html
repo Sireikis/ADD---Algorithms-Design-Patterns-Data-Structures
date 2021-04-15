@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- link to css file-->
+        <!-- link to css files-->
         <link rel="stylesheet" href="../../css/ContentStyle.css">
             <link rel="stylesheet" href="../../css/RedStyle.css">
                 </head>
@@ -9,7 +9,30 @@
         <h1 class="title">Data Structures</h1>
         
         <h2>Definition</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>
+        Data structures are ways of representing relationships between information. In other words, what operations a data structure allows between the information it holds should directly reflect the relationships between the information we are trying to model. In the following section we'll look at the linear data structure in some detail to get a concrete example of what this means.
+        </p>
+        
+        <h2>Linear</h2>
+        <p>
+        A data structure that is linear describes data that is sequentially connected and therefore ordered. To clarify, "ordered" in this sense does not necessarily mean that there is some arbitrary order over the sequence, like alphabetical or numerical order (though sorting this data is often a goal). Rather, this type of structure inherently has an order because of the way we are allowed to traverse it. Let's look at a concrete example.
+        </p>
+        
+        <p>
+        Imagine a row of wall lockers, like those that commonly line the halls of high schools in America. For the sake of simplicity, in our example the lockers will not be stacked on top of each other, instead each is the height of the wall. Facing this wall of lockers we notice that only one of them is numbered, the leftmost locker, with the number 0--the rest of the lockers were not numbered. Now imagine, that for some arbitrary reason, the only way we can get into a locker is to start at locker 0 and begin counting from it to the locker we want. But then again is this method of accessing a locker really arbitrary? In these circumstances, how else would we figure out which locker is locker number 34 or 52 or 1627, without starting from 0 and counting up to that locker? You could argue that we could guess which locker is the middle (if the number of lockers is small enough), or maybe we know the number of the last locker. But how could we be sure of these things? Well, we could have numbered the lockers when they were built, that sounds like a perfectly reasonable solution--we could have avoided this problem in the first place! However, numbering a locker is not free. Sure compared to the locker it's pretty cheap, but why do that when we can just make students go through the work of finding their lockers while the noticable bigger budget is spent on other things, like maybe more lockers. So students in this school are forced to start at locker 0 and count up until they reach their locker. Notice that the locker numbers are ordered--we start at 0, move to 1, to 2, etc. However, the contents of these lockers could be anything.
+        </p>
+        
+        <p>
+        So why are we talking about lockers? How does this relate to linear data structures? Well a very popular linear data structure is the array. In an array we know where the array begins (locker 0) and typically we know its size, but depending on the language we use it could be up to us to keep track of how large this array is. We move through an array in the same way we moved through those lockers, by starting at 0. For lockers it's position is denoted by locker numbers, for an array we refer to position by an index. We begin at index 0 and count up from there, to index 1, 2, etc. until we get to the element (locker) we want. So how does budget from our example relate to arrays? Well computers store information in memory, such as RAM. We can think of memory as a bunch of compartments that can only hold a very specific amount of information. Depending on what kind of information we want to store, we can use multiple compartments in memory to represent one locker that holds that information. This is where the analogy deviates from reality, in reality a locker could be used to store things that are smaller than it. In a computer's memory however, when we make an array the size of each locker is the same and each locker is perfectly sized to accommodate the information it stores. A locker in a computer's memory can only store one type of information and each locker is perfectly sized to store that information. Back to the topic of budget, index 0, which we use to denote where an array begins, is information that takes up a few compartments in memory, which may or may not be the same size as each locker in an array. Hence, if we were to allocate memory (budget) to say where each locker is located in memory, it's address, the amount of memory we would use would be directly proportional to how many lockers we want to have. So instead we denote where the array begins and move to the locker we want from there.
+        </p>
+        
+        <p>
+        This example should serve to set the stage for how the structure of a data structure can represent the relationships between information. The linear data structure is sequential (start at locker 0) and ordered (start at locker 0, then move to locker 1, 2, etc. At this point hopefully the distinction between the position of the lockers and the order of their contents is clear.). In our example the operation we allowed is to move through the array, starting from index 0 to index 1, then index 2, etc. Therefore, given the means of traversal, the information we choose to store in our array may make the most sense when traversed sequentially. For example each locker could contain a letter or a space. If we traverse our lockers one at a time and read out the letter of each locker, we will eventually get a sentence. Whether or not this sentence makes sense or not depends entirely on whether the students did a good job putting the letters and spaces into their respective lockers!
+        </p>
+        
+        <p>
+        The ways we are allowed to traverse a data structure and what operations we are allowed to perform on it can be used to reflect the relationships between pieces of information. Linear data structures allow sequential traversal, where one piece of information leads to the next. Thus, linear data structures are great at representing information that care about order, where one piece of information is somehow connected to the next.
+        </p>
     </body>
 </html>
 
