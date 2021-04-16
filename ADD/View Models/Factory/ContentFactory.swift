@@ -23,6 +23,8 @@ class ContentFactory {
         switch tidBit {
         case .beginner:
             return TidBitImplementor(Beginner())
+        case .bigO:
+            return TidBitImplementor(BigO())
         case .glossary:
             return TidBitImplementor(Glossary())
         case .whatIsADD:

@@ -44,7 +44,21 @@
         </p>
 
         <h2>Graph</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>
+        A graph data structure describes relationships between multiple pieces of data. Each piece of data can be referred to as a node (or a vertex) which may or may not be related in some sense to any number of other nodes. The relationship can be referred to as an edge. Edges can be directed, undirected, weighted, or a combination of these characteristics. Let's break down what we mean by these terms.
+        </p>
+        
+        <p>
+        A directed edge describes a relationship between two nodes in one or both directions. Typically an edge is depicted as an arrow from one node to another. An example of a relationship that could be depicted with a directed edge is if person A owes person B money. An edge in this graph would represent a node that owes money to another node--with the arrow pointing in the direction of the node owed money. In this example, the edge would start at node A (used to represent person A) and end at node B (used to represent person B) with an arrow pointing towards B. This relationship is directed because while node A owes money to node B, node B does not owe money to node A. If we wanted to depict the relationship where both nodes owe money to each other, then we could simply draw an arrow at both ends of the edge.
+        </p>
+        
+        <p>
+        An undirected edge depicts an association between two nodes, with no notion of direction. While this does mean that nodes with undirected edges can be traversed in either direction, being able to move through these nodes is not an aspect of the relationship we are modeling. For example, we can imagine a cluster of nodes connected to each other by undirected edges because they share a certain characteristic, like being red. If we want to look at all things that are red, we can traverse these undirected edges that link nodes that are both red.
+        </p>
+        
+        <p>
+        A weighted edge typically assigns some numerical value to an edge, signifying some cost associated with the traversal between two nodes. The weighted edge may be directed or undirected. For example, the cost could be the length of the route, where each edge depicts a route between two nodes. Or the cost could represent a financial cost between traveling from one node to another, such as the cost of a plane ticket. We can imagine directed weighted edges pretty easily, such as the cost of a plane ticket from node A to node B. We can also imagine that the cost may be different on the return flight. Hence we may use a bidirectional weighted edge, where the cost of traversing node A to node B differs from the cost of traversing node B to node A. If the cost in either direction was the same, then perhaps we may choose to depict this as an undirected graph with a single cost, since the direction of traversal does not matter.
+        </p>
     </body>
 </html>
 

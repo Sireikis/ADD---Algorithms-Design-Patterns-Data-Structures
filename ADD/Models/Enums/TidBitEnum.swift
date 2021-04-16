@@ -8,6 +8,6 @@
 import Foundation
 
 enum TidBits {
-    case beginner, glossary, whatIsADD, whatAreAlgorithms, whatAreClassifications,
+    case beginner, bigO, glossary, whatIsADD, whatAreAlgorithms, whatAreClassifications,
          whatAreDesignPatterns, DPCategories, whatAreDataStructures, DSCategories
 }

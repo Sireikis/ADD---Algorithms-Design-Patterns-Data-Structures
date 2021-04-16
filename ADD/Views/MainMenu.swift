@@ -27,10 +27,16 @@ struct MainMenu: View {
                               rectColor: .green, txtColor: .white)
                     }
                     
+                    // A description of Big O
+                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.bigO)))) {
+                        Topic(description: "Big O",
+                              rectColor: .blue, txtColor: .white)
+                    }
+                    
                     // A glossary that briefly explains the meaning of some commonly used terms
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.glossary)))) {
                         Topic(description: "Glossary",
-                              rectColor: .blue, txtColor: .white)
+                              rectColor: .pink, txtColor: .white)
                     }
                 }
             }

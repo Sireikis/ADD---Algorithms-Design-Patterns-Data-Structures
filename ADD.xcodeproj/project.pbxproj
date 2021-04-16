@@ -31,6 +31,7 @@
 		7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */; };
 		7B3BBF97261E6F9F007207A3 /* HashBasedDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */; };
 		7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */; };
+		7B5844E62629FF9B0069058D /* BigO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5844E52629FF9B0069058D /* BigO.swift */; };
 		7B5B91A526178D3B00C82B47 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7B5B91A426178D3B00C82B47 /* www */; };
 		7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */; };
 		7B8150DA261F6DDF00E6CAAD /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D9261F6DDE00E6CAAD /* LazyView.swift */; };
@@ -89,6 +90,7 @@
 		7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDSEnum.swift; sourceTree = "<group>"; };
 		7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashBasedDSEnum.swift; sourceTree = "<group>"; };
 		7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSEnum.swift; sourceTree = "<group>"; };
+		7B5844E52629FF9B0069058D /* BigO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigO.swift; sourceTree = "<group>"; };
 		7B5B91A426178D3B00C82B47 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		7B8150D9261F6DDE00E6CAAD /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				7BE542722627A291000673E5 /* DSCategories.swift */,
 				7BE5425F262798B2000673E5 /* WhatIsADD.swift */,
 				7BE54262262798DD000673E5 /* Beginner.swift */,
+				7B5844E52629FF9B0069058D /* BigO.swift */,
 				7BE54265262798F6000673E5 /* Glossary.swift */,
 			);
 			path = TidBits;
@@ -453,6 +456,7 @@
 				7B07741A2613B2B100FEDB85 /* SortAlgorithmsMenu.swift in Sources */,
 				7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */,
 				7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */,
+				7B5844E62629FF9B0069058D /* BigO.swift in Sources */,
 				7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */,
 				7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */,
 				7BE54266262798F6000673E5 /* Glossary.swift in Sources */,
