@@ -12,6 +12,8 @@ struct DesignPatternsMenu: View {
     let factory: ContentFactory
     let headingWidth: CGFloat = 216
     
+    @State var selection: String? = nil
+    
     var body: some View {
         List {
             ScrollView(.horizontal) {
@@ -30,22 +32,30 @@ struct DesignPatternsMenu: View {
             }
             
             Section(header: Text("Patterns")) {
-                NavigationLink(destination: BehavioralDPMenu()) {
+                NavigationLink(destination: BehavioralDPMenu(), tag: "Behavioral", selection: $selection) {
                     NavigationButton(description: "Behavioral", image: "gearshape.2", imgForeground: .blue)
+                }.onDisappear {
+                    self.selection = nil
                 }
                 
-                NavigationLink(destination: CreationalDPMenu()) {
+                NavigationLink(destination: CreationalDPMenu(), tag: "Creational", selection: $selection) {
                     NavigationButton(description: "Creational", image: "lightbulb", imgForeground: .blue)
+                }.onDisappear {
+                    self.selection = nil
                 }
                 
-                NavigationLink(destination: StructuralDPMenu()) {
+                NavigationLink(destination: StructuralDPMenu(), tag: "Structural", selection: $selection) {
                     NavigationButton(description: "Structural", image: "square.grid.3x1.below.line.grid.1x2", imgForeground: .blue)
+                }.onDisappear {
+                    self.selection = nil
                 }
-            }
+            }.id("idSection1")
         }
+        .id("idList")
         .navigationBarTitle("Design Patterns", displayMode: .inline)
     }
 }
+
 
 struct DesignPatternsMenu_Previews: PreviewProvider {
     static var previews: some View {

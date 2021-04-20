@@ -55,7 +55,6 @@
 		7BE5425726276DA9000673E5 /* TidBit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425626276DA9000673E5 /* TidBit.swift */; };
 		7BE5425A26279214000673E5 /* ContentCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425926279214000673E5 /* ContentCategoryEnum.swift */; };
 		7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5425F262798B2000673E5 /* WhatIsADD.swift */; };
-		7BE54263262798DD000673E5 /* Beginner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE54262262798DD000673E5 /* Beginner.swift */; };
 		7BE54266262798F6000673E5 /* Glossary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE54265262798F6000673E5 /* Glossary.swift */; };
 		7BE542692627A031000673E5 /* DPCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE542682627A031000673E5 /* DPCategories.swift */; };
 		7BE5426C2627A059000673E5 /* WhatAreDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */; };
@@ -114,7 +113,6 @@
 		7BE5425626276DA9000673E5 /* TidBit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBit.swift; sourceTree = "<group>"; };
 		7BE5425926279214000673E5 /* ContentCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCategoryEnum.swift; sourceTree = "<group>"; };
 		7BE5425F262798B2000673E5 /* WhatIsADD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatIsADD.swift; sourceTree = "<group>"; };
-		7BE54262262798DD000673E5 /* Beginner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beginner.swift; sourceTree = "<group>"; };
 		7BE54265262798F6000673E5 /* Glossary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glossary.swift; sourceTree = "<group>"; };
 		7BE542682627A031000673E5 /* DPCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCategories.swift; sourceTree = "<group>"; };
 		7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDesignPatterns.swift; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 				7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */,
 				7BE542722627A291000673E5 /* DSCategories.swift */,
 				7BE5425F262798B2000673E5 /* WhatIsADD.swift */,
-				7BE54262262798DD000673E5 /* Beginner.swift */,
 				7B5844E52629FF9B0069058D /* BigO.swift */,
 				7BE54265262798F6000673E5 /* Glossary.swift */,
 			);
@@ -430,7 +427,6 @@
 				7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */,
 				7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */,
 				7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */,
-				7BE54263262798DD000673E5 /* Beginner.swift in Sources */,
 				7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */,
 				7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */,
 				7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */,

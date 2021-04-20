@@ -12,6 +12,8 @@ struct DataStructuresMenu: View {
     let factory: ContentFactory
     let headingWidth: CGFloat = 216
     
+    @State var selection: String? = nil
+    
     var body: some View {
         List {
             ScrollView(.horizontal) {
@@ -30,23 +32,31 @@ struct DataStructuresMenu: View {
             }
             
             Section(header: Text("Structures")) {
-                NavigationLink(destination: LinearDSMenu()) {
+                NavigationLink(destination: LinearDSMenu(), tag: "Linear", selection: $selection) {
                     NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
+                }.onDisappear {
+                    self.selection = nil
                 }
                 
-                NavigationLink(destination: TreeDSMenu()) {
+                NavigationLink(destination: TreeDSMenu(), tag: "Tree", selection: $selection) {
                     NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
+                }.onDisappear {
+                    self.selection = nil
                 }
                 
-                NavigationLink(destination: HashBasedDSMenu()) {
+                NavigationLink(destination: HashBasedDSMenu(), tag: "Hash-based", selection: $selection) {
                     NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
+                }.onDisappear {
+                    self.selection = nil
                 }
                 
-                NavigationLink(destination: GraphDSMenu()) {
+                NavigationLink(destination: GraphDSMenu(), tag: "Graph", selection: $selection) {
                     NavigationButton(description: "Graph", image: "squareshape.controlhandles.on.squareshape.controlhandles", imgForeground: .red)
+                }.onDisappear {
+                    self.selection = nil
                 }
-            }
-        }
+            }.id("idSection1")
+        }.id("idList")
         .navigationBarTitle("Data Structures", displayMode: .inline)
     }
 }

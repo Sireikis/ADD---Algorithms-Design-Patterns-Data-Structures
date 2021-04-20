@@ -8,8 +8,30 @@
     <body>
         <h1 class="title">Design Patterns</h1>
         
-        <h2>Definition</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>
+        A design pattern is a general concept for solving commonly occurring problems in software design through the application of fundamental principles of object-oriented programming. Unlike an algorithm, a design pattern is a high-level description of a solution. Instead of giving you clear steps to take, it gives you an outline of the relationships that objects will have--the implementation of those objects is up to you.
+        </p>
+        
+        <h2>An Example</h2>
+        <p>
+        Let's say you're developing a page for an app that contains some information and UI elements. We want to be able to take this page and fill it with information from some data source somewhere. That seems easy enough, we can just inject the data source, or provide it to our page in any number of ways. However, what happens when we introduce another data source with some other interface (different method names)? Suddenly we can't use both data sources without creating new page classes with their own instance of a data source (tightly coupling a page to a data source). Furthermore, what if we want to display that same information, but in a completely different layout?
+        </p>
+        
+        <p>
+        You can start to see how this example forms a situation where we might end up with a class explosion. If we aren't careful, we'll create a number of classes equal to the cartesian product--the set of all possible ordered pairs. In other words, each page layout class paired with each different data source. If we had three different page layouts and five different data sources, we would have 15 different classes. So how do we avoid this?
+        </p>
+        
+        <p>
+        The problem occurs when we try to extend the functionality of a class (the page class) in two different directions. We want the page to have different layouts and different, but contextually similar, information filling those layouts. The solution is to use the Bridge Pattern, which uses object composition and interfaces. We extract one of the dimensions of the functionality we are trying to add (the information for example) into their own separate classes, which all conform to an interface we call the Implementor. The Implementor interface says that each implementor must have a getData() method. Also, we will say that all pages conform to an interface called the Abstraction, where each page must have an instance of an Implementor. Now each page will have an instance of an Implementor, which will be a class conforming to the Implementor protocol, meaning we know we can have the page call a method called getData() on the implementor instance.
+        </p>
+        
+        <p>
+        You might be thinking, how does this solve our problem if we can't change the interface for our data sources? Well that's why in this example you probably want to combine the Bridge pattern with the Adapter pattern. Each implementor will be composed with a specific data source object, the methods of which will be called in the getData() function. The implementation of the getData() function will differ between the different implementor classes, however the page classes will be able to call the getData() function reliably and get different data depending on the implementor it uses.
+        </p>
+        
+        <p>
+        Let's recap. Each page class conforms to an Abstraction interface that says it must compose an object of type Implementor. Each page class creates a different layout but expects some data (which may differ) that is retrieved by calling the Implementor's getData() function. Each implementor conforms to an Implementor interface that says it must contain a getData() method. The classes that conform to the Implementor protocol will be composed with an instance of a data source class. Each implementor class should be composed with a different data source class. The implementor classes act as adapters for the data source classes, calling the appropriate methods of the data source class in their getData() method. Now we have a flexible system where we can create new page layouts, add new data sources, and compose the two in any combination.
+        </p>
     </body>
 </html>
 

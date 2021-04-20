@@ -21,22 +21,16 @@ struct MainMenu: View {
                               rectColor: .pink, txtColor: .white)
                     }
                     
-                    // Has a list of resources that I recommend someone should start with.
-                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.beginner)))) {
-                        Topic(description: "Beginner",
-                              rectColor: .green, txtColor: .white)
-                    }
-                    
                     // A description of Big O
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.bigO)))) {
                         Topic(description: "Big O",
-                              rectColor: .blue, txtColor: .white)
+                              rectColor: .green, txtColor: .white)
                     }
                     
                     // A glossary that briefly explains the meaning of some commonly used terms
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.glossary)))) {
                         Topic(description: "Glossary",
-                              rectColor: .pink, txtColor: .white)
+                              rectColor: .blue, txtColor: .white)
                     }
                 }
             }

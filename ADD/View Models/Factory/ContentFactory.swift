@@ -21,8 +21,6 @@ class ContentFactory {
     
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
-        case .beginner:
-            return TidBitImplementor(Beginner())
         case .bigO:
             return TidBitImplementor(BigO())
         case .glossary:

@@ -73,7 +73,6 @@ struct PagesBar: View {
                     }
                 }
             }
-            
             getWebView()
         }
     }

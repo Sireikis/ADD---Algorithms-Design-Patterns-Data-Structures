@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TidBitView: View {
+struct TidBitView: View, TemplateAbstraction {
     @EnvironmentObject var singleWebView: SingleWebView
     var implementor: Implementor
     

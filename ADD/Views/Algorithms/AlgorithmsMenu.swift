@@ -13,6 +13,8 @@ struct AlgorithmsMenu: View {
     let headingWidth: CGFloat = 216
     let factory: ContentFactory
     
+    @State var selection: String? = nil
+    
     var body: some View {
         List {
             /*
@@ -66,19 +68,22 @@ struct AlgorithmsMenu: View {
             Section(header: Text("By Purpose")) {
                 // Section, by purpose?
                 // However, there are infinitely many purposes
-                NavigationLink(destination: SearchAlgorithmsMenu()) {
+                NavigationLink(destination: SearchAlgorithmsMenu(), tag: "Search", selection: $selection) {
                     NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
+                }.onDisappear {
+                    self.selection = nil
                 }
                 
-                NavigationLink(destination: SortAlgorithmsMenu(factory: factory)) {
+                NavigationLink(destination: SortAlgorithmsMenu(factory: factory), tag: "Sort", selection: $selection) {
                     NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
+                }.onDisappear {
+                    self.selection = nil
                 }
-            }
-        }
+            }.id("idSection1")
+        }.id("idList")
         .navigationBarTitle("Algorithms", displayMode: .inline)
     }
 }
-
 
 
 struct AlgorithmsMenu_Previews: PreviewProvider {

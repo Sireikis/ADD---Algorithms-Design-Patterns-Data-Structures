@@ -24,6 +24,7 @@ struct SortAlgorithmsMenu: View {
                 }
             }
         }
+        .id("idList")
         .navigationBarTitle("Sort", displayMode: .inline)
         .navigationBarItems(trailing: Text("Home"))
     }
