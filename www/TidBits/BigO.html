@@ -8,10 +8,121 @@
     <body>
         <h1 class="title">Big O</h1>
         
-        <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>
+        Big O is a mathematical notation used to represent the upper bound 'speed' of a function, regardless of the hardware used to run the function. Note that this notation is typically considering large input sizes. We will not cover the mathematical aspects of this topic, such as analyzing a function to determine its Big O. However, we will cover the meaning of some common asymptotic notation (O, &Omega;, &Theta;), the functions used to represent their values, and the distinction between asymptotic notation and worst/average/best case.
+        </p>
         
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <h2>What Problem Does Big O Solve?</h2>
+        <p>
+        To understand what Big O is it helps to understand what problem it solves. In this day and age there are so many different devices with different levels of computing power at their disposable. Let's say you sit down at your personal computer and you want to know how fast it takes to sort an array of 1000 elements. So you use mergesort and time how fast your computer performs the sort and you get some numerical value, let's say 10 milliseconds. How useful is that information for other people? Is it even useful for your own personal use?
+        </p>
+        
+        <p>
+        The problem with measuring the speed of an algorithm in milliseconds (or any other units of time) is that it is completely dependent on the conditions under which the measurement was performed. What hardware was used? What else was that computer doing at that time? What features does the CPU have that may speed up or slow down the ability of the computer to perform the sorting task? What we need is a way to measure the speed of an algorithm in terms that disregard the hardware used to perform the algorithm. This is what Big O does; in computer science asymptotic notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows.
+        </p>
+        
+        <h2>Big Omega, Big Theta, Big O</h2>
+        <p>
+        Let's consider what a graph that describes the speed of an algorithm in terms that disregard the hardware used to perform the algorithm looks like. We know that the amount of time taken to perform each step of an algorithm will vary between hardware. So let's consider the problem in more general terms, where we call each computation or step taken in an algorithm an <b>operation</b>. For example, an operation could be setting the value of a variable, incrementing a variable, initializing an array, or any such statement. This will be the y axis of our graph, the value that varies from algorithm to algorithm. What do all algorithms share? Well, they all process some input, some discrete number of elements. An example would sorting an array of 10 elements--the size of the input would be 10. This will be the x axis of our graph, the input size of an algorithm.
+        </p>
+        
+        <img src="../Images/BigO Operations VS Inputs.png">
+        
+        <p>
+        Now we can imagine that for some given algorithm, given some input size, we can count the number of operations that the algorithm needs to perform to accomplish its task. However, there's an important detail to consider, which is that the order of the input can often matter. Some sorting algorithms perform badly given an input that's in a specific order. Conversely, some algorithms perform better. To clarify, we are equating a low number of operations to better performance and a high number of operations to worse performance. With this in mind, we often don't get a single line that we can connect our points with, but rather a spread of dots.
+        </p>
+        
+        <p>
+        Image here
+        </p>
+        <!-- Operations vs Input Size, spread plot of example data, match to description below -->
+        
+        <p>
+        Here at input size 10 we see that there's a variance in the number of operations performed when given different variations in input size. So how do we describe the speed of an algorithm given this spread of operations performed for a given input size? The solution is to form lines, generated by some function, that describes the upper and lower limits of operations performed at a given input size. Thus, we can say that a given algorithm will always perform less operations than the line formed by a given function (upper bound) or that it will always perform more operations than the line formed by a given function (lower bound). These bounds are described by the terms below. Examples of common functions that form these line will be also be given below in the values section.
+        </p>
+        
+        <p>
+        Notice that these bounds can be far above or below the actual number of operations than an algorithm will perform. Thus, it's important to determine the running time of an algorithm as <b>tightly</b> as we can. In other words, forming bounds that are as close to the minimum (lower bound) or maximum (upper bound) number of actual operations performed by an algorithm.
+        </p>
+        
+        <h3>Big O</h3>
+        <p>
+        Big O refers to the upper bound of an algorithm, which is the maximum number of operations an algorithm will taken given the most unfavorable inputs. What do we mean by unfavorable? Well, let's say we're using a sorting algorithm like quicksort, where the pivot is the rightmost element. If we consider all possible variations in input, the inputs that would take the longest to sort (most operations) would be:
+        </p>
+        
+        <ol>
+            <li>Elements are sorted</li>
+            <li>Elements are sorted in reverse order</li>
+            <li>All elements are the same</li>
+        </ol>
+        
+        <p>
+        These are the unfavorable inputs for this version of quicksort--where the pivot is the rightmost element. For an input of any given size <i>n</i>, if the inputs are arranged in the above ways, the quicksort algorithm will perform the most operations to sort those inputs, compared to inputs of the same size arranged in other ways. This sets a concrete ceiling for this algorithm, an upper bound, for how badly it can perform given some input size n.
+        </p>
+        
+        <p>
+        I have purposely avoided saying 'worst case' thus far, I will explain the difference between asymptotic notation and the best/average/worst cases below.
+        </p>
+        
+        
+        <h3>Big Omega (&Omega;)</h3>
+        <p>
+        Big &Omega; refers to the lower bound of an algorithm, which is the minimum number of operations an algorithm will taken given the most favorable inputs. What do we mean by favorable? Let's say we're using a sorting algorithm like bubble sort, which will proceed through the given input and check if an element and the next element need to be swapped. If we find no swaps, sorting is considered to be done and the function ends. Under these conditions, if we consider all possible variations in input, the inputs that would take the shortest amount of time to sort (fewest operations) would be:
+        </p>
+        
+        <ol>
+            <li>Elements are sorted</li>
+            <li>All elements are the same</li>
+        </ol>
+        
+        <p>
+        These are the favorable inputs for this version of bubble sort. For an input of any given size <i>n</i>, if the inputs are arranged in the above ways, the bubble sort algorithm will perform the fewest operations to sort those inputs, compared to inputs of the same size arranged in other ways. This sets a concrete floor for this algorithm, a lower bound, for how well it can perform given some input size n.
+        </p>
+        
+        <p>
+        I have purposely avoided saying 'best case' thus far, I will explain the difference between asymptotic notation and the best/average/worst cases below.
+        </p>
+        
+        <h3>Big Theta (&Theta;)</h3>
+        <p>
+        Big &Theta; refers to the upper and lower bounds of an algorithm, which are the maximum and minimum number of operations that an algorithm performs under some set of conditions. You can imagine it as being a pair of lines which contain between them the number of operations an algorithm performs under some set of conditions. The pair of lines are formed by the same function, however the constants that multiple the value of the function differ between the lower and upper bounds.
+        </p>
+        
+        <p>
+        Image here
+        </p>
+        <!-- Big Theta tightily bound graph -->
+        
+        <p>
+        Once the input size is sufficiently large, the number of operations will fall between <var>k<sub>1</sub></var> &#x2219; <var>f(n)</var> and <var>k<sub>2</sub></var> &#x2219; <var>f(n)</var>.
+        </p>
+        
+        <p>
+        Notice that we make a reference to the upper and lower bounds of an algorithm. You'd be right to think that these refer to Big O and Big &Omega;. In fact, Big &Theta; can be used to determine a tight bound on the number of operations for an algorithm only when the Big O and Big &Omega; are the same for some set of conditions. More formally <b>Big &Theta;</b> is the intersection of the sets of functions that determine the lower bound (Big &Omega;) and the upper bound (Big O). Remember that Big O can overshoot and Big &Omega; can undershoot, so all functions that contain the operations of the algorithm in question are valid functions for representing Big O or Big &Omega;. Hence, if there is a function that is shared between both groups of functions (the intersection), then it is the function that most tightly binds the operations of an algorithm. If there is no such function, then there is no Big &Theta; for the algorithm in question. At best we can describe its operations using the bounds given by Big O and Big &Omega;. It's worthwhile to note that of the two, Big O binds the algorithm in question more tightly. Since Big &Omega; sets a floor, there is an infinite celing above it. Meanwhile, Big O sets a ceiling, which means we will eventually reach the floor.
+        </p>
+        
+        <p>
+        I have purposely avoided saying 'average case' thus far, I will explain the difference between asymptotic notation and the best/average/worst cases below.
+        </p>
+        
+        <h2>Common Values</h2>
+        <p>
+        dasda
+        </p>
+        
+        <img src="../Images/BigO Complexities.png">
+        
+        <h2>Best, Worst, Average Case</h2>
+        <p>
+        What is the distinction between cases and time complexities?
+        dasda
+        Make a reference to 'set of conditions' repeatedly mentioned before.
+        Describe what we've meant when we say functions
+        </p>
+        
+        <p>
+        The best/average/worst describe resource usages, which can be DESCRIBED in terms of asymptotic notation. The worst case can be described as being at most O(n^2) or at least &Omega;(n) or is exactly &Theta;(n^2).
+        </p>
     </body>
 </html>
 
