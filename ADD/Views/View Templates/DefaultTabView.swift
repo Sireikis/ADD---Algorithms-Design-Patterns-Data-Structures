@@ -92,7 +92,7 @@ struct PagesBar: View {
 }
 
 
-struct AlgorithmTabView_Previews: PreviewProvider {
+struct DefaultTabView_Previews: PreviewProvider {
     static var previews: some View {
         DefaultTabView(ContentImplementor(InsertionSort()))
     }

@@ -10,3 +10,7 @@ h2 {
 h3 {
   border-bottom: 5px solid blue;
 }
+
+th {
+    background-color: blue;
+}

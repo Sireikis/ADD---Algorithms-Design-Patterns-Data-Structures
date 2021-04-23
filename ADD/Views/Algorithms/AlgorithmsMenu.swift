@@ -13,6 +13,7 @@ struct AlgorithmsMenu: View {
     let headingWidth: CGFloat = 216
     let factory: ContentFactory
     
+    // Fixes selected link staying grey when navigating back.
     @State var selection: String? = nil
     
     var body: some View {

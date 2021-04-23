@@ -12,6 +12,7 @@ struct DataStructuresMenu: View {
     let factory: ContentFactory
     let headingWidth: CGFloat = 216
     
+    // Fixes selected link staying grey when navigating back.
     @State var selection: String? = nil
     
     var body: some View {

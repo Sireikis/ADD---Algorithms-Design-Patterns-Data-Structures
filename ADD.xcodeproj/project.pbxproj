@@ -60,6 +60,7 @@
 		7BE5426C2627A059000673E5 /* WhatAreDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */; };
 		7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */; };
 		7BE542732627A291000673E5 /* DSCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE542722627A291000673E5 /* DSCategories.swift */; };
+		7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDesignPatterns.swift; sourceTree = "<group>"; };
 		7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDataStructures.swift; sourceTree = "<group>"; };
 		7BE542722627A291000673E5 /* DSCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCategories.swift; sourceTree = "<group>"; };
+		7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDefaultTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			children = (
 				7B0774482613D34F00FEDB85 /* Protocols */,
 				7B0774372613BC0C00FEDB85 /* DefaultTabView.swift */,
+				7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */,
 				7BE5424226276275000673E5 /* TidBitView.swift */,
 				7B5B91B12617971F00C82B47 /* Helpers */,
 			);
@@ -446,6 +449,7 @@
 				7B0774232613B32400FEDB85 /* InsertionSort.swift in Sources */,
 				7BB65CF0261D169300369C00 /* LinearDSMenu.swift in Sources */,
 				7B0774122613B27600FEDB85 /* AlgorithmsMenu.swift in Sources */,
+				7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */,
 				7B0774292613B3A100FEDB85 /* ContentImplementor.swift in Sources */,
 				7BB65CFB261D18AB00369C00 /* BehavioralDPMenu.swift in Sources */,
 				7BB65CCE261D0BE800369C00 /* CreationalDPMenu.swift in Sources */,

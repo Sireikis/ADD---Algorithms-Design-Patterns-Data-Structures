@@ -8,6 +8,8 @@
 import Foundation
 
 
+// First release of App will only use Summaries and CodeExamples, with a single page for both.
+// In the future each piece of content will have multiple pages for each section.
 protocol Content {
     var filePath: String { get }
     
