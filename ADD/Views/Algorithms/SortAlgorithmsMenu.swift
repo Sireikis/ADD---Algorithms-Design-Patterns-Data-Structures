@@ -16,9 +16,15 @@ struct SortAlgorithmsMenu: View {
     var body: some View {
         List {
             ForEach(SortAlgorithm.allCases, id: \.self) { content in
-                NavigationLink(destination: LazyView(SimpleDefaultTabView(factory.getSortContent(content))), tag: content.description, selection: $selection) {
+                NavigationLink(
+                    destination: LazyView(SimpleDefaultTabView(factory.getSortContent(content))
+                                            .navigationBarTitle(content.description, displayMode: .inline)),
+                    tag: content.description,
+                    selection: $selection
+                ) {
                     NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
-                }.onDisappear {
+                }
+                .onDisappear {
                     self.selection = nil
                 }
             }

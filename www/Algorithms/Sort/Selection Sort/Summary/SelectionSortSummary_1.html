@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Selection Sort</h1>
+        
+        <h2>Big O</h2>
+        
+        <table id="BigO">
+            <tr>
+                <th id="BestCase">Best</th>
+                <th id="AverageCase">Average</th>
+                <th id="WorstCase">Worst</th>
+                <th id="SpaceWorst">Space (Worst)</th>
+            </tr>
+            <tr>
+                <td>&Omega;(n<sup>2</sup>)</td>
+                <td>&Theta;(n<sup>2</sup>)</td>
+                <td>O(n<sup>2</sup>)</td>
+                <td>O(1)</td>
+            </tr>
+        </table>
+        
+        <h2>Summary</h2>
+        <p>
+        Selection Sort virtually splits a given array into sorted and unsorted sections. An outer loop, beginning with the index of the first element, designates the current iteration as the MinValueIndex. Another loop, starting with the index to the right of the current iteration, compares all elements to the element at the MinValueIndex. If an element is found to be smaller (assuming ascending order sort), that element's index becomes the value of MinValueIndex. Once the inner loop reaches the end of its iteration through the 'unsorted' portion of the array, the element at the MinValueIndex is swapped with the element at the index designated by the outer loop (MinValueIndex's original value, if it changed). This places the smallest element of the entire array at the beginning.
+        </p>
+        
+        <p>
+        At the beginning and end of every iteration of the outer loop, indexes to the left of the current outer loop index are sorted. The positions of these sorted elements will not change as sorting continues.
+        </p>
+    </body>
+</html>

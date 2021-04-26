@@ -27,7 +27,7 @@
     // Maybe I should preload all summary pages?
     // Change it to loadSummaryPages()?
     private func loadDefaultPage() {
-        let defaultFile = "www/Algorithms/Sort/InsertionSort/Summary/InsertionSortSummary_1"
+        let defaultFile = "www/Algorithms/Sort/Insertion Sort/Summary/InsertionSortSummary_1"
         if let summaryURL = Bundle.main.url(forResource: defaultFile, withExtension: "html") {
             let defaultPage = URLRequest(url: summaryURL)
             webView = WebView(request: defaultPage)

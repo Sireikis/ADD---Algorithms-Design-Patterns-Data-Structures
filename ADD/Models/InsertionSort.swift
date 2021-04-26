@@ -10,7 +10,7 @@ import Foundation
 
 // Model, Adaptee
 class InsertionSort: Content {
-    let filePath: String = "www/Algorithms/Sort/InsertionSort/"
+    let filePath: String = "www/Algorithms/Sort/Insertion Sort/"
     
     var summaries = [FileNumber:URLRequest]()
     var explanations = [FileNumber:URLRequest]()
@@ -19,8 +19,10 @@ class InsertionSort: Content {
     
     init() {
         summaries = loadHTMLContentFor(path: "Summary/InsertionSortSummary_")
-        explanations = loadHTMLContentFor(path: "Explanation/InsertionSortExplanation_")
+        // Implemented Later
+        // explanations = loadHTMLContentFor(path: "Explanation/InsertionSortExplanation_")
         codeExamples = loadHTMLContentFor(path: "Code/InsertionSortCode_")
-        exampleProblems = loadHTMLContentFor(path: "Example/InsertionSortExample_")
+        // Implemented Later
+        // exampleProblems = loadHTMLContentFor(path: "Example/InsertionSortExample_")
     }
 }

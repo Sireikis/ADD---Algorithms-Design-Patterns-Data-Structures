@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Insertion Sort</h1>
+        
+        <h2>Big O</h2>
+        
+        <table id="BigO">
+            <tr>
+                <th id="BestCase">Best</th>
+                <th id="AverageCase">Average</th>
+                <th id="WorstCase">Worst</th>
+                <th id="SpaceWorst">Space (Worst)</th>
+            </tr>
+            <tr>
+                <td>&Omega;(n)</td>
+                <td>&Theta;(n<sup>2</sup>)</td>
+                <td>O(n<sup>2</sup>)</td>
+                <td>O(1)</td>
+            </tr>
+        </table>
+        
+        <h2>Summary</h2>
+        <p>
+        Insertion Sort virtually splits a given array into sorted and unsorted sections. It iterates over an array, starting at the second element and comparing it to the previous element. The second element is designated the <b>key</b>, whose value is stored at the beginning of every iteration. The element that is considered the key will shift by one to the right at the beginning of every iteration. During each iteration the key will be compared to every element to its left. In an ascending order sort, if an element is found to be larger than the key, that element is copied over to it's right. The first time this occurs in every iteration will overwrite the key, which is why we saved the value of the key first. When we encounter an element that is no longer larger than the key (or a duplicate), we place the key to the right of that element. This overwrites the temporary duplicate we've been creating.
+        </p>
+        
+        <p>
+        The sorted section of the array is everything to the left of the key after every iteration. However, it is only considered sorted in the sense that at that specific moment in time (at the very beginning or very end of the iteration) it is in sorted order. The entire array is not sorted until the last element becomes the key and the final iteration completes.
+        </p>
+    </body>
+</html>
