@@ -10,12 +10,9 @@ import SwiftUI
 
 enum SortAlgorithm: String, CaseIterable, Identifiable {
     // Planned content
-    // case bucketSort, countingSort, heapSort, insertionSort, mergeSort, quickSort, selectionSort
-    
-    // Content to finish
-    // case insertionSort, mergeSort, quickSort, selectionSort
-    
-    case insertionSort, selectionSort
+    // case bucketSort, countingSort, heapSort
+
+    case insertionSort, selectionSort, mergeSort, quickSort
     
     var image: String {
         return "arrow.up.arrow.down"
@@ -49,6 +46,10 @@ enum SortAlgorithm: String, CaseIterable, Identifiable {
             return "Insertion Sort"
         case .selectionSort:
             return "Selection Sort"
+        case .mergeSort:
+            return "Merge Sort"
+        case .quickSort:
+            return "Quick Sort"
         }
     }
     

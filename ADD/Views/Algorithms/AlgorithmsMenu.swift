@@ -18,22 +18,6 @@ struct AlgorithmsMenu: View {
     
     var body: some View {
         List {
-            /*
-             // https://www.quora.com/What-is-a-list-of-the-eight-types-of-algorithms
-             Section(header: Text("Alternate ways of ordering")) {
-                 // Divide and conquer, dynamic, greedy, etc
-                 Text("By Design Paradigm")
-                 
-                 // Such as recursive vs iterative, logical vs procedural, serial vs parallel, etc.
-                 Text("By Implementation")
-                 
-                 // BigO
-                 Text("By Complexity")
-                 
-                 // Sort, Search, current method.
-                 Text("By Purpose")
-             }
-             */
             ScrollView(.horizontal) {
                 HStack {
                     // Describes the intent of the app, as a reference mainly
@@ -43,30 +27,10 @@ struct AlgorithmsMenu: View {
                               rectColor: .pink, txtColor: .white, rectWidth: headingWidth)
                         
                     }
-
-                    NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreClassifications)))) {
-                        Topic(description: "What are Classifications?",
-                              rectColor: .green, txtColor: .white, rectWidth: headingWidth)
-                        
-                    }
                 }
             }
             
-            Section(header: Text("Classification")) {
-                NavigationLink(destination: SearchAlgorithmsMenu()) {
-                    NavigationButton(description: "By Design Paradigm", image: "arrow.triangle.branch", imgForeground: .green)
-                }
-                
-                NavigationLink(destination: SearchAlgorithmsMenu()) {
-                    NavigationButton(description: "By Implementation", image: "arrow.triangle.2.circlepath", imgForeground: .green)
-                }
-                
-                NavigationLink(destination: SearchAlgorithmsMenu()) {
-                    NavigationButton(description: "By Complexity", image: "circle", imgForeground: .green)
-                }
-            }
-            
-            Section(header: Text("By Purpose")) {
+            Section(header: Text("Algorithms")) {
                 // Section, by purpose?
                 // However, there are infinitely many purposes
                 NavigationLink(destination: SearchAlgorithmsMenu(), tag: "Search", selection: $selection) {

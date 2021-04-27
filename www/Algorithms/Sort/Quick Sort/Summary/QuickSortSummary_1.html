@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Quick Sort</h1>
+        
+        <h2>Big O</h2>
+        
+        <table id="BigO">
+            <tr>
+                <th id="Time"></th>
+                <th id="Time">Time</th>
+                <th id="Time"></th>
+                <th id="Space">Space</th>
+            </tr>
+            <tr>
+                <th id="BestCase">Best</th>
+                <th id="AverageCase">Average</th>
+                <th id="WorstCase">Worst</th>
+                <th id="SpaceWorst">Worst</th>
+            </tr>
+            <tr>
+                <td>&Omega;(nlog(n))</td>
+                <td>&Theta;(nlog(n))</td>
+                <td>O(n<sup>2</sup>)</td>
+                <td>O(log(n))</td>
+            </tr>
+        </table>
+        
+        <h2>Summary</h2>
+        <p>
+        Quick Sort is given a range which represents the first and last index of the array to be sorted. Quick sort finishesf if the range represents less than two elements--an array with a single element. An element is chosen to be the pivot. In an ascending order search, elements less than the pivot are placed to the left and elements greater than the pivot are placed to the right. An element that is equal to the pivot can go either way. Once this process is complete, the pivot element is now located in its final position relative to the rest of the array. The previous steps are repeated, by recursively handing quick sort the range to the left of the current pivot and the range to the right of the current pivot. in other words, we make two calls to quick sort representing ranges to the left and right of the current pivot. Each subsequent recursive call will receive smaller subsections of the array, until it is sorted.
+        </p>
+        
+        <p>
+        The speed of quick sort is greatly affected by the chosen pivot. More efficient implementations tend to use a random pivot and give up stability.
+        </p>
+    </body>
+</html>
+

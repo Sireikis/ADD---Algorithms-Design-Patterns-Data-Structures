@@ -90,12 +90,12 @@ table {
 td, th {
     border: 1px solid #ddd;
     padding: 20px;
+    text-align: center;
 }
 
 th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
     
     color: white;
 }
@@ -104,6 +104,13 @@ th {
     color: white;
     
     text-shadow: 0px 0px 8px black;
+}
+
+#Time, #Space {
+    background-color: black;
+    text-align: center;
+    
+    border: 1px solid black;
 }
 
 #BestCase {

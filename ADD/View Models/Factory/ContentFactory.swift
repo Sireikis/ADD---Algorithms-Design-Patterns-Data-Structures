@@ -16,6 +16,10 @@ class ContentFactory {
             return ContentImplementor(InsertionSort())
         case .selectionSort:
             return ContentImplementor(SelectionSort())
+        case .mergeSort:
+            return ContentImplementor(MergeSort())
+        case .quickSort:
+            return ContentImplementor(QuickSort())
         }
     }
     

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Quick Sort</h1>
+        
+        <h2>Recursive Sort() Succinct</h2>
+        
+        <pre><code class="language-swift">
+            func quickSort(_ arr: inout [Int], _ low: Int, _ high: Int) {
+                if low &lt; high {
+                    let pi = partition(&arr, low, high)
+                    
+                    quickSort(&arr, low, pi-1)
+                    quickSort(&arr, pi+1, high)
+                }
+            }
+
+            func partition(_ arr: inout [Int], _ low: Int, _ high: Int) -> Int {
+                let pivot = arr[high]
+                var i = low
+                
+                for j in low..&lt;high {
+                    if arr[j] &lt;= pivot {
+                        arr.swapAt(i, j)
+                        i += 1
+                    }
+                }
+                arr.swapAt(i, high)
+                
+                return i
+            }
+        </code></pre>
+    
+        <h2>Recursive Sort() Verbose</h2>
+        
+        <pre><code class="language-swift">
+            func quickSort(array: inout [Int], start: Int, end: Int) {
+                if start &lt; end {
+                    let partitionIndex = partition(array: &array, start: start, end: end)
+                    
+                    quickSort(array: &array, start: start, end: partitionIndex-1)
+                    quickSort(array: &array, start: partitionIndex+1, end: end)
+                }
+            }
+
+            func partition(array: inout [Int], start: Int, end: Int) -> Int {
+                let pivot = array[end]
+                var pIndex = start
+                
+                for index in start..&lt;end {
+                    if array[index] &lt;= pivot {
+                        array.swapAt(index, pIndex)
+                        pIndex += 1
+                    }
+                }
+                array.swapAt(pIndex, end)
+                
+                return pIndex
+            }
+        </code></pre>
+        
+        <h2>Pseudocode</h2>
+        
+        <br>
+        <br>
+        
+        <h3>Succinct</h3>
+        <pre><code class="language-none">
+1: If the given range has less than two elements, return the array
+2: Choose an element, called the pivot, in the given range
+3: Place elements less than the pivot to its left and larger than to its right
+4: Repeat steps 1-3, where the range comprises elements to the left and right of the pivot
+        </code></pre>
+        
+        <h3>Verbose</h3>
+        <pre><code class="language-none">
+<b>Quick Sort Function:</b> Expects a reference to an array, starting index, and ending index.
+In a zero-base array,
+Given a reference to the array and the starting and ending index,
+If the starting index is less than the ending index,
+    Declare an index called the <b>partitionIndex</b>, returned by the Partition Function.
+    
+    Recursively call the Quick Sort Function with a reference to the array, the starting index, and partitionIndex minus one
+    Recursively call the Quick Sort Function with a reference to the array, the partitionIndex plus one, and ending index
+    
+    
+<b>Partition function:</b> Expects a reference to an array, starting index, and ending index.
+In a zero-base array,
+Given a reference to the array and the starting and ending index,
+Declare the element at the ending index the <b>pivot</b>
+Declare the starting index the <b>pIndex</b>
+    
+For every index A from the starting index up to but not including the ending index,
+    If the element at index A is less than or equal to the pivot,
+        Swap the elements at index A and the pIndex
+        Increment pIndex
+    
+Swap the elements at pIndex and the ending index.
+Return the pIndex
+        </code></pre>
+        
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+
+
+
+

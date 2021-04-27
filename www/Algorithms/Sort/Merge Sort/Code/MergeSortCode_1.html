@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Merge Sort</h1>
+        
+        <h2>Recursive Sorted() Succinct</h2>
+        
+        <pre><code class="language-swift">
+            func mergeSort(_ arr: [Int]) -> [Int] {
+                if arr.count &lt;= 1 {
+                    return arr
+                }
+                
+                let mid = arr.count / 2
+                
+                let l = mergeSort(Array(arr[0..&lt;mid]))
+                let r = mergeSort(Array(arr[mid..&lt;arr.count]))
+                
+                return merge(l, r)
+            }
+            
+            func merge(_ l: [Int], _ r: [Int]) -> [Int] {
+                var li = 0
+                var ri = 0
+                
+                var arr: [Int] = []
+                
+                while li &lt; l.count && ri &lt; r.count {
+                    let le = l[li]
+                    let re = r[ri]
+                    
+                    if le &lt;= re {
+                        arr.append(le)
+                        li += 1
+                    } else {
+                        arr.append(re)
+                        ri += 1
+                    }
+                }
+                
+                while li &lt; l.count {
+                    arr.append(l[li])
+                    li += 1
+                }
+                while ri &lt; r.count {
+                    arr.append(r[ri])
+                    ri += 1
+                }
+                return arr
+            }
+        </code></pre>
+    
+        <h2>Recursive Sorted() Verbose</h2>
+        
+        <pre><code class="language-swift">
+            func mergeSort(_ array: [Int]) -> [Int] {
+                if array.count &lt;= 1 {
+                    return array
+                }
+                
+                let middleIndex = array.count / 2
+                
+                let leftArray = mergeSort(Array(array[0..&lt;middleIndex]))
+                let rightArray = mergeSort(Array(array[middleIndex..&lt;array.count]))
+                
+                return merge(leftArray, rightArray)
+            }
+            
+            func merge(_ left: [Int], _ right: [Int]) -> [Int] {
+                var leftIndex = 0
+                var rightIndex = 0
+                
+                var orderedArray: [Int] = []
+                
+                while leftIndex &lt; left.count && rightIndex &lt; right.count {
+                    let leftElement = left[leftIndex]
+                    let rightElement = right[rightIndex]
+                    
+                    if leftElement &lt;= rightElement {
+                        orderedArray.append(leftElement)
+                        leftIndex += 1
+                    } else {
+                        orderedArray.append(rightElement)
+                        rightIndex += 1
+                    }
+                }
+                
+                while leftIndex &lt; left.count {
+                    orderedArray.append(left[leftIndex])
+                    leftIndex += 1
+                }
+                while rightIndex &lt; right.count {
+                    orderedArray.append(right[rightIndex])
+                    rightIndex += 1
+                }
+                return orderedArray
+            }
+        </code></pre>
+        
+        <h2>Pseudocode</h2>
+        
+        <br>
+        <br>
+        
+        <h3>Succinct</h3>
+        <pre><code class="language-none">
+1:
+2:
+3:
+4:
+5:
+6:
+
+1: Set minValue and unsortedIndex to index 0
+2: Iterate through the array to find the smallest element, starting at unsortedIndex + 1
+3: Update minValue with its index
+4: Swap the element at minValue with the element at unsortedIndex
+5: Increment unsortedIndex by 1
+6: Repeat 2-5 until sorted
+        </code></pre>
+        
+        <h3>Verbose</h3>
+        <pre><code class="language-none">
+In a zero-base array,
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+
+
+

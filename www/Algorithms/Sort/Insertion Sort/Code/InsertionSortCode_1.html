@@ -11,7 +11,7 @@
         <h2>Iterative Sorted() Succinct</h2>
         
         <pre><code class="language-swift">
-            func InsertionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
+            func insertionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
                 var a = arr
                 var key: Int
                 
@@ -32,7 +32,7 @@
         <h2>Iterative Sorted() Verbose</h2>
         
         <pre><code class="language-swift">
-            func InsertionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
+            func insertionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
                 var array = arr
                 
                 var key: Int
@@ -72,7 +72,7 @@
 In a zero-based array,
 For every index A from 1 to the last index,
     Declare the current element at index A the <b>key</b>
-    Declare the index to the left of index A the <b>index B</b>
+    Declare that the index to the left of index A is <b>index B</b>
     
     While index B is at least 0 and the element at index B is greater than the key,
         Copy the element at index B over the element to its right
