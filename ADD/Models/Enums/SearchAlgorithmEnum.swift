@@ -15,7 +15,7 @@ enum SearchAlgorithm: String, CaseIterable, Identifiable {
     // Content to finish
     // case binarySearch, breadthFirstSearch, depthFirstSearch
     
-    case binarySearch, breadthFirstSearch, depthFirstSearch
+    case binarySearch, breadthFirstSearch
     
     var image: String {
         return "magnifyingglass"
@@ -31,8 +31,8 @@ enum SearchAlgorithm: String, CaseIterable, Identifiable {
             return "Binary Search"
         case .breadthFirstSearch:
             return "Breadth First Search"
-        case .depthFirstSearch:
-            return "Depth First Search"
+//        case .depthFirstSearch:
+//            return "Depth First Search"
         }
     }
     

@@ -33,6 +33,8 @@
 		7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */; };
 		7B5844E62629FF9B0069058D /* BigO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5844E52629FF9B0069058D /* BigO.swift */; };
 		7B5B91A526178D3B00C82B47 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7B5B91A426178D3B00C82B47 /* www */; };
+		7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96A2639D2970090D4FA /* BinarySearch.swift */; };
+		7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */; };
 		7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */; };
 		7B8150DA261F6DDF00E6CAAD /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D9261F6DDE00E6CAAD /* LazyView.swift */; };
 		7BB65CB8261CC34100369C00 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CB7261CC34100369C00 /* Content.swift */; };
@@ -94,6 +96,8 @@
 		7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSEnum.swift; sourceTree = "<group>"; };
 		7B5844E52629FF9B0069058D /* BigO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigO.swift; sourceTree = "<group>"; };
 		7B5B91A426178D3B00C82B47 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		7B7DC96A2639D2970090D4FA /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
+		7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadthFirstSearch.swift; sourceTree = "<group>"; };
 		7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		7B8150D9261F6DDE00E6CAAD /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		7BB65CB7261CC34100369C00 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 				7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */,
 				7BF92E2C263861B50057E791 /* MergeSort.swift */,
 				7BF92E2F263863620057E791 /* QuickSort.swift */,
+				7B7DC96A2639D2970090D4FA /* BinarySearch.swift */,
+				7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				7BE5424F26276B0B000673E5 /* Topic.swift in Sources */,
 				7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */,
 				7BF92E30263863620057E791 /* QuickSort.swift in Sources */,
+				7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */,
 				7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */,
 				7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */,
 				7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */,
@@ -454,6 +461,7 @@
 				7BE5425726276DA9000673E5 /* TidBit.swift in Sources */,
 				7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */,
 				7B07740E2613B24200FEDB85 /* MainMenu.swift in Sources */,
+				7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */,
 				7B1BDEA326166B3A00427505 /* WebView.swift in Sources */,
 				7BE5424326276275000673E5 /* TidBitView.swift in Sources */,
 				7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */,

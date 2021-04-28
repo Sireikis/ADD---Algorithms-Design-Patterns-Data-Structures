@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Breadth First Search</h1>
+        
+        <h2>Big O</h2>
+        
+        <table id="BigO">
+            <tr>
+                <th id="Time"></th>
+                <th id="Time">Time</th>
+                <th id="Time"></th>
+                <th id="Space">Space</th>
+            </tr>
+            <tr>
+                <th id="BestCase">Best</th>
+                <th id="AverageCase">Average</th>
+                <th id="WorstCase">Worst</th>
+                <th id="SpaceWorst">Worst</th>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>--</td>
+                <td>O(V + E)</td>
+                <td>O(V)</td>
+            </tr>
+        </table>
+        
+        <p>
+        Breadth First Search is applied to graph data structures, so here "V" refers to the number of <b>vertices</b> and "E" to the number of <b>edges</b>. A vertex is also called a node.
+        </p>
+        
+        <h2>Summary</h2>
+        <p>
+        Breadth First Search can be used on graphs, hence it utilizes a queue structure to avoid cycling. A given node is appended to a queue structure, perhaps an array. The node is marked as visited using an associative array (like a dictionary), where the node can be the key and a boolean the value. Then a series of steps are repeated until the queue is empty.
+        </p>
+        
+        <p>
+        A node is dequeued, if it matches the target the node is returned and the search ends. If it does not, for every child of that node, we check if that child has been added to the visited dictionary. If it hasn't, we enqueue it and add it to the visited dictionary. If the queue is empty, searching ends and the target does not exist in the graph.
+        </p>
+
+    </body>
+</html>
+
+

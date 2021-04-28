@@ -109,31 +109,56 @@
         
         <h3>Succinct</h3>
         <pre><code class="language-none">
-1:
-2:
-3:
-4:
-5:
-6:
-
-1: Set minValue and unsortedIndex to index 0
-2: Iterate through the array to find the smallest element, starting at unsortedIndex + 1
-3: Update minValue with its index
-4: Swap the element at minValue with the element at unsortedIndex
-5: Increment unsortedIndex by 1
-6: Repeat 2-5 until sorted
+1: If the array is less than two elements, return it
+2: Find the middle index of the array
+3: Repeat 1-2 with a sub-array from index 0 up to but not including the middle index
+4: The returned array is the left array
+5: Repeat 1-4 with a sub-array from the middle index up to the last index
+6: The returned array is the right array
+7: Merge the left and right arrays
         </code></pre>
         
         <h3>Verbose</h3>
         <pre><code class="language-none">
-In a zero-base array,
+<b>Merge Sort Function:</b> Expects an array
+In a zero-based array,
+If the array is 2 or more elements,
+    Find the middle index
+    Declare a <b>left array</b>, returned by recursively calling Merge Sort with a subarray from index 0 up to but not including the middle index
+    Declare a <b>right array</b>, returned by recursively calling Merge Sort with a subarray from the middle index up to the last index
+    
+    Return the result of the Merge Function
+Otherwise,
+    Return the array
+
+    
+<b>Merge Function:</b> Expects a left and right array
+In a zero-based array,
+Declare <b>leftIndex</b> and <b>rightIndex</b> to be 0
+Declare an empty <b>orderedArray</b>
+
+While the leftIndex and rightIndex don't exceed their respective arrays,
+    Declare <b>leftElement</b> to be the element at leftIndex
+    Declare <b>rightElement</b> to be the element at rightIndex
+    
+    If leftElement is less than or equal to rightElement,
+        Append leftElement to orderedArray
+        Increment leftIndex
+    Otherwise,
+        Append rightIndex to orderedArray
+        Increment rightIndex
+
+While leftIndex is less than left array's length,
+    Append the element at leftIndex to orderedArray
+    Increment leftIndex
+
+While rightIndex is less than right array's length,
+    Append the element at rightIndex to orderedArray
+    Increment rightIndex
+
+Return orderedArray
         </code></pre>
 
         <script src="../../../../Prism/prism.js"></script>
     </body>
 </html>
-
-
-
-
-

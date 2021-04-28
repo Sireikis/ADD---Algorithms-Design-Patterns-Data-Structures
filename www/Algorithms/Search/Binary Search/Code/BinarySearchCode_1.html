@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Binary Search</h1>
+        
+        <h2>Iterative Search() Succinct</h2>
+        
+        <pre><code class="language-swift">
+            func binarySearch(arr: [Int], T: Int) -> Int? {
+                var L = 0
+                var R = arr.count - 1
+                
+                while L &lt;= R {
+                    let M = (L+R) / 2
+                    
+                    if T == arr[M] {
+                        return M
+                    } else if T &lt; arr[M] {
+                        R = M - 1
+                    } else {
+                        L = M + 1
+                    }
+                }
+                return nil
+            }
+        </code></pre>
+    
+        <h2>Iterative Search() Verbose</h2>
+        
+        <pre><code class="language-swift">
+            func binarySearch(arr: [Int], target: Int) -> Int? {
+                var lowIndex = 0
+                var highIndex = arr.count - 1
+                
+                while lowIndex &lt;= highIndex {
+                    let middleIndex = (lowIndex+highIndex) / 2
+                    
+                    if target == arr[middleIndex] {
+                        return middleIndex
+                    } else if target &lt; arr[middleIndex] {
+                        highIndex = middleIndex - 1
+                    } else {
+                        lowIndex = middleIndex + 1
+                    }
+                }
+                return nil
+            }
+        </code></pre>
+        
+        <h2>Pseudocode</h2>
+        
+        <br>
+        <br>
+        
+        <h3>Succinct</h3>
+        <pre><code class="language-none">
+1: Determine the first and last index, called the low and high indexes
+2: Search fails if the low index is greater than the high index
+3: Determine the middle index
+4: If the target is equal to the element at the middle index, return the middle index
+5: If the target is less than the element at the middle index, high index becomes middle index minus one
+6: If the target is greater than the element at the middle index, low index becomes middle index plus one
+7: Repeat 2-6 until search completes
+        </code></pre>
+        
+        <h3>Verbose</h3>
+        <pre><code class="language-none">
+Binary Search expects an array and a target.
+
+In a zero-based array,
+Declare the first index the <b>lowIndex</b>
+Declare the last index the <b>highIndex</b>
+While the lowIndex is less than or equal to the highIndex,
+    Declare the average of lowIndex and highIndex the <b>middleIndex</b>
+    
+    If the target is equal to the middleIndex,
+        Return the middleIndex
+    Else of the target is less than the middleIndex,
+        highIndex gets the value of middleIndex minus one
+    Otherwise,
+        lowIndex gets the value of middleIndex plus one
+        
+Search failed, return nil
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+

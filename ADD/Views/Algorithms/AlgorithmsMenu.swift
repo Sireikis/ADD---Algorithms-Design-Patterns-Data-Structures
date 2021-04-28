@@ -33,7 +33,7 @@ struct AlgorithmsMenu: View {
             Section(header: Text("Algorithms")) {
                 // Section, by purpose?
                 // However, there are infinitely many purposes
-                NavigationLink(destination: SearchAlgorithmsMenu(), tag: "Search", selection: $selection) {
+                NavigationLink(destination: SearchAlgorithmsMenu(factory: factory), tag: "Search", selection: $selection) {
                     NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
                 }.onDisappear {
                     self.selection = nil

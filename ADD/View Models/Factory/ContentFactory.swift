@@ -23,6 +23,15 @@ class ContentFactory {
         }
     }
     
+    func getSearchContent(_ contentType: SearchAlgorithm) -> ContentImplementor {
+        switch contentType {
+        case .binarySearch:
+            return ContentImplementor(BinarySearch())
+        case .breadthFirstSearch:
+            return ContentImplementor(BreadthFirstSearch())
+        }
+    }
+    
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
         case .bigO:

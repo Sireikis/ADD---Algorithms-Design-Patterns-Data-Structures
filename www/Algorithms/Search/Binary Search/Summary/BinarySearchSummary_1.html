@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Binary Search</h1>
+        
+        <h2>Big O</h2>
+        
+        <table id="BigO">
+            <tr>
+                <th id="Time"></th>
+                <th id="Time">Time</th>
+                <th id="Time"></th>
+                <th id="Space">Space</th>
+            </tr>
+            <tr>
+                <th id="BestCase">Best</th>
+                <th id="AverageCase">Average</th>
+                <th id="WorstCase">Worst</th>
+                <th id="SpaceWorst">Worst</th>
+            </tr>
+            <tr>
+                <td>O(1)</td>
+                <td>O(log n)</td>
+                <td>O(log n)</td>
+                <td>O(1)</td>
+            </tr>
+        </table>
+        
+        <h2>Summary</h2>
+        <p>
+        Binary Search expects a sorted array (or other sorted iterable collection). It searches for the given element, called the target, by repeatedly dividing the array in half. Binary Search first determines the low and high indexes of the array. In the beginning, these are equivalent to the first and last index, respectively. Then, while the low and high indexes don't overlap, it finds the middle index (by adding low and high indexes and dividing by two) and performs the following steps until the indexes DO overlap, or the target is found:
+        </p>
+        
+        <ol>
+            <li>
+                Check if the element at the middle index is the target, if so return the element and search is complete.
+            </li>
+            <li>
+                If the target is less than that element, the high index becomes the middle index minus one and the while loop repeats.
+            </li>
+            <li>
+                If the target is greater than that element, the low index becomes the middle index plus one and the while loop repeats.
+            </li>
+        </ol>
+        
+        <p>
+        Binary Search can be applied to tree structures, such as a Binary Search Tree. The structure of a Binary Search Tree follows the invariant "given a node, the left subtree will contain values less than it while the right subtree will contain values greater than it." Hence, instead of manipulating indexes, we simply traverse nodes according to the given value until it is found or no path forward exists.
+        </p>
+        
+    </body>
+</html>
+
