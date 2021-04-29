@@ -8,21 +8,36 @@
 import SwiftUI
 
 
-// DP stands for Design Pattern
 struct BehavioralDPMenu: View {
+    let factory: ContentFactory
+    
+    @State var selection: String? = nil
+    
     var body: some View {
         List {
             ForEach(BehavioralDP.allCases, id: \.self) { content in
-                NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
+                NavigationLink(
+                    destination: LazyView(SimpleDefaultTabView(factory.getBehavioralDPContent(content))
+                                            .navigationBarTitle(content.description, displayMode: .inline)),
+                    tag: content.description,
+                    selection: $selection
+                ) {
+                    NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
+                }
+                .onDisappear {
+                    self.selection = nil
+                }
             }
         }
+        .id("idList")
         .navigationBarTitle("Behavioral", displayMode: .inline)
         .navigationBarItems(trailing: Text("Home"))
     }
 }
 
+
 struct BehavioralDPMenu_Previews: PreviewProvider {
     static var previews: some View {
-        BehavioralDPMenu()
+        BehavioralDPMenu(factory: ContentFactory())
     }
 }

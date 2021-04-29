@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/GreenStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Depth First Search</h1>
+        
+        <h2>Recursive Search() Verbose</h2>
+        
+        <pre><code class="language-swift">
+            func depthFirstSearch&lt;T: Equatable>(startNode: Node&lt;T>, target: T) -> Node&lt;T>? {
+                var queue: [Node&lt;T>] = []
+                var visited: [Node&lt;T>:Bool] = [:]
+                
+                queue.append(startNode)
+                visited[startNode] = true
+                
+                while !queue.isEmpty {
+                    let node = queue.removeFirst()
+                    if node.value == target { return node }
+                    
+                    recursiveDFS(node: node, visited: &visited, queue: &queue)
+                }
+                return nil
+            }
+
+            func recursiveDFS&lt;T: Equatable>(node: Node&lt;T>, visited: inout [Node&lt;T>:Bool], queue: inout [Node&lt;T>]) {
+                for child in node.children {
+                    if visited[child] != true {
+                        queue.append(child)
+                        visited[child] = true
+                        recursiveDFS(node: child, visited: &visited, queue: &queue)
+                    }
+                }
+            }
+        </code></pre>
+        
+        <h2>Pseudocode</h2>
+        
+        <br>
+        <br>
+        
+        <h3>Succinct</h3>
+        <pre><code class="language-none">
+1: Append the given node to a queue
+2: Mark the node as visited
+3: As long as the queue is not empty, dequeue
+4: If the node is equal to the target, return the node
+5: For every child of the node, check if the node has been visited
+6: If the node hasn't been visited, add it to the queue
+7: Mark the node as visited
+8: Repeat 5-7 until all nodes are visited
+9: Repeat 3-4 until search completes
+        </code></pre>
+        
+        <h3>Verbose</h3>
+        <pre><code class="language-none">
+<b>Depth First Search Function:</b> Expects a node from a graph data structure and a target
+In an N-ary tree,
+Declare a <b>queue</b>
+Declare an associative array called <b>visited</b>
+
+Enqueue the given node
+Add the given node to visited
+
+While the queue is not empty,
+    Dequeue from queue and declare it <b>node</b>
+    If the target is equal to the node,
+        Return the node
+        
+    Recursively call the Recursive DFS Function with the node
+
+Search failed, return nil
+    
+    
+<b>Recursive DFS Function:</b> Expects a node and references to queue and visited
+For every child of the node,
+    If the child is not in visited,
+        Enqueue the child
+        Add the child to visited
+        Recursively call the Recursive DFS Function with the child
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+

@@ -29,6 +29,15 @@ class ContentFactory {
             return ContentImplementor(BinarySearch())
         case .breadthFirstSearch:
             return ContentImplementor(BreadthFirstSearch())
+        case .depthFirstSearch:
+            return ContentImplementor(DepthFirstSearch())
+        }
+    }
+    
+    func getBehavioralDPContent(_ contentType: BehavioralDP) -> ContentImplementor {
+        switch contentType {
+        case .strategy:
+            return ContentImplementor(StrategyPattern())
         }
     }
     

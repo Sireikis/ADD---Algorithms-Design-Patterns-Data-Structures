@@ -9,6 +9,57 @@
         <h1 class="title">Algorithms</h1>
         
         <h2>Definition</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>
+        Algorithms are a series of detailed instructions used to outline how to complete a task. In the context of computer science, an algorithm can be classified based on many different factors such as: design paradigm, implementation, complexity, etc. For example, the time that an algorithm takes relative to the size of the input it was given can be described by Big O notation, which is used when classifying by complexity.
+        </p>
+        
+        <h2>Classifications</h2>
+        <p>
+        The following are brief descriptions of some problem solving strategies that algorithms can be designed around. Some of these strategies can be combined together.
+        </p>
+        
+        <h3>Brute Force</h3>
+        <p>
+        This method entails trying all possible solutions. An example is starting from 0000 on a 4 digit lock and trying all combinations.
+        </p>
+        
+        <h3>Divide and Conquer</h3>
+        <p>
+        This involves repeatedly reducing a problem to one or more smaller instances of the same problem, until the instances are small enough to solve easily. An example is merge sort.
+        </p>
+        
+        <p>
+        A simpler variant is called Descrease and Conquer. This involves solving a subproblem and using the solution of the subproblem to solve the bigger problem. An example is binary search.
+        </p>
+        
+        <h3>Greedy</h3>
+        <p>
+        This method entails making the locally optimal choice at each step. This strategy does not usually produce an optimal solution, but rather a local optima, which are solutions that cannot be improved by the algorithm, but are not optimum. This strategy can be used to provide solutions for high time complexity problems such as the traveling salesman problem. In such a case the locally optimal solution may approximate the globally optimal solution.
+        </p>
+        
+        <h3>Dynamic</h3>
+        <p>
+        This method is for problems that can satisfy two criteria: the problem must have optimal substructures and overlapping subproblems. A problem has optimal substructures when an optimal solution can be constructed from the optimal solutions of its subproblems. A problem has overlapping subproblems when the same subproblems can be used to solve many different problem instances. Under these criteria, the dynamic programming approach can be taken. This approach avoids recomputing solutions by memoization or caching of previously computed solutions.
+        </p>
+        
+        <p>
+        This differs from Divide and Conquer, as the subproblems are independent in divide and conquer. Furthermore, dynamic programming differs from recursion because of memoization. On that note, if subproblems are independent then memoization does not help, as the same subproblem won't appear multiple times (overlap).
+        </p>
+        
+        <h3>Randomize</h3>
+        <p>
+        This method involves making choices randomly or pseudo-randomly. Two classes of this method exist: Monte Carlo and Las Vegas. Monte Carlo algorithms return a correct answer with high probability and their run time is bounded. Las Vegas algorithms always return the correct answer, but their runtime is only probabilistically bounded. Las Vegas algorithms have a finite expected runtime, but their runtime can differ even when given the same input.
+        </p>
+        
+        <h3>Back Tracking</h3>
+        <p>
+        In this method, multiple candidates to solutions are built incrementally and abandoned when it is clear that a candidate cannot lead to a valid solution. Problems that can be solved by this method allow for partial solutions, where additions to the solution can possibly invalidate it. The test that is performed to check validity should be relatively quick. An example would be solving a Sudoku puzzle. If the fields in the Sudoku puzzle are filled via brute force but checked for duplicate numbers (according to the rules of Sudoku), then entire brute force enumerations can be eliminated.
+        </p>
+        
+        <h3>Reduction of Complexity</h3>
+        <p>
+        This involves solving a problem by transforming it into another problem for which we have an optimal solution. For example, finding the median of an unsorted list can be solved by first sorting the list and then returning the middle element in the sorted list.
+        </p>
+        
     </body>
 </html>

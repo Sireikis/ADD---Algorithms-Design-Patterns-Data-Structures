@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-// DP stands for Design Pattern
 struct StructuralDPMenu: View {
     var body: some View {
         List {

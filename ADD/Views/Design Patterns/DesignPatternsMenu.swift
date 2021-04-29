@@ -33,7 +33,7 @@ struct DesignPatternsMenu: View {
             }
             
             Section(header: Text("Patterns")) {
-                NavigationLink(destination: BehavioralDPMenu(), tag: "Behavioral", selection: $selection) {
+                NavigationLink(destination: BehavioralDPMenu(factory: factory), tag: "Behavioral", selection: $selection) {
                     NavigationButton(description: "Behavioral", image: "gearshape.2", imgForeground: .blue)
                 }.onDisappear {
                     self.selection = nil

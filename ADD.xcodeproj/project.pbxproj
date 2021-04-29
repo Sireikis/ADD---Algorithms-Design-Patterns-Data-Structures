@@ -33,6 +33,8 @@
 		7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */; };
 		7B5844E62629FF9B0069058D /* BigO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5844E52629FF9B0069058D /* BigO.swift */; };
 		7B5B91A526178D3B00C82B47 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7B5B91A426178D3B00C82B47 /* www */; };
+		7B62E161263B027C0070F9A5 /* DepthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */; };
+		7B62E164263B4FF90070F9A5 /* StrategyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */; };
 		7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96A2639D2970090D4FA /* BinarySearch.swift */; };
 		7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */; };
 		7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */; };
@@ -96,6 +98,8 @@
 		7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSEnum.swift; sourceTree = "<group>"; };
 		7B5844E52629FF9B0069058D /* BigO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigO.swift; sourceTree = "<group>"; };
 		7B5B91A426178D3B00C82B47 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthFirstSearch.swift; sourceTree = "<group>"; };
+		7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyPattern.swift; sourceTree = "<group>"; };
 		7B7DC96A2639D2970090D4FA /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadthFirstSearch.swift; sourceTree = "<group>"; };
 		7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				7BB65CBA261CCACF00369C00 /* Protocols */,
 				7BE5425C2627958A000673E5 /* TidBits */,
 				7BF92E32263865B20057E791 /* Algorithms */,
+				7B62E166263B50000070F9A5 /* Design Patterns */,
 				7BB65CE4261D12EC00369C00 /* Enums */,
 			);
 			path = Models;
@@ -269,6 +274,14 @@
 				7B8150D9261F6DDE00E6CAAD /* LazyView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7B62E166263B50000070F9A5 /* Design Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */,
+			);
+			path = "Design Patterns";
 			sourceTree = "<group>";
 		};
 		7BB65CBA261CCACF00369C00 /* Protocols */ = {
@@ -355,6 +368,7 @@
 				7BF92E2F263863620057E791 /* QuickSort.swift */,
 				7B7DC96A2639D2970090D4FA /* BinarySearch.swift */,
 				7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */,
+				7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -465,6 +479,7 @@
 				7B1BDEA326166B3A00427505 /* WebView.swift in Sources */,
 				7BE5424326276275000673E5 /* TidBitView.swift in Sources */,
 				7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */,
+				7B62E161263B027C0070F9A5 /* DepthFirstSearch.swift in Sources */,
 				7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */,
 				7BE542732627A291000673E5 /* DSCategories.swift in Sources */,
 				7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */,
@@ -483,6 +498,7 @@
 				7B5844E62629FF9B0069058D /* BigO.swift in Sources */,
 				7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */,
 				7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */,
+				7B62E164263B4FF90070F9A5 /* StrategyPattern.swift in Sources */,
 				7BE54266262798F6000673E5 /* Glossary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

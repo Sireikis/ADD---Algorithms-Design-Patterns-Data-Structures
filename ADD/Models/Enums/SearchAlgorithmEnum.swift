@@ -10,12 +10,9 @@ import SwiftUI
 
 enum SearchAlgorithm: String, CaseIterable, Identifiable {
     // Planned content
-    // case binarySearch, breadthFirstSearch, depthFirstSearch
+    // case leeAlgorithm
     
-    // Content to finish
-    // case binarySearch, breadthFirstSearch, depthFirstSearch
-    
-    case binarySearch, breadthFirstSearch
+    case binarySearch, breadthFirstSearch, depthFirstSearch
     
     var image: String {
         return "magnifyingglass"
@@ -31,8 +28,8 @@ enum SearchAlgorithm: String, CaseIterable, Identifiable {
             return "Binary Search"
         case .breadthFirstSearch:
             return "Breadth First Search"
-//        case .depthFirstSearch:
-//            return "Depth First Search"
+        case .depthFirstSearch:
+            return "Depth First Search"
         }
     }
     

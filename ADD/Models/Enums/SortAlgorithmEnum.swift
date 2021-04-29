@@ -31,25 +31,17 @@ enum SortAlgorithm: String, CaseIterable, Identifiable {
              return "Counting Sort"
          case .heapSort:
              return "Heap Sort"
-         case .insertionSort:
-             return "Insertion Sort"
-         case .mergeSort:
-             return "Merge Sort"
-         case .quickSort:
-             return "Quick Sort"
-         case .selectionSort:
-             return "Selection Sort"
          }
          */
         switch self {
         case .insertionSort:
             return "Insertion Sort"
-        case .selectionSort:
-            return "Selection Sort"
         case .mergeSort:
             return "Merge Sort"
         case .quickSort:
             return "Quick Sort"
+        case .selectionSort:
+            return "Selection Sort"
         }
     }
     

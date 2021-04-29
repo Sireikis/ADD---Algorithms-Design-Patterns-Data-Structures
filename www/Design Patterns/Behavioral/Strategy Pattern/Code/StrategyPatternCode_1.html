@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Strategy Pattern</h1>
+        
+        <h2>UML Skeleton</h2>
+        
+        <pre><code class="language-swift">
+            // Abstract Class
+            class Client {
+                var behavior: IStrategy
+                
+                func performBehavior() {
+                    behavior.strategy()
+                }
+                
+                func changeBehavior(to behavior: IStrategy) {
+                    self.behavior = behavior
+                }
+                
+                init(behavior: IStrategy) {
+                    self.behavior = behavior
+                }
+            }
+
+            // Interface for family of algorithms that vary behavior
+            protocol IStrategy {
+                func strategy()
+            }
+
+            // Concrete Class - implementation of IStrategy
+            // Defines one of the various strategy behaviors that are interchangeable
+            class SomeBehavior: IStrategy {
+                func strategy() {
+                    print("I have some behavior")
+                }
+            }
+
+            // Concrete Class - implementation of IStrategy
+            // Another different strategy behavior
+            class SomeOtherBehavior: IStrategy {
+                func strategy() {
+                    print("I have some other behavior")
+                }
+            }
+
+            // --------------------------
+
+            // Concrete Class - implementation of Client
+            class ConcreteClient: Client {
+                // Other Methods
+            }
+
+            // Concrete Client with some behavior set at runtime
+            var client = ConcreteClient(behavior: SomeBehavior())
+            client.performBehavior()  // "I have some behavior"
+
+            // Concrete Client behavior dynamically changed at runtime
+            client.changeBehavior(to: SomeOtherBehavior())
+            client.performBehavior()  // "I have some other behavior"
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
