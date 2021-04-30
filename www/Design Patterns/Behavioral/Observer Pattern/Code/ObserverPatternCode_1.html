@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Observer Pattern</h1>
+        
+        <h2>UML Code - Push</h2>
+        
+        <pre><code class="language-swift">
+            // The Push variant of Observer Pattern
+
+            // AKA Observer
+            protocol Subscriber: class {
+                func update(dataA: String, dataB: String, dataC: String)
+            }
+
+            // AKA Observable or Subject
+            protocol Publisher {
+                func subscribe(s: Subscriber)
+                func unsubscribe(s: Subscriber)
+                func notifySubscribers()
+            }
+
+            
+            class ConcretePublisher: Publisher {
+                private var subscribers: [ObjectIdentifier: Subscriber] = [:]
+                
+                private var dataA: String = ""
+                private var dataB: String = ""
+                private var dataC: String = ""
+                
+                public func subscribe(s: Subscriber) {
+                    subscribers[ObjectIdentifier(s)] = s
+                }
+                
+                public func unsubscribe(s: Subscriber) {
+                    let id = ObjectIdentifier(s)
+                    subscribers.removeValue(forKey: id)
+                }
+                
+                // All data is pushed to all subscribers
+                // The pull variant solves this issue
+                public func notifySubscribers() {
+                    for subscriber in subscribers.values {
+                        subscriber.update(dataA: dataA, dataB: dataB, dataC: dataC)
+                    }
+                }
+                
+                // Data generating function, this could be a data source we pull from
+                func generateData(dataA: String, dataB: String, dataC: String) {
+                    self.dataA = dataA
+                    self.dataB = dataB
+                    self.dataC = dataC
+                    
+                    notifySubscribers()
+                }
+            }
+
+            class ConcreteSubscriberA: Subscriber {
+                var dataA: String = ""
+                var dataC: String = ""
+                
+                func update(dataA: String, dataB: String, dataC: String) {
+                    self.dataA = dataA
+                    self.dataC = dataC
+                    
+                    broadcast()
+                }
+                
+                // Other Methods
+                
+                // Broadcast just illustrates new Subscriber state when Publisher is updated
+                func broadcast() {
+                    print("ConcreteSubscriberA received new data:")
+                    print("dataA: \(dataA)")
+                    print("dataC: \(dataC)")
+                }
+            }
+
+            class ConcreteSubscriberB: Subscriber {
+                var dataB: String = ""
+                var dataC: String = ""
+                
+                func update(dataA: String, dataB: String, dataC: String) {
+                    self.dataB = dataB
+                    self.dataC = dataC
+                    
+                    broadcast()
+                }
+                
+                // Other Methods
+                
+                // Broadcast just illustrates new Subscriber state when Publisher is updated
+                func broadcast() {
+                    print("ConcreteSubscriberB received new data:")
+                    print("dataB: \(dataB)")
+                    print("dataC: \(dataC)")
+                }
+            }
+
+            // --------------------------
+
+            // Instantiate Publisher and Subscribers, then register Subscribers
+            var publisher = ConcretePublisher()
+            let subscriberA = ConcreteSubscriberA()
+            let subscriberB = ConcreteSubscriberB()
+            publisher.subscribe(s: subscriberA)
+            publisher.subscribe(s: subscriberB)
+
+            // Update Publisher and see our Subscribers update accordingly.
+            publisher.generateData(dataA: "New Data A", dataB: "New Data B", dataC: "New Data C")
+            // Both broadcast
+
+            publisher.unsubscribe(s: subscriberB)
+            publisher.generateData(dataA: "Newer Data A", dataB: "Newer Data B", dataC: "Newer Data C")
+            // Only subscriberA broadcasts
+        </code></pre>
+        
+        <h2>UML Code - Pull</h2>
+        
+        <pre><code class="language-swift">
+            // The Pull variant of Observer Pattern
+
+            // AKA Observer
+            protocol Subscriber: class {
+                // The pull variant requires a reference to the Publisher
+                // Subscribers will pull data from the Publisher when notified
+                var publisher: Publisher { get set }
+                
+                func update()
+            }
+
+            // AKA Observable or Subject
+            protocol Publisher {
+                func subscribe(s: Subscriber)
+                func unsubscribe(s: Subscriber)
+                func notifySubscribers()
+                
+                // Methods Subscribers use to pull data
+                func getDataA() -> String
+                func getDataB() -> String
+                func getDataC() -> String
+            }
+
+
+            class ConcretePublisher: Publisher {
+                private var subscribers: [ObjectIdentifier: Subscriber] = [:]
+                
+                private var dataA: String = ""
+                private var dataB: String = ""
+                private var dataC: String = ""
+                
+                public func subscribe(s: Subscriber) {
+                    subscribers[ObjectIdentifier(s)] = s
+                }
+                
+                public func unsubscribe(s: Subscriber) {
+                    let id = ObjectIdentifier(s)
+                    subscribers.removeValue(forKey: id)
+                }
+                
+                // All data is pushed to all subscribers
+                // The pull variant solves this issue
+                public func notifySubscribers() {
+                    for subscriber in subscribers.values {
+                        subscriber.update()
+                    }
+                }
+                
+                // Data generating function, this could be a data source we pull from
+                func generateData(dataA: String, dataB: String, dataC: String) {
+                    self.dataA = dataA
+                    self.dataB = dataB
+                    self.dataC = dataC
+                    
+                    notifySubscribers()
+                }
+                
+                public func getDataA() -> String {
+                    return dataA
+                }
+                
+                public func getDataB() -> String {
+                    return dataB
+                }
+                
+                public func getDataC() -> String {
+                    return dataC
+                }
+            }
+
+            class ConcreteSubscriberA: Subscriber {
+                var publisher: Publisher
+                
+                var dataA: String = ""
+                var dataC: String = ""
+                
+                init(publisher: Publisher) {
+                    self.publisher = publisher
+                }
+                
+                func update() {
+                    self.dataA = publisher.getDataA()
+                    self.dataC = publisher.getDataC()
+                    
+                    broadcast()
+                }
+                
+                // Other Methods
+                
+                // Broadcast just illustrates new Subscriber state when Publisher is updated
+                func broadcast() {
+                    print("ConcreteSubscriberA received new data:")
+                    print("dataA: \(dataA)")
+                    print("dataC: \(dataC)")
+                }
+            }
+
+            class ConcreteSubscriberB: Subscriber {
+                var publisher: Publisher
+                
+                var dataB: String = ""
+                var dataC: String = ""
+                
+                init(publisher: Publisher) {
+                    self.publisher = publisher
+                }
+                
+                func update() {
+                    self.dataB = publisher.getDataB()
+                    self.dataC = publisher.getDataC()
+                    
+                    broadcast()
+                }
+                
+                // Other Methods
+                
+                // Broadcast just illustrates new Subscriber state when Publisher is updated
+                func broadcast() {
+                    print("ConcreteSubscriberB received new data:")
+                    print("dataB: \(dataB)")
+                    print("dataC: \(dataC)")
+                }
+            }
+
+            // --------------------------
+
+            // Instantiate Publisher and Subscribers, then register Subscribers
+            var publisher = ConcretePublisher()
+            let subscriberA = ConcreteSubscriberA(publisher: publisher)
+            let subscriberB = ConcreteSubscriberB(publisher: publisher)
+            publisher.subscribe(s: subscriberA)
+            publisher.subscribe(s: subscriberB)
+
+            // Update Publisher and see our Subscribers update accordingly.
+            // In this variant, the composition of Publisher
+            // allows Subscribers to request the data they want.
+            publisher.generateData(dataA: "New Data A", dataB: "New Data B", dataC: "New Data C")
+            // Both broadcast
+
+            publisher.unsubscribe(s: subscriberB)
+            publisher.generateData(dataA: "Newer Data A", dataB: "Newer Data B", dataC: "Newer Data C")
+            // Only subscriberA broadcasts
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>

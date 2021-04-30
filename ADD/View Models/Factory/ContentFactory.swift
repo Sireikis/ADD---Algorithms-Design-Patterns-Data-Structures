@@ -36,6 +36,8 @@ class ContentFactory {
     
     func getBehavioralDPContent(_ contentType: BehavioralDP) -> ContentImplementor {
         switch contentType {
+        case .observer:
+            return ContentImplementor(ObserverPattern())
         case .strategy:
             return ContentImplementor(StrategyPattern())
         }

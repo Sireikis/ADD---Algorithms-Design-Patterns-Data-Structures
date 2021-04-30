@@ -14,9 +14,9 @@ enum BehavioralDP: String, CaseIterable, Identifiable {
     // observer, state, strategy, templateMethod, visitor
     
     // Content to finish
-    // case command, observer, strategy
+    // case command, observer
     
-    case strategy
+    case observer, strategy
     
     var image: String {
         return "gearshape.2"
@@ -38,8 +38,8 @@ enum BehavioralDP: String, CaseIterable, Identifiable {
 //            return "Mediator"
 //        case .memento:
 //            return "Memento"
-//        case .observer:
-//            return "Observer"
+        case .observer:
+            return "Observer"
 //        case .state:
 //            return "State"
         case .strategy:

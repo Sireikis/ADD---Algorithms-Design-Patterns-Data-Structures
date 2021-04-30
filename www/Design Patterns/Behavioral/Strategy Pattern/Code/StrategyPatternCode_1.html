@@ -8,61 +8,59 @@
     <body>
         <h1 class="title">Strategy Pattern</h1>
         
-        <h2>UML Skeleton</h2>
+        <h2>UML Code</h2>
         
         <pre><code class="language-swift">
-            // Abstract Class
-            class Client {
-                var behavior: IStrategy
+            // Could be an Abstract Class or used by the Client
+            // Contains the interface for interacting with a Strategy
+            class Context {
+                private var strategy: Strategy
                 
-                func performBehavior() {
-                    behavior.strategy()
+                public func executeStrategy() {
+                    strategy.execute()
                 }
                 
-                func changeBehavior(to behavior: IStrategy) {
-                    self.behavior = behavior
+                public func changeStrategy(to strategy: Strategy) {
+                    self.strategy = strategy
                 }
                 
-                init(behavior: IStrategy) {
-                    self.behavior = behavior
+                init(strategy: Strategy) {
+                    self.strategy = strategy
                 }
+                
+                // Other Methods
             }
 
             // Interface for family of algorithms that vary behavior
-            protocol IStrategy {
-                func strategy()
+            protocol Strategy {
+                func execute()
             }
 
-            // Concrete Class - implementation of IStrategy
+            // Concrete Class - implementation of Strategy
             // Defines one of the various strategy behaviors that are interchangeable
-            class SomeBehavior: IStrategy {
-                func strategy() {
+            class SomeBehavior: Strategy {
+                public func execute() {
                     print("I have some behavior")
                 }
             }
 
-            // Concrete Class - implementation of IStrategy
+            // Concrete Class - implementation of Strategy
             // Another different strategy behavior
-            class SomeOtherBehavior: IStrategy {
-                func strategy() {
+            class SomeOtherBehavior: Strategy {
+                public func execute() {
                     print("I have some other behavior")
                 }
             }
 
             // --------------------------
 
-            // Concrete Class - implementation of Client
-            class ConcreteClient: Client {
-                // Other Methods
-            }
+            // Context used by Client with some behavior set at runtime
+            var client = Context(strategy: SomeBehavior())
+            client.executeStrategy()  // "I have some behavior"
 
-            // Concrete Client with some behavior set at runtime
-            var client = ConcreteClient(behavior: SomeBehavior())
-            client.performBehavior()  // "I have some behavior"
-
-            // Concrete Client behavior dynamically changed at runtime
-            client.changeBehavior(to: SomeOtherBehavior())
-            client.performBehavior()  // "I have some other behavior"
+            // Context behavior dynamically changed at runtime
+            client.changeStrategy(to: SomeOtherBehavior())
+            client.executeStrategy()  // "I have some other behavior"
         </code></pre>
 
         <script src="../../../../Prism/prism.js"></script>

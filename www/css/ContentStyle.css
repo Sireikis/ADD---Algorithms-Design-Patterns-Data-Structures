@@ -132,4 +132,6 @@ th {
 img {
     width: 95%;
     padding: 5px;
+    
+    pointer-events: none
 }

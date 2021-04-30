@@ -64,6 +64,7 @@
 		7BE5426C2627A059000673E5 /* WhatAreDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */; };
 		7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */; };
 		7BE542732627A291000673E5 /* DSCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE542722627A291000673E5 /* DSCategories.swift */; };
+		7BF46366263CB476007B4917 /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF46365263CB476007B4917 /* ObserverPattern.swift */; };
 		7BF92E2D263861B50057E791 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF92E2C263861B50057E791 /* MergeSort.swift */; };
 		7BF92E30263863620057E791 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF92E2F263863620057E791 /* QuickSort.swift */; };
 		7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */; };
@@ -129,6 +130,7 @@
 		7BE5426B2627A059000673E5 /* WhatAreDesignPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDesignPatterns.swift; sourceTree = "<group>"; };
 		7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDataStructures.swift; sourceTree = "<group>"; };
 		7BE542722627A291000673E5 /* DSCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCategories.swift; sourceTree = "<group>"; };
+		7BF46365263CB476007B4917 /* ObserverPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverPattern.swift; sourceTree = "<group>"; };
 		7BF92E2C263861B50057E791 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		7BF92E2F263863620057E791 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDefaultTabView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */,
+				7BF46365263CB476007B4917 /* ObserverPattern.swift */,
 			);
 			path = "Design Patterns";
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				7BB65CB8261CC34100369C00 /* Content.swift in Sources */,
 				7BE542692627A031000673E5 /* DPCategories.swift in Sources */,
 				7BE5424F26276B0B000673E5 /* Topic.swift in Sources */,
+				7BF46366263CB476007B4917 /* ObserverPattern.swift in Sources */,
 				7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */,
 				7BF92E30263863620057E791 /* QuickSort.swift in Sources */,
 				7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */,
