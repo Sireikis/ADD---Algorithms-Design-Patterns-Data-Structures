@@ -39,7 +39,7 @@ struct DesignPatternsMenu: View {
                     self.selection = nil
                 }
                 
-                NavigationLink(destination: CreationalDPMenu(), tag: "Creational", selection: $selection) {
+                NavigationLink(destination: CreationalDPMenu(factory: factory), tag: "Creational", selection: $selection) {
                     NavigationButton(description: "Creational", image: "lightbulb", imgForeground: .blue)
                 }.onDisappear {
                     self.selection = nil

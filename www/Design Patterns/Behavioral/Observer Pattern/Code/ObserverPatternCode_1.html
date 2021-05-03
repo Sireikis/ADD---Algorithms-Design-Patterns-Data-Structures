@@ -129,6 +129,7 @@
             protocol Subscriber: class {
                 // The pull variant requires a reference to the Publisher
                 // Subscribers will pull data from the Publisher when notified
+                // However, publisher doesn't NEED to be part of the requirements
                 var publisher: Publisher { get set }
                 
                 func update()

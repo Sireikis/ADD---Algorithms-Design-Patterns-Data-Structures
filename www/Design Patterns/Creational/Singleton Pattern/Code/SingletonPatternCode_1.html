@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Singleton Pattern</h1>
+        
+        <h2>UML</h2>
+        
+        <pre><code class="language-swift">
+            // Concrete Singleton
+            class Singleton {
+                private static var instance: Singleton?
+                
+                // Some data we only want one instance of
+                private var uniqueData: String = "I am Unique"
+                
+                // The heart of this pattern is that init is private.
+                // Only the methods inside this class can access the init()
+                private init() { }
+                
+                // If this is the first Singleton, we create a new instance.
+                // Otherwise, we return the previously created instance.
+                public static func getInstance() -> Singleton {
+                    if let instance = instance {
+                        print("Returning Same Instance")
+                        return instance
+                    } else {
+                        print("Created New Instance")
+                        instance = Singleton()
+                    }
+                    return instance!
+                }
+                
+                public func getUniqueData() -> String {
+                    return uniqueData
+                }
+            }
+
+            // -------------------------------------
+
+            var singletonTest1 = Singleton.getInstance()
+            singletonTest1.getUniqueData()
+            // Prints "Created New Instance"
+
+            var singletonTest2 = Singleton.getInstance()
+            singletonTest2.getUniqueData()
+            // Prints "Returning Same Instance"
+        </code></pre>
+        
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+

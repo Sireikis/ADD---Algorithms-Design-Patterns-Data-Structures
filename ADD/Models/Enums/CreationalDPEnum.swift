@@ -15,7 +15,7 @@ enum CreationalDP: String, CaseIterable, Identifiable {
     // Content to finish
     // case abstractFactory, factoryMethod, singleton
     
-    case abstractFactory, builder, factoryMethod, prototype, singleton
+    case abstractFactory, singleton
     
     var image: String {
         return "lightbulb"
@@ -29,12 +29,12 @@ enum CreationalDP: String, CaseIterable, Identifiable {
         switch self {
         case .abstractFactory:
             return "Abstract Factory"
-        case .builder:
-            return "Builder"
-        case .factoryMethod:
-            return "Factory Method"
-        case .prototype:
-            return "Prototype"
+//        case .builder:
+//            return "Builder"
+//        case .factoryMethod:
+//            return "Factory Method"
+//        case .prototype:
+//            return "Prototype"
         case .singleton:
             return "Singleton"
         }

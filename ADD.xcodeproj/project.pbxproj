@@ -35,6 +35,8 @@
 		7B5B91A526178D3B00C82B47 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7B5B91A426178D3B00C82B47 /* www */; };
 		7B62E161263B027C0070F9A5 /* DepthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */; };
 		7B62E164263B4FF90070F9A5 /* StrategyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */; };
+		7B6C360826409B13001B906C /* SingletonPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C360726409B13001B906C /* SingletonPattern.swift */; };
+		7B6C360B2640AD69001B906C /* AbstractFactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C360A2640AD69001B906C /* AbstractFactoryPattern.swift */; };
 		7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96A2639D2970090D4FA /* BinarySearch.swift */; };
 		7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */; };
 		7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */; };
@@ -101,6 +103,8 @@
 		7B5B91A426178D3B00C82B47 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthFirstSearch.swift; sourceTree = "<group>"; };
 		7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyPattern.swift; sourceTree = "<group>"; };
+		7B6C360726409B13001B906C /* SingletonPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonPattern.swift; sourceTree = "<group>"; };
+		7B6C360A2640AD69001B906C /* AbstractFactoryPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactoryPattern.swift; sourceTree = "<group>"; };
 		7B7DC96A2639D2970090D4FA /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadthFirstSearch.swift; sourceTree = "<group>"; };
 		7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 			children = (
 				7B62E163263B4FF90070F9A5 /* StrategyPattern.swift */,
 				7BF46365263CB476007B4917 /* ObserverPattern.swift */,
+				7B6C360726409B13001B906C /* SingletonPattern.swift */,
+				7B6C360A2640AD69001B906C /* AbstractFactoryPattern.swift */,
 			);
 			path = "Design Patterns";
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */,
 				7BB65D0A261D1C7500369C00 /* HashBasedDSMenu.swift in Sources */,
 				7B0774262613B35D00FEDB85 /* Implementor.swift in Sources */,
+				7B6C360B2640AD69001B906C /* AbstractFactoryPattern.swift in Sources */,
 				7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */,
 				7B3BBF85261E6482007207A3 /* SearchAlgorithmEnum.swift in Sources */,
 				7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */,
@@ -499,6 +506,7 @@
 				7B07741A2613B2B100FEDB85 /* SortAlgorithmsMenu.swift in Sources */,
 				7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */,
 				7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */,
+				7B6C360826409B13001B906C /* SingletonPattern.swift in Sources */,
 				7B5844E62629FF9B0069058D /* BigO.swift in Sources */,
 				7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */,
 				7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */,

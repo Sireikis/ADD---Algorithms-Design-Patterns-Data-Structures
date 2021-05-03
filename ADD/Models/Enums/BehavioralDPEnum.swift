@@ -14,7 +14,7 @@ enum BehavioralDP: String, CaseIterable, Identifiable {
     // observer, state, strategy, templateMethod, visitor
     
     // Content to finish
-    // case command, observer
+    // case command
     
     case observer, strategy
     

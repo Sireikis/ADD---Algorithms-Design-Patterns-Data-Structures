@@ -43,6 +43,15 @@ class ContentFactory {
         }
     }
     
+    func getCreationalDPContent(_ contentType: CreationalDP) -> ContentImplementor {
+        switch contentType {
+        case .abstractFactory:
+            return ContentImplementor(AbstractFactoryPattern())
+        case .singleton:
+            return ContentImplementor(SingletonPattern())
+        }
+    }
+    
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
         case .bigO:
