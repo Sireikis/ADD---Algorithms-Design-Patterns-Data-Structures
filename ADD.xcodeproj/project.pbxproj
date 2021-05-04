@@ -67,6 +67,10 @@
 		7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */; };
 		7BE542732627A291000673E5 /* DSCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE542722627A291000673E5 /* DSCategories.swift */; };
 		7BF46366263CB476007B4917 /* ObserverPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF46365263CB476007B4917 /* ObserverPattern.swift */; };
+		7BF8576D2641A4BC00547EB3 /* FactoryMethodPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8576C2641A4BC00547EB3 /* FactoryMethodPattern.swift */; };
+		7BF857702641B54800547EB3 /* AdapterPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8576F2641B54800547EB3 /* AdapterPattern.swift */; };
+		7BF857732641DD7300547EB3 /* BridgePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF857722641DD7300547EB3 /* BridgePattern.swift */; };
+		7BF857762641F7CC00547EB3 /* DecoratorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF857752641F7CC00547EB3 /* DecoratorPattern.swift */; };
 		7BF92E2D263861B50057E791 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF92E2C263861B50057E791 /* MergeSort.swift */; };
 		7BF92E30263863620057E791 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF92E2F263863620057E791 /* QuickSort.swift */; };
 		7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */; };
@@ -135,6 +139,10 @@
 		7BE5426F2627A26A000673E5 /* WhatAreDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreDataStructures.swift; sourceTree = "<group>"; };
 		7BE542722627A291000673E5 /* DSCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCategories.swift; sourceTree = "<group>"; };
 		7BF46365263CB476007B4917 /* ObserverPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverPattern.swift; sourceTree = "<group>"; };
+		7BF8576C2641A4BC00547EB3 /* FactoryMethodPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryMethodPattern.swift; sourceTree = "<group>"; };
+		7BF8576F2641B54800547EB3 /* AdapterPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterPattern.swift; sourceTree = "<group>"; };
+		7BF857722641DD7300547EB3 /* BridgePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgePattern.swift; sourceTree = "<group>"; };
+		7BF857752641F7CC00547EB3 /* DecoratorPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoratorPattern.swift; sourceTree = "<group>"; };
 		7BF92E2C263861B50057E791 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		7BF92E2F263863620057E791 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDefaultTabView.swift; sourceTree = "<group>"; };
@@ -289,6 +297,10 @@
 				7BF46365263CB476007B4917 /* ObserverPattern.swift */,
 				7B6C360726409B13001B906C /* SingletonPattern.swift */,
 				7B6C360A2640AD69001B906C /* AbstractFactoryPattern.swift */,
+				7BF8576C2641A4BC00547EB3 /* FactoryMethodPattern.swift */,
+				7BF8576F2641B54800547EB3 /* AdapterPattern.swift */,
+				7BF857722641DD7300547EB3 /* BridgePattern.swift */,
+				7BF857752641F7CC00547EB3 /* DecoratorPattern.swift */,
 			);
 			path = "Design Patterns";
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 				7BE5425426276D6A000673E5 /* TidBitImplementor.swift in Sources */,
 				7BE5426C2627A059000673E5 /* WhatAreDesignPatterns.swift in Sources */,
 				7BB65CB8261CC34100369C00 /* Content.swift in Sources */,
+				7BF857732641DD7300547EB3 /* BridgePattern.swift in Sources */,
 				7BE542692627A031000673E5 /* DPCategories.swift in Sources */,
 				7BE5424F26276B0B000673E5 /* Topic.swift in Sources */,
 				7BF46366263CB476007B4917 /* ObserverPattern.swift in Sources */,
@@ -482,6 +495,7 @@
 				7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */,
 				7B0774382613BC0C00FEDB85 /* DefaultTabView.swift in Sources */,
 				7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */,
+				7BF8576D2641A4BC00547EB3 /* FactoryMethodPattern.swift in Sources */,
 				7BF92E2D263861B50057E791 /* MergeSort.swift in Sources */,
 				7BE5425726276DA9000673E5 /* TidBit.swift in Sources */,
 				7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */,
@@ -491,6 +505,7 @@
 				7BE5424326276275000673E5 /* TidBitView.swift in Sources */,
 				7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */,
 				7B62E161263B027C0070F9A5 /* DepthFirstSearch.swift in Sources */,
+				7BF857702641B54800547EB3 /* AdapterPattern.swift in Sources */,
 				7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */,
 				7BE542732627A291000673E5 /* DSCategories.swift in Sources */,
 				7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */,
@@ -499,6 +514,7 @@
 				7B0774232613B32400FEDB85 /* InsertionSort.swift in Sources */,
 				7BB65CF0261D169300369C00 /* LinearDSMenu.swift in Sources */,
 				7B0774122613B27600FEDB85 /* AlgorithmsMenu.swift in Sources */,
+				7BF857762641F7CC00547EB3 /* DecoratorPattern.swift in Sources */,
 				7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */,
 				7B0774292613B3A100FEDB85 /* ContentImplementor.swift in Sources */,
 				7BB65CFB261D18AB00369C00 /* BehavioralDPMenu.swift in Sources */,

@@ -45,7 +45,7 @@ struct DesignPatternsMenu: View {
                     self.selection = nil
                 }
                 
-                NavigationLink(destination: StructuralDPMenu(), tag: "Structural", selection: $selection) {
+                NavigationLink(destination: StructuralDPMenu(factory: factory), tag: "Structural", selection: $selection) {
                     NavigationButton(description: "Structural", image: "square.grid.3x1.below.line.grid.1x2", imgForeground: .blue)
                 }.onDisappear {
                     self.selection = nil

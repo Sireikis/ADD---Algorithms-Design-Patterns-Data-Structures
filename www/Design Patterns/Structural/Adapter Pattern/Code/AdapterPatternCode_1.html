@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Adapter Pattern</h1>
+        
+        <h2>UML</h2>
+        
+        <pre><code class="language-swift">
+            // Interface - Abstract Adapter
+            protocol Adapter {
+                func request()
+            }
+
+            // -------------------------
+
+            // Client
+            class Client {
+                private var adapter: Adapter
+                
+                init(adapter: Adapter) {
+                    self.adapter = adapter
+                }
+                
+                // Client expects to call request() on Adaptee,
+                // however the interface is different--specificRequest().
+                // Adapter solves this issue
+                func makeRequest() {
+                    adapter.request()
+                }
+                
+                // Other methods that expect to call request() on adaptee
+            }
+
+            // Concrete Adapter
+            class ConcreteAdapter: Adapter {
+                private var adaptee: Adaptee
+                
+                init(adaptee: Adaptee) {
+                    self.adaptee = adaptee
+                }
+                
+                public func request() {
+                    adaptee.specificRequest()
+                }
+            }
+
+            // Adaptee
+            class Adaptee {
+                func specificRequest() {
+                    print("Adaptee is making a specificRequest.")
+                }
+            }
+
+            // -------------------------
+
+            var adaptee = Adaptee()
+            var adapter = ConcreteAdapter(adaptee: adaptee)
+            var client = Client(adapter: adapter)
+
+            // makeRequests expects to call request() on the adaptee
+            client.makeRequest()
+            // Adaptee prints "Adaptee is making a specificRequest."
+        </code></pre>
+        
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+

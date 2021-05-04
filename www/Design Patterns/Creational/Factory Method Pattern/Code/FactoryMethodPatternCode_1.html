@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Factory Method Pattern</h1>
+        
+        <h2>UML</h2>
+        
+        <pre><code class="language-swift">
+            // Interface - Abstract Factory
+            // For clarity in Swift, we are using an Interface.
+            // However, typically we use an Abstract Class and
+            // return some default Product, then subclass from it.
+            // Note: Subclassing would mean we'd need to override createProduct()
+            protocol Factory {
+                func createProduct() -> Product
+            }
+
+            // Interface - Abstract Product
+            protocol Product {
+                var name: String { get set}
+            }
+
+            // -------------------------
+
+            // Concrete Factories
+            // Each factory creates a single type of product
+
+            class FactoryA: Factory {
+                func createProduct() -> Product {
+                    return ProductA()
+                }
+            }
+
+            class FactoryB: Factory {
+                func createProduct() -> Product {
+                    return ProductB()
+                }
+            }
+
+            class FactoryC: Factory {
+                func createProduct() -> Product {
+                    return ProductC()
+                }
+            }
+
+            // Concrete Products
+
+            class ProductA: Product {
+                var name: String = "Product A"
+            }
+
+            class ProductB: Product {
+                var name: String = "Product B"
+            }
+
+            class ProductC: Product {
+                var name: String = "Product C"
+            }
+
+            // -------------------------------------
+
+            var factories: [Factory] = [FactoryA(), FactoryB(), FactoryC()]
+
+            // Creates then prints all three Product names
+            for factory in factories {
+                print(factory.createProduct().name)
+            }
+        </code></pre>
+        
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+

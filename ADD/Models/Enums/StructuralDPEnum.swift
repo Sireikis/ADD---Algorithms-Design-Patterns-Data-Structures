@@ -15,7 +15,7 @@ enum StructuralDP: String, CaseIterable, Identifiable {
     // Content to finish
     // case adapter, bridge, decorator, facade, proxy
     
-    case adapter, bridge, composite, decorator, facade, flyweight, proxy
+    case adapter, bridge, decorator
     
     var image: String {
         return "square.grid.3x1.below.line.grid.1x2"
@@ -31,16 +31,16 @@ enum StructuralDP: String, CaseIterable, Identifiable {
             return "Adapter"
         case .bridge:
             return "Bridge"
-        case .composite:
-            return "Composite"
+//        case .composite:
+//            return "Composite"
         case .decorator:
             return "Decorator"
-        case .facade:
-            return "Facade"
-        case .flyweight:
-            return "Flyweight"
-        case .proxy:
-            return "Proxy"
+//        case .facade:
+//            return "Facade"
+//        case .flyweight:
+//            return "Flyweight"
+//        case .proxy:
+//            return "Proxy"
         }
     }
     

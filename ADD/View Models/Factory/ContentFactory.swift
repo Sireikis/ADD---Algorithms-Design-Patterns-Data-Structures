@@ -47,8 +47,21 @@ class ContentFactory {
         switch contentType {
         case .abstractFactory:
             return ContentImplementor(AbstractFactoryPattern())
+        case .factoryMethod:
+            return ContentImplementor(FactoryMethodPattern())
         case .singleton:
             return ContentImplementor(SingletonPattern())
+        }
+    }
+    
+    func getStructuralDPContent(_ contentType: StructuralDP) -> ContentImplementor {
+        switch contentType {
+        case .adapter:
+            return ContentImplementor(AdapterPattern())
+        case .bridge:
+            return ContentImplementor(BridgePattern())
+        case .decorator:
+            return ContentImplementor(DecoratorPattern())
         }
     }
     

@@ -26,7 +26,7 @@ class TidBitImplementor: Implementor {
             // Currently no plans for tidbits to have alternate versions.
             // Thus, techincally this could ignore the file variable
             // and just call .one (so views can't mess up).
-            return instance.getTidBitIn(file: file)
+            return instance.getTidBitIn(file: .one)
         default:
             // Views that call unexpected content get the tidBit file
             return instance.getTidBitIn(file: .one)

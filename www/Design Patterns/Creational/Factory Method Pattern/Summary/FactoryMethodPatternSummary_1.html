@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Factory Method Pattern</h1>
+        
+        <h2>UML</h2>
+        
+        <br>
+        <br>
+        
+        <img src="../../../../Images/Factory Method Pattern.png">
+        
+        <h2>Summary</h2>
+        <p>
+        Factory Method Pattern defines object creation in a superclass, but allows subclasses to decide which object to create. In other words, instantiation of objects is deferred to subclasses. This is achieved by making objects conform to a common interface (Product) then creating a method in the superclass that returns a product--createProduct(). When a subclass needs to use a specific product, we override createProduct() in that subclass and return the product it needs. Then all calls to the product's constructor are replaced by calls to the factory method, createProduct().
+        </p>
+        
+        <p>
+        Typically this is used to encapsulate and decouple object creation logic from business logic. Hence, the Factory tends to be some abstract class that has some other primary purpose. Subclasses would then override the createProduct() method and return the Product they need. Alternatively, we could create a general interface for Factories and compose them with the client class--which is what Abstract Factory Pattern does.
+        </p>
+        
+    </body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Bridge Pattern</h1>
+        
+        <h2>UML</h2>
+        
+        <br>
+        <br>
+        
+        <img src="../../../../Images/Bridge Pattern.png">
+        
+        <h2>Summary</h2>
+        <p>
+        Bridge Pattern allows you to separate the abstract framework of an application from the low level implementation of the framework, which may differ depending on the context. For example, an application's GUI is the Abstraction while the implementation details, such as what happens when users interact with that GUI in different operating systems, are Implementations. The Abstraction could be the same across all operating systems, but the Implemenation of the Abstraction may differ depending on the operating system. Alternatively, we may have multiple Abstractions (GUIs) with multiple Implementations. To avoid a class explosion where we create a number of classes equal to the cartesian product, we use the Bridge Pattern.
+        </p>
+        
+        <p>
+        More generally, this pattern can be applied to any scenario where a class acts as a container for other classes. This occurs in situations where a class (or classes) is the framework onto which other classes are applied (Implementations). If those Implementations have a common characteristic, we can group them together under an interface and use them interchangeably.
+        </p>
+        
+    </body>
+</html>
