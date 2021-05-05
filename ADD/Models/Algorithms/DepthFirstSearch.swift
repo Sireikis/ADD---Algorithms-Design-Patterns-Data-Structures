@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class DepthFirstSearch: Content {
+class DepthFirstSearch: ADDContent {
     let filePath: String = "www/Algorithms/Search/Depth First Search/"
     
     var summaries = [FileNumber:URLRequest]()

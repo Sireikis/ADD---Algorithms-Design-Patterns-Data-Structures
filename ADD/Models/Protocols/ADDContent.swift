@@ -1,5 +1,5 @@
 //
-//  Content.swift
+//  ADDContent.swift
 //  ADD
 //
 //  Created by Ignas Sireikis on 4/6/21.
@@ -10,7 +10,7 @@ import Foundation
 
 // First release of App will only use Summaries and CodeExamples, with a single page for both.
 // In the future each piece of content will have multiple pages for each section.
-protocol Content {
+protocol ADDContent {
     var filePath: String { get }
     
     var summaries: [FileNumber:URLRequest] { get set }
@@ -23,7 +23,7 @@ protocol Content {
     func loadHTMLContentFor(path: String) -> [FileNumber:URLRequest]
 }
 
-extension Content {
+extension ADDContent {
     func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
         switch page {
         case .Summary:

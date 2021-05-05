@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class AdapterPattern: Content {
+class AdapterPattern: ADDContent {
     let filePath: String = "www/Design Patterns/Structural/Adapter Pattern/"
     
     var summaries = [FileNumber:URLRequest]()

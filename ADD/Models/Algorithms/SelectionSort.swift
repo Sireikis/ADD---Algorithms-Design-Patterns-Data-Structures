@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class SelectionSort: Content {
+class SelectionSort: ADDContent {
     let filePath: String = "www/Algorithms/Sort/Selection Sort/"
     
     var summaries = [FileNumber:URLRequest]()

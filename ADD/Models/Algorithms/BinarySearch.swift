@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class BinarySearch: Content {
+class BinarySearch: ADDContent {
     let filePath: String = "www/Algorithms/Search/Binary Search/"
     
     var summaries = [FileNumber:URLRequest]()

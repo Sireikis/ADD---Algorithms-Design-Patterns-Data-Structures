@@ -12,7 +12,7 @@ enum TreeDS: String, CaseIterable, Identifiable {
     // Planned content
     // case binarySearchTree, binaryTree, heap
     
-    // Content to finish
+    // ADDContent to finish
     // case binarySearchTree, binaryTree, heap
     
     case binarySearchTree, binaryTree, heap
@@ -36,7 +36,7 @@ enum TreeDS: String, CaseIterable, Identifiable {
         }
     }
     
-    var id: UUID {
-        return UUID()
+    var id: String {
+        rawValue
     }
 }

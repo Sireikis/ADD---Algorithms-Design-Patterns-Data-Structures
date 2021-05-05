@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class StrategyPattern: Content {
+class StrategyPattern: ADDContent {
     let filePath: String = "www/Design Patterns/Behavioral/Strategy Pattern/"
     
     var summaries = [FileNumber:URLRequest]()

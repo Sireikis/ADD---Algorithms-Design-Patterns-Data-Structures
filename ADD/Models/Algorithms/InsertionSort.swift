@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class InsertionSort: Content {
+class InsertionSort: ADDContent {
     let filePath: String = "www/Algorithms/Sort/Insertion Sort/"
     
     var summaries = [FileNumber:URLRequest]()

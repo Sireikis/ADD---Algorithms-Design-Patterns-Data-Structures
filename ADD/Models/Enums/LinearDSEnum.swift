@@ -12,7 +12,7 @@ enum LinearDS: String, CaseIterable, Identifiable {
     // Planned content
     // case array, linkedList
     
-    // Content to finish
+    // ADDContent to finish
     // case array, linkedList
     
     case array, linkedList
@@ -34,7 +34,7 @@ enum LinearDS: String, CaseIterable, Identifiable {
         }
     }
     
-    var id: UUID {
-        return UUID()
+    var id: String {
+        rawValue
     }
 }

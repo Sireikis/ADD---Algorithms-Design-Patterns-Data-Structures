@@ -36,6 +36,8 @@ class ContentFactory {
     
     func getBehavioralDPContent(_ contentType: BehavioralDP) -> ContentImplementor {
         switch contentType {
+        case .command:
+            return ContentImplementor(CommandPattern())
         case .observer:
             return ContentImplementor(ObserverPattern())
         case .strategy:
@@ -62,6 +64,8 @@ class ContentFactory {
             return ContentImplementor(BridgePattern())
         case .decorator:
             return ContentImplementor(DecoratorPattern())
+        case .proxy:
+            return ContentImplementor(ProxyPattern())
         }
     }
     

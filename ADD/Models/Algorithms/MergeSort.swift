@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class MergeSort: Content {
+class MergeSort: ADDContent {
     let filePath: String = "www/Algorithms/Sort/Merge Sort/"
     
     var summaries = [FileNumber:URLRequest]()

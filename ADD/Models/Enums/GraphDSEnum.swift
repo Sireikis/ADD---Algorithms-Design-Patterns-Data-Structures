@@ -12,7 +12,7 @@ enum GraphDS: String, CaseIterable, Identifiable {
     // Planned content
     // case adjacencyList, graph
     
-    // Content to finish
+    // ADDContent to finish
     // case adjacencyList, graph
     
     case adjacencyList, graph
@@ -34,7 +34,7 @@ enum GraphDS: String, CaseIterable, Identifiable {
         }
     }
     
-    var id: UUID {
-        return UUID()
+    var id: String {
+        rawValue
     }
 }

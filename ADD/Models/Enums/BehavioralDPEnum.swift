@@ -13,10 +13,7 @@ enum BehavioralDP: String, CaseIterable, Identifiable {
     // case chainOfResponsibility, command, iterator, mediator, memento,
     // observer, state, strategy, templateMethod, visitor
     
-    // Content to finish
-    // case command
-    
-    case observer, strategy
+    case command, observer, strategy
     
     var image: String {
         return "gearshape.2"
@@ -30,8 +27,8 @@ enum BehavioralDP: String, CaseIterable, Identifiable {
         switch self {
 //        case .chainOfResponsibility:
 //            return "Chain of Responsibility"
-//        case .command:
-//            return "Command"
+        case .command:
+            return "Command"
 //        case .iterator:
 //            return "Iterator"
 //        case .mediator:
@@ -51,7 +48,7 @@ enum BehavioralDP: String, CaseIterable, Identifiable {
         }
     }
     
-    var id: UUID {
-        return UUID()
+    var id: String {
+        rawValue
     }
 }

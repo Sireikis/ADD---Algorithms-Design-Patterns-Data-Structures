@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class SingletonPattern: Content {
+class SingletonPattern: ADDContent {
     let filePath: String = "www/Design Patterns/Creational/Singleton Pattern/"
     
     var summaries = [FileNumber:URLRequest]()

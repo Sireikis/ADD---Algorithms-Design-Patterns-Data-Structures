@@ -12,13 +12,15 @@
         <br>
         <br>
         
-        <!--
         <img src="../../../../Images/Decorator Pattern.png">
-        -->
         
         <h2>Summary</h2>
         <p>
-        Decorator Pattern
+        Decorator Pattern allows you to dynamically add behavior to existing objects by wrapping them with decorators. The decorator and the component we are trying to modify will conform to the same interface, Component. Inside of any given decorator we will compose an object of type Component. Inside of the method we are trying to modify, we call the same method belonging to the object we are composing. This creates a russian nesting doll situation, where decorators call the method of the decorator it holds a reference to, until the original object we are modifying is reached. At any step during this process we can modify or change the output of the method we call in any way we see fit. This allows us to extend an object's behavior without inheritance.
+        </p>
+        
+        <p>
+        Note that the interface is never changed, we simply change the behavior of the method we are propagating as we pass it along. This allows the client to continue to use the object as it expects.
         </p>
         
     </body>

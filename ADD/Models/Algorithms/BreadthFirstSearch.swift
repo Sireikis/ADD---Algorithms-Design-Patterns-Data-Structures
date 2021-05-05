@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class BreadthFirstSearch: Content {
+class BreadthFirstSearch: ADDContent {
     let filePath: String = "www/Algorithms/Search/Breadth First Search/"
     
     var summaries = [FileNumber:URLRequest]()

@@ -45,7 +45,7 @@ enum SortAlgorithm: String, CaseIterable, Identifiable {
         }
     }
     
-    var id: UUID {
-        return UUID()
+    var id: String {
+        rawValue
     }
 }

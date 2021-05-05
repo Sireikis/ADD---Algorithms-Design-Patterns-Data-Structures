@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/BlueStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Proxy Pattern</h1>
+        
+        <h2>UML</h2>
+        
+        <pre><code class="language-swift">
+            // Interface - Subject
+            protocol Subject {
+                func request()
+            }
+
+            // -------------------------
+
+            // Real Subject (Concrete Subject)
+            class RealSubject: Subject {
+                // Creation of this class is expensive
+                init() {
+                    request()
+                }
+                
+                public func request() {
+                    print("I am an expensive request")
+                }
+            }
+
+            // Proxy
+            class Proxy: Subject {
+                private var subject: RealSubject?
+                
+                // The subject is not initialized until a request is made
+                public func request() {
+                    if let subject = subject {
+                        subject.request()
+                    } else {
+                        subject = RealSubject()
+                    }
+                }
+            }
+
+            // Client
+            class Client {
+                private var subject: Subject
+                
+                // Client expects a Subject, but
+                // will receive a Proxy instead.
+                init(subject: Subject) {
+                    self.subject = subject
+                }
+                
+                public func makeRequest() {
+                    subject.request()
+                }
+            }
+
+            // -------------------------
+
+            var proxy = Proxy()
+            // Passing RealSubject into the constructor would cause
+            // an expensive request, even though we aren't making one yet
+            var client = Client(subject: proxy) // No request
+
+            client.makeRequest()
+            // Prints "I am an expensive request"
+        </code></pre>
+        
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+
+
+
+

@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class QuickSort: Content {
+class QuickSort: ADDContent {
     let filePath: String = "www/Algorithms/Sort/Quick Sort/"
     
     var summaries = [FileNumber:URLRequest]()

@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class AbstractFactoryPattern: Content {
+class AbstractFactoryPattern: ADDContent {
     let filePath: String = "www/Design Patterns/Creational/Abstract Factory Pattern/"
     
     var summaries = [FileNumber:URLRequest]()

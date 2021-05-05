@@ -11,7 +11,68 @@
         <h2>UML</h2>
         
         <pre><code class="language-swift">
-            das
+            // Interface - Component
+            protocol Component {
+                func execute() -> String
+            }
+
+            // -------------------------
+
+            // Concrete Component
+            // The class we are adding behavior to
+            class ConcreteComponent: Component {
+                public func execute() -> String {
+                    return "ConcreteComponent"
+                }
+            }
+
+            // Base Decorator - Abstract Class
+            class BaseDecorator: Component {
+                private var component: Component
+                
+                init(component: Component) {
+                    self.component = component
+                }
+                
+                // This defines the default wrapping
+                // interface for all Concrete Decorators
+                public func execute() -> String {
+                    return component.execute()
+                }
+            }
+
+            // Concrete Decorators
+
+            class ConcreteDecoratorUppercase: BaseDecorator {
+                override public func execute() -> String {
+                    return super.execute().uppercased() + " (Previous Decorators are Uppercased)"
+                }
+            }
+
+            class ConcreteDecoratorLowercase: BaseDecorator {
+                override public func execute() -> String {
+                    return super.execute().lowercased() + " (Previous Decorators are Lowercased)"
+                }
+            }
+
+
+            class ConcreteDecoratorDelete: BaseDecorator {
+                override public func execute() -> String {
+                    return "(Previous Decorators are Deleted)"
+                }
+            }
+
+            // -------------------------
+
+            var concreteComponent = ConcreteComponent()
+            var lowercase = ConcreteDecoratorLowercase(component: concreteComponent)
+            print(lowercase.execute())
+            // Returns "concretecomponent (Previous Decorators are Lowercased)"
+
+            var delete = ConcreteDecoratorDelete(component: lowercase)
+            var uppercase = ConcreteDecoratorUppercase(component: delete)
+            print(uppercase.execute())
+            // Returns "(PREVIOUS DECORATORS ARE DELETED) (Previous Decorators are Uppercased)"
         </code></pre>
         
         <script src="../../../../Prism/prism.js"></script>

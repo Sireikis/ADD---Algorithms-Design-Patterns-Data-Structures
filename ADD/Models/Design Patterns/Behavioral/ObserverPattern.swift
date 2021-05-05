@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class ObserverPattern: Content {
+class ObserverPattern: ADDContent {
     let filePath: String = "www/Design Patterns/Behavioral/Observer Pattern/"
     
     var summaries = [FileNumber:URLRequest]()

@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class BridgePattern: Content {
+class BridgePattern: ADDContent {
     let filePath: String = "www/Design Patterns/Structural/Bridge Pattern/"
     
     var summaries = [FileNumber:URLRequest]()

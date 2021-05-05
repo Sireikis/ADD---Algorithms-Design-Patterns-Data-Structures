@@ -12,7 +12,7 @@ enum HashBasedDS: String, CaseIterable, Identifiable {
     // Planned content
     // case hashList, hashTable
     
-    // Content to finish
+    // ADDContent to finish
     // case hashList, hashTable
     
     case hashList, hashTable
@@ -34,7 +34,7 @@ enum HashBasedDS: String, CaseIterable, Identifiable {
         }
     }
     
-    var id: UUID {
-        return UUID()
+    var id: String {
+        rawValue
     }
 }
