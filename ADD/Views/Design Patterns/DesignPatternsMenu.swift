@@ -13,7 +13,7 @@ struct DesignPatternsMenu: View {
     let headingWidth: CGFloat = 216
     
     // Fixes selected link staying grey when navigating back.
-    @State var selection: String? = nil
+    @State var selection: String?
     
     var body: some View {
         List {
@@ -35,24 +35,18 @@ struct DesignPatternsMenu: View {
             Section(header: Text("Patterns")) {
                 NavigationLink(destination: BehavioralDPMenu(factory: factory), tag: "Behavioral", selection: $selection) {
                     NavigationButton(description: "Behavioral", image: "gearshape.2", imgForeground: .blue)
-                }.onDisappear {
-                    self.selection = nil
                 }
                 
                 NavigationLink(destination: CreationalDPMenu(factory: factory), tag: "Creational", selection: $selection) {
                     NavigationButton(description: "Creational", image: "lightbulb", imgForeground: .blue)
-                }.onDisappear {
-                    self.selection = nil
                 }
                 
                 NavigationLink(destination: StructuralDPMenu(factory: factory), tag: "Structural", selection: $selection) {
                     NavigationButton(description: "Structural", image: "square.grid.3x1.below.line.grid.1x2", imgForeground: .blue)
-                }.onDisappear {
-                    self.selection = nil
                 }
-            }.id("idSection1")
+            }
         }
-        .id("idList")
+        .refreshOnAppear(selection: $selection)
         .navigationBarTitle("Design Patterns", displayMode: .inline)
     }
 }

@@ -13,7 +13,7 @@ struct DataStructuresMenu: View {
     let headingWidth: CGFloat = 216
     
     // Fixes selected link staying grey when navigating back.
-    @State var selection: String? = nil
+    @State var selection: String?
     
     var body: some View {
         List {
@@ -35,32 +35,26 @@ struct DataStructuresMenu: View {
             Section(header: Text("Structures")) {
                 NavigationLink(destination: LinearDSMenu(), tag: "Linear", selection: $selection) {
                     NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
-                }.onDisappear {
-                    self.selection = nil
                 }
                 
                 NavigationLink(destination: TreeDSMenu(), tag: "Tree", selection: $selection) {
                     NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
-                }.onDisappear {
-                    self.selection = nil
                 }
                 
                 NavigationLink(destination: HashBasedDSMenu(), tag: "Hash-based", selection: $selection) {
                     NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
-                }.onDisappear {
-                    self.selection = nil
                 }
                 
                 NavigationLink(destination: GraphDSMenu(), tag: "Graph", selection: $selection) {
                     NavigationButton(description: "Graph", image: "squareshape.controlhandles.on.squareshape.controlhandles", imgForeground: .red)
-                }.onDisappear {
-                    self.selection = nil
                 }
-            }.id("idSection1")
-        }.id("idList")
+            }
+        }
+        .refreshOnAppear(selection: $selection)
         .navigationBarTitle("Data Structures", displayMode: .inline)
     }
 }
+
 
 struct DataStructuresMenu_Previews: PreviewProvider {
     static var previews: some View {

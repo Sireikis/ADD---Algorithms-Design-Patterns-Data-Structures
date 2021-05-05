@@ -14,7 +14,7 @@ struct AlgorithmsMenu: View {
     let factory: ContentFactory
     
     // Fixes selected link staying grey when navigating back.
-    @State var selection: String? = nil
+    @State var selection: String?
     
     var body: some View {
         List {
@@ -35,17 +35,14 @@ struct AlgorithmsMenu: View {
                 // However, there are infinitely many purposes
                 NavigationLink(destination: SearchAlgorithmsMenu(factory: factory), tag: "Search", selection: $selection) {
                     NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
-                }.onDisappear {
-                    self.selection = nil
                 }
                 
                 NavigationLink(destination: SortAlgorithmsMenu(factory: factory), tag: "Sort", selection: $selection) {
                     NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
-                }.onDisappear {
-                    self.selection = nil
                 }
-            }.id("idSection1")
-        }.id("idList")
+            }
+        }
+        .refreshOnAppear(selection: $selection)
         .navigationBarTitle("Algorithms", displayMode: .inline)
     }
 }

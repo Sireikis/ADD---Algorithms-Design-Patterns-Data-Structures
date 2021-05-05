@@ -32,6 +32,7 @@ struct BehavioralDPMenu: View {
     }
 }
 
+
 struct BehavioralDPMenu_Previews: PreviewProvider {
     static var previews: some View {
         BehavioralDPMenu(factory: ContentFactory())

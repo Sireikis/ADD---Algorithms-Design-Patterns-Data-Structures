@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchAlgorithmsMenu: View {
     let factory: ContentFactory
     
-    @State var selection: String? = nil
+    @State var selection: String?
     
     var body: some View {
         List {
@@ -24,12 +24,9 @@ struct SearchAlgorithmsMenu: View {
                 ) {
                     NavigationButton(description: content.description, image: content.image, imgForeground: content.imgForeground)
                 }
-                .onDisappear {
-                    self.selection = nil
-                }
             }
         }
-        .id("idList")
+        .refreshOnAppear(selection: $selection)
         .navigationBarTitle("Search", displayMode: .inline)
         .navigationBarItems(trailing: Text("Home"))
     }
