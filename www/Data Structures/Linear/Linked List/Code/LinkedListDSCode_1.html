@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Linked List</h1>
+        
+        <h2>Doubly-Linked List</h2>
+        
+        <br>
+        <br>
+        
+        <h3>Code - Structure</h3>
+        
+        <pre><code class="language-swift">
+            // Doubly-Linked List - Basic Structure
+
+            // A segment of the Doubly-Linked List is a Node.
+            // A Node can contain some value along with
+            // a connection to the next and/or previous Node.
+            public class Node&lt;T> {
+                public var value: T
+                public var next: Node&lt;T>?
+                public weak var previous: Node&lt;T>?
+                
+                public init(value: T) {
+                    self.value = value
+                }
+            }
+
+            // -------------------------
+
+            public class LinkedList&lt;T> {
+                // The 'first' Node
+                public var head: Node&lt;T>?
+                // The 'last' Node
+                public var tail: Node&lt;T>?
+                
+                public init() {}
+                
+                public var isEmpty: Bool {
+                    return head == nil
+                }
+                
+                // This method has a time complexity of O(n).
+                // Using append or a similar method for adding to the
+                // front would be O(1), as Linked-List
+                // holds references to those Nodes and they can
+                // be accessed immediately.
+                public func insert(value: T, at index: Int) {
+                    let newNode = Node(value: value)
+                    
+                    // Check if a Node is at that index
+                    if let nextNode = nodeAt(index: index) {
+                        // Save the previous node
+                        if let prevNode = nextNode.previous {
+                            // Previous node's next is newNode
+                            prevNode.next = newNode
+                            newNode.previous = prevNode
+                        }
+                        // NextNodes previous is now NewNode
+                        nextNode.previous = newNode
+                        newNode.next = nextNode
+                        return
+                    }
+                    
+                    // Check if this is an append
+                    if index-1 >= 0 {
+                        if let tail = nodeAt(index: index-1) {
+                            tail.next = newNode
+                            newNode.previous = tail
+                            return
+                        }
+                    }
+                    
+                    print("Cannot insert at this Index.")
+                }
+                
+                public func append(value: T) {
+                    let newNode = Node(value: value)
+                    
+                    if let tailNode = tail {
+                        newNode.previous = tailNode
+                        tailNode.next = newNode
+                    } else {
+                        head = newNode
+                    }
+                    tail = newNode
+                }
+                
+                public func nodeAt(index: Int) -> Node&lt;T>? {
+                    if index >= 0 {
+                        var node = head
+                        var i = index
+                        while node != nil {
+                            if i == 0 { return node }
+                            node = node?.next
+                            i -= 1
+                        }
+                    }
+                    return nil
+                }
+                
+                public func removeAll() {
+                    head = nil
+                    tail = nil
+                }
+                
+                // Returns the removed value
+                public func remove(node: Node&lt;T>) -> T {
+                    let prev = node.previous
+                    let next = node.next
+                    
+                    if let prev = prev {
+                        prev.next = next
+                    } else {
+                        head = next
+                    }
+                   
+                    if let next = next {
+                        next.previous = prev
+                    } else {
+                        tail = prev
+                    }
+                    
+                    node.previous = nil
+                    node.next = nil
+                    
+                    return node.value
+                }
+            }
+
+            // -------------------------
+
+            // Allows the Linked List to be printed
+            // with the appearance of an array.
+            extension LinkedList: CustomStringConvertible {
+                public var description: String {
+                    var text = "["
+                    var node = head
+                    while node != nil {
+                        text += "\(node!.value)"
+                        node = node!.next
+                        if node != nil { text += ", " }
+                    }
+                    return text + "]"
+                }
+            }
+
+            // -------------------------
+
+            let numbers = LinkedList&lt;Int>()
+            numbers.append(value: 5)
+            numbers.append(value: 10)
+            numbers.append(value: 15)
+            print(numbers)
+            // Prints "[5, 10, 15]"
+
+            if let index = numbers.nodeAt(index: 1) {
+                numbers.remove(node: index)
+            }
+            print(numbers)
+            // Prints "[5, 15]"
+
+            numbers.insert(value: 20, at: 2)
+            print(numbers)
+            // Prints "[5, 15, 20]"
+        </code></pre>
+    
+        <h3>Code - Basic Operations</h3>
+        
+        <pre><code class="language-swift">
+            // Doubly-Linked List - Basic Operations
+
+            // Access
+            /*
+             The nodeAt() method treats access to a Linked-List
+             as if it was an array, using an index.
+             
+             However, in order to reach the Node we
+             need to traverse the List, similar to a
+             Linear Search in an Array. Since we traverse
+             each Node, the complexity is O(n).
+             */
+
+            let numbers = LinkedList&lt;Int>()
+            numbers.append(value: 0)
+            numbers.append(value: 1)
+            numbers.append(value: 2)
+            numbers.append(value: 3)
+
+            let one = numbers.nodeAt(index: 1)
+            print(one!.value)
+            // Prints "1"
+
+            // -------------------------
+
+            // Search
+
+            // Basic implementation of Linear Search
+            func linearSearch(_ list: LinkedList&lt;Int>, target: Int) {
+                var head = list.head
+                
+                while head != nil {
+                    if head!.value == target {
+                        print("Found target: \(target)")
+                        return
+                    }
+                    head = head?.next
+                }
+                print("Failed to find target: \(target)")
+            }
+
+            linearSearch(numbers, target: 1)
+            // Prints "Found target: 1"
+
+            linearSearch(numbers, target: 5)
+            // Prints "Failed to find target: 5"
+
+            // -------------------------
+
+            // Insertion
+            /*
+             Insertion is considered O(1) because
+             it is assumed that we have a reference to the Node
+             we are inserting next to. This IS the case when using
+             append or a similar implementation for inserting at
+             the front or back of the Linked-List.
+             
+             However, if we use the insert() method, which
+             uses nodeAt(), we must iterate through the Linked-List.
+             In this case inserting is O(n).
+             
+             In other words:
+             Finding the point of insertion: O(n)
+             Performing the insertion: O(1)
+             */
+            // This is O(1)
+            numbers.append(value: 5)
+            print(numbers)
+            // Prints "[0, 1, 2, 3, 5]"
+
+            // This is O(n)
+            numbers.insert(value: 4, at: 4)
+            print(numbers)
+            // Prints "[0, 1, 2, 3, 4, 5]"
+
+            // -------------------------
+
+            // Deletion
+
+            /*
+             Deletion presents the same situation as
+             Insertion, if we have a reference to the node
+             we want to delete, it is considered O(1).
+             
+             If we need to find the node we are deleting,
+             we must traverse the Linked-List and
+             deletion becomes O(n).
+             
+             In other words:
+             Finding the point of deletion: O(n)
+             Performing the deletion: O(1)
+             */
+
+            // This is O(1)
+            numbers.remove(node: numbers.tail!)
+            print(numbers)
+            // Prints "[0, 1, 2, 3, 4]"
+
+            // This is O(n)
+            if let index = numbers.nodeAt(index: 3) {
+                numbers.remove(node: index)
+            }
+            print(numbers)
+            // Prints "[0, 1, 2, 4]"
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>

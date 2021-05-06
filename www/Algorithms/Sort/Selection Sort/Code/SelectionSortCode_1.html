@@ -7,30 +7,8 @@
                     </head>
     <body>
         <h1 class="title">Selection Sort</h1>
-        
-        <h2>Iterative Sorted() Succinct</h2>
-        
-        <pre><code class="language-swift">
-            func selectionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
-                var a = arr
-                
-                for i in 0...lastIndex-1 {
-                    var jMin = i
-                    
-                    for j in i+1...lastIndex {
-                        if a[j] &lt; a[jMin] {
-                            jMin = j
-                        }
-                    }
-                    if jMin != i {
-                        a.swapAt(i, jMin)
-                    }
-                }
-                return a
-            }
-        </code></pre>
     
-        <h2>Iterative Sorted() Verbose</h2>
+        <h2>Iterative Sorted()</h2>
         
         <pre><code class="language-swift">
             func selectionSorted(for arr: [Int], lastIndex: Int) -> [Int] {

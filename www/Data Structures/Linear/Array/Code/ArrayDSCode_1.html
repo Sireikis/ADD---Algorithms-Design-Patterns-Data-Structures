@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Array</h1>
+    
+        <h2>Code - Basic Operations</h2>
+        
+        <pre><code class="language-swift">
+            // Arrays - Basic Operations
+
+            // Access
+            /*
+             In other languages with more low-level access,
+             arrays are given an address in memory with a
+             predetermined amount of space layed out
+             contiguously from that address.
+             
+             The datatype determines the amount of
+             bytes reserved for each element.
+             */
+
+            // In swift types must always be declared
+            // either implicitly or explicitly.
+            var array = ["I", "am", "an", "array"]
+
+            print(array[3])
+            // Prints "array"
+
+            /*
+             In swift accessing an index out
+             of bounds returns an error.
+             
+             Other languages may allow you to
+             make that mistake however.
+             */
+            print(array[4])
+            // Fatal error: Index out of range
+
+            // -------------------------
+
+            // Search
+
+            // Basic implementation of Linear Search
+            func linearSearch(_ array: [String], target: String) {
+                for word in array {
+                    if word == target {
+                        print("Found target: \(target)")
+                        return
+                    }
+                }
+                print("Failed to find target: \(target)")
+            }
+
+            linearSearch(array, target: "array")
+            // Prints "Found target: array"
+
+            // -------------------------
+
+            // Insertion
+            /*
+             As a high-level language, Swift covers
+             the details of insertion into an array
+             with syntactic sugar and built-in methods.
+             
+             In a low-level language, if the capacity of
+             the array is exceeded, a new one is
+             made. Otherwise, elements may need to be
+             shifted to the right in order to make room.
+             */
+
+            array.insert("awesome", at: 3)
+            print(array)
+            // Prints "["I", "am", "an", "awesome", "array"]"
+
+            // -------------------------
+
+            // Deletion
+            /*
+             Deletion can be viewed as the inverse of Insertion.
+             Once again, Swift has built-in methods for this.
+             
+             In a lower level language, elements to the right
+             of the deleted element would be shifted left.
+             */
+            array.remove(at: 3)
+            print(array)
+            // Prints "["I", "am", "an", "array"]"
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+
+
+

@@ -129,6 +129,10 @@ th {
     background-color: red;
 }
 
+#DSWorst {
+    background-color: gray;
+}
+
 img {
     width: 95%;
     padding: 5px;

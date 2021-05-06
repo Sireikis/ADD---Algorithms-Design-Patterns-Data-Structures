@@ -8,28 +8,7 @@
     <body>
         <h1 class="title">Insertion Sort</h1>
         
-        <h2>Iterative Sorted() Succinct</h2>
-        
-        <pre><code class="language-swift">
-            func insertionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
-                var a = arr
-                var key: Int
-                
-                for i in 1...lastIndex {
-                    key = a[i]
-                    var j = i - 1
-                 
-                    while j >= 0 && a[j] > key {
-                        a[j+1] = a[j]
-                        j -= 1
-                    }
-                    a[j+1] = key
-                }
-                return a
-            }
-        </code></pre>
-        
-        <h2>Iterative Sorted() Verbose</h2>
+        <h2>Iterative Sorted()</h2>
         
         <pre><code class="language-swift">
             func insertionSorted(for arr: [Int], lastIndex: Int) -> [Int] {

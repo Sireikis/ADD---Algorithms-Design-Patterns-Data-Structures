@@ -7,36 +7,8 @@
                     </head>
     <body>
         <h1 class="title">Quick Sort</h1>
-        
-        <h2>Recursive Sort() Succinct</h2>
-        
-        <pre><code class="language-swift">
-            func quickSort(_ arr: inout [Int], _ low: Int, _ high: Int) {
-                if low &lt; high {
-                    let pi = partition(&arr, low, high)
-                    
-                    quickSort(&arr, low, pi-1)
-                    quickSort(&arr, pi+1, high)
-                }
-            }
-
-            func partition(_ arr: inout [Int], _ low: Int, _ high: Int) -> Int {
-                let pivot = arr[high]
-                var i = low
-                
-                for j in low..&lt;high {
-                    if arr[j] &lt;= pivot {
-                        arr.swapAt(i, j)
-                        i += 1
-                    }
-                }
-                arr.swapAt(i, high)
-                
-                return i
-            }
-        </code></pre>
     
-        <h2>Recursive Sort() Verbose</h2>
+        <h2>Recursive Sort()</h2>
         
         <pre><code class="language-swift">
             func quickSort(array: inout [Int], start: Int, end: Int) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0080B8264451CB00447224 /* ArrayDSLinear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0080B7264451CB00447224 /* ArrayDSLinear.swift */; };
+		7B0080BF2644890400447224 /* LinkedListDSLinear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0080BE2644890400447224 /* LinkedListDSLinear.swift */; };
 		7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0773F32613ADA100FEDB85 /* ADDApp.swift */; };
 		7B0773F82613ADA100FEDB85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0773F72613ADA100FEDB85 /* Assets.xcassets */; };
 		7B0773FB2613ADA100FEDB85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0773FA2613ADA100FEDB85 /* Preview Assets.xcassets */; };
@@ -80,6 +82,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B0080B7264451CB00447224 /* ArrayDSLinear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDSLinear.swift; sourceTree = "<group>"; };
+		7B0080BE2644890400447224 /* LinkedListDSLinear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListDSLinear.swift; sourceTree = "<group>"; };
 		7B0773F02613ADA100FEDB85 /* ADD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0773F32613ADA100FEDB85 /* ADDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDApp.swift; sourceTree = "<group>"; };
 		7B0773F72613ADA100FEDB85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +169,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B0080B12644516E00447224 /* Structural */ = {
+			isa = PBXGroup;
+			children = (
+				7BF8576F2641B54800547EB3 /* AdapterPattern.swift */,
+				7BF857722641DD7300547EB3 /* BridgePattern.swift */,
+				7BF857752641F7CC00547EB3 /* DecoratorPattern.swift */,
+				7B409077264310A00039E630 /* ProxyPattern.swift */,
+			);
+			path = Structural;
+			sourceTree = "<group>";
+		};
+		7B0080B32644518200447224 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				7B0774222613B32400FEDB85 /* InsertionSort.swift */,
+				7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */,
+				7BF92E2C263861B50057E791 /* MergeSort.swift */,
+				7BF92E2F263863620057E791 /* QuickSort.swift */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		7B0080B52644518700447224 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7B7DC96A2639D2970090D4FA /* BinarySearch.swift */,
+				7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */,
+				7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7B0080BA264451DE00447224 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				7B0080BC264451EF00447224 /* Linear */,
+			);
+			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		7B0080BC264451EF00447224 /* Linear */ = {
+			isa = PBXGroup;
+			children = (
+				7B0080B7264451CB00447224 /* ArrayDSLinear.swift */,
+				7B0080BE2644890400447224 /* LinkedListDSLinear.swift */,
+			);
+			path = Linear;
+			sourceTree = "<group>";
+		};
 		7B0773E72613ADA100FEDB85 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +318,7 @@
 				7BE5425C2627958A000673E5 /* TidBits */,
 				7BF92E32263865B20057E791 /* Algorithms */,
 				7B62E166263B50000070F9A5 /* Design Patterns */,
+				7B0080BA264451DE00447224 /* Data Structures */,
 				7BB65CE4261D12EC00369C00 /* Enums */,
 			);
 			path = Models;
@@ -322,10 +376,7 @@
 			children = (
 				7B40907D2643430C0039E630 /* Behavioral */,
 				7B409080264343800039E630 /* Creational */,
-				7BF8576F2641B54800547EB3 /* AdapterPattern.swift */,
-				7BF857722641DD7300547EB3 /* BridgePattern.swift */,
-				7BF857752641F7CC00547EB3 /* DecoratorPattern.swift */,
-				7B409077264310A00039E630 /* ProxyPattern.swift */,
+				7B0080B12644516E00447224 /* Structural */,
 			);
 			path = "Design Patterns";
 			sourceTree = "<group>";
@@ -408,13 +459,8 @@
 		7BF92E32263865B20057E791 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				7B0774222613B32400FEDB85 /* InsertionSort.swift */,
-				7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */,
-				7BF92E2C263861B50057E791 /* MergeSort.swift */,
-				7BF92E2F263863620057E791 /* QuickSort.swift */,
-				7B7DC96A2639D2970090D4FA /* BinarySearch.swift */,
-				7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */,
-				7B62E160263B027C0070F9A5 /* DepthFirstSearch.swift */,
+				7B0080B32644518200447224 /* Sort */,
+				7B0080B52644518700447224 /* Search */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -512,6 +558,7 @@
 				7BE5424F26276B0B000673E5 /* Topic.swift in Sources */,
 				7BF46366263CB476007B4917 /* ObserverPattern.swift in Sources */,
 				7BE54260262798B2000673E5 /* WhatIsADD.swift in Sources */,
+				7B0080B8264451CB00447224 /* ArrayDSLinear.swift in Sources */,
 				7BF92E30263863620057E791 /* QuickSort.swift in Sources */,
 				7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */,
 				7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */,
@@ -525,6 +572,7 @@
 				7BF8576D2641A4BC00547EB3 /* FactoryMethodPattern.swift in Sources */,
 				7BF92E2D263861B50057E791 /* MergeSort.swift in Sources */,
 				7BE5425726276DA9000673E5 /* TidBit.swift in Sources */,
+				7B0080BF2644890400447224 /* LinkedListDSLinear.swift in Sources */,
 				7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */,
 				7B07740E2613B24200FEDB85 /* MainMenu.swift in Sources */,
 				7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */,

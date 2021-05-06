@@ -16,10 +16,16 @@
         
         <h2>Summary</h2>
         <p>
-        Command Pattern
+        Command Pattern encapsulates requests as objects that contain all necessary information about the request. This allows requests to be passed as arguments, delayed, logged, or even undone.
+        </p>
+        
+        <p>
+        Requests conform to the Command protocol, allowing them to be manipulated through an Invoker. The Invoker contains commands and the interface for executing those commands. Simple commands may be performed by a Concrete Command object, however typically commands delegate the work to a Receiver. The client will configure a Command with a Receiver and any parameters it needs. Then this command object can be associated with the Invoker. The Receiver contains some business logic for perfoming actual work.
+        </p>
+        
+        <p>
+        For example, if we wanted to support reversible operations, the Receiver would contain methods for performing an operation as well as the opposite of performing that operation. The Command interface would then include an undo() method. An Invoker would then call a Command's undo() method which would then call the Receiver's method for undoing an operation. If commands were stored in an array structure in the Invoker instead of a variable, we could navigate back and forth through state changes made by Receivers.
         </p>
         
     </body>
 </html>
-
-

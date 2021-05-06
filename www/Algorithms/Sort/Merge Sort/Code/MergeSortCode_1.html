@@ -7,55 +7,8 @@
                     </head>
     <body>
         <h1 class="title">Merge Sort</h1>
-        
-        <h2>Recursive Sorted() Succinct</h2>
-        
-        <pre><code class="language-swift">
-            func mergeSort(_ arr: [Int]) -> [Int] {
-                if arr.count &lt;= 1 {
-                    return arr
-                }
-                
-                let mid = arr.count / 2
-                
-                let l = mergeSort(Array(arr[0..&lt;mid]))
-                let r = mergeSort(Array(arr[mid..&lt;arr.count]))
-                
-                return merge(l, r)
-            }
-            
-            func merge(_ l: [Int], _ r: [Int]) -> [Int] {
-                var li = 0
-                var ri = 0
-                
-                var arr: [Int] = []
-                
-                while li &lt; l.count && ri &lt; r.count {
-                    let le = l[li]
-                    let re = r[ri]
-                    
-                    if le &lt;= re {
-                        arr.append(le)
-                        li += 1
-                    } else {
-                        arr.append(re)
-                        ri += 1
-                    }
-                }
-                
-                while li &lt; l.count {
-                    arr.append(l[li])
-                    li += 1
-                }
-                while ri &lt; r.count {
-                    arr.append(r[ri])
-                    ri += 1
-                }
-                return arr
-            }
-        </code></pre>
     
-        <h2>Recursive Sorted() Verbose</h2>
+        <h2>Recursive Sorted()</h2>
         
         <pre><code class="language-swift">
             func mergeSort(_ array: [Int]) -> [Int] {

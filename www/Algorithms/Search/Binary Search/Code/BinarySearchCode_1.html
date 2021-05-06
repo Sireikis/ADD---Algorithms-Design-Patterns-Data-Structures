@@ -7,30 +7,8 @@
                     </head>
     <body>
         <h1 class="title">Binary Search</h1>
-        
-        <h2>Iterative Search() Succinct</h2>
-        
-        <pre><code class="language-swift">
-            func binarySearch(arr: [Int], T: Int) -> Int? {
-                var L = 0
-                var R = arr.count - 1
-                
-                while L &lt;= R {
-                    let M = (L+R) / 2
-                    
-                    if T == arr[M] {
-                        return M
-                    } else if T &lt; arr[M] {
-                        R = M - 1
-                    } else {
-                        L = M + 1
-                    }
-                }
-                return nil
-            }
-        </code></pre>
     
-        <h2>Iterative Search() Verbose</h2>
+        <h2>Iterative Search()</h2>
         
         <pre><code class="language-swift">
             func binarySearch(arr: [Int], target: Int) -> Int? {

@@ -10,7 +10,7 @@ import SwiftUI
 
 enum TreeDS: String, CaseIterable, Identifiable {
     // Planned content
-    // case binarySearchTree, binaryTree, heap
+    // case binarySearchTree, binaryTree, heap, nAryTree
     
     // ADDContent to finish
     // case binarySearchTree, binaryTree, heap

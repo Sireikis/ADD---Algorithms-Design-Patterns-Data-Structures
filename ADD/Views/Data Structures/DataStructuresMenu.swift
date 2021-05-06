@@ -33,7 +33,7 @@ struct DataStructuresMenu: View {
             }
             
             Section(header: Text("Structures")) {
-                NavigationLink(destination: LinearDSMenu(), tag: "Linear", selection: $selection) {
+                NavigationLink(destination: LinearDSMenu(factory: factory), tag: "Linear", selection: $selection) {
                     NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
                 }
                 

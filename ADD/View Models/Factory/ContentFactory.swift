@@ -69,6 +69,15 @@ class ContentFactory {
         }
     }
     
+    func getLinearDSContent(_ contentType: LinearDS) -> ContentImplementor {
+        switch contentType {
+        case .array:
+            return ContentImplementor(ArrayDSLinear())
+        case .linkedList:
+            return ContentImplementor(LinkedListDSLinear())
+        }
+    }
+    
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
         case .bigO:

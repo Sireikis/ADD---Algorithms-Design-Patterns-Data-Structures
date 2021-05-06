@@ -11,7 +11,94 @@
         <h2>UML Code</h2>
         
         <pre><code class="language-swift">
-            fsd
+            // Interface - Command
+            protocol Command {
+                func execute()
+            }
+
+            // -------------------------
+
+            // Invoker
+            class Invoker {
+                private var command: Command
+                
+                // Command set through the constructor
+                init(command: Command) {
+                    self.command = command
+                }
+                
+                public func changeCommand(to command: Command) {
+                    self.command = command
+                }
+                
+                public func executeCommand() {
+                    command.execute()
+                }
+            }
+
+            // Receiver
+            class Receiver {
+                public func someOperation(_ contextA: String) {
+                    print("Receiver performs some operation with context \(contextA).")
+                }
+                
+                public func someOtherOperation(_ contextB: String) {
+                    print("Receiver performs some other operation with context \(contextB).")
+                }
+            }
+
+            // Concrete Commands
+
+            class SimpleCommand: Command {
+                public func execute() {
+                    print("Perform a simple command.")
+                }
+            }
+
+            class ComplexCommand: Command {
+                private var receiver: Receiver
+                
+                // ComplexCommand is passed the parameters
+                // the Receiver needs to function.
+                private var contextA: String
+                private var contextB: String
+                
+                init(receiver: Receiver, contextA: String, contextB: String) {
+                    self.receiver = receiver
+                    self.contextA = contextA
+                    self.contextB = contextB
+                }
+                
+                public func execute() {
+                    print("ComplexCommand delegating to Receiver:")
+                    receiver.someOperation(contextA)
+                    receiver.someOtherOperation(contextB)
+                }
+            }
+
+            // -------------------------
+
+            // The client configures the invoker according to their needs.
+            var receiver = Receiver()
+
+            var simpleCommand = SimpleCommand()
+            var complexCommand = ComplexCommand(receiver: receiver,
+                                                contextA: "A",
+                                                contextB: "B")
+
+            var invoker = Invoker(command: simpleCommand)
+
+            invoker.executeCommand()
+            // Prints "Perform a simple command."
+
+            invoker.changeCommand(to: complexCommand)
+            invoker.executeCommand()
+            /*
+             Prints:
+             ComplexCommand delegating to Receiver:
+             Receiver performs some operation with context A.
+             Receiver performs some other operation with context B.
+             */
         </code></pre>
 
         <script src="../../../../Prism/prism.js"></script>
