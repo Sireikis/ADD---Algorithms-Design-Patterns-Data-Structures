@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Binary Search Tree</h1>
+        
+        
+        <h2>Code - Structure</h2>
+        
+        <pre><code class="language-swift">
+            /*
+             A Node is a single part of the Binary Tree,
+             each containing a value and references for
+             up to two other Nodes. These other nodes have
+             the same properties.
+             
+             A Node will not point to any node that will
+             lead back to itself (no cycles). A Node that points
+             to other Nodes is called the parent while the Nodes
+             being pointed at are called children.
+             */
+            public class Node&lt;T: Equatable>: Equatable {
+                public var value: T
+                public var leftChild: Node&lt;T>?
+                public var rightChild: Node&lt;T>?
+                
+                public init(value: T) {
+                    self.value = value
+                }
+                
+                public static func == (lhs: Node&lt;T>, rhs: Node&lt;T>) -> Bool {
+                    lhs.value == rhs.value
+                }
+            }
+
+            // -------------------------
+
+            // For simplicity, we will not allow duplicate values.
+            /*
+             A BST follows this invariant: Given a node, each node in
+             its left subtree contains values less than it and each
+             node in its right subtree contains values greater than it.
+             
+             An inOrder Traversal would return a sorted sequence
+             of values.
+             */
+            public class BinarySearchTree&lt;T: Comparable> {
+                // We will allow root to be nil so that
+                // delete() can remove the root as well.
+                public var root: Node&lt;T>?
+                
+                public init(root: Node&lt;T>) { }
+                
+                // Display Binary Search Tree (InOrder Traversal)
+                public func printInOrder(node: Node&lt;T>?) {
+                    recursiveInOrder(node)
+                    print("")
+                }
+                
+                func recursiveInOrder(_ node: Node&lt;T>?) {
+                    guard node != nil else { return }
+                    
+                    recursiveInOrder(node?.leftChild)
+                    print("\(node!.value) ", terminator: "")
+                    recursiveInOrder(node?.rightChild)
+                }
+                
+                // Search
+                // Will divide the tree in half
+                // each time a comparison is made.
+                public func binarySearch(node: Node&lt;T>?, target: T) -> Node&lt;T>? {
+                    guard node != nil else {
+                        print("Target not found: \(target)")
+                        return nil
+                    }
+                    
+                    let value = node!.value
+                    
+                    if value == target {
+                        print("Target found: \(target)")
+                        return node
+                    } else if target &lt; value {
+                        return binarySearch(node: node?.leftChild, target: target)
+                    } else {
+                        return binarySearch(node: node?.rightChild, target: target)
+                    }
+                }
+                
+                // Insertion
+                // The values contained in Nodes are called keys.
+                public func insert(root: Node&lt;T>?, _ key: T) -> Node&lt;T> {
+                    if let node = root {
+                        if node.value == key {
+                            return node
+                        } else if node.value &lt; key {
+                            node.rightChild = insert(root: node.rightChild, key)
+                        } else {
+                            node.leftChild = insert(root: node.leftChild, key)
+                        }
+                        return node
+                    } else {
+                        return Node(value: key)
+                    }
+                }
+                
+                // Deletion
+                public func delete(root: inout Node&lt;T>?, _ key: T) -> Node&lt;T>? {
+                    if let node = root {
+                        if key &lt; node.value {
+                            node.leftChild = delete(root: &node.leftChild, key)
+                        } else if key > node.value {
+                            node.rightChild = delete(root: &node.rightChild, key)
+                            // Node has been found
+                        } else {
+                            // Node has no leftChild
+                            if node.leftChild == nil {
+                                let temp = node.rightChild
+                                root = nil
+                                return temp
+                            // Node has no rightChild
+                            } else if node.rightChild == nil {
+                                let temp = node.leftChild
+                                root = nil
+                                return temp
+                            }
+                            // We know at this point that Node has children,
+                            // so we arbitrarily choose to get the
+                            // smallest node on the right side.
+                            // We could have also gotten the largest node
+                            // on the left side.
+                            let temp = minValueNode(node.rightChild!)
+                            // Copy the smallest node's value over node's value
+                            node.value = temp.value
+                            // Delete the smallest node whose value we used earlier.
+                            node.rightChild = delete(root: &node.rightChild, temp.value)
+                        }
+                    }
+                    return root
+                }
+                
+                func minValueNode(_ node: Node&lt;T>) -> Node&lt;T> {
+                    var current = node
+                    
+                    while current.leftChild != nil {
+                        current = current.leftChild!
+                    }
+                    return current
+                }
+            }
+
+            // -------------------------
+
+            //      4
+            //    /   \
+            //   2     6
+            //  / \   / \
+            // 1   3 5   7
+
+            var root = Node(value: 4)
+            var one = Node(value: 1)
+            var two = Node(value: 2)
+            var three = Node(value: 3)
+            var five = Node(value: 5)
+            var six = Node(value: 6)
+            var seven = Node(value: 7)
+
+            var tree = BinarySearchTree&lt;Int>(root: root)
+            tree.root = root
+            tree.insert(root: tree.root, 2)
+            tree.insert(root: tree.root, 6)
+            tree.insert(root: tree.root, 1)
+            tree.insert(root: tree.root, 3)
+            tree.insert(root: tree.root, 5)
+            tree.insert(root: tree.root, 7)
+
+            tree.printInOrder(node: tree.root)
+            // Prints "1 2 3 4 5 6 7"
+
+            tree.binarySearch(node: tree.root, target: 3)
+            // Prints "Target found: 3"
+            tree.binarySearch(node: tree.root, target: 25)
+            // Prints "Target not found: 25"
+
+            tree.delete(root: &tree.root, 4)
+            tree.printInOrder(node: tree.root)
+            // Prints "1 2 3 5 6 7"
+        </code></pre>
+    
+        <h2>Code - Basic Operations</h2>
+        
+        <pre><code class="language-swift">
+            // Binary Search Tree - Basic Operations
+
+            //      4
+            //    /   \
+            //   2     6
+            //  / \   / \
+            // 1   3 5   7
+
+            var root = Node(value: 4)
+            var one = Node(value: 1)
+            var two = Node(value: 2)
+            var three = Node(value: 3)
+            var five = Node(value: 5)
+            var six = Node(value: 6)
+            var seven = Node(value: 7)
+
+            var tree = BinarySearchTree&lt;Int>(root: root)
+            tree.root = root
+            tree.insert(root: tree.root, 2)
+            tree.insert(root: tree.root, 6)
+            tree.insert(root: tree.root, 1)
+            tree.insert(root: tree.root, 3)
+            tree.insert(root: tree.root, 5)
+            tree.insert(root: tree.root, 7)
+
+            guard let root = tree.root else { fatalError() }
+
+            // Access
+            /*
+             A Binary Search Tree can be accessed from any Node,
+             given that we have a prior reference to it.
+             Typically, we only hold a reference to the root node.
+             Much like a Linked List, we cannot travel directly
+             to a specific Node unless we already have a reference
+             to it. Hence, in order to find a certain Node we must
+             traverse the Tree and search for it--at worst this is
+             O(n), but on average O(log(n)).
+            */
+
+            if let rootValue = tree.root?.value {
+                print(rootValue)
+                // Prints "4"
+            }
+
+            // -------------------------
+
+            // Search
+            /*
+             In a BST, we leverage the structure that the invariant
+             produces. We take a divide and conquer approach,
+             getting rid of approximately half of the tree in a
+             well-balanced BST. Consequently, binary search is
+             on average O(log(n)).
+             */
+
+            tree.binarySearch(node: tree.root, target: 3)
+            // Prints "Target found: 3"
+            tree.binarySearch(node: tree.root, target: 25)
+            // Prints "Target not found: 25"
+
+            // -------------------------
+
+            // Insertion
+            /*
+             In a BST insertion leverages divide and conquer and
+             recursion to insert a node inthe appopriate location.
+             
+             Note that repeatedly inserting values that belong
+             on one side of the tree will produce an unbalanced tree.
+             This version of insert does not rebalance the tree.
+             */
+
+            tree.printInOrder(node: root)
+            // Prints "1 2 3 4 5 6 7"
+
+            tree.insert(root: root, 8)
+            tree.printInOrder(node: root)
+            // Prints "1 2 3 4 5 6 7 8"
+
+            // -------------------------
+
+            // Deletion
+            /*
+             In a BST deletion leverages divide and conquer and
+             recursion to delete a node. If the target node has
+             children, the minimum value node in the right subtree
+             swaps values and is then deleted. This can also be
+             done with the maximum value node in the left subtree.
+             */
+
+            tree.delete(root: &tree.root, 4)
+            tree.printInOrder(node: root)
+            // Prints "1 2 3 5 6 7 8 "
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>

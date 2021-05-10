@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Binary Search Tree</h1>
+        
+        <h2>Big O</h2>
+        <p>
+        For a Binary Search Tree, looking at the average case may be more useful. Since the BST is sorted we can expect, if the tree is balanced, to properly divide and conquer our way to an answer. Since we split the tree in half each time, average time complexity is O(log(n))--worst case is still O(n).
+        </p>
+        
+        
+        <table id="BigO">
+            <tr>
+                <th id="Time" colspan="4">Time Complexity - Average</th>
+                <th id="Space">Space</th>
+            </tr>
+            <tr>
+                <th id="DSWorst">Access</th>
+                <th id="DSWorst">Search</th>
+                <th id="DSWorst">Insertion</th>
+                <th id="DSWorst">Deletion</th>
+                <th id="DSWorst">Worst</th>
+            </tr>
+            <tr>
+                <td colspan="4">O(log(n))</td>
+                <td>O(nlog(n))</td>
+            </tr>
+        </table>
+
+        <h2>Summary</h2>
+        <p>
+        Binary Search Trees are Binary trees that follow this invariant: For any node <i>n</i> with some value, every value contained in the left subtree of <i>n</i> has a value less than <i>n</i>'s value. Furthermore, every value contained in the right subtree of <i>n</i> has a value greater than <i>n</i>'s value. Notice that this means that BSTs typically do not contain duplicates and the values they contain must be comparable.
+        </p>
+        
+    </body>
+</html>
+
+

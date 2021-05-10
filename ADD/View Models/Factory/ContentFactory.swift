@@ -78,6 +78,15 @@ class ContentFactory {
         }
     }
     
+    func getTreeDSContent(_ contentType: TreeDS) -> ContentImplementor {
+        switch contentType {
+        case .binarySearchTree:
+            return ContentImplementor(BinarySearchTreeDS())
+        case .binaryTree:
+            return ContentImplementor(BinaryTreeDS())
+        }
+    }
+    
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
         case .bigO:

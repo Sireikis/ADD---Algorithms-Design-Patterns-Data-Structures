@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Binary Tree</h1>
+        
+        
+        <h2>Code - Structure</h2>
+        
+        <pre><code class="language-swift">
+            /*
+             A Node is a single part of the Binary Tree,
+             each containing a value and references for
+             up to two other Nodes. These other nodes have
+             the same properties.
+             
+             A Node will not point to any node that will
+             lead back to itself (no cycles). A Node that points
+             to other Nodes is called the parent while the Nodes
+             being pointed at are called children.
+             */
+            public class Node&lt;T: Equatable>: Equatable {
+                public var value: T
+                public var leftChild: Node&lt;T>?
+                public var rightChild: Node&lt;T>?
+                
+                public init(value: T) {
+                    self.value = value
+                }
+                
+                public static func == (lhs: Node&lt;T>, rhs: Node&lt;T>) -> Bool {
+                    lhs.value == rhs.value
+                }
+            }
+
+            // -------------------------
+
+            // For simplicity, we will not allow duplicate values.
+            public class BinaryTree&lt;T: Comparable> {
+                // We will allow root to be nil so that
+                // delete() can remove the root as well.
+                public var root: Node&lt;T>?
+                
+                public init() { }
+                
+                // Display Binary Tree (InOrder Traversal)
+                public func printInOrder(node: Node&lt;T>?) {
+                    recursiveInOrder(node)
+                    print("")
+                }
+                
+                func recursiveInOrder(_ node: Node&lt;T>?) {
+                    guard node != nil else { return }
+                    
+                    recursiveInOrder(node?.leftChild)
+                    print("\(node!.value) ", terminator: "")
+                    recursiveInOrder(node?.rightChild)
+                }
+                
+                // Display Binary Tree (Level-Order Traversal)
+                public func printLevelOrder(node: Node&lt;T>) {
+                    var queue: [Node&lt;T>] = []
+                    queue.append(node)
+                    while !queue.isEmpty {
+                        let node = queue.removeFirst()
+                        print("\(node.value) ", terminator: "")
+                        
+                        if let leftChild = node.leftChild {
+                            queue.append(leftChild)
+                        }
+                        if let rightChild = node.rightChild {
+                            queue.append(rightChild)
+                        }
+                    }
+                    print("")
+                }
+                
+                // Search
+                // Will perform traversal in level-order,
+                // searching along the way.
+                public func search(target: T) -> Node&lt;T>? {
+                    var queue: [Node&lt;T>] = []
+                    
+                    if let root = root {
+                        queue.append(root)
+                    } else {
+                        print("Tree is empty.")
+                        return nil
+                    }
+
+                    while !queue.isEmpty {
+                        let node = queue.removeFirst()
+                        if node.value == target {
+                            print("Target found: \(target)")
+                            return node
+                        }
+                        
+                        if let leftChild = node.leftChild {
+                            queue.append(leftChild)
+                        }
+                        if let rightChild = node.rightChild {
+                            queue.append(rightChild)
+                        }
+                    }
+                    print("Target not found: \(target)")
+                    return nil
+                }
+                
+                // Insertion
+                // Will perform traversal in level-order,
+                // then insert at first empty space.
+                public func insertInLevelOrder(_ newNode: Node&lt;T>) {
+                    var queue: [Node&lt;T>] = []
+                    
+                    if let root = root {
+                        queue.append(root)
+                    } else {
+                        root = newNode
+                    }
+
+                    while !queue.isEmpty {
+                        let node = queue.removeFirst()
+                        
+                        if let leftChild = node.leftChild {
+                            queue.append(leftChild)
+                        } else {
+                            node.leftChild = newNode
+                            return
+                        }
+                        if let rightChild = node.rightChild {
+                            queue.append(rightChild)
+                        } else {
+                            node.rightChild = newNode
+                            return
+                        }
+                    }
+                }
+                
+                // Deletion
+                // Will perform traversal in reverse-postOrder,
+                // (bottom->top, right->left) finding the target,
+                // rightmost deepest node, and its parent. The target
+                // is replaced and the rightmost node is deleted.
+                public func delete(root: inout Node&lt;T>?, target: T) {
+                    var stack: [(Node&lt;T>?, Bool)] = []
+                    
+                    if root?.leftChild == nil && root?.rightChild == nil {
+                        if root?.value == target {
+                            root = nil
+                            return
+                        } else {
+                            print("Target not found: \(target)")
+                            return
+                        }
+                    }
+                    stack.append((root,false))
+                    
+                    var targetNode: Node&lt;T>?
+                    var deepestNode: Node&lt;T>?
+                    var parentOfDeepestNode = root
+                    
+                    while !stack.isEmpty {
+                        let lastNode = stack.popLast()
+                        let node = lastNode?.0
+                        let visited = lastNode!.1
+                        
+                        if node != nil {
+                            if visited {
+                                if node?.value == target {
+                                    targetNode = node
+                                }
+                                if node?.leftChild == deepestNode ||
+                                    node?.rightChild == deepestNode {
+                                    parentOfDeepestNode = node
+                                }
+                                
+                                if deepestNode == nil {
+                                    deepestNode = node
+                                }
+                            } else {
+                                stack.append((node,true))
+                                stack.append((node?.leftChild,false))
+                                stack.append((node?.rightChild,false))
+                            }
+                        }
+                    }
+                    
+                    guard targetNode != nil else {
+                        print("Target not found: \(target)")
+                        return
+                    }
+                    
+                    targetNode!.value = deepestNode!.value
+                    
+                    if parentOfDeepestNode?.leftChild == deepestNode {
+                        parentOfDeepestNode?.leftChild = nil
+                        return
+                    }
+                    if parentOfDeepestNode?.rightChild == deepestNode {
+                        parentOfDeepestNode?.rightChild = nil
+                        return
+                    }
+                }
+            }
+
+            // -------------------------
+
+            //      0
+            //    /   \
+            //   1     2
+            //  / \   / \
+            // 3   4 5   6
+
+            var root = Node(value: 0)
+            var one = Node(value: 1)
+            var two = Node(value: 2)
+            var three = Node(value: 3)
+            var four = Node(value: 4)
+            var five = Node(value: 5)
+            var six = Node(value: 6)
+
+            var tree = BinaryTree&lt;Int>()
+            tree.insertInLevelOrder(root)
+            tree.insertInLevelOrder(one)
+            tree.insertInLevelOrder(two)
+            tree.insertInLevelOrder(three)
+            tree.insertInLevelOrder(four)
+            tree.insertInLevelOrder(five)
+            tree.insertInLevelOrder(six)
+
+            tree.printInOrder(node: tree.root)
+            // Prints "3 1 4 0 5 2 6"
+
+            tree.search(target: 3)
+            // Prints "Target found: 3"
+            tree.search(target: 7)
+            // Prints "Target not found: 7"
+
+            tree.delete(root: &tree.root, target: 2)
+            tree.printInOrder(node: tree.root)
+            // Prints "3 1 4 0 5 6"
+        </code></pre>
+    
+        <h2>Code - Basic Operations</h2>
+        
+        <pre><code class="language-swift">
+            // Binary Tree - Basic Operations
+
+            //      0
+            //    /   \
+            //   1     2
+            //  / \   / \
+            // 3   4 5   6
+
+            var root = Node(value: 0)
+            var one = Node(value: 1)
+            var two = Node(value: 2)
+            var three = Node(value: 3)
+            var four = Node(value: 4)
+            var five = Node(value: 5)
+            var six = Node(value: 6)
+
+            var tree = BinaryTree&lt;Int>()
+            tree.insertInLevelOrder(root)
+            tree.insertInLevelOrder(one)
+            tree.insertInLevelOrder(two)
+            tree.insertInLevelOrder(three)
+            tree.insertInLevelOrder(four)
+            tree.insertInLevelOrder(five)
+            tree.insertInLevelOrder(six)
+
+            guard let root = tree.root else { fatalError() }
+
+            // Access
+            /*
+             A Binary Tree can be accessed from any Node, given that
+             we have a prior reference to it. Typically, we only hold
+             a reference to the root node. Much like a Linked List,
+             we cannot travel directly to a specific Node unless we
+             already have a reference to it. Hence, in order to find
+             a certain Node we must traverse the Tree and search
+             for it--at worst this is O(n).
+            */
+
+            if let rootValue = tree.root?.value {
+                print(rootValue)
+                // Prints "0"
+            }
+
+            // -------------------------
+
+            // Search
+            /*
+             Searching can be done in a multitude of ways, but in a
+             simple Binary Tree with no invariant, they all tend
+             to be O(n). In certain circumstances a specific
+             traversal method may technically be faster, but we'll
+             use the level order search that was written as
+             part of the Binary Tree structure.
+             */
+
+            tree.search(target: 5)
+            // Prints "Target found: 5"
+            tree.search(target: 15)
+            // Prints "Target not found: 13"
+
+            // -------------------------
+
+            // Insertion
+            /*
+             Insertion can be done in any number of ways, some more
+             efficient if the Binary Tree has an invariant, like
+             in a Binary Search Tree. These insertion methods try
+             to keep the tree as balanced as possible.
+             
+             Here we'll insert new nodes in the first empty space
+             returned by a level-order traversal.
+             */
+
+            tree.printLevelOrder(node: root)
+            // Prints "0 1 2 3 4 5 6"
+
+            var seven = Node(value: 7)
+            tree.insertInLevelOrder(seven)
+            tree.printLevelOrder(node: root)
+            // Prints "0 1 2 3 4 5 6 7"
+
+            // -------------------------
+
+            // Deletion
+            /*
+             Like Insertion, an optimal deletion implementation
+             depends on the type of Binary Tree. For this example,
+             we will traverse the tree in reverse-postOrder,
+             meaning we encounter the bottom-right node first.
+             This is the same node that is printed last in
+             level-order traversal. We will call this node the
+             deepestNode, whose value will supplant the node we are
+             deleting--the targetNode. Once the value has been
+             inserted, the deepestNode will be deleted--instead of
+             the node we are targeting!. In order to accomplish that
+             we need a reference to the parent of the deepestNode.
+             
+             Note that this implementation makes no attempt to
+             maintain the order of the tree. We are simply deleting
+             the bottom-rightmost Node each time.
+             */
+
+            tree.delete(root: &tree.root, target: 2)
+            tree.printLevelOrder(node: root)
+            // Prints "0 1 6 3 4 5 7"
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+

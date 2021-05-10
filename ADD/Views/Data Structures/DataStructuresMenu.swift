@@ -37,7 +37,7 @@ struct DataStructuresMenu: View {
                     NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
                 }
                 
-                NavigationLink(destination: TreeDSMenu(), tag: "Tree", selection: $selection) {
+                NavigationLink(destination: TreeDSMenu(factory: factory), tag: "Tree", selection: $selection) {
                     NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
                 }
                 

@@ -15,7 +15,7 @@ enum TreeDS: String, CaseIterable, Identifiable {
     // ADDContent to finish
     // case binarySearchTree, binaryTree, heap
     
-    case binarySearchTree, binaryTree, heap
+    case binarySearchTree, binaryTree
     
     var image: String {
         return "leaf"
@@ -31,8 +31,8 @@ enum TreeDS: String, CaseIterable, Identifiable {
             return "Binary Search Tree"
         case .binaryTree:
             return "Binary Tree"
-        case .heap:
-            return "Heap"
+//        case .heap:
+//            return "Heap"
         }
     }
     
