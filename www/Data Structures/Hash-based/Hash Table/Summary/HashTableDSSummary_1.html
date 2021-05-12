@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Hash Table</h1>
+        
+        <h2>Big O</h2>
+        
+        <p>
+        The time complexity of a Hash Table will often depend on the ability of the hash function to avoid collisions given a set of data. Some data sets can be processed in such a way that every index contains only a single piece of data. In such cases (the average case), operations for search, insertion, and deletion can be performed in &Theta;(1).
+        </p>
+        
+        <table id="BigO">
+            <tr>
+                <th id="Time" colspan="4">Time Complexity - Worst</th>
+                <th id="Space">Space</th>
+            </tr>
+            <tr>
+                <th id="DSWorst">Access</th>
+                <th id="DSWorst">Search</th>
+                <th id="DSWorst">Insertion</th>
+                <th id="DSWorst">Deletion</th>
+                <th id="DSWorst">Worst</th>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+
+        <h2>Summary</h2>
+        <p>
+        Hash Tables store pairs of information, called key-value pairs, that can be operated on (on average) in constant time. The caveats are:
+        </p>
+
+        <ol>
+            <li>The dataset must not care about order.</li>
+            <li>Each pair of data must have a uniquely identifying portion, called the key, relative to all other pairs.</li>
+            <li>The hash-function meets typical standards.</li>
+        </ol>
+        
+        <p>
+        The general structure of a Hash Table is that of an array where each element can be a linked-list (depending on the variation used). An ideal Hash Table would be an array where each element is a linked-list with a single node. When multiple key-value pairs are inserted into the same index, the linked-list at that index is extended to contain that key-value pair--this is called a collision.
+        </p>
+        
+        <p>
+        To insert a key-value pair into the hash table, a hash function takes the given key and returns an index. To generate an index, The hash function typically computes some number based on the key and performs a modulo operation on that number with the capacity of the hash table array. The index is then used to either overwrite an existing node or create a new node at that index. This depends on whether or not that key was previously used to add a value. If the load factor (the ratio of keys to capacity) has been exceeded, a new array with double the capacity is created. All the keys from the previous array are then re-inserted into the new array.
+        </p>
+        
+        <p>
+        Note that if our hash-function is bad or the data set being processed is producing a large amount of collisions, we may end up resizing the array even though the actual number of indexes being used relative to the capacity doesn't exceed the load factor. The reason we use number of keys rather than number of indexes filled to calculate the load factor, is to account for variations in the number of collisions between datasets. We cannot predict the number of collisions that will happen, so we tend towards believing that the hash-function will produce the least amount of collisions possible and that it will need more space to maintain, on average, constant time operations.
+        </p>
+        
+    </body>
+</html>
+
+
+

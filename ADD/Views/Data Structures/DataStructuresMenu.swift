@@ -41,7 +41,7 @@ struct DataStructuresMenu: View {
                     NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
                 }
                 
-                NavigationLink(destination: HashBasedDSMenu(), tag: "Hash-based", selection: $selection) {
+                NavigationLink(destination: HashBasedDSMenu(factory: factory), tag: "Hash-based", selection: $selection) {
                     NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
                 }
                 

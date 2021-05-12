@@ -13,7 +13,7 @@ enum TreeDS: String, CaseIterable, Identifiable {
     // case binarySearchTree, binaryTree, heap, nAryTree
     
     // ADDContent to finish
-    // case binarySearchTree, binaryTree, heap
+    // case  heap
     
     case binarySearchTree, binaryTree
     

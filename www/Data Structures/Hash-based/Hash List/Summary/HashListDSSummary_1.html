@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Hash List</h1>
+        
+        <h2>Diagram</h2>
+        
+        <img src="../../../../Images/Hash List Diagram.png">
+
+        <h2>Summary</h2>
+        <p>
+        A Hash List is a subtree of a Merkle tree, with the primary purpose of authenticating data. A hashlist can also be used to redownload and fix only the altered portions of data, rather than all of the data. Real-world applications typically utilize some variant of a Merkle tree.
+        </p>
+        
+        <p>
+        This is achieved by passing sections of the original unaltered data into a hash function. The resulting hashes are stored in some collection, whose combined values are used to generate another hash, the top hash. When a file needs to be verified, the top hash from a trusted source can be compared to your own top hash. If they differ, then we know the hashes representing the blocks of data differs somewhere. In that case the list of hashes is requested from the trusted source, which will reveal one or more altered hashes. These altered hashes correspond to altered blocks of data, which can now be redownloaded--avoiding a full redownload. The same concept is used in authentication, if the hashes differ then the data differs.
+        </p>
+        
+        <p>
+        A peer-to-peer network may use a hash list to verify that users are sending unaltered data to each other. Of course, the top hash representing the file data needs to come from a trusted source. This system allows multiple users to contribute and send pieces of a file, since authenticity can be confirmed and the file is divided into section.
+        </p>
+
+    </body>
+</html>
+
+
+

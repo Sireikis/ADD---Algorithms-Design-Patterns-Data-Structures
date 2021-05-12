@@ -87,6 +87,15 @@ class ContentFactory {
         }
     }
     
+    func getHashBasedDSContent(_ contentType: HashBasedDS) -> ContentImplementor {
+    switch contentType {
+    case .hashList:
+        return ContentImplementor(HashListDS())
+    case .hashTable:
+        return ContentImplementor(HashTableDS())
+    }
+}
+    
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
         case .bigO:

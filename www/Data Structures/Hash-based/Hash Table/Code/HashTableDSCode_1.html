@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Hash Table</h1>
+        
+        
+        <h3>Code - Structure</h3>
+        
+        <pre><code class="language-swift">
+            // Hash Table With Separate Chaining - Basic Structure
+
+            /*
+             This Hash Table will use separate chaining to resolve
+             collisions. You can think of the hash table as an array
+             representing buckets into which our key-value pairs are
+             dumped into. The key-value pairs are organized as links
+             in a chain, essentially a Linked-List that is unordered.
+             
+             Under ideal circumstances operations are performed in
+             constant time. However, with enough collisions operations
+             can degrade down to O(n), becuase traversal of a
+             linked-list is necessary to find a key.
+             */
+
+            // A segment in a chain of Nodes resulting from collisions
+            public class HashNode&lt;K, V> {
+                public var key: K
+                public var value: V
+                public var next: HashNode&lt;K, V>?
+                
+                init(key: K, value: V, next: HashNode&lt;K, V>?=nil) {
+                    self.key = key
+                    self.value = value
+                }
+            }
+
+            // -------------------------
+
+            public class HashTable&lt;K: Hashable, V> {
+                private var bucketArray: [HashNode&lt;K, V>?]
+                // The capacity of the HashTable
+                private var numBuckets: Int
+                // The number of keys in the HashTable
+                private var size: Int
+                
+                // The ratio of keys to capacity allowed before resizing
+                private var loadFactor: Float = 0.75
+                
+                public init(numBuckets: Int=10) {
+                    size = 0
+                    self.numBuckets = numBuckets
+                    
+                    // Creates an empty hash table
+                    bucketArray = Array(repeating: nil, count: numBuckets)
+                }
+                
+                public func getSize() -> Int {
+                    return size
+                }
+                
+                public func getNumBuckets() -> Int {
+                    return numBuckets
+                }
+                
+                public func isEmpty() -> Bool {
+                    return getSize() == 0
+                }
+                
+                // Displays contents of HashTable
+                public func printBucketArray() {
+                    for bucket in bucketArray {
+                        print("-----------New Bucket-----------")
+                        
+                        var headNode = bucket
+                        if headNode == nil {
+                            print("Empty bucket.")
+                        }
+                        while headNode != nil {
+                            print("Fruit: \(headNode!.key), Price: \(headNode!.value)")
+                            
+                            headNode = headNode?.next
+                        }
+                    }
+                }
+                
+                // Given a key, generates an index from its hash value
+                private func getBucketIndex(key: K) -> Int {
+                    let hashValue = key.hashValue
+                    let index = abs(hashValue % numBuckets)
+                    
+                    return index
+                }
+                
+                // Given a key, returns a value from HashTable
+                public func get(key: K) -> V? {
+                    let bucketIndex = getBucketIndex(key: key)
+                    var head = bucketArray[bucketIndex]
+                    
+                    while head != nil {
+                        if head?.key == key {
+                            return head?.value
+                        }
+                        head = head?.next
+                    }
+                    
+                    print("Get failed. Key not found.")
+                    return nil
+                }
+                
+                // Adds a key-value pair to the HashTable
+                public func add(key: K, value: V) {
+                    let bucketIndex = getBucketIndex(key: key)
+                    var head = bucketArray[bucketIndex]
+                    
+                    // Checking if key is already present,
+                    // in which case it is overwritten
+                    while head != nil {
+                        if head?.key == key {
+                            head?.value = value
+                            return
+                        }
+                        head = head?.next
+                    }
+                    
+                    size += 1
+                    
+                    // Key-value is inserted into chain
+                    head = bucketArray[bucketIndex]
+                    let newNode = HashNode(key: key, value: value)
+                    newNode.next = head
+                    bucketArray[bucketIndex] = newNode
+                    
+                    // If the loadfactor is exceeded,
+                    // double the HashTable's capacity
+                    if Float(size / numBuckets) >= loadFactor {
+                        let temp = bucketArray
+                        numBuckets *= 2
+                        size = 0
+                        
+                        bucketArray = Array(repeating: nil, count: numBuckets)
+                        
+                        for node in temp {
+                            var headNode = node
+                            while headNode != nil {
+                                add(key: headNode!.key, value: headNode!.value)
+                                headNode = headNode?.next
+                            }
+                        }
+                    }
+                }
+                
+                // Given a key, remove it and return the associated value
+                public func remove(key: K) -> V? {
+                    let bucketIndex = getBucketIndex(key: key)
+                    
+                    var head: HashNode&lt;K, V>? = bucketArray[bucketIndex]
+                    var prev: HashNode&lt;K, V>? = nil
+                    
+                    // Searching for key in chain
+                    while head != nil {
+                        if head?.key == key {
+                            break
+                        }
+                        
+                        prev = head
+                        head = head?.next
+                    }
+                    
+                    if head == nil {
+                        print("Remove failed. Key not found.")
+                        return nil
+                    }
+                    
+                    size -= 1
+                    
+                    // Remove the key-value pair
+                    if prev != nil {
+                        prev?.next = head?.next
+                    } else {
+                        bucketArray[bucketIndex] = head?.next
+                    }
+                    
+                    return head?.value
+                }
+            }
+
+            // -------------------------
+
+            var fruitPrices: HashTable&lt;String, Float> = HashTable()
+            // We will need to expand the HashTable when the
+            // load factor (0.75) is exceeded. With 7 additions
+            // that's impossible, even with no collisions.
+            fruitPrices.add(key: "Strawberry", value: 1.70)
+            fruitPrices.add(key: "Romaine Lettuce", value: 2.00)
+            fruitPrices.add(key: "Red Leaf Lettuce", value: 1.84)
+            fruitPrices.add(key: "Potatoes", value: 5.14)
+            fruitPrices.add(key: "Oranges", value: 1.45)
+            fruitPrices.add(key: "Iceberg Lettuce", value: 1.46)
+            fruitPrices.add(key: "Green Leaf Lettuce", value: 1.70)
+
+            // As we add more to the table, the chance of exceeding
+            // the load factor increases.
+            fruitPrices.add(key: "Celery", value: 2.36)
+            fruitPrices.add(key: "Cauliflower", value: 4.35)
+            fruitPrices.add(key: "Carrots", value: 0.95)
+            // Depending on our luck, by this point our table size
+            // may have doubled to 20.
+            fruitPrices.getNumBuckets()
+            // The hash values that are generated in Swift are not
+            // guaranteed to be equal across different executions
+            // of a program. Hence, the resulting table may vary.
+            fruitPrices.printBucketArray()
+            /*
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Fruit: Green Leaf Lettuce, Price: 1.7
+             Fruit: Cauliflower, Price: 4.35
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Fruit: Red Leaf Lettuce, Price: 1.84
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Fruit: Iceberg Lettuce, Price: 1.46
+             -----------New Bucket-----------
+             Fruit: Carrots, Price: 0.95
+             -----------New Bucket-----------
+             Fruit: Oranges, Price: 1.45
+             -----------New Bucket-----------
+             Fruit: Strawberry, Price: 1.7
+             Fruit: Romaine Lettuce, Price: 2.0
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Fruit: Potatoes, Price: 5.14
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Fruit: Celery, Price: 2.36
+             -----------New Bucket-----------
+             Empty bucket.
+             -----------New Bucket-----------
+             Empty bucket.
+             */
+
+            fruitPrices.get(key: "fail")
+            // Prints "Get failed. Key not found."
+
+            if let carrotValue = fruitPrices.get(key: "Carrots") {
+                print(carrotValue)
+                // Prints "0.95"
+            }
+
+            fruitPrices.remove(key: "fail")
+            // Prints "Remove failed. Key not found."
+
+            // Removes Carrots from the Hashtable.
+            if let removedCarrot = fruitPrices.remove(key: "Carrots") {
+                print(removedCarrot)
+                // Prints "0.95"
+                
+                // Note that this implementation does not resize
+                // the table when keys are removed.
+            }
+        </code></pre>
+    
+        <h3>Code - Basic Operations</h3>
+        
+        <pre><code class="language-swift">
+            // Hash Table With Separate Chaining - Basic Operations
+
+            // Access
+            /*
+             Typically access refers to accessing an element
+             at a specific position--an index. A Hash Table has
+             no notion of position because it's unordered.
+             
+             Instead, to access a value we perform a
+             search operation using a key.
+             */
+
+            var fruitPrices: HashTable&lt;String, Float> = HashTable()
+
+            fruitPrices.add(key: "Strawberry", value: 1.70)
+            fruitPrices.add(key: "Romaine Lettuce", value: 2.00)
+            fruitPrices.add(key: "Red Leaf Lettuce", value: 1.84)
+            fruitPrices.add(key: "Potatoes", value: 5.14)
+            fruitPrices.add(key: "Oranges", value: 1.45)
+            fruitPrices.add(key: "Iceberg Lettuce", value: 1.46)
+            fruitPrices.add(key: "Green Leaf Lettuce", value: 1.70)
+
+            // 'Access' does not exist in this context
+
+            // -------------------------
+
+            // Search
+            /*
+             In order to access a value we must provide a key.
+             The key is hashed and an index is returned. The
+             index will either contain the value or be absent.
+             Assuming the hash function is reliable, if it is
+             absent we can conclude that the key is not in the
+             hash table. In the case where the index has collisions,
+             we must traverse a linked-list until the key's value is
+             found or we reach the end the list.
+             */
+
+            fruitPrices.get(key: "fail")
+            // Prints "Get failed. Key not found."
+
+            if let potatoeValue = fruitPrices.get(key: "Potatoes") {
+                print(potatoeValue)
+                // Prints "5.14"
+            }
+
+            // -------------------------
+
+            // Insertion
+            /*
+             Adding a key-value pair involves several steps.
+             We must first check if the key-value pair already
+             exists, in which case we assume the user wants to
+             overwrite the existing value.
+             
+             If it does not exist, we insert the new value into
+             the index returned by the hash-function. If that
+             index already contains a value, we resolve the
+             collision by adding the new key-value pair as a
+             new link to the existing linked-list at that index.
+             
+             Once this is done the hash table's loadfactor is
+             checked. If the current loadfactor crosses the
+             pre-determined threshold (usually 0.75), the capacity
+             of the hash table is doubled and every key-value
+             pair in the old hash table is inserted into the
+             new hash table. Since the capacity is different
+             the indexes key-value pairs are placed into will
+             likely also be different.
+             */
+
+            fruitPrices.add(key: "Celery", value: 2.36)
+            fruitPrices.add(key: "Cauliflower", value: 4.35)
+            fruitPrices.add(key: "Carrots", value: 0.95)
+
+            // -------------------------
+
+            // Deletion
+            /*
+             Given a key, we find the index it should be
+             located at. In the case of a collision, we
+             search through the linked-list for the key-value
+             pair. If it is absent, the key did not exist in the
+             hash table. Otherwise, the link containing the
+             key-value pair is removed and the rest of the link
+             is joined together.
+             
+             This particulaur implementation does not resize the
+             tree below some specific load factor. Whether this
+             functionality is advantageous depends on the context.
+             */
+
+            fruitPrices.remove(key: "fail")
+            // Prints "Remove failed. Key not found."
+
+            // Removes Carrots from the Hashtable.
+            if let removedCelery = fruitPrices.remove(key: "Celery") {
+                print(removedCelery)
+                // Prints "2.36"
+            }
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>
+

@@ -24,6 +24,8 @@
 		7B0774382613BC0C00FEDB85 /* DefaultTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774372613BC0C00FEDB85 /* DefaultTabView.swift */; };
 		7B0DF8552643469600DAADF3 /* CommandPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DF8542643469600DAADF3 /* CommandPattern.swift */; };
 		7B0DF85926435BA700DAADF3 /* RefreshOnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DF85826435BA700DAADF3 /* RefreshOnAppearModifier.swift */; };
+		7B1669B7264B0B540037D531 /* HashListDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1669B6264B0B540037D531 /* HashListDS.swift */; };
+		7B1669BB264B2F340037D531 /* HashTableDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1669BA264B2F340037D531 /* HashTableDS.swift */; };
 		7B1BDEA326166B3A00427505 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDEA226166B3A00427505 /* WebView.swift */; };
 		7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */; };
 		7B3BBF76261E08EA007207A3 /* SearchAlgorithmsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */; };
@@ -103,6 +105,8 @@
 		7B0774372613BC0C00FEDB85 /* DefaultTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTabView.swift; sourceTree = "<group>"; };
 		7B0DF8542643469600DAADF3 /* CommandPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPattern.swift; sourceTree = "<group>"; };
 		7B0DF85826435BA700DAADF3 /* RefreshOnAppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshOnAppearModifier.swift; sourceTree = "<group>"; };
+		7B1669B6264B0B540037D531 /* HashListDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashListDS.swift; sourceTree = "<group>"; };
+		7B1669BA264B2F340037D531 /* HashTableDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableDS.swift; sourceTree = "<group>"; };
 		7B1BDEA226166B3A00427505 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileChoiceEnum.swift; sourceTree = "<group>"; };
 		7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmsMenu.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 		7B0080BA264451DE00447224 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				7B1669B5264B0B470037D531 /* Hash-based */,
 				7B039C2D2645E58200DF9BF3 /* Tree */,
 				7B0080BC264451EF00447224 /* Linear */,
 			);
@@ -344,6 +349,15 @@
 				7B0774252613B35D00FEDB85 /* Implementor.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7B1669B5264B0B470037D531 /* Hash-based */ = {
+			isa = PBXGroup;
+			children = (
+				7B1669B6264B0B540037D531 /* HashListDS.swift */,
+				7B1669BA264B2F340037D531 /* HashTableDS.swift */,
+			);
+			path = "Hash-based";
 			sourceTree = "<group>";
 		};
 		7B3BBF7B261E0FBC007207A3 /* Reusable UI Components */ = {
@@ -551,6 +565,7 @@
 			files = (
 				7B8150DA261F6DDF00E6CAAD /* LazyView.swift in Sources */,
 				7B07742D2613B57900FEDB85 /* TemplateAbstraction.swift in Sources */,
+				7B1669B7264B0B540037D531 /* HashListDS.swift in Sources */,
 				7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */,
 				7BB65D0A261D1C7500369C00 /* HashBasedDSMenu.swift in Sources */,
 				7B0774262613B35D00FEDB85 /* Implementor.swift in Sources */,
@@ -580,6 +595,7 @@
 				7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */,
 				7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */,
 				7B039C332645F33900DF9BF3 /* BinaryTreeDS.swift in Sources */,
+				7B1669BB264B2F340037D531 /* HashTableDS.swift in Sources */,
 				7B409078264310A00039E630 /* ProxyPattern.swift in Sources */,
 				7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */,
 				7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */,
