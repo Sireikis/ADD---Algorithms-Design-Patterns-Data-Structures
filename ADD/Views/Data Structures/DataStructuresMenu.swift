@@ -33,19 +33,43 @@ struct DataStructuresMenu: View {
             }
             
             Section(header: Text("Structures")) {
-                NavigationLink(destination: LinearDSMenu(factory: factory), tag: "Linear", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Linear",
+                                                           factory: factory,
+                                                           content: [.array, .linkedList]),
+                    tag: "Linear",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
                 }
                 
-                NavigationLink(destination: TreeDSMenu(factory: factory), tag: "Tree", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Tree",
+                                                           factory: factory,
+                                                           content: [.binarySearchTree, .binaryTree]),
+                    tag: "Tree",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
                 }
                 
-                NavigationLink(destination: HashBasedDSMenu(factory: factory), tag: "Hash-based", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Hash-based",
+                                                           factory: factory,
+                                                           content: [.hashList, .hashTable]),
+                    tag: "Hash-based",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
                 }
                 
-                NavigationLink(destination: GraphDSMenu(factory: factory), tag: "Graph", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Graph",
+                                                           factory: factory,
+                                                           content: [.adjacencyList]),
+                    tag: "Graph",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Graph", image: "squareshape.controlhandles.on.squareshape.controlhandles", imgForeground: .red)
                 }
             }

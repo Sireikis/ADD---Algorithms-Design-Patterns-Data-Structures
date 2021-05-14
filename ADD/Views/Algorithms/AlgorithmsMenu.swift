@@ -31,13 +31,23 @@ struct AlgorithmsMenu: View {
             }
             
             Section(header: Text("Algorithms")) {
-                // Section, by purpose?
-                // However, there are infinitely many purposes
-                NavigationLink(destination: SearchAlgorithmsMenu(factory: factory), tag: "Search", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Search",
+                                                           factory: factory,
+                                                           content: [.binarySearch, .breadthFirstSearch, .depthFirstSearch]),
+                    tag: "Search",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
                 }
                 
-                NavigationLink(destination: SortAlgorithmsMenu(factory: factory), tag: "Sort", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Sort",
+                                                           factory: factory,
+                                                           content: [.insertionSort, .selectionSort, .mergeSort, .quickSort]),
+                    tag: "Sort",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
                 }
             }

@@ -16,7 +16,6 @@
 		7B0773FB2613ADA100FEDB85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0773FA2613ADA100FEDB85 /* Preview Assets.xcassets */; };
 		7B07740E2613B24200FEDB85 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07740D2613B24200FEDB85 /* MainMenu.swift */; };
 		7B0774122613B27600FEDB85 /* AlgorithmsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774112613B27600FEDB85 /* AlgorithmsMenu.swift */; };
-		7B07741A2613B2B100FEDB85 /* SortAlgorithmsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774192613B2B100FEDB85 /* SortAlgorithmsMenu.swift */; };
 		7B0774232613B32400FEDB85 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774222613B32400FEDB85 /* InsertionSort.swift */; };
 		7B0774262613B35D00FEDB85 /* Implementor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774252613B35D00FEDB85 /* Implementor.swift */; };
 		7B0774292613B3A100FEDB85 /* ContentImplementor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774282613B3A100FEDB85 /* ContentImplementor.swift */; };
@@ -28,17 +27,7 @@
 		7B1669BB264B2F340037D531 /* HashTableDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1669BA264B2F340037D531 /* HashTableDS.swift */; };
 		7B1BDEA326166B3A00427505 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDEA226166B3A00427505 /* WebView.swift */; };
 		7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */; };
-		7B3BBF76261E08EA007207A3 /* SearchAlgorithmsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */; };
 		7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */; };
-		7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF80261E5C91007207A3 /* SortAlgorithmEnum.swift */; };
-		7B3BBF85261E6482007207A3 /* SearchAlgorithmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF84261E6482007207A3 /* SearchAlgorithmEnum.swift */; };
-		7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF87261E6945007207A3 /* BehavioralDPEnum.swift */; };
-		7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF8A261E6B9B007207A3 /* CreationalDPEnum.swift */; };
-		7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF8D261E6D21007207A3 /* StructuralDPEnum.swift */; };
-		7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF90261E6DF7007207A3 /* LinearDSEnum.swift */; };
-		7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */; };
-		7B3BBF97261E6F9F007207A3 /* HashBasedDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */; };
-		7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */; };
 		7B409078264310A00039E630 /* ProxyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B409077264310A00039E630 /* ProxyPattern.swift */; };
 		7B5844E62629FF9B0069058D /* BigO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5844E52629FF9B0069058D /* BigO.swift */; };
 		7B5B91A526178D3B00C82B47 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7B5B91A426178D3B00C82B47 /* www */; };
@@ -49,6 +38,7 @@
 		7B7B8FE4264ED7D4009EBB89 /* ADDContentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B8FE3264ED7D4009EBB89 /* ADDContentEnum.swift */; };
 		7B7B8FEC264ED82B009EBB89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B8FEB264ED82B009EBB89 /* SearchView.swift */; };
 		7B7B8FEF264EE68E009EBB89 /* ContentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B8FEE264EE68E009EBB89 /* ContentEnum.swift */; };
+		7B7B8FFC264F20C9009EBB89 /* BasicContentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B8FFB264F20C9009EBB89 /* BasicContentSelectionView.swift */; };
 		7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96A2639D2970090D4FA /* BinarySearch.swift */; };
 		7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */; };
 		7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */; };
@@ -56,15 +46,8 @@
 		7B8BC60F264C803B00191030 /* AdjacencyListDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BC60E264C803B00191030 /* AdjacencyListDS.swift */; };
 		7BB65CB8261CC34100369C00 /* ADDContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CB7261CC34100369C00 /* ADDContent.swift */; };
 		7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */; };
-		7BB65CCE261D0BE800369C00 /* CreationalDPMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CCD261D0BE800369C00 /* CreationalDPMenu.swift */; };
 		7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CE0261D12DA00369C00 /* ContentFactory.swift */; };
 		7BB65CEB261D158800369C00 /* DataStructuresMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CEA261D158800369C00 /* DataStructuresMenu.swift */; };
-		7BB65CF0261D169300369C00 /* LinearDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CEF261D169300369C00 /* LinearDSMenu.swift */; };
-		7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CF5261D180200369C00 /* StructuralDPMenu.swift */; };
-		7BB65CFB261D18AB00369C00 /* BehavioralDPMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CFA261D18AB00369C00 /* BehavioralDPMenu.swift */; };
-		7BB65D01261D1A7D00369C00 /* TreeDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65D00261D1A7D00369C00 /* TreeDSMenu.swift */; };
-		7BB65D0A261D1C7500369C00 /* HashBasedDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65D09261D1C7500369C00 /* HashBasedDSMenu.swift */; };
-		7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65D0C261D1CDC00369C00 /* GraphDSMenu.swift */; };
 		7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */; };
 		7BE5424326276275000673E5 /* TidBitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424226276275000673E5 /* TidBitView.swift */; };
 		7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424526276544000673E5 /* TidBitEnum.swift */; };
@@ -101,7 +84,6 @@
 		7B0773FC2613ADA100FEDB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B07740D2613B24200FEDB85 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		7B0774112613B27600FEDB85 /* AlgorithmsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsMenu.swift; sourceTree = "<group>"; };
-		7B0774192613B2B100FEDB85 /* SortAlgorithmsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAlgorithmsMenu.swift; sourceTree = "<group>"; };
 		7B0774222613B32400FEDB85 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		7B0774252613B35D00FEDB85 /* Implementor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Implementor.swift; sourceTree = "<group>"; };
 		7B0774282613B3A100FEDB85 /* ContentImplementor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImplementor.swift; sourceTree = "<group>"; };
@@ -113,17 +95,7 @@
 		7B1669BA264B2F340037D531 /* HashTableDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableDS.swift; sourceTree = "<group>"; };
 		7B1BDEA226166B3A00427505 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileChoiceEnum.swift; sourceTree = "<group>"; };
-		7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmsMenu.swift; sourceTree = "<group>"; };
 		7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
-		7B3BBF80261E5C91007207A3 /* SortAlgorithmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAlgorithmEnum.swift; sourceTree = "<group>"; };
-		7B3BBF84261E6482007207A3 /* SearchAlgorithmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmEnum.swift; sourceTree = "<group>"; };
-		7B3BBF87261E6945007207A3 /* BehavioralDPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioralDPEnum.swift; sourceTree = "<group>"; };
-		7B3BBF8A261E6B9B007207A3 /* CreationalDPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalDPEnum.swift; sourceTree = "<group>"; };
-		7B3BBF8D261E6D21007207A3 /* StructuralDPEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuralDPEnum.swift; sourceTree = "<group>"; };
-		7B3BBF90261E6DF7007207A3 /* LinearDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearDSEnum.swift; sourceTree = "<group>"; };
-		7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDSEnum.swift; sourceTree = "<group>"; };
-		7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashBasedDSEnum.swift; sourceTree = "<group>"; };
-		7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSEnum.swift; sourceTree = "<group>"; };
 		7B409077264310A00039E630 /* ProxyPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyPattern.swift; sourceTree = "<group>"; };
 		7B5844E52629FF9B0069058D /* BigO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigO.swift; sourceTree = "<group>"; };
 		7B5B91A426178D3B00C82B47 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
@@ -134,6 +106,7 @@
 		7B7B8FE3264ED7D4009EBB89 /* ADDContentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDContentEnum.swift; sourceTree = "<group>"; };
 		7B7B8FEB264ED82B009EBB89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		7B7B8FEE264EE68E009EBB89 /* ContentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEnum.swift; sourceTree = "<group>"; };
+		7B7B8FFB264F20C9009EBB89 /* BasicContentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContentSelectionView.swift; sourceTree = "<group>"; };
 		7B7DC96A2639D2970090D4FA /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		7B7DC96E2639F39B0090D4FA /* BreadthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadthFirstSearch.swift; sourceTree = "<group>"; };
 		7B8150D2261F5FBB00E6CAAD /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
@@ -141,15 +114,8 @@
 		7B8BC60E264C803B00191030 /* AdjacencyListDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyListDS.swift; sourceTree = "<group>"; };
 		7BB65CB7261CC34100369C00 /* ADDContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDContent.swift; sourceTree = "<group>"; };
 		7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignPatternsMenu.swift; sourceTree = "<group>"; };
-		7BB65CCD261D0BE800369C00 /* CreationalDPMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalDPMenu.swift; sourceTree = "<group>"; };
 		7BB65CE0261D12DA00369C00 /* ContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFactory.swift; sourceTree = "<group>"; };
 		7BB65CEA261D158800369C00 /* DataStructuresMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresMenu.swift; sourceTree = "<group>"; };
-		7BB65CEF261D169300369C00 /* LinearDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearDSMenu.swift; sourceTree = "<group>"; };
-		7BB65CF5261D180200369C00 /* StructuralDPMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuralDPMenu.swift; sourceTree = "<group>"; };
-		7BB65CFA261D18AB00369C00 /* BehavioralDPMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioralDPMenu.swift; sourceTree = "<group>"; };
-		7BB65D00261D1A7D00369C00 /* TreeDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDSMenu.swift; sourceTree = "<group>"; };
-		7BB65D09261D1C7500369C00 /* HashBasedDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashBasedDSMenu.swift; sourceTree = "<group>"; };
-		7BB65D0C261D1CDC00369C00 /* GraphDSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDSMenu.swift; sourceTree = "<group>"; };
 		7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreAlgorithms.swift; sourceTree = "<group>"; };
 		7BE5424226276275000673E5 /* TidBitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitView.swift; sourceTree = "<group>"; };
 		7BE5424526276544000673E5 /* TidBitEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitEnum.swift; sourceTree = "<group>"; };
@@ -302,8 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				7B0774112613B27600FEDB85 /* AlgorithmsMenu.swift */,
-				7B0774192613B2B100FEDB85 /* SortAlgorithmsMenu.swift */,
-				7B3BBF75261E08EA007207A3 /* SearchAlgorithmsMenu.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -316,6 +280,7 @@
 				7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */,
 				7BE5424226276275000673E5 /* TidBitView.swift */,
 				7B7B8FEB264ED82B009EBB89 /* SearchView.swift */,
+				7B7B8FFB264F20C9009EBB89 /* BasicContentSelectionView.swift */,
 				7B5B91B12617971F00C82B47 /* Helpers */,
 			);
 			path = "View Templates";
@@ -448,9 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */,
-				7BB65CFA261D18AB00369C00 /* BehavioralDPMenu.swift */,
-				7BB65CCD261D0BE800369C00 /* CreationalDPMenu.swift */,
-				7BB65CF5261D180200369C00 /* StructuralDPMenu.swift */,
 			);
 			path = "Design Patterns";
 			sourceTree = "<group>";
@@ -461,15 +423,6 @@
 				7B7B8FE2264ED7CA009EBB89 /* Protocols */,
 				7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */,
 				7B7B8FEE264EE68E009EBB89 /* ContentEnum.swift */,
-				7B3BBF80261E5C91007207A3 /* SortAlgorithmEnum.swift */,
-				7B3BBF84261E6482007207A3 /* SearchAlgorithmEnum.swift */,
-				7B3BBF87261E6945007207A3 /* BehavioralDPEnum.swift */,
-				7B3BBF8A261E6B9B007207A3 /* CreationalDPEnum.swift */,
-				7B3BBF8D261E6D21007207A3 /* StructuralDPEnum.swift */,
-				7B3BBF90261E6DF7007207A3 /* LinearDSEnum.swift */,
-				7B3BBF93261E6EF0007207A3 /* TreeDSEnum.swift */,
-				7B3BBF96261E6F9F007207A3 /* HashBasedDSEnum.swift */,
-				7B3BBF99261E701E007207A3 /* GraphDSEnum.swift */,
 				7BE5424526276544000673E5 /* TidBitEnum.swift */,
 				7BE5425926279214000673E5 /* ContentCategoryEnum.swift */,
 			);
@@ -488,10 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				7BB65CEA261D158800369C00 /* DataStructuresMenu.swift */,
-				7BB65CEF261D169300369C00 /* LinearDSMenu.swift */,
-				7BB65D00261D1A7D00369C00 /* TreeDSMenu.swift */,
-				7BB65D09261D1C7500369C00 /* HashBasedDSMenu.swift */,
-				7BB65D0C261D1CDC00369C00 /* GraphDSMenu.swift */,
 			);
 			path = "Data Structures";
 			sourceTree = "<group>";
@@ -595,14 +544,12 @@
 				7B07742D2613B57900FEDB85 /* TemplateAbstraction.swift in Sources */,
 				7B1669B7264B0B540037D531 /* HashListDS.swift in Sources */,
 				7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */,
-				7BB65D0A261D1C7500369C00 /* HashBasedDSMenu.swift in Sources */,
 				7B0774262613B35D00FEDB85 /* Implementor.swift in Sources */,
 				7B6C360B2640AD69001B906C /* AbstractFactoryPattern.swift in Sources */,
 				7B8150D3261F5FBB00E6CAAD /* SelectionSort.swift in Sources */,
-				7B3BBF85261E6482007207A3 /* SearchAlgorithmEnum.swift in Sources */,
+				7B7B8FFC264F20C9009EBB89 /* BasicContentSelectionView.swift in Sources */,
 				7BE542702627A26B000673E5 /* WhatAreDataStructures.swift in Sources */,
 				7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */,
-				7B3BBF97261E6F9F007207A3 /* HashBasedDSEnum.swift in Sources */,
 				7B039C2F2645E5DC00DF9BF3 /* BinarySearchTreeDS.swift in Sources */,
 				7BE5425A26279214000673E5 /* ContentCategoryEnum.swift in Sources */,
 				7BB65CEB261D158800369C00 /* DataStructuresMenu.swift in Sources */,
@@ -621,23 +568,17 @@
 				7B0080B8264451CB00447224 /* ArrayDS.swift in Sources */,
 				7BF92E30263863620057E791 /* QuickSort.swift in Sources */,
 				7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */,
-				7BB65CF6261D180200369C00 /* StructuralDPMenu.swift in Sources */,
 				7B7B8FE4264ED7D4009EBB89 /* ADDContentEnum.swift in Sources */,
-				7B3BBF88261E6945007207A3 /* BehavioralDPEnum.swift in Sources */,
 				7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */,
 				7B039C332645F33900DF9BF3 /* BinaryTreeDS.swift in Sources */,
 				7B1669BB264B2F340037D531 /* HashTableDS.swift in Sources */,
 				7B7B8FEF264EE68E009EBB89 /* ContentEnum.swift in Sources */,
 				7B409078264310A00039E630 /* ProxyPattern.swift in Sources */,
-				7B3BBF81261E5C91007207A3 /* SortAlgorithmEnum.swift in Sources */,
-				7B3BBF8B261E6B9B007207A3 /* CreationalDPEnum.swift in Sources */,
 				7B0774382613BC0C00FEDB85 /* DefaultTabView.swift in Sources */,
-				7B3BBF94261E6EF0007207A3 /* TreeDSEnum.swift in Sources */,
 				7BF8576D2641A4BC00547EB3 /* FactoryMethodPattern.swift in Sources */,
 				7BF92E2D263861B50057E791 /* MergeSort.swift in Sources */,
 				7BE5425726276DA9000673E5 /* TidBit.swift in Sources */,
 				7B0080BF2644890400447224 /* LinkedListDS.swift in Sources */,
-				7BB65D0D261D1CDC00369C00 /* GraphDSMenu.swift in Sources */,
 				7B07740E2613B24200FEDB85 /* MainMenu.swift in Sources */,
 				7B7DC96F2639F39B0090D4FA /* BreadthFirstSearch.swift in Sources */,
 				7B1BDEA326166B3A00427505 /* WebView.swift in Sources */,
@@ -645,22 +586,13 @@
 				7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */,
 				7B62E161263B027C0070F9A5 /* DepthFirstSearch.swift in Sources */,
 				7BF857702641B54800547EB3 /* AdapterPattern.swift in Sources */,
-				7B3BBF8E261E6D21007207A3 /* StructuralDPEnum.swift in Sources */,
 				7BE542732627A291000673E5 /* DSCategories.swift in Sources */,
-				7B3BBF9A261E701E007207A3 /* GraphDSEnum.swift in Sources */,
-				7BB65D01261D1A7D00369C00 /* TreeDSMenu.swift in Sources */,
-				7B3BBF76261E08EA007207A3 /* SearchAlgorithmsMenu.swift in Sources */,
 				7B0774232613B32400FEDB85 /* InsertionSort.swift in Sources */,
-				7BB65CF0261D169300369C00 /* LinearDSMenu.swift in Sources */,
 				7B0774122613B27600FEDB85 /* AlgorithmsMenu.swift in Sources */,
 				7BF857762641F7CC00547EB3 /* DecoratorPattern.swift in Sources */,
 				7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */,
 				7B0774292613B3A100FEDB85 /* ContentImplementor.swift in Sources */,
-				7BB65CFB261D18AB00369C00 /* BehavioralDPMenu.swift in Sources */,
-				7BB65CCE261D0BE800369C00 /* CreationalDPMenu.swift in Sources */,
-				7B07741A2613B2B100FEDB85 /* SortAlgorithmsMenu.swift in Sources */,
 				7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */,
-				7B3BBF91261E6DF7007207A3 /* LinearDSEnum.swift in Sources */,
 				7B6C360826409B13001B906C /* SingletonPattern.swift in Sources */,
 				7B5844E62629FF9B0069058D /* BigO.swift in Sources */,
 				7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */,

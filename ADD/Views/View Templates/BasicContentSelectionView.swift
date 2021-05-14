@@ -1,23 +1,19 @@
 //
-//  CreationalDPMenu.swift
+//  BasicContentSelectionView.swift
 //  ADD
 //
-//  Created by Ignas Sireikis on 4/6/21.
+//  Created by Ignas Sireikis on 5/14/21.
 //
 
 import SwiftUI
 
 
-struct CreationalDPMenu: View {
+struct BasicContentSelectionView: View {
+    let title: String
     let factory: ContentFactory
+    let content: [ContentEnum]
     
     @State var selection: String?
-    
-    let content: [ContentEnum] = [
-        .abstractFactory,
-        .factoryMethod,
-        .singleton,
-    ]
     
     var body: some View {
         List {
@@ -33,14 +29,13 @@ struct CreationalDPMenu: View {
             }
         }
         .refreshOnAppear(selection: $selection)
-        .navigationBarTitle("Creational", displayMode: .inline)
+        .navigationBarTitle(title, displayMode: .inline)
         .navigationBarItems(trailing: Text("Home"))
     }
 }
 
-
-struct CreationalDPMenu_Previews: PreviewProvider {
+struct BasicContentSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CreationalDPMenu(factory: ContentFactory())
+        BasicContentSelectionView(title: "Basic", factory: ContentFactory(), content: [.abstractFactory])
     }
 }

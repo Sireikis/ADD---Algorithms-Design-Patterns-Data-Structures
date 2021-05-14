@@ -7,6 +7,7 @@
  
  import Foundation
  
+ // For use with DefaultTabView when that's implemented.
  
  enum FileNumber: Int, CaseIterable {
     case one = 1, two, three, four

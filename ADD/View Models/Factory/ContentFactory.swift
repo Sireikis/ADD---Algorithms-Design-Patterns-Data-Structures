@@ -84,25 +84,27 @@ class ContentFactory {
     }
     
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
+        var content: TidBit
         switch tidBit {
         case .bigO:
-            return TidBitImplementor(BigO())
+            content = BigO()
         case .glossary:
-            return TidBitImplementor(Glossary())
+            content = Glossary()
         case .whatIsADD:
-            return TidBitImplementor(WhatIsADD())
+            content = WhatIsADD()
         case .whatAreAlgorithms:
-            return TidBitImplementor(WhatAreAlgorithms())
+            content = WhatAreAlgorithms()
         case .whatAreClassifications:
-            return TidBitImplementor(WhatAreClassifications())
+            content = WhatAreClassifications()
         case .whatAreDesignPatterns:
-            return TidBitImplementor(WhatAreDesignPatterns())
+            content = WhatAreDesignPatterns()
         case .DPCategories:
-            return TidBitImplementor(DPCategories())
+            content = DPCategories()
         case .whatAreDataStructures:
-            return TidBitImplementor(WhatAreDataStructures())
+            content = WhatAreDataStructures()
         case .DSCategories:
-            return TidBitImplementor(DSCategories())
+            content = DSCategories()
         }
+        return TidBitImplementor(content)
     }
 }

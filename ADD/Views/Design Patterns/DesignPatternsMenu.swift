@@ -33,15 +33,33 @@ struct DesignPatternsMenu: View {
             }
             
             Section(header: Text("Patterns")) {
-                NavigationLink(destination: BehavioralDPMenu(factory: factory), tag: "Behavioral", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Behavioral",
+                                                           factory: factory,
+                                                           content: [.command, .observer, .strategy]),
+                    tag: "Behavioral",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Behavioral", image: "gearshape.2", imgForeground: .blue)
                 }
                 
-                NavigationLink(destination: CreationalDPMenu(factory: factory), tag: "Creational", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Creational",
+                                                           factory: factory,
+                                                           content: [.abstractFactory, .factoryMethod, .singleton]),
+                    tag: "Creational",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Creational", image: "lightbulb", imgForeground: .blue)
                 }
                 
-                NavigationLink(destination: StructuralDPMenu(factory: factory), tag: "Structural", selection: $selection) {
+                NavigationLink(
+                    destination: BasicContentSelectionView(title: "Structural",
+                                                           factory: factory,
+                                                           content: [.adapter, .bridge, .decorator, .proxy]),
+                    tag: "Structural",
+                    selection: $selection
+                ) {
                     NavigationButton(description: "Structural", image: "square.grid.3x1.below.line.grid.1x2", imgForeground: .blue)
                 }
             }
