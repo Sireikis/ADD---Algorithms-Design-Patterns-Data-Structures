@@ -14,11 +14,16 @@ struct TreeDSMenu: View {
     
     @State var selection: String?
     
+    let content: [ContentEnum] = [
+        .binarySearchTree,
+        .binaryTree,
+    ]
+    
     var body: some View {
         List {
-            ForEach(TreeDS.allCases, id: \.self) { content in
+            ForEach(content, id: \.self) { content in
                 NavigationLink(
-                    destination: LazyView(SimpleDefaultTabView(factory.getTreeDSContent(content))
+                    destination: LazyView(SimpleDefaultTabView(factory.getContent(content))
                                             .navigationBarTitle(content.description, displayMode: .inline)),
                     tag: content.description,
                     selection: $selection

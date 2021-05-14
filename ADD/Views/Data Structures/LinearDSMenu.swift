@@ -14,11 +14,16 @@ struct LinearDSMenu: View {
     
     @State var selection: String?
     
+    let content: [ContentEnum] = [
+        .array,
+        .linkedList,
+    ]
+    
     var body: some View {
         List {
-            ForEach(LinearDS.allCases, id: \.self) { content in
+            ForEach(content, id: \.self) { content in
                 NavigationLink(
-                    destination: LazyView(SimpleDefaultTabView(factory.getLinearDSContent(content))
+                    destination: LazyView(SimpleDefaultTabView(factory.getContent(content))
                                             .navigationBarTitle(content.description, displayMode: .inline)),
                     tag: content.description,
                     selection: $selection

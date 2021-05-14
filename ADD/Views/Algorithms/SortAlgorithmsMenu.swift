@@ -13,11 +13,18 @@ struct SortAlgorithmsMenu: View {
     
     @State var selection: String?
     
+    let content: [ContentEnum] = [
+        .insertionSort,
+        .mergeSort,
+        .quickSort,
+        .selectionSort
+    ]
+    
     var body: some View {
         List {
-            ForEach(SortAlgorithm.allCases, id: \.self) { content in
+            ForEach(content, id: \.self) { content in
                 NavigationLink(
-                    destination: LazyView(SimpleDefaultTabView(factory.getSortContent(content))
+                    destination: LazyView(SimpleDefaultTabView(factory.getContent(content))
                                             .navigationBarTitle(content.description, displayMode: .inline)),
                     tag: content.description,
                     selection: $selection

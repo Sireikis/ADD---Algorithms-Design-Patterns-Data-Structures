@@ -45,7 +45,7 @@ struct DataStructuresMenu: View {
                     NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
                 }
                 
-                NavigationLink(destination: GraphDSMenu(), tag: "Graph", selection: $selection) {
+                NavigationLink(destination: GraphDSMenu(factory: factory), tag: "Graph", selection: $selection) {
                     NavigationButton(description: "Graph", image: "squareshape.controlhandles.on.squareshape.controlhandles", imgForeground: .red)
                 }
             }

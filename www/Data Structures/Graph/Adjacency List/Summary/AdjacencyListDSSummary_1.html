@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                </head>
+    <body>
+        <h1 class="title">Adjacency List</h1>
+        
+        <h2>Big O</h2>
+        
+        <p>
+        The Big O below is in the context of an Adjacency List utilizing a dictionary of arrays method and Depth First Search. The letter "V" refers to the number of <b>vertices</b> and "E" to the number of <b>edges</b>.
+        </p>
+        
+        <div>
+            <table id="BigO">
+                <tr>
+                    <th id="Time" colspan="5">Time Complexity - Worst</th>
+                    <th id="Space">Space</th>
+                </tr>
+                <tr>
+                    <th id="DSWorst"></th>
+                    <th id="DSWorst">Query</th>
+                    <th id="DSWorst">Search</th>
+                    <th id="DSWorst">Insertion</th>
+                    <th id="DSWorst">Deletion</th>
+                    <th id="DSWorst">Worst</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>O(V)*</td>
+                    <td>O(V+E)</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>O(V+E)</td>
+                </tr>
+                <tr>
+                    <td>Vertex</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>O(1)</td>
+                    <td>O(V+E)</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Edge</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>O(1)</td>
+                    <td>O(E)</td>
+                    <td>--</td>
+                </tr>
+            </table>
+        </div>
+        
+        <p>
+        <sup>*</sup>Query is defined as: Given a vertex, what are its edges? In our implementation this boils down to searching the adjacency dictionary for a value, where V also represents the number of key-value pairs. In this case a key-value pair is a vertex and all its edges. Since we're using a dictionary, access technically doesn't exist--it's a Hash Table. Conceptually, we're going to conflate access and search. Hence, practically we can expect &Theta;(1) 'access' times, but technically the worst case is still O(V).
+        </p>
+        
+        <h2>Summary</h2>
+        <p>
+        An Adjacency List represents a graph as some collection that associates a vertex with all of its neighboring vertices--its edges. There are several methods for accomplishing this:
+        </p>
+        
+        <ul>
+            <li><b>Dictionary of Arrays:</b> Each key represents a vertex and the associated value is an array of edges.</li>
+            <li><b>Array of Arrays:</b> A given index of the outer array represents a vertex. The array at a given index contains edges for that vertex.</li>
+            <li><b>Array of Linked-Lists:</b> A given index of the outer array represents a vertex, which stores a linked-list containing edges for that vertex.</li>
+        </ul>
+        
+        <p>
+        The relationship between vertices, its edges, can be classified as directed or undirected. Directed edges communicate a notion of direction, with or without a cost associated with traveling in that direction--a weight. Undirected edges can be thought of as an association, either indicating no direction or a two-way relationship. In other words, they represent whether or not a relationship exists between two vertices. They can be implemented as two directed edges or as pairs of vertices.
+        </p>
+        
+    </body>
+</html>

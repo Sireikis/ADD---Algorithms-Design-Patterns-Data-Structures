@@ -13,11 +13,17 @@ struct CreationalDPMenu: View {
     
     @State var selection: String?
     
+    let content: [ContentEnum] = [
+        .abstractFactory,
+        .factoryMethod,
+        .singleton,
+    ]
+    
     var body: some View {
         List {
-            ForEach(CreationalDP.allCases, id: \.self) { content in
+            ForEach(content, id: \.self) { content in
                 NavigationLink(
-                    destination: LazyView(SimpleDefaultTabView(factory.getCreationalDPContent(content))
+                    destination: LazyView(SimpleDefaultTabView(factory.getContent(content))
                                             .navigationBarTitle(content.description, displayMode: .inline)),
                     tag: content.description,
                     selection: $selection

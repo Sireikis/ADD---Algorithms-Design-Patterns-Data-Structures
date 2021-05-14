@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../../../css/ContentStyle.css">
+            <link rel="stylesheet" href="../../../../css/RedStyle.css">
+                <link rel="stylesheet" href="../../../../Prism/prism.css">
+                    </head>
+    <body>
+        <h1 class="title">Adjacency List</h1>
+        
+        <h2>Code - Structure</h2>
+        
+        <pre><code class="language-swift">
+            // Adjacency List - Basic Structure
+            // Method: Dictionary of Arrays
+
+            /*
+             This implementation will use a dictionary to store every
+             vertex as a key and all its associated edges as an array
+             of values. The array of values represent a list of all
+             vertices that the current vertex (the key) is adjacent
+             to--hence the name. Depending on the type of graph,
+             vertices can point to each other to form a cycle or
+             even point to themselves.
+             
+             Using the implementation below, we can make a directed
+             or undirected graph. We will choose to make an undirected
+             graph, where each vertex is an airport and each edge is
+             weighted, representing the cost of travel. Traveling
+             between any two vertices in either direction costs the
+             same--the weight of the edge. Given the context, no
+             vertices (airports) will point to themselves.
+             */
+
+            // Defines the methods that a graph must have.
+            protocol Graphable {
+                // Elements contained in vertices and edges must be
+                // Hashable, so that they can be placed into a dictionary.
+                associatedtype Element: Hashable
+                
+                // Returns a string repesentation of all
+                // vertices and their associated edges.
+                var description: CustomStringConvertible { get }
+                
+                // Creates a vertex and adds it to the adjacency dictionary.
+                func createVertex(data: Element) -> Vertex&lt;Element>
+                // Given two vertices, creates a directed or undirected edge between them.
+                func add(_ type: EdgeType, from source: Vertex&lt;Element>, to destination: Vertex&lt;Element>, weight: Double?)
+                // Given source and destination vertices, returns the weight of that edge.
+                func weight(from source: Vertex&lt;Element>, to destination: Vertex&lt;Element>) -> Double?
+                // Given a vertex, returns its adjacency list (all its edges).
+                func edges(from source: Vertex&lt;Element>) -> [Edge&lt;Element>]?
+            }
+
+            // -------------------------
+
+            // Adjacency List
+
+            // Edges are unordered in this implementation.
+            public class AdjacencyList&lt;T: Hashable> {
+                public var adjacencyDict: [Vertex&lt;T>: [Edge&lt;T>]] = [:]
+                public init() { }
+                
+                // Creates a directed edge with or without a weight.
+                private func addDirectedEdge(from source: Vertex&lt;Element>, to destination: Vertex&lt;Element>, weight: Double?) {
+                    let edge = Edge(source: source, destination: destination, weight: weight)
+                    
+                    adjacencyDict[source]?.append(edge)
+                }
+                
+                // Creates an undirected edge with or without a weight.
+                // Represents an undirected edge as two directed edges with the same weight.
+                private func addUndirectedEdge(vertices: (Vertex&lt;Element>, Vertex&lt;Element>), weight: Double?) {
+                    let (source, destination) = vertices
+                    
+                    addDirectedEdge(from: source, to: destination, weight: weight)
+                    addDirectedEdge(from: destination, to: source, weight: weight)
+                }
+            }
+
+            // The methods that Adjacency List must conform
+            // to in order to represent a graph.
+            extension AdjacencyList: Graphable {
+                // Any type, as long as it is Hashable and Equatable,
+                // can be stored as data in a vertex.
+                public typealias Element = T
+                
+                // Creates and returns a vertex.
+                // If this is new vertex, it is added
+                // to the adjacency dictionary with no edges.
+                // This does not overwrite previously existing vertices.
+                public func createVertex(data: Element) -> Vertex&lt;Element> {
+                    let vertex =  Vertex(data: data)
+                    
+                    if adjacencyDict[vertex] == nil {
+                        adjacencyDict[vertex] = []
+                    }
+                    
+                    return vertex
+                }
+                
+                // Adds the given type of edge to the pair of vertices provided.
+                public func add(_ type: EdgeType, from source: Vertex&lt;T>, to destination: Vertex&lt;T>, weight: Double?) {
+                    switch type {
+                    case .directed:
+                        addDirectedEdge(from: source, to: destination, weight: weight)
+                    case .undirected:
+                        addUndirectedEdge(vertices: (source, destination), weight: weight)
+                    }
+                }
+                
+                // Iterates through all key-value pairs to delete the given vertex
+                public func delete(_ vertex: Vertex&lt;T>) {
+                    adjacencyDict[vertex] = nil
+                    for (key, values) in adjacencyDict {
+                        let newEdges = values.filter { $0.destination != vertex }
+                        adjacencyDict[key] = newEdges
+                    }
+                }
+                
+                // Returns a weight for the given vertex pair, or nil otherwise.
+                public func weight(from source: Vertex&lt;T>, to destination: Vertex&lt;T>) -> Double? {
+                    guard let edges = adjacencyDict[source] else {
+                        return nil
+                    }
+                    
+                    // Edges are unordered, so we must find it first.
+                    for edge in edges {
+                        if edge.destination == destination {
+                            return edge.weight
+                        }
+                    }
+                    
+                    return nil
+                }
+                
+                // Returns all edges of the given vertex.
+                public func edges(from source: Vertex&lt;T>) -> [Edge&lt;T>]? {
+                    return adjacencyDict[source]
+                }
+                
+                // Calling this property returns a string repesentation
+                // of all vertices and their associated edges.
+                public var description: CustomStringConvertible {
+                    var result = ""
+                    for (vertex, edges) in adjacencyDict {
+                        var edgeString = ""
+                        for (index, edge) in edges.enumerated() {
+                            if index != edges.count - 1 {
+                                edgeString.append("\(edge.destination), ")
+                            } else {
+                                edgeString.append("\(edge.destination)")
+                            }
+                        }
+                        result.append("\(vertex) ---> [ \(edgeString) ] \n")
+                    }
+                    return result
+                }
+            }
+
+            // -------------------------
+
+            // Vertex
+            // Can store any type that is Hashable and Equatable
+            public struct Vertex&lt;T: Hashable> {
+                public var data: T
+            }
+
+            // Conformance to Hashable and Equatable
+            extension Vertex: Hashable {
+                public func hash(into hasher: inout Hasher) {
+                    hasher.combine(data)
+                }
+                
+                static public func ==(lhs: Vertex, rhs: Vertex) -> Bool {
+                    return lhs.data == rhs.data
+                }
+            }
+
+            // Defines the output when converting a
+            // vertex into a string.
+            extension Vertex: CustomStringConvertible {
+                public var description: String {
+                    return "\(data)"
+                }
+            }
+
+            // -------------------------
+
+            // Edge
+            // Directed edges use source -> destination to
+            // denote direction. Undirected edges are represented
+            // as two directed edges with the same weight.
+            public struct Edge&lt;T: Hashable> {
+                public var source: Vertex&lt;T>
+                public var destination: Vertex&lt;T>
+                public let weight: Double?
+            }
+
+
+            // Used by clients to determine which edge to create
+            public enum EdgeType {
+                case directed, undirected
+            }
+
+            // Conformance to Hashable and Equatable
+            extension Edge: Hashable {
+                public func hash(into hasher: inout Hasher) {
+                    hasher.combine(source)
+                    hasher.combine(destination)
+                    hasher.combine(weight)
+                }
+                
+                static public func ==(lhs: Edge&lt;T>, rhs: Edge&lt;T>) -> Bool {
+                    return lhs.source == rhs.source &&
+                        lhs.destination == rhs.destination &&
+                        lhs.weight == rhs.weight
+                }
+            }
+
+            // -------------------------
+            // We will represent airports with strings.
+            let adjacencyList = AdjacencyList&lt;String>()
+
+            // Generating a vertex for each airport and
+            // adding them to the adjacency dictionary.
+            let vilnius = adjacencyList.createVertex(data: "Vilnius")
+            let riga = adjacencyList.createVertex(data: "Riga")
+            let chicago = adjacencyList.createVertex(data: "Chicago")
+            let newYork = adjacencyList.createVertex(data: "New York")
+            let sanFrancisco = adjacencyList.createVertex(data: "San Francisco")
+            let amsterdam = adjacencyList.createVertex(data: "Amsterdam")
+            let berlin = adjacencyList.createVertex(data: "Berlin")
+            let velana = adjacencyList.createVertex(data: "Velana")
+
+            // Generating the edges between vertices, which
+            // represent the travel cost between cities.
+            // Travel can occur in either direction for the same cost.
+            adjacencyList.add(.undirected, from: vilnius, to: chicago, weight: 700)
+            adjacencyList.add(.undirected, from: vilnius, to: amsterdam, weight: 250)
+            adjacencyList.add(.undirected, from: riga, to: amsterdam, weight: 250)
+            adjacencyList.add(.undirected, from: riga, to: berlin, weight: 750)
+            adjacencyList.add(.undirected, from: chicago, to: newYork, weight: 200)
+            adjacencyList.add(.undirected, from: chicago, to: velana, weight: 800)
+            adjacencyList.add(.undirected, from: newYork, to: berlin, weight: 550)
+            adjacencyList.add(.undirected, from: sanFrancisco, to: newYork, weight: 350)
+            adjacencyList.add(.undirected, from: amsterdam, to: velana, weight: 600)
+            adjacencyList.add(.undirected, from: berlin, to: amsterdam, weight: 150)
+
+            // Returns each airport with a list of all direct flights.
+            print(adjacencyList.description)
+            /*
+             Riga ---> [ Amsterdam, Berlin ]
+             San Francisco ---> [ New York ]
+             Amsterdam ---> [ Vilnius, Riga, Velana, Berlin ]
+             Velana ---> [ Chicago, Amsterdam ]
+             Berlin ---> [ Riga, New York, Amsterdam ]
+             Chicago ---> [ Vilnius, New York, Velana ]
+             New York ---> [ Chicago, Berlin, San Francisco ]
+             Vilnius ---> [ Chicago, Amsterdam ]
+             */
+
+            // Returns the cost of flying between Chicago and Velana
+            adjacencyList.weight(from: chicago, to: velana)
+
+            if let flightsFromChicago = adjacencyList.edges(from: chicago) {
+                print("Chicago Out Going Flights")
+                print("-------------------------")
+                for edge in flightsFromChicago {
+                    print("from: \(edge.source) to: \(edge.destination)")
+                }
+            }
+            /*
+             Chicago Out Going Flights
+             -------------------------
+             from: Chicago to: Vilnius
+             from: Chicago to: New York
+             from: Chicago to: Velana
+             */
+
+            // Removes Chicago airport and all airports that
+            // listed it as a possible destination.
+            adjacencyList.delete(chicago)
+            print(adjacencyList.description)
+            /*
+             Riga ---> [ Amsterdam, Berlin ]
+             San Francisco ---> [ New York ]
+             Amsterdam ---> [ Vilnius, Riga, Velana, Berlin ]
+             Velana ---> [ Amsterdam ]
+             Berlin ---> [ Riga, New York, Amsterdam ]
+             New York ---> [ Berlin, San Francisco ]
+             Vilnius ---> [ Amsterdam ]
+             */
+        </code></pre>
+        
+        <h2>Code - Operations</h2>
+        
+        <pre><code class="language-swift">
+            // Adjacency List - Basic Operations
+            // Method: Dictionary of Arrays
+
+            // -------------------------
+
+            // Adjacency List Setup
+
+            // We will represent airports with strings.
+            let adjacencyList = AdjacencyList&lt;String>()
+
+            // Generating a vertex for each airport and
+            // adding them to the adjacency dictionary.
+            let vilnius = adjacencyList.createVertex(data: "Vilnius")
+            let riga = adjacencyList.createVertex(data: "Riga")
+            let chicago = adjacencyList.createVertex(data: "Chicago")
+            let newYork = adjacencyList.createVertex(data: "New York")
+            let sanFrancisco = adjacencyList.createVertex(data: "San Francisco")
+            let amsterdam = adjacencyList.createVertex(data: "Amsterdam")
+            let berlin = adjacencyList.createVertex(data: "Berlin")
+            let velana = adjacencyList.createVertex(data: "Velana")
+
+            // Generating the edges between vertices, which
+            // represent the travel cost between cities.
+            // Travel can occur in either direction for the same cost.
+            adjacencyList.add(.undirected, from: vilnius, to: chicago, weight: 700)
+            adjacencyList.add(.undirected, from: vilnius, to: amsterdam, weight: 250)
+            adjacencyList.add(.undirected, from: riga, to: amsterdam, weight: 250)
+            adjacencyList.add(.undirected, from: riga, to: berlin, weight: 750)
+            adjacencyList.add(.undirected, from: chicago, to: newYork, weight: 200)
+            adjacencyList.add(.undirected, from: chicago, to: velana, weight: 800)
+            adjacencyList.add(.undirected, from: newYork, to: berlin, weight: 550)
+            adjacencyList.add(.undirected, from: sanFrancisco, to: newYork, weight: 350)
+            adjacencyList.add(.undirected, from: amsterdam, to: velana, weight: 600)
+            adjacencyList.add(.undirected, from: berlin, to: amsterdam, weight: 150)
+
+            // Query
+            /*
+             We'll define Query as:
+             Given a vertex, what are its edges?
+             
+             Since we are using a dictionary, answering this
+             question involves searching for a value, which in
+             the worst case is done in O(n) time. On average
+             we can expect this operation to be done
+             in &Theta;(1).
+             
+             The variables V (the number of vertices) and n
+             (the number of key-value pairs) are equivalent.
+             Hence, the time complexity for a Hash Table search
+             O(n) and an Adjacency List Query O(V) are
+             equivalent--assuming implementation uses the
+             dictionary of arrays method.
+             */
+
+            if let vilniusFlights = adjacencyList.edges(from: vilnius) {
+                var edgeString = ""
+                for (index, edge) in vilniusFlights.enumerated() {
+                    if index != vilniusFlights.count - 1 {
+                        edgeString.append("\(edge.destination), ")
+                    } else {
+                        edgeString.append("\(edge.destination)")
+                    }
+                }
+                print("[ \(edgeString) ]\n")
+                // Prints "[ Chicago, Amsterdam ]"
+            }
+
+            // -------------------------
+
+            // Search
+
+            // Basic implementation of Depth First Search
+            func depthFirstSearch(startVertex: Vertex&lt;String>, target: String) -> Vertex&lt;String>?{
+                var queue: [Vertex&lt;String>] = []
+                var visited: [Vertex&lt;String>:Bool] = [:]
+                
+                queue.append(startVertex)
+                visited[startVertex] = true
+                
+                while !queue.isEmpty {
+                    let vertex = queue.removeFirst()
+                    if vertex.data == target {
+                        print("Found destination: \(target)")
+                        return vertex
+                    }
+                    
+                    recursiveDFS(vertex: vertex, visited: &visited, queue: &queue)
+                }
+                print("Failed to find destionation: \(target)")
+                return nil
+            }
+
+            func recursiveDFS(vertex: Vertex&lt;String>, visited: inout [Vertex&lt;String>:Bool], queue: inout [Vertex&lt;String>]) {
+                if let edges = adjacencyList.adjacencyDict[vertex] {
+                    for vertex in edges {
+                        if visited[vertex.destination] != true {
+                            queue.append(vertex.destination)
+                            visited[vertex.destination] = true
+                            recursiveDFS(vertex: vertex.destination, visited: &visited, queue: &queue)
+                        }
+                    }
+                }
+            }
+
+            depthFirstSearch(startVertex: chicago, target: "Bermuda")
+            // Prints "Failed to find destionation: Bermuda"
+            depthFirstSearch(startVertex: chicago, target: riga.data)
+            // Prints "Found destination: Riga"
+
+            // -------------------------
+
+            // Insertion
+            /*
+             We will use the createVertex() vertex method and
+             then the add() method to create a vertex with an
+             edge to another vertex.
+             */
+
+            // Creates a new vertex "Tokyo" and adds
+            // it to the adjacency dictionary.
+            let tokyo = adjacencyList.createVertex(data: "Tokyo")
+
+            // Adds values to the adjacency dictionary in
+            // the form of new undirected edges.
+            adjacencyList.add(.undirected, from: tokyo, to: chicago, weight: 1200)
+            print(adjacencyList.description)
+            /*
+             New York ---> [ Chicago, Berlin, San Francisco ]
+             Riga ---> [ Amsterdam, Berlin ]
+             Amsterdam ---> [ Vilnius, Riga, Velana, Berlin ]
+             Vilnius ---> [ Chicago, Amsterdam ]
+             Berlin ---> [ Riga, New York, Amsterdam ]
+             Velana ---> [ Chicago, Amsterdam ]
+             Tokyo ---> [ Chicago ]
+             San Francisco ---> [ New York ]
+             Chicago ---> [ Vilnius, New York, Velana, Tokyo ]
+             */
+
+            // -------------------------
+
+            // Deletion
+            /*
+             In order to delete a vertex we need to iterate
+             over all key-value pairs. Since vertices can point
+             to each other, we need to remove the references
+             that each vertex has to the given vertex. The key
+             for that vertex should also be removed.
+             
+             When we iterate over the dictionary we visit every
+             vertex (key) and each value for that key (edges).
+             Hence, the time complexity for removing a vertex is
+             O(V + E).
+             */
+
+            // Removing a vertex
+            adjacencyList.delete(chicago)
+            print(adjacencyList.description)
+            /*
+             New York ---> [ Berlin, San Francisco ]
+             Riga ---> [ Amsterdam, Berlin ]
+             Amsterdam ---> [ Vilnius, Riga, Velana, Berlin ]
+             Vilnius ---> [ Amsterdam ]
+             Berlin ---> [ Riga, New York, Amsterdam ]
+             Velana ---> [ Amsterdam ]
+             Tokyo ---> [  ]
+             San Francisco ---> [ New York ]
+             */
+        </code></pre>
+
+        <script src="../../../../Prism/prism.js"></script>
+    </body>
+</html>

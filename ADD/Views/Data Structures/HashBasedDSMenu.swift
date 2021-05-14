@@ -14,11 +14,16 @@ struct HashBasedDSMenu: View {
     
     @State var selection: String?
     
+    let content: [ContentEnum] = [
+        .hashList,
+        .hashTable,
+    ]
+    
     var body: some View {
         List {
-            ForEach(HashBasedDS.allCases, id: \.self) { content in
+            ForEach(content, id: \.self) { content in
                 NavigationLink(
-                    destination: LazyView(SimpleDefaultTabView(factory.getHashBasedDSContent(content))
+                    destination: LazyView(SimpleDefaultTabView(factory.getContent(content))
                                             .navigationBarTitle(content.description, displayMode: .inline)),
                     tag: content.description,
                     selection: $selection

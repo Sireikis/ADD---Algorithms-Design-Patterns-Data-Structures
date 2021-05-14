@@ -33,6 +33,8 @@ enum TreeDS: String, CaseIterable, Identifiable {
             return "Binary Tree"
 //        case .heap:
 //            return "Heap"
+//        case .nAryTree:
+//            return "N-ary Tree"
         }
     }
     

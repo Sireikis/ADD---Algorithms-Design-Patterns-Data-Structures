@@ -10,91 +10,78 @@ import Foundation
 
 // Factory
 class ContentFactory {
-    func getSortContent(_ contentType: SortAlgorithm) -> ContentImplementor {
+    func getContent( _ contentType: ContentEnum) -> ContentImplementor {
+        var content: ADDContent
         switch contentType {
+        // Algorithms - Sort
         case .insertionSort:
-            return ContentImplementor(InsertionSort())
+            content = InsertionSort()
         case .selectionSort:
-            return ContentImplementor(SelectionSort())
+            content = SelectionSort()
         case .mergeSort:
-            return ContentImplementor(MergeSort())
+            content = MergeSort()
         case .quickSort:
-            return ContentImplementor(QuickSort())
-        }
-    }
-    
-    func getSearchContent(_ contentType: SearchAlgorithm) -> ContentImplementor {
-        switch contentType {
+            content = QuickSort()
+            
+        // Algorithms - Search
         case .binarySearch:
-            return ContentImplementor(BinarySearch())
+            content = BinarySearch()
         case .breadthFirstSearch:
-            return ContentImplementor(BreadthFirstSearch())
+            content = BreadthFirstSearch()
         case .depthFirstSearch:
-            return ContentImplementor(DepthFirstSearch())
-        }
-    }
-    
-    func getBehavioralDPContent(_ contentType: BehavioralDP) -> ContentImplementor {
-        switch contentType {
+            content = DepthFirstSearch()
+            
+        // Design Patterns - Behavioral
         case .command:
-            return ContentImplementor(CommandPattern())
+            content = CommandPattern()
         case .observer:
-            return ContentImplementor(ObserverPattern())
+            content = ObserverPattern()
         case .strategy:
-            return ContentImplementor(StrategyPattern())
-        }
-    }
-    
-    func getCreationalDPContent(_ contentType: CreationalDP) -> ContentImplementor {
-        switch contentType {
+            content = StrategyPattern()
+            
+        // Design Patterns - Creational
         case .abstractFactory:
-            return ContentImplementor(AbstractFactoryPattern())
+            content = AbstractFactoryPattern()
         case .factoryMethod:
-            return ContentImplementor(FactoryMethodPattern())
+            content = FactoryMethodPattern()
         case .singleton:
-            return ContentImplementor(SingletonPattern())
-        }
-    }
-    
-    func getStructuralDPContent(_ contentType: StructuralDP) -> ContentImplementor {
-        switch contentType {
+            content = SingletonPattern()
+            
+        // Design Patterns - Structural
         case .adapter:
-            return ContentImplementor(AdapterPattern())
+            content = AdapterPattern()
         case .bridge:
-            return ContentImplementor(BridgePattern())
+            content = BridgePattern()
         case .decorator:
-            return ContentImplementor(DecoratorPattern())
+            content = DecoratorPattern()
         case .proxy:
-            return ContentImplementor(ProxyPattern())
-        }
-    }
-    
-    func getLinearDSContent(_ contentType: LinearDS) -> ContentImplementor {
-        switch contentType {
+            content = ProxyPattern()
+            
+        // Data Structures - Linear
         case .array:
-            return ContentImplementor(ArrayDSLinear())
+            content = ArrayDS()
         case .linkedList:
-            return ContentImplementor(LinkedListDSLinear())
-        }
-    }
-    
-    func getTreeDSContent(_ contentType: TreeDS) -> ContentImplementor {
-        switch contentType {
+            content = LinkedListDS()
+            
+        // Data Structures - Tree
         case .binarySearchTree:
-            return ContentImplementor(BinarySearchTreeDS())
+            content = BinarySearchTreeDS()
         case .binaryTree:
-            return ContentImplementor(BinaryTreeDS())
+            content = BinaryTreeDS()
+            
+        // Data Structures - Hash-based
+        case .hashList:
+            content = HashListDS()
+        case .hashTable:
+            content = HashTableDS()
+            
+        // Data Structures - Graph
+        case .adjacencyList:
+            content = AdjacencyListDS()
         }
+        
+        return ContentImplementor(content)
     }
-    
-    func getHashBasedDSContent(_ contentType: HashBasedDS) -> ContentImplementor {
-    switch contentType {
-    case .hashList:
-        return ContentImplementor(HashListDS())
-    case .hashTable:
-        return ContentImplementor(HashTableDS())
-    }
-}
     
     func getTidBit(_ tidBit: TidBits) -> TidBitImplementor {
         switch tidBit {
@@ -118,7 +105,4 @@ class ContentFactory {
             return TidBitImplementor(DSCategories())
         }
     }
-    
-    // Methods that get other content types.
-    //func getSearchContent(_ contentType: SearchAlgorithm) -> ContentImplementor { }
 }

@@ -13,11 +13,18 @@ struct StructuralDPMenu: View {
     
     @State var selection: String?
     
+    let content: [ContentEnum] = [
+        .adapter,
+        .bridge,
+        .decorator,
+        .proxy
+    ]
+    
     var body: some View {
         List {
-            ForEach(StructuralDP.allCases, id: \.self) { content in
+            ForEach(content, id: \.self) { content in
                 NavigationLink(
-                    destination: LazyView(SimpleDefaultTabView(factory.getStructuralDPContent(content))
+                    destination: LazyView(SimpleDefaultTabView(factory.getContent(content))
                                             .navigationBarTitle(content.description, displayMode: .inline)),
                     tag: content.description,
                     selection: $selection

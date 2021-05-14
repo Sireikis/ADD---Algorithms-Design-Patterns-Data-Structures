@@ -1,5 +1,5 @@
 //
-//  ArrayDSLinear.swift
+//  ArrayDS.swift
 //  ADD
 //
 //  Created by Ignas Sireikis on 5/6/21.
@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class ArrayDSLinear: ADDContent {
+class ArrayDS: ADDContent {
     let filePath: String = "www/Data Structures/Linear/Array/"
     
     var summaries = [FileNumber:URLRequest]()

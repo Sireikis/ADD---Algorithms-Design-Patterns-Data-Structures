@@ -53,7 +53,12 @@ struct MainMenu: View {
         .navigationTitle("ADD")
         //.navigationBarTitle("ADD", displayMode: .inline)
         
-        .navigationBarItems(trailing: Text("Settings"))
+        //.navigationBarItems(trailing: Text("Settings"))
+        .navigationBarItems(leading:
+                                NavigationLink(destination: SearchView(factory: factory)) {
+                                    Label("Search", systemImage: "magnifyingglass")
+                                }, trailing: Text("Settings")
+        )
         
         // Fixes the grey buttons on backtrack, but gives lots of errors.
         // OS_ACTIVITY_MODE is disabled, so no errors.

@@ -1,5 +1,5 @@
 //
-//  LinkedListDSLinear.swift
+//  LinkedListDS.swift
 //  ADD
 //
 //  Created by Ignas Sireikis on 5/6/21.
@@ -9,7 +9,7 @@ import Foundation
 
 
 // Model, Adaptee
-class LinkedListDSLinear: ADDContent {
+class LinkedListDS: ADDContent {
     let filePath: String = "www/Data Structures/Linear/Linked List/"
     
     var summaries = [FileNumber:URLRequest]()

@@ -9,13 +9,7 @@ import SwiftUI
 
 
 enum GraphDS: String, CaseIterable, Identifiable {
-    // Planned content
-    // case adjacencyList, graph
-    
-    // ADDContent to finish
-    // case adjacencyList, graph
-    
-    case adjacencyList, graph
+    case adjacencyList
     
     var image: String {
         return "squareshape.controlhandles.on.squareshape.controlhandles"
@@ -29,8 +23,6 @@ enum GraphDS: String, CaseIterable, Identifiable {
         switch self {
         case .adjacencyList:
             return "Adjacency List"
-        case .graph:
-            return "Graph"
         }
     }
     
