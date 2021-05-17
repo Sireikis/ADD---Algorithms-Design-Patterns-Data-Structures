@@ -16,18 +16,24 @@ struct DesignPatternsMenu: View {
     @State var selection: String?
     
     var body: some View {
+        GeometryReader { geometry in
+            body(for: geometry.size)
+        }
+    }
+    
+    func body(for size: CGSize) -> some View {
         List {
             ScrollView(.horizontal) {
                 HStack {
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreDesignPatterns)))) {
                         Topic(description: "What are", botDescription: "Design Patterns?", splitDescription: true,
-                              rectColor: .pink, txtColor: .white, rectWidth: headingWidth)
+                              rectColor: .pink, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
                     }
                     
                     // Describes the difference between behavioral, creational, and structural
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.DPCategories)))) {
                         Topic(description: "What do these", botDescription: "categories mean?", splitDescription: true,
-                              rectColor: .green, txtColor: .white, rectWidth: headingWidth)
+                              rectColor: .green, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
                     }
                 }
             }

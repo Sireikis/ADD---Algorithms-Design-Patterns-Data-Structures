@@ -30,7 +30,6 @@ struct BasicContentSelectionView: View {
         }
         .refreshOnAppear(selection: $selection)
         .navigationBarTitle(title, displayMode: .inline)
-        .navigationBarItems(trailing: Text("Home"))
     }
 }
 

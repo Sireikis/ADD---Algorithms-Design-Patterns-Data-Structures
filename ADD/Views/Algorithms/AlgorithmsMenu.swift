@@ -17,14 +17,20 @@ struct AlgorithmsMenu: View {
     @State var selection: String?
     
     var body: some View {
+        GeometryReader { geometry in
+            body(for: geometry.size)
+        }
+    }
+    
+    func body(for size: CGSize) -> some View {
         List {
             ScrollView(.horizontal) {
                 HStack {
                     // Describes the intent of the app, as a reference mainly
                     // Use Geometry Reader, not hardcoded
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreAlgorithms)))) {
-                        Topic(description: "What are Algorithms?",
-                              rectColor: .pink, txtColor: .white, rectWidth: headingWidth)
+                        Topic(description: "What are", botDescription: "Algorithms?", splitDescription: true,
+                              rectColor: .pink, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
                         
                     }
                 }

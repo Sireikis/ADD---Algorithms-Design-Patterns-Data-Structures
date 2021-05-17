@@ -48,6 +48,10 @@
 		7BB65CC2261D0ACC00369C00 /* DesignPatternsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */; };
 		7BB65CE1261D12DA00369C00 /* ContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CE0261D12DA00369C00 /* ContentFactory.swift */; };
 		7BB65CEB261D158800369C00 /* DataStructuresMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB65CEA261D158800369C00 /* DataStructuresMenu.swift */; };
+		7BC404412652C76100972364 /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC404402652C76100972364 /* MailComposer.swift */; };
+		7BC404442652C7E900972364 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC404432652C7E900972364 /* SettingsView.swift */; };
+		7BC4044F2652D2A900972364 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4044E2652D2A900972364 /* HideKeyboard.swift */; };
+		7BC4045226530CDB00972364 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4045126530CDB00972364 /* Launch Screen.storyboard */; };
 		7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */; };
 		7BE5424326276275000673E5 /* TidBitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424226276275000673E5 /* TidBitView.swift */; };
 		7BE5424626276544000673E5 /* TidBitEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5424526276544000673E5 /* TidBitEnum.swift */; };
@@ -116,6 +120,10 @@
 		7BB65CC1261D0ACC00369C00 /* DesignPatternsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignPatternsMenu.swift; sourceTree = "<group>"; };
 		7BB65CE0261D12DA00369C00 /* ContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFactory.swift; sourceTree = "<group>"; };
 		7BB65CEA261D158800369C00 /* DataStructuresMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresMenu.swift; sourceTree = "<group>"; };
+		7BC404402652C76100972364 /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
+		7BC404432652C7E900972364 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7BC4044E2652D2A900972364 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		7BC4045126530CDB00972364 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7BE5423F26276197000673E5 /* WhatAreAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatAreAlgorithms.swift; sourceTree = "<group>"; };
 		7BE5424226276275000673E5 /* TidBitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitView.swift; sourceTree = "<group>"; };
 		7BE5424526276544000673E5 /* TidBitEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidBitEnum.swift; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 				7B0773F72613ADA100FEDB85 /* Assets.xcassets */,
 				7B0773FC2613ADA100FEDB85 /* Info.plist */,
 				7B0773F92613ADA100FEDB85 /* Preview Content */,
+				7BC4045126530CDB00972364 /* Launch Screen.storyboard */,
 			);
 			path = ADD;
 			sourceTree = "<group>";
@@ -255,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				7B07740D2613B24200FEDB85 /* MainMenu.swift */,
+				7BC404462652C88000972364 /* Settings */,
+				7BC4044A2652CFAB00972364 /* Search */,
 				7B3BBF7B261E0FBC007207A3 /* Reusable UI Components */,
 				7B0774142613B27B00FEDB85 /* Algorithms */,
 				7BB65CC4261D0AD200369C00 /* Design Patterns */,
@@ -279,8 +290,6 @@
 				7B0774372613BC0C00FEDB85 /* DefaultTabView.swift */,
 				7BFD7E6E2633286E00D4A4C4 /* SimpleDefaultTabView.swift */,
 				7BE5424226276275000673E5 /* TidBitView.swift */,
-				7B7B8FEB264ED82B009EBB89 /* SearchView.swift */,
-				7B7B8FFB264F20C9009EBB89 /* BasicContentSelectionView.swift */,
 				7B5B91B12617971F00C82B47 /* Helpers */,
 			);
 			path = "View Templates";
@@ -370,6 +379,7 @@
 				7B1BDEA226166B3A00427505 /* WebView.swift */,
 				7B8150D9261F6DDE00E6CAAD /* LazyView.swift */,
 				7B0DF85826435BA700DAADF3 /* RefreshOnAppearModifier.swift */,
+				7B7B8FFB264F20C9009EBB89 /* BasicContentSelectionView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -443,6 +453,40 @@
 				7BB65CEA261D158800369C00 /* DataStructuresMenu.swift */,
 			);
 			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		7BC404462652C88000972364 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7BC404432652C7E900972364 /* SettingsView.swift */,
+				7BC404482652CEAF00972364 /* Helpers */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7BC404482652CEAF00972364 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7BC404402652C76100972364 /* MailComposer.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7BC4044A2652CFAB00972364 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7B7B8FEB264ED82B009EBB89 /* SearchView.swift */,
+				7BC4044C2652D29500972364 /* Helpers */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7BC4044C2652D29500972364 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7BC4044E2652D2A900972364 /* HideKeyboard.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7BE5425C2627958A000673E5 /* TidBits */ = {
@@ -529,6 +573,7 @@
 			files = (
 				7B0773FB2613ADA100FEDB85 /* Preview Assets.xcassets in Resources */,
 				7B0773F82613ADA100FEDB85 /* Assets.xcassets in Resources */,
+				7BC4045226530CDB00972364 /* Launch Screen.storyboard in Resources */,
 				7B5B91A526178D3B00C82B47 /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +614,9 @@
 				7BF92E30263863620057E791 /* QuickSort.swift in Sources */,
 				7B7DC96B2639D2970090D4FA /* BinarySearch.swift in Sources */,
 				7B7B8FE4264ED7D4009EBB89 /* ADDContentEnum.swift in Sources */,
+				7BC404442652C7E900972364 /* SettingsView.swift in Sources */,
 				7BE5424026276197000673E5 /* WhatAreAlgorithms.swift in Sources */,
+				7BC404412652C76100972364 /* MailComposer.swift in Sources */,
 				7B039C332645F33900DF9BF3 /* BinaryTreeDS.swift in Sources */,
 				7B1669BB264B2F340037D531 /* HashTableDS.swift in Sources */,
 				7B7B8FEF264EE68E009EBB89 /* ContentEnum.swift in Sources */,
@@ -590,6 +637,7 @@
 				7B0774232613B32400FEDB85 /* InsertionSort.swift in Sources */,
 				7B0774122613B27600FEDB85 /* AlgorithmsMenu.swift in Sources */,
 				7BF857762641F7CC00547EB3 /* DecoratorPattern.swift in Sources */,
+				7BC4044F2652D2A900972364 /* HideKeyboard.swift in Sources */,
 				7BFD7E6F2633286E00D4A4C4 /* SimpleDefaultTabView.swift in Sources */,
 				7B0774292613B3A100FEDB85 /* ContentImplementor.swift in Sources */,
 				7B0773F42613ADA100FEDB85 /* ADDApp.swift in Sources */,
