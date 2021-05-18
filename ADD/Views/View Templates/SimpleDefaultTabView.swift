@@ -9,7 +9,7 @@ import SwiftUI
 
 
 // Client + Refined Abstraction
-// Need to probably abstract this all into a factory.
+// Used until Explanations, Examples, and multiple pages are introduced.
 struct SimpleDefaultTabView: View, TemplateAbstraction {
     var implementor: Implementor
     
@@ -57,7 +57,6 @@ struct SimplePage: View {
         }
     }
 }
-
 
 struct SimpleDefaultTabView_Previews: PreviewProvider {
     static var previews: some View {

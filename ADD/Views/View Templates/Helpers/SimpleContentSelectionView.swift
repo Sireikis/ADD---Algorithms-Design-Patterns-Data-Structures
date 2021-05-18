@@ -1,5 +1,5 @@
 //
-//  BasicContentSelectionView.swift
+//  SimpleContentSelectionView.swift
 //  ADD
 //
 //  Created by Ignas Sireikis on 5/14/21.
@@ -8,7 +8,8 @@
 import SwiftUI
 
 
-struct BasicContentSelectionView: View {
+// Generates a view containing a list of the given content
+struct SimpleContentSelectionView: View {
     let title: String
     let factory: ContentFactory
     let content: [ContentEnum]
@@ -35,6 +36,6 @@ struct BasicContentSelectionView: View {
 
 struct BasicContentSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        BasicContentSelectionView(title: "Basic", factory: ContentFactory(), content: [.abstractFactory])
+        SimpleContentSelectionView(title: "Basic", factory: ContentFactory(), content: [.abstractFactory])
     }
 }

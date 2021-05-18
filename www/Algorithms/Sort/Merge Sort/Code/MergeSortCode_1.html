@@ -73,26 +73,26 @@
         
         <h3>Verbose</h3>
         <pre><code class="language-none">
-<b>Merge Sort Function:</b> Expects an array
+Merge Sort Function: Expects an array
 In a zero-based array,
 If the array is 2 or more elements,
     Find the middle index
-    Declare a <b>left array</b>, returned by recursively calling Merge Sort with a subarray from index 0 up to but not including the middle index
-    Declare a <b>right array</b>, returned by recursively calling Merge Sort with a subarray from the middle index up to the last index
+    Declare a left array, returned by recursively calling Merge Sort with a subarray from index 0 up to but not including the middle index
+    Declare a right array, returned by recursively calling Merge Sort with a subarray from the middle index up to the last index
     
     Return the result of the Merge Function
 Otherwise,
     Return the array
 
     
-<b>Merge Function:</b> Expects a left and right array
+Merge Function: Expects a left and right array
 In a zero-based array,
-Declare <b>leftIndex</b> and <b>rightIndex</b> to be 0
-Declare an empty <b>orderedArray</b>
+Declare leftIndex and rightIndex to be 0
+Declare an empty orderedArray
 
 While the leftIndex and rightIndex don't exceed their respective arrays,
-    Declare <b>leftElement</b> to be the element at leftIndex
-    Declare <b>rightElement</b> to be the element at rightIndex
+    Declare leftElement to be the element at leftIndex
+    Declare rightElement to be the element at rightIndex
     
     If leftElement is less than or equal to rightElement,
         Append leftElement to orderedArray

@@ -15,7 +15,7 @@ struct SettingsView: View {
     @State var mailError = false
     
     var url: URL {
-        // Changed app ID from LifeStock to ADD!!
+        // Change app ID from LifeStock to ADD!!
         guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1542466908?action=write-review")
         else { fatalError("Expected a valid URL") }
         return writeReviewURL
@@ -37,7 +37,6 @@ struct SettingsView: View {
             }
         }
         .navigationBarTitle("Settings", displayMode: .inline)
-        
         .sheet(isPresented: $isShowingMailView) {
             MailComposer(result: $result)
         }

@@ -21,7 +21,7 @@ struct MainMenu: View {
         List {
             ScrollView(.horizontal) {
                 HStack {
-                    // Describes the intent of the app, as a reference mainly
+                    // Describes the intent of the app
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatIsADD)))) {
                         Topic(description: "What is ADD?",
                               rectColor: .pink, txtColor: .white, size: size,

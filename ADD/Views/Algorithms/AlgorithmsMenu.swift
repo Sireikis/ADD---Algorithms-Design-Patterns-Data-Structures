@@ -8,11 +8,9 @@
 import SwiftUI
 
 
-// Using wiki Algo Types
 struct AlgorithmsMenu: View {
     let headingWidth: CGFloat = 216
     let factory: ContentFactory
-    
     // Fixes selected link staying grey when navigating back.
     @State var selection: String?
     
@@ -26,19 +24,16 @@ struct AlgorithmsMenu: View {
         List {
             ScrollView(.horizontal) {
                 HStack {
-                    // Describes the intent of the app, as a reference mainly
-                    // Use Geometry Reader, not hardcoded
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreAlgorithms)))) {
                         Topic(description: "What are", botDescription: "Algorithms?", splitDescription: true,
                               rectColor: .pink, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
-                        
                     }
                 }
             }
             
             Section(header: Text("Algorithms")) {
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Search",
+                    destination: SimpleContentSelectionView(title: "Search",
                                                            factory: factory,
                                                            content: [.binarySearch, .breadthFirstSearch, .depthFirstSearch]),
                     tag: "Search",
@@ -48,7 +43,7 @@ struct AlgorithmsMenu: View {
                 }
                 
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Sort",
+                    destination: SimpleContentSelectionView(title: "Sort",
                                                            factory: factory,
                                                            content: [.insertionSort, .selectionSort, .mergeSort, .quickSort]),
                     tag: "Sort",
@@ -63,10 +58,8 @@ struct AlgorithmsMenu: View {
     }
 }
 
-
 struct AlgorithmsMenu_Previews: PreviewProvider {
     static var previews: some View {
         AlgorithmsMenu(factory: ContentFactory())
-            //.environmentObject(SingleWebView())
     }
 }

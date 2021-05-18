@@ -11,7 +11,7 @@ import SwiftUI
 
 // https://stackoverflow.com/questions/63934037/swiftui-navigationlink-cell-in-a-form-stays-highlighted-after-detail-pop
 // Fixes greyed out NavigationLinks when backtracking through app.
-// Also fixes spontaneuos backtracking when selecting NavigationLinks if using
+// Also fixes spontaneous backtracking when selecting NavigationLinks if using
 // the .onDisappear method shown in same post.
 struct RefreshOnAppearModifier<Tag: Hashable>: ViewModifier {
     @State private var viewId = UUID()

@@ -11,7 +11,6 @@ import SwiftUI
 struct DesignPatternsMenu: View {
     let factory: ContentFactory
     let headingWidth: CGFloat = 216
-    
     // Fixes selected link staying grey when navigating back.
     @State var selection: String?
     
@@ -40,7 +39,7 @@ struct DesignPatternsMenu: View {
             
             Section(header: Text("Patterns")) {
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Behavioral",
+                    destination: SimpleContentSelectionView(title: "Behavioral",
                                                            factory: factory,
                                                            content: [.command, .observer, .strategy]),
                     tag: "Behavioral",
@@ -50,7 +49,7 @@ struct DesignPatternsMenu: View {
                 }
                 
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Creational",
+                    destination: SimpleContentSelectionView(title: "Creational",
                                                            factory: factory,
                                                            content: [.abstractFactory, .factoryMethod, .singleton]),
                     tag: "Creational",
@@ -60,7 +59,7 @@ struct DesignPatternsMenu: View {
                 }
                 
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Structural",
+                    destination: SimpleContentSelectionView(title: "Structural",
                                                            factory: factory,
                                                            content: [.adapter, .bridge, .decorator, .proxy]),
                     tag: "Structural",
@@ -74,7 +73,6 @@ struct DesignPatternsMenu: View {
         .navigationBarTitle("Design Patterns", displayMode: .inline)
     }
 }
-
 
 struct DesignPatternsMenu_Previews: PreviewProvider {
     static var previews: some View {

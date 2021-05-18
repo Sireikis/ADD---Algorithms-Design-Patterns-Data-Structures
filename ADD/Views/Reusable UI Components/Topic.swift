@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 // Gain button-like animation when nested in NavigationLink
 struct Topic: View {
     var description: String
@@ -30,7 +31,6 @@ struct Topic: View {
         self.txtColor = txtColor
         
         self.size = size
-        
         self.rectWidth = rectWidth
         self.rectHeight = rectHeight
     }

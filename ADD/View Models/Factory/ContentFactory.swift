@@ -79,7 +79,6 @@ class ContentFactory {
         case .adjacencyList:
             content = AdjacencyListDS()
         }
-        
         return ContentImplementor(content)
     }
     
@@ -94,8 +93,9 @@ class ContentFactory {
             content = WhatIsADD()
         case .whatAreAlgorithms:
             content = WhatAreAlgorithms()
-        case .whatAreClassifications:
-            content = WhatAreClassifications()
+            // Not implemented
+//        case .whatAreClassifications:
+//            content = WhatAreClassifications()
         case .whatAreDesignPatterns:
             content = WhatAreDesignPatterns()
         case .DPCategories:

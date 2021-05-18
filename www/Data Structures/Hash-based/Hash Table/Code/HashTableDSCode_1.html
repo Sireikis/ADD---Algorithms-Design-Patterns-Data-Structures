@@ -23,7 +23,7 @@
              
              Under ideal circumstances operations are performed in
              constant time. However, with enough collisions operations
-             can degrade down to O(n), becuase traversal of a
+             can degrade down to O(n), because traversal of a
              linked-list is necessary to find a key.
              */
 
@@ -135,7 +135,7 @@
                     newNode.next = head
                     bucketArray[bucketIndex] = newNode
                     
-                    // If the loadfactor is exceeded,
+                    // If the load factor is exceeded,
                     // double the HashTable's capacity
                     if Float(size / numBuckets) >= loadFactor {
                         let temp = bucketArray
@@ -319,7 +319,7 @@
             absent we can conclude that the key is not in the
             hash table. In the case where the index has collisions,
             we must traverse a linked-list until the key's value is
-            found or we reach the end the list.
+            found or we reach the end of the list.
             */
 
            producePrices.get(key: "fail")
@@ -345,9 +345,9 @@
             collision by adding the new key-value pair as a
             new link to the existing linked-list at that index.
             
-            Once this is done the hash table's loadfactor is
-            checked. If the current loadfactor crosses the
-            pre-determined threshold (usually 0.75), the capacity
+            Once this is done the hash table's load factor is
+            checked. If the current load factor crosses the
+            predetermined threshold (usually 0.75), the capacity
             of the hash table is doubled and every key-value
             pair in the old hash table is inserted into the
             new hash table. Since the capacity is different
@@ -371,7 +371,7 @@
             key-value pair is removed and the rest of the link
             is joined together.
             
-            This particulaur implementation does not resize the
+            This particular implementation does not resize the
             tree below some specific load factor. Whether this
             functionality is advantageous depends on the context.
             */

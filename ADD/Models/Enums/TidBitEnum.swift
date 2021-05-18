@@ -7,7 +7,9 @@
 
 import Foundation
 
+
 enum TidBits {
-    case bigO, glossary, whatIsADD, whatAreAlgorithms, whatAreClassifications,
-         whatAreDesignPatterns, DPCategories, whatAreDataStructures, DSCategories
+    // .whatAreClassifications not implemented
+    case bigO, glossary, whatIsADD, whatAreAlgorithms,
+    whatAreDesignPatterns, DPCategories, whatAreDataStructures, DSCategories
 }

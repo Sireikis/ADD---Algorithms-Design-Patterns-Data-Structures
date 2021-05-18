@@ -15,14 +15,3 @@ protocol ADDContentEnum: Identifiable {
     var description: String { get }
     var id: String { get }
 }
-
-/*
- extension ADDContentEnum: Hashable {
-     public func hash(into hasher: inout Hasher) {
-         hasher.combine(image)
-         hasher.combine(imgForeground)
-         hasher.combine(description)
-     }
- }
- */
-

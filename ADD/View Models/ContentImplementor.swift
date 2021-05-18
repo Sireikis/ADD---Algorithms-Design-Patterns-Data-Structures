@@ -30,8 +30,9 @@ class ContentImplementor: Implementor {
             return instance.getContentIn(file: file, for: .Code)
         case .exampleProblem:
             return instance.getContentIn(file: file, for: .Example)
+            // Should never be called
         default:
-            // Views that call unexpected content get InsertionSortSummary_1.html
+            // Views that call unexpected content get the summary file
             return instance.getContentIn(file: .one, for: .Summary)
         }
     }

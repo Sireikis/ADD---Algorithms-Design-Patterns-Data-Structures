@@ -11,7 +11,6 @@ import SwiftUI
 struct DataStructuresMenu: View {
     let factory: ContentFactory
     let headingWidth: CGFloat = 216
-    
     // Fixes selected link staying grey when navigating back.
     @State var selection: String?
     
@@ -30,7 +29,7 @@ struct DataStructuresMenu: View {
                               rectColor: .pink, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
                     }
                     
-                    // Describes the difference between behavioral, creational, and structural
+                    // Describes the difference between linear, tree, hash-based, and graph
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.DSCategories)))) {
                         Topic(description: "What do these", botDescription: "categories mean?", splitDescription: true,
                               rectColor: .green, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
@@ -40,7 +39,7 @@ struct DataStructuresMenu: View {
             
             Section(header: Text("Structures")) {
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Linear",
+                    destination: SimpleContentSelectionView(title: "Linear",
                                                            factory: factory,
                                                            content: [.array, .linkedList]),
                     tag: "Linear",
@@ -50,7 +49,7 @@ struct DataStructuresMenu: View {
                 }
                 
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Tree",
+                    destination: SimpleContentSelectionView(title: "Tree",
                                                            factory: factory,
                                                            content: [.binarySearchTree, .binaryTree]),
                     tag: "Tree",
@@ -60,7 +59,7 @@ struct DataStructuresMenu: View {
                 }
                 
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Hash-based",
+                    destination: SimpleContentSelectionView(title: "Hash-based",
                                                            factory: factory,
                                                            content: [.hashList, .hashTable]),
                     tag: "Hash-based",
@@ -70,7 +69,7 @@ struct DataStructuresMenu: View {
                 }
                 
                 NavigationLink(
-                    destination: BasicContentSelectionView(title: "Graph",
+                    destination: SimpleContentSelectionView(title: "Graph",
                                                            factory: factory,
                                                            content: [.adjacencyList]),
                     tag: "Graph",
@@ -84,7 +83,6 @@ struct DataStructuresMenu: View {
         .navigationBarTitle("Data Structures", displayMode: .inline)
     }
 }
-
 
 struct DataStructuresMenu_Previews: PreviewProvider {
     static var previews: some View {

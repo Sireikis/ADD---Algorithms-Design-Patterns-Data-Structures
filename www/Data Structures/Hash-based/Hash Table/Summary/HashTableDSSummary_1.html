@@ -54,7 +54,7 @@
         </p>
         
         <p>
-        Note that if our hash-function is bad or the data set being processed is producing a large amount of collisions, we may end up resizing the array even though the actual number of indexes being used relative to the capacity doesn't exceed the load factor. The reason we use number of keys rather than number of indexes filled to calculate the load factor, is to account for variations in the number of collisions between datasets. We cannot predict the number of collisions that will happen, so we tend towards believing that the hash-function will produce the least amount of collisions possible and that it will need more space to maintain, on average, constant time operations.
+        Note that if our hash-function is bad or the data set being processed is producing a large amount of collisions, we may end up resizing the array even though the actual number of indexes being used relative to the capacity doesn't exceed the load factor. The reason we use the number of keys rather than number of indexes filled to calculate the load factor, is to account for variations in the number of collisions between datasets. We cannot predict the number of collisions that will happen, so we tend towards believing that the hash-function will produce the least amount of collisions possible and that it will need more space to maintain, on average, constant time operations.
         </p>
         
     </body>

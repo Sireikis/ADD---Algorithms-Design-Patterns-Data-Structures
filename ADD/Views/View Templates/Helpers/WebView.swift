@@ -4,6 +4,7 @@
  //
  //  Created by Ignas Sireikis on 4/1/21.
  //
+ 
  import SwiftUI
  import WebKit
  
@@ -24,8 +25,7 @@
         return webView!
     }
     
-    // Maybe I should preload all summary pages?
-    // Change it to loadSummaryPages()?
+    // Pre-loading InsertionSortSummary_1, choice is arbitrary
     private func loadDefaultPage() {
         let defaultFile = "www/Algorithms/Sort/Insertion Sort/Summary/InsertionSortSummary_1"
         if let summaryURL = Bundle.main.url(forResource: defaultFile, withExtension: "html") {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct TidBitView: View, TemplateAbstraction {
     @EnvironmentObject var singleWebView: SingleWebView
     var implementor: Implementor
@@ -27,6 +28,6 @@ struct TidBitView: View, TemplateAbstraction {
 
 struct TidBitView_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultTabView(TidBitImplementor(WhatAreAlgorithms()))
+        TidBitView(TidBitImplementor(WhatAreAlgorithms()))
     }
 }

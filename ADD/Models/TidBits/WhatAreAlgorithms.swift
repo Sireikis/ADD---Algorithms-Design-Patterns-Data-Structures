@@ -18,4 +18,3 @@ class WhatAreAlgorithms: TidBit {
         tidBit = loadHTMLTidBitFor(path: "WhatAreAlgorithms")
     }
 }
-

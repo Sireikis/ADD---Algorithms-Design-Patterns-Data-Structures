@@ -16,7 +16,6 @@ struct NavigationButton: View {
     var imgForeground: Color = .black
     var imgBackground: Color = .clear
 
-    
     var body: some View {
         HStack {
             Image(systemName: image)
@@ -30,7 +29,6 @@ struct NavigationButton: View {
         }
     }
 }
-
 
 struct NavigationButton_Previews: PreviewProvider {
     static var previews: some View {

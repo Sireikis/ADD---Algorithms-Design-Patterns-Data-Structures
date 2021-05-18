@@ -38,7 +38,7 @@
                 // Hashable, so that they can be placed into a dictionary.
                 associatedtype Element: Hashable
                 
-                // Returns a string repesentation of all
+                // Returns a string representation of all
                 // vertices and their associated edges.
                 var description: CustomStringConvertible { get }
                 
@@ -139,7 +139,7 @@
                     return adjacencyDict[source]
                 }
                 
-                // Calling this property returns a string repesentation
+                // Calling this property returns a string representation
                 // of all vertices and their associated edges.
                 public var description: CustomStringConvertible {
                     var result = ""
@@ -264,14 +264,14 @@
             adjacencyList.weight(from: chicago, to: velana)
 
             if let flightsFromChicago = adjacencyList.edges(from: chicago) {
-                print("Chicago Out Going Flights")
+                print("Chicago Outgoing Flights")
                 print("-------------------------")
                 for edge in flightsFromChicago {
                     print("from: \(edge.source) to: \(edge.destination)")
                 }
             }
             /*
-             Chicago Out Going Flights
+             Chicago Outgoing Flights
              -------------------------
              from: Chicago to: Vilnius
              from: Chicago to: New York
@@ -384,7 +384,7 @@
                     
                     recursiveDFS(vertex: vertex, visited: &visited, queue: &queue)
                 }
-                print("Failed to find destionation: \(target)")
+                print("Failed to find destination: \(target)")
                 return nil
             }
 
@@ -401,7 +401,7 @@
             }
 
             depthFirstSearch(startVertex: chicago, target: "Bermuda")
-            // Prints "Failed to find destionation: Bermuda"
+            // Prints "Failed to find destination: Bermuda"
             depthFirstSearch(startVertex: chicago, target: riga.data)
             // Prints "Found destination: Riga"
 

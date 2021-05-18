@@ -1,4 +1,3 @@
-
 //
 //  SearchView.swift
 //  ADD
@@ -15,6 +14,9 @@ struct SearchView: View {
     @State var selection: String?
     @State var search: String = ""
     @State var content: [ContentEnum] = []
+    
+    // Fixes keyboard TidBit resizing bug
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     let searchDict: [(String, ContentEnum)] = [
         // Algorithms - Search
@@ -90,6 +92,15 @@ struct SearchView: View {
         }
         .refreshOnAppear(selection: $selection)
         .navigationBarTitle("Search", displayMode: .inline)
+        // Fixes keyboard TidBit resizing bug
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                                Button(action: {
+                                    hideKeyboard()
+                                    self.mode.wrappedValue.dismiss()
+                                }) {
+                                    Label("ADD", systemImage: "chevron.left")
+                                })
     }
     
     func searchResults(_ search: String)  {

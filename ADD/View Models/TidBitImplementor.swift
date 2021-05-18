@@ -27,6 +27,7 @@ class TidBitImplementor: Implementor {
             // Thus, techincally this could ignore the file variable
             // and just call .one (so views can't mess up).
             return instance.getTidBitIn(file: .one)
+            // Should never be called
         default:
             // Views that call unexpected content get the tidBit file
             return instance.getTidBitIn(file: .one)
