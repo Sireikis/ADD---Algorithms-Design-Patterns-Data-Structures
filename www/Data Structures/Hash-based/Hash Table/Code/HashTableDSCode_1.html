@@ -8,7 +8,6 @@
     <body>
         <h1 class="title">Hash Table</h1>
         
-        
         <h3>Code - Structure</h3>
         
         <pre><code class="language-swift">
@@ -194,7 +193,8 @@
             var producePrices: HashTable&lt;String, Float> = HashTable()
             // We will need to expand the HashTable when the
             // load factor (0.75) is exceeded. With 7 additions
-            // that's impossible, even with no collisions.
+            // that's impossible, because our load factor
+            // is calculated based on the number of keys.
             producePrices.add(key: "Strawberry", value: 1.70)
             producePrices.add(key: "Romaine Lettuce", value: 2.00)
             producePrices.add(key: "Red Leaf Lettuce", value: 1.84)
@@ -203,14 +203,16 @@
             producePrices.add(key: "Iceberg Lettuce", value: 1.46)
             producePrices.add(key: "Green Leaf Lettuce", value: 1.70)
 
-            // As we add more to the table, the chance of exceeding
-            // the load factor increases.
+            // Adding more produce to the hash table.
             producePrices.add(key: "Celery", value: 2.36)
             producePrices.add(key: "Cauliflower", value: 4.35)
             producePrices.add(key: "Carrots", value: 0.95)
-            // Depending on our luck, by this point our table size
-            // may have doubled to 20.
+            // Since we're counting the number of keys
+            // added, our load factor is exceeded and
+            // the number of 'buckets' doubles to 20.
             producePrices.getNumBuckets()
+            // Returns "20"
+
             // The hash values that are generated in Swift are not
             // guaranteed to be equal across different executions
             // of a program. Hence, the resulting table may vary.
@@ -350,8 +352,8 @@
             predetermined threshold (usually 0.75), the capacity
             of the hash table is doubled and every key-value
             pair in the old hash table is inserted into the
-            new hash table. Since the capacity is different
-            the indexes key-value pairs are placed into will
+            new hash table. Since the capacity is different,
+            the indices key-value pairs are placed into will
             likely also be different.
             */
 

@@ -37,7 +37,7 @@
         
         <h3>Succinct</h3>
         <pre><code class="language-none">
-1: Determine the first and last index, called the low and high indexes
+1: Determine the first and last index, called the low and high indices
 2: Search fails if the low index is greater than the high index
 3: Determine the middle index
 4: If the target is equal to the element at the middle index, return the middle index
@@ -56,9 +56,9 @@ Declare the last index the highIndex
 While the lowIndex is less than or equal to the highIndex,
     Declare the average of lowIndex and highIndex the middleIndex
     
-    If the target is equal to the middleIndex,
+    If the target is equal to the element at middleIndex,
         Return the middleIndex
-    Else of the target is less than the middleIndex,
+    Else if the target is less than the element at middleIndex,
         highIndex gets the value of middleIndex minus one
     Otherwise,
         lowIndex gets the value of middleIndex plus one

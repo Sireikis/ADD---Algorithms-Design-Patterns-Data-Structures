@@ -14,7 +14,6 @@
             func selectionSorted(for arr: [Int], lastIndex: Int) -> [Int] {
                 var array = arr
                 var minValueIndex: Int
-                var tempValue: Int
                 
                 for minUnsortedIndex in 0..&lt;lastIndex {
                     minValueIndex = minUnsortedIndex
@@ -24,9 +23,7 @@
                             minValueIndex = unsortedIndex
                         }
                     }
-                    tempValue = array[minUnsortedIndex]
-                    array[minUnsortedIndex] = array[minValueIndex]
-                    array[minValueIndex] = tempValue
+                    array.swapAt(minUnsortedIndex, minValueIndex)
                 }
                 return array
             }
@@ -39,11 +36,11 @@
         
         <h3>Succinct</h3>
         <pre><code class="language-none">
-1: Set minValue and unsortedIndex to index 0
-2: Iterate through the array to find the smallest element, starting at unsortedIndex + 1
-3: Update minValue with its index
-4: Swap the element at minValue with the element at unsortedIndex
-5: Increment unsortedIndex by 1
+1: Set minValueIndex and minUnsortedIndex to index 0
+2: Iterate through the array to find the smallest element, starting at minUnsortedIndex + 1, called unsortedIndex
+3: Update minValueIndex to equal unsortedIndex if unsortedIndex contains a smaller element
+4: Swap the element at minValueIndex with the element at minUnsortedIndex
+5: Increment minUnsortedIndex by 1
 6: Repeat 2-5 until sorted
         </code></pre>
         
@@ -53,7 +50,7 @@ In a zero-base array,
 For every index A from 0 up to but not including the last index,
     Declare index A the minValueIndex
     
-    For every index B to the right of index A up to but not including the last index,
+    For every index B to the right of index A up to and including the last index,
         If the element at index B is less than the element at the minValueIndex,
             The minValueIndex becomes index B
     

@@ -47,7 +47,7 @@
                 
                 // This method has a time complexity of O(n).
                 // Using append or a similar method for adding to the
-                // front would be O(1), as Linked-List
+                // front or back would be O(1), as Linked-List
                 // holds references to those Nodes and they can
                 // be accessed immediately.
                 public func insert(value: T, at index: Int) {
@@ -57,11 +57,11 @@
                     if let nextNode = nodeAt(index: index) {
                         // Save the previous node
                         if let prevNode = nextNode.previous {
-                            // Previous node's next is newNode
+                            // Previous node's next is now newNode
                             prevNode.next = newNode
                             newNode.previous = prevNode
                         }
-                        // NextNodes previous is now NewNode
+                        // NextNode's previous is now newNode
                         nextNode.previous = newNode
                         newNode.next = nextNode
                         return
@@ -79,6 +79,7 @@
                     print("Cannot insert at this Index.")
                 }
                 
+                // Add a node to the tail of the linked-list
                 public func append(value: T) {
                     let newNode = Node(value: value)
                     
@@ -91,6 +92,7 @@
                     tail = newNode
                 }
                 
+                // Returns the position of a node as an index
                 public func nodeAt(index: Int) -> Node&lt;T>? {
                     if index >= 0 {
                         var node = head
@@ -178,12 +180,12 @@
             // Access
             /*
              The nodeAt() method treats access to a Linked-List
-             as if it was an array, using an index.
+             as if it were an array, using an index.
              
-             However, in order to reach the Node we
+             However, in order to reach a Node we
              need to traverse the List, similar to a
              Linear Search in an Array. Since we traverse
-             each Node, the complexity is O(n).
+             each Node, the time complexity is O(n).
              */
 
             let numbers = LinkedList&lt;Int>()
@@ -232,7 +234,7 @@
              
              However, if we use the insert() method, which
              uses nodeAt(), we must iterate through the Linked-List.
-             In this case inserting is O(n).
+             In this case insertion is O(n).
              
              In other words:
              Finding the point of insertion: O(n)

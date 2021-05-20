@@ -68,7 +68,7 @@
 4: The returned array is the left array
 5: Repeat 1-4 with a sub-array from the middle index up to the last index
 6: The returned array is the right array
-7: Merge the left and right arrays
+7: Merge the left and right arrays until sorted
         </code></pre>
         
         <h3>Verbose</h3>
@@ -91,8 +91,8 @@ Declare leftIndex and rightIndex to be 0
 Declare an empty orderedArray
 
 While the leftIndex and rightIndex don't exceed their respective arrays,
-    Declare leftElement to be the element at leftIndex
-    Declare rightElement to be the element at rightIndex
+    Declare leftElement to be the element at leftIndex in left array
+    Declare rightElement to be the element at rightIndex in right array
     
     If leftElement is less than or equal to rightElement,
         Append leftElement to orderedArray

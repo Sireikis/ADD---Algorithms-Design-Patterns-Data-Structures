@@ -29,16 +29,16 @@
         </table>
         
         <p>
-        Breadth First Search is applied to graph data structures, so here "V" refers to the number of <b>vertices</b> and "E" to the number of <b>edges</b>. A vertex is also called a node.
+        Breadth First Search is applied to graph-like data structures, so here "V" refers to the number of <b>vertices</b> and "E" to the number of <b>edges</b>. A vertex is also called a node.
         </p>
         
         <h2>Summary</h2>
         <p>
-        Breadth First Search can be used on graphs, hence it utilizes a queue structure to avoid cycling. A given node is appended to a queue structure, perhaps an array. The node is marked as visited using an associative array (like a dictionary), where the node can be the key and a boolean the value. Then a series of steps are repeated until the queue is empty.
+        Breadth First Search can be used on graphs (or trees, a type of graph), hence it utilizes a queue structure to avoid cycling. The given node is appended to a queue structure. The node is marked as visited using an associative array (like a dictionary), where the node can be the key and a boolean the value. Then a series of steps are repeated until the queue is empty.
         </p>
         
         <p>
-        A node is dequeued, if it matches the target the node is returned and the search ends. If it does not, for every child of that node, we check if that child has been added to the visited dictionary. If it hasn't, we enqueue it and add it to the visited dictionary. If the queue is empty, searching ends and the target does not exist in the graph.
+        A node is dequeued and if it matches the target then the node is returned and the search ends. If it does not, for every child of that node, we check if that child has been added to the visited dictionary. If it hasn't, we enqueue it and add it to the visited dictionary. If the queue is empty, searching ends and the target does not exist in the graph.
         </p>
 
     </body>

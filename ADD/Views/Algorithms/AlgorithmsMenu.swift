@@ -45,7 +45,7 @@ struct AlgorithmsMenu: View {
                 NavigationLink(
                     destination: SimpleContentSelectionView(title: "Sort",
                                                            factory: factory,
-                                                           content: [.insertionSort, .selectionSort, .mergeSort, .quickSort]),
+                                                           content: [.insertionSort, .mergeSort, .quickSort, .selectionSort]),
                     tag: "Sort",
                     selection: $selection
                 ) {

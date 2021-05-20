@@ -22,11 +22,12 @@
             class RealSubject: Subject {
                 // Creation of this class is expensive
                 init() {
-                    request()
+                    print("I'm expensive to initialize")
                 }
                 
+                // Using this method is expensive
                 public func request() {
-                    print("I am an expensive request")
+                    print("I'm an expensive request")
                 }
             }
 
@@ -40,6 +41,7 @@
                         subject.request()
                     } else {
                         subject = RealSubject()
+                        subject!.request()
                     }
                 }
             }
@@ -67,7 +69,8 @@
             var client = Client(subject: proxy) // No request
 
             client.makeRequest()
-            // Prints "I am an expensive request"
+            // Prints "I'm expensive to initialize"
+            // Prints "I'm an expensive request"
         </code></pre>
         
         <script src="../../../../Prism/prism.js"></script>

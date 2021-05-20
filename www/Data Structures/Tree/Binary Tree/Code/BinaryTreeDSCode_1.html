@@ -243,6 +243,9 @@
             tree.delete(root: &tree.root, target: 2)
             tree.printInOrder(node: tree.root)
             // Prints "3 1 4 0 5 6"
+            
+            tree.printLevelOrder(node: tree.root!)
+            // Prints "0 1 6 3 4 5"
         </code></pre>
     
         <h2>Code - Basic Operations</h2>
@@ -328,6 +331,8 @@
             tree.insertInLevelOrder(seven)
             tree.printLevelOrder(node: root)
             // Prints "0 1 2 3 4 5 6 7"
+            tree.printInOrder(node: root)
+            // Prints "7 3 1 4 0 5 2 6"
 
             // -------------------------
 
@@ -353,6 +358,16 @@
             tree.delete(root: &tree.root, target: 2)
             tree.printLevelOrder(node: root)
             // Prints "0 1 6 3 4 5 7"
+            tree.printInOrder(node: root)
+            // Prints "7 3 1 4 0 5 6"
+
+            //        0
+            //      /   \
+            //     1     6
+            //    / \   /
+            //   3   4 5
+            //  /
+            // 7
         </code></pre>
 
         <script src="../../../../Prism/prism.js"></script>

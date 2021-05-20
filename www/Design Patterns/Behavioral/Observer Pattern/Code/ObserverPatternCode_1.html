@@ -25,6 +25,7 @@
                 func notifySubscribers()
             }
 
+            // --------------------------
             
             class ConcretePublisher: Publisher {
                 private var subscribers: [ObjectIdentifier: Subscriber] = [:]
@@ -127,9 +128,8 @@
 
             // AKA Observer
             protocol Subscriber: class {
-                // The pull variant requires a reference to the Publisher
-                // Subscribers will pull data from the Publisher when notified
-                // However, publisher doesn't NEED to be part of the requirements
+                // The pull variant requires a reference to the Publisher.
+                // Subscribers will pull data from the Publisher when notified.
                 var publisher: Publisher { get set }
                 
                 func update()
@@ -147,6 +147,7 @@
                 func getDataC() -> String
             }
 
+            // --------------------------
 
             class ConcretePublisher: Publisher {
                 private var subscribers: [ObjectIdentifier: Subscriber] = [:]
@@ -164,8 +165,8 @@
                     subscribers.removeValue(forKey: id)
                 }
                 
-                // All data is pushed to all subscribers
-                // The pull variant solves this issue
+                // All subscribers are notified. Subscribers make
+                // pull requests for all data relavant to them.
                 public func notifySubscribers() {
                     for subscriber in subscribers.values {
                         subscriber.update()

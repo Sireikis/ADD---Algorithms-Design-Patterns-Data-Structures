@@ -11,6 +11,13 @@
         <h2>UML Code</h2>
         
         <pre><code class="language-swift">
+            // Interface for family of algorithms that vary behavior
+            protocol Strategy {
+                func execute()
+            }
+
+            // --------------------------
+
             // Could be an Abstract Class or used by the Client
             // Contains the interface for interacting with a Strategy
             class Context {
@@ -29,11 +36,6 @@
                 }
                 
                 // Other Methods
-            }
-
-            // Interface for family of algorithms that vary behavior
-            protocol Strategy {
-                func execute()
             }
 
             // Concrete Class - implementation of Strategy
@@ -56,11 +58,13 @@
 
             // Context used by Client with some behavior set at runtime
             var client = Context(strategy: SomeBehavior())
-            client.executeStrategy()  // "I have some behavior"
+            client.executeStrategy()
+            // Prints "I have some behavior"
 
             // Context behavior dynamically changed at runtime
             client.changeStrategy(to: SomeOtherBehavior())
-            client.executeStrategy()  // "I have some other behavior"
+            client.executeStrategy()
+            // Prints "I have some other behavior"
         </code></pre>
 
         <script src="../../../../Prism/prism.js"></script>

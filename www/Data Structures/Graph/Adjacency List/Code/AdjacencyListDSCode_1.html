@@ -86,7 +86,7 @@
                 public typealias Element = T
                 
                 // Creates and returns a vertex.
-                // If this is new vertex, it is added
+                // If this is a new vertex, it is added
                 // to the adjacency dictionary with no edges.
                 // This does not overwrite previously existing vertices.
                 public func createVertex(data: Element) -> Vertex&lt;Element> {
@@ -197,7 +197,6 @@
                 public let weight: Double?
             }
 
-
             // Used by clients to determine which edge to create
             public enum EdgeType {
                 case directed, undirected
@@ -262,7 +261,9 @@
 
             // Returns the cost of flying between Chicago and Velana
             adjacencyList.weight(from: chicago, to: velana)
+            // Prints "800"
 
+            // Prints Outgoing flights from Chicago
             if let flightsFromChicago = adjacencyList.edges(from: chicago) {
                 print("Chicago Outgoing Flights")
                 print("-------------------------")
@@ -298,8 +299,6 @@
         <pre><code class="language-swift">
             // Adjacency List - Basic Operations
             // Method: Dictionary of Arrays
-
-            // -------------------------
 
             // Adjacency List Setup
 
@@ -409,8 +408,8 @@
 
             // Insertion
             /*
-             We will use the createVertex() vertex method and
-             then the add() method to create a vertex with an
+             We will use the createVertex() method and then
+             the add() method to create a vertex with an
              edge to another vertex.
              */
 

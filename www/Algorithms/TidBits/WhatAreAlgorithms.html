@@ -10,7 +10,7 @@
         
         <h2>Definition</h2>
         <p>
-        Algorithms are a series of detailed instructions used to outline how to complete a task. In the context of computer science, an algorithm can be classified based on many different factors such as: design paradigm, implementation, complexity, etc. For example, the time that an algorithm takes relative to the size of the input it was given can be described by Big O notation, which is used when classifying by complexity.
+        Algorithms are a series of detailed instructions used to outline how to complete a task. In the context of computer science, an algorithm can be classified based on many different factors such as: design paradigm, implementation, complexity, etc. For example, the time that an algorithm takes relative to the size of the input it was given can be described by Big O notation, which is used when classifying by time complexity.
         </p>
         
         <h2>Classifications</h2>
@@ -34,12 +34,12 @@
         
         <h3>Greedy</h3>
         <p>
-        This method entails making the locally optimal choice at each step. This strategy does not usually produce an optimal solution, but rather a local optima, which are solutions that cannot be improved by the algorithm, but are not optimum. This strategy can be used to provide solutions for high time complexity problems such as the traveling salesman problem. In such a case the locally optimal solution may approximate the globally optimal solution.
+        This method entails making the locally optimal choice at each step. This strategy does not usually produce an optimal solution, but rather a local optima, which are solutions that cannot be improved on by the algorithm, but are not optimum. This strategy can be used to provide solutions for high time complexity problems such as the traveling salesman problem in a much lower time complexity. In such a case the locally optimal solution may approximate the globally optimal solution.
         </p>
         
         <h3>Dynamic</h3>
         <p>
-        This method is for problems that can satisfy two criteria: the problem must have optimal substructures and overlapping subproblems. A problem has optimal substructures when an optimal solution can be constructed from the optimal solutions of its subproblems. A problem has overlapping subproblems when the same subproblems can be used to solve many different problem instances. Under these criteria, the dynamic programming approach can be taken. This approach avoids recomputing solutions by memoization or caching of previously computed solutions.
+        This method is for problems that can satisfy two criteria: the problem must have optimal substructures and overlapping subproblems. A problem has optimal substructures when an optimal solution can be constructed from the optimal solutions of its subproblems. A problem has overlapping subproblems when the same subproblems can be used to solve many different problem instances. Under these criteria, the dynamic programming approach can be taken. This approach avoids recomputing solutions by memoization (aka caching) of previously computed solutions.
         </p>
         
         <p>

@@ -26,7 +26,7 @@
         </p>
         
         <p>
-        You might be thinking, how does this solve our problem if we can't change the interface for our data sources? Well that's why in this example you probably want to combine the Bridge pattern with the Adapter pattern. Each implementor will be composed with a specific data source object, the methods of which will be called in the getData() function. The implementation of the getData() function will differ between the different implementor classes, however the page classes will be able to call the getData() function reliably and get different data depending on the implementor it uses.
+        You might be thinking, how does this solve our problem if we can't change the interface for our data sources? Well that's why in this example you probably want to combine the Bridge pattern with the Adapter pattern. Each implementor will be composed with a specific data source object, the methods of which will be called in the getData() function. While the implementation of the getData() function will differ between the different implementor classes, the page classes will be able to call the getData() function reliably and get different data depending on the implementor it uses.
         </p>
         
         <p>
@@ -34,4 +34,3 @@
         </p>
     </body>
 </html>
-
