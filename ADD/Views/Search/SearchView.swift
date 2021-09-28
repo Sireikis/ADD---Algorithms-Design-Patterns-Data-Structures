@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-
+/*
+ Would be better to implement this as a Trie
+ */
 struct SearchView: View {
     let factory: ContentFactory
     

@@ -183,3 +183,149 @@ enum ContentEnum: String, CaseIterable, Identifiable {
         rawValue
     }
 }
+
+// Properties that ContentFactory uses to initialize ConcreteContent
+extension ContentEnum {
+    
+    var htmlFilePath: String {
+        
+        switch self {
+        // Algorithms - Search
+        case .binarySearch:
+            return "www/Algorithms/Search/Binary Search/"
+        case .breadthFirstSearch:
+            return "www/Algorithms/Search/Breadth First Search/"
+        case .depthFirstSearch:
+            return "www/Algorithms/Search/Depth First Search/"
+            
+        // Algorithms - Sort
+        case .insertionSort:
+            return "www/Algorithms/Sort/Insertion Sort/"
+        case .mergeSort:
+            return "www/Algorithms/Sort/Merge Sort/"
+        case .quickSort:
+            return "www/Algorithms/Sort/Quick Sort/"
+        case .selectionSort:
+            return "www/Algorithms/Sort/Selection Sort/"
+            
+        // Design Patterns - Behavioral
+        case .command:
+            return "www/Design Patterns/Behavioral/Command Pattern/"
+        case .observer:
+            return "www/Design Patterns/Behavioral/Observer Pattern/"
+        case .strategy:
+            return "www/Design Patterns/Behavioral/Strategy Pattern/"
+            
+            // Design Patterns - Creational
+        case .abstractFactory:
+            return "www/Design Patterns/Creational/Abstract Factory Pattern/"
+        case .factoryMethod:
+            return "www/Design Patterns/Creational/Factory Method Pattern/"
+        case .singleton:
+            return "www/Design Patterns/Creational/Singleton Pattern/"
+            
+            // Design Patterns - Structural
+        case .adapter:
+            return "www/Design Patterns/Structural/Adapter Pattern/"
+        case .bridge:
+            return "www/Design Patterns/Structural/Bridge Pattern/"
+        case .decorator:
+            return "www/Design Patterns/Structural/Decorator Pattern/"
+        case .proxy:
+            return "www/Design Patterns/Structural/Proxy Pattern/"
+            
+            // Data Structures - Linear
+        case .array:
+            return "www/Data Structures/Linear/Array/"
+        case .linkedList:
+            return "www/Data Structures/Linear/Linked List/"
+            
+            // Data Structures - Tree
+        case .binarySearchTree:
+            return "www/Data Structures/Tree/Binary Search Tree/"
+        case .binaryTree:
+            return "www/Data Structures/Tree/Binary Tree/"
+            
+            // Data Structures - Hash-based
+        case .hashList:
+            return "www/Data Structures/Hash-based/Hash List/"
+        case .hashTable:
+            return "www/Data Structures/Hash-based/Hash Table/"
+            
+            // Data Structures - Graph
+        case .adjacencyList:
+            return "www/Data Structures/Graph/Adjacency List/"
+        }
+    }
+    
+    var name: String {
+        
+        switch self {
+        // Algorithms - Search
+        case .binarySearch:
+            return "BinarySearch"
+        case .breadthFirstSearch:
+            return "BreadthFirstSearch"
+        case .depthFirstSearch:
+            return "DepthFirstSearch"
+            
+        // Algorithms - Sort
+        case .insertionSort:
+            return "InsertionSort"
+        case .mergeSort:
+            return "MergeSort"
+        case .quickSort:
+            return "QuickSort"
+        case .selectionSort:
+            return "SelectionSort"
+            
+        // Design Patterns - Behavioral
+        case .command:
+            return "CommandPattern"
+        case .observer:
+            return "ObserverPattern"
+        case .strategy:
+            return "StrategyPattern"
+            
+        // Design Patterns - Creational
+        case .abstractFactory:
+            return "AbstractFactoryPattern"
+        case .factoryMethod:
+            return "FactoryMethodPattern"
+        case .singleton:
+            return "SingletonPattern"
+            
+        // Design Patterns - Structural
+        case .adapter:
+            return "AdapterPattern"
+        case .bridge:
+            return "BridgePattern"
+        case .decorator:
+            return "DecoratorPattern"
+        case .proxy:
+            return "ProxyPattern"
+            
+        // Data Structures - Linear
+        case .array:
+            return "ArrayDS"
+        case .linkedList:
+            return "LinkedListDS"
+            
+        // Data Structures - Tree
+        case .binarySearchTree:
+            return "BinarySearchTreeDS"
+        case .binaryTree:
+            return "BinaryTreeDS"
+            
+        // Data Structures - Hash-based
+        case .hashList:
+            return "HashListDS"
+        case .hashTable:
+            return "HashTableDS"
+            
+        // Data Structures - Graph
+        case .adjacencyList:
+            return "AdjacencyListDS"
+        }
+    }
+}

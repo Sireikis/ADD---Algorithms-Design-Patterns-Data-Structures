@@ -28,6 +28,11 @@ struct TidBitView: View, TemplateAbstraction {
 
 struct TidBitView_Previews: PreviewProvider {
     static var previews: some View {
-        TidBitView(TidBitImplementor(WhatAreAlgorithms()))
+        
+        let filePath = TidBits.whatAreAlgorithms.htmlFilePath
+        let name = TidBits.whatAreAlgorithms.name
+        let content = ConcreteTidBit(filePath: filePath, name: name)
+        
+        TidBitView(TidBitImplementor(content))
     }
 }

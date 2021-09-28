@@ -60,6 +60,10 @@ struct SimplePage: View {
 
 struct SimpleDefaultTabView_Previews: PreviewProvider {
     static var previews: some View {
-        SimpleDefaultTabView(ContentImplementor(InsertionSort()))
+        let filePath = ContentEnum.insertionSort.htmlFilePath
+        let name = ContentEnum.insertionSort.name
+        let content = ConcreteContent(filePath: filePath, name: name)
+        
+        SimpleDefaultTabView(ContentImplementor(content))
     }
 }
