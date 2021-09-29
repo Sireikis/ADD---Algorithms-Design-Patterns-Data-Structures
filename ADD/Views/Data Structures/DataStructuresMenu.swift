@@ -9,8 +9,8 @@ import SwiftUI
 
 
 struct DataStructuresMenu: View {
+    
     let factory: ContentFactory
-    let headingWidth: CGFloat = 216
     // Fixes selected link staying grey when navigating back.
     @State var selection: String?
     
@@ -25,57 +25,75 @@ struct DataStructuresMenu: View {
             ScrollView(.horizontal) {
                 HStack {
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreDataStructures)))) {
-                        Topic(description: "What are", botDescription: "Data Structures?", splitDescription: true,
-                              rectColor: .pink, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
+                        Topic(
+                            description: "What are",
+                            botDescription: "Data Structures?",
+                            splitDescription: true,
+                            rectColor: .pink,
+                            txtColor: .white,
+                            size: size,
+                            rectWidth: size.width / TidBitUI.widthScalingFactor,
+                            rectHeight: size.height / TidBitUI.heightScalingFactor)
                     }
                     
                     // Describes the difference between linear, tree, hash-based, and graph
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.DSCategories)))) {
-                        Topic(description: "What do these", botDescription: "categories mean?", splitDescription: true,
-                              rectColor: .green, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
+                        Topic(
+                            description: "What do these",
+                            botDescription: "categories mean?",
+                            splitDescription: true,
+                            rectColor: .green,
+                            txtColor: .white,
+                            size: size,
+                            rectWidth: size.width / TidBitUI.widthScalingFactor,
+                            rectHeight: size.height / TidBitUI.heightScalingFactor)
                     }
                 }
             }
             
             Section(header: Text("Structures")) {
                 NavigationLink(
-                    destination: SimpleContentSelectionView(title: "Linear",
-                                                           factory: factory,
-                                                           content: [.array, .linkedList]),
+                    destination: SimpleContentSelectionView(
+                        title: "Linear",
+                        factory: factory,
+                        content: [.array, .linkedList]),
                     tag: "Linear",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Linear", image: "arrow.left.and.right", imgForeground: .red)
+                    NavigationButton(description: "Linear", image: SFSymbols.linear, imgForeground: .red)
                 }
                 
                 NavigationLink(
-                    destination: SimpleContentSelectionView(title: "Tree",
-                                                           factory: factory,
-                                                           content: [.binarySearchTree, .binaryTree]),
+                    destination: SimpleContentSelectionView(
+                        title: "Tree",
+                        factory: factory,
+                        content: [.binarySearchTree, .binaryTree]),
                     tag: "Tree",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Tree", image: "leaf", imgForeground: .red)
+                    NavigationButton(description: "Tree", image: SFSymbols.tree, imgForeground: .red)
                 }
                 
                 NavigationLink(
-                    destination: SimpleContentSelectionView(title: "Hash-based",
-                                                           factory: factory,
-                                                           content: [.hashList, .hashTable]),
+                    destination: SimpleContentSelectionView(
+                        title: "Hash-based",
+                        factory: factory,
+                        content: [.hashList, .hashTable]),
                     tag: "Hash-based",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Hash-based", image: "grid", imgForeground: .red)
+                    NavigationButton(description: "Hash-based", image: SFSymbols.hashBased, imgForeground: .red)
                 }
                 
                 NavigationLink(
-                    destination: SimpleContentSelectionView(title: "Graph",
-                                                           factory: factory,
-                                                           content: [.adjacencyList]),
+                    destination: SimpleContentSelectionView(
+                        title: "Graph",
+                        factory: factory,
+                        content: [.adjacencyList]),
                     tag: "Graph",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Graph", image: "squareshape.controlhandles.on.squareshape.controlhandles", imgForeground: .red)
+                    NavigationButton(description: "Graph", image: SFSymbols.graph, imgForeground: .red)
                 }
             }
         }
@@ -84,7 +102,9 @@ struct DataStructuresMenu: View {
     }
 }
 
+
 struct DataStructuresMenu_Previews: PreviewProvider {
+    
     static var previews: some View {
         DataStructuresMenu(factory: ContentFactory())
     }

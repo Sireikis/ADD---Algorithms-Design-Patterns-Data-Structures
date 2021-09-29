@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-
 // Client + Refined Abstraction
 // Used until Explanations, Examples, and multiple pages are introduced.
 struct SimpleDefaultTabView: View, TemplateAbstraction {
+    
     var implementor: Implementor
     
-    // Any Implementor can be paired with this TabView
     init(_ i: Implementor) {
         implementor = i
     }
@@ -22,18 +21,19 @@ struct SimpleDefaultTabView: View, TemplateAbstraction {
         TabView {
             SimplePage(implementor: implementor, pageContent: .Summary)
                 .tabItem {
-                    Label("Summary", systemImage: "note.text")
+                    Label("Summary", systemImage: SFSymbols.summary)
                 }
             
             SimplePage(implementor: implementor, pageContent: .Code)
                 .tabItem {
-                    Label("Code", systemImage: "curlybraces")
+                    Label("Code", systemImage: SFSymbols.code)
                 }
         }
     }
 }
 
 struct SimplePage: View {
+    
     @EnvironmentObject var singleWebView: SingleWebView
     var implementor: Implementor
     var pageContent: Page
@@ -59,6 +59,7 @@ struct SimplePage: View {
 }
 
 struct SimpleDefaultTabView_Previews: PreviewProvider {
+    
     static var previews: some View {
         let filePath = ContentEnum.insertionSort.htmlFilePath
         let name = ContentEnum.insertionSort.name

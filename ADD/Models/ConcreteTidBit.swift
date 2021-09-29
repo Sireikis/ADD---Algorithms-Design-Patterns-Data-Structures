@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class ConcreteTidBit: TidBit {
     
     var filePath: String

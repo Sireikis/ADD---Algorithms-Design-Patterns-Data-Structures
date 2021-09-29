@@ -24,6 +24,7 @@ protocol ADDContent {
 }
 
 extension ADDContent {
+    
     func isFileAvailable(_ file: FileNumber, for page: Page) -> Bool {
         switch page {
         case .Summary:

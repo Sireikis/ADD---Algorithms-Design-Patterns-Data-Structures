@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-/*
- Would be better to implement this as a Trie
- */
+// Would be better to implement this as a Trie
 struct SearchView: View {
+    
     let factory: ContentFactory
     
     @State var selection: String?
@@ -20,7 +19,7 @@ struct SearchView: View {
     // Fixes keyboard TidBit resizing bug
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
-    let searchDict: [(String, ContentEnum)] = [
+    let searchArray: [(topic: String, contentType: ContentEnum)] = [
         // Algorithms - Search
         ("binary search", .binarySearch),
         ("breadth first search", .breadthFirstSearch),
@@ -58,13 +57,15 @@ struct SearchView: View {
     
     var body: some View {
         // Allows List to update after every key press
-        let binding = Binding<String>(get: {
-            self.search
-        }, set: {
-            self.search = $0
-            searchResults(search)
-        })
-    
+        let binding = Binding<String>(
+            get: {
+                self.search
+            },
+            set: {
+                self.search = $0
+                searchResults(search)
+            })
+        
         List {
             TextField("Search", text: binding)
                 .keyboardType(.alphabet)
@@ -89,34 +90,38 @@ struct SearchView: View {
                         EmptyView()
                     })
                 }
-                
             }
         }
         .refreshOnAppear(selection: $selection)
         .navigationBarTitle("Search", displayMode: .inline)
         // Fixes keyboard TidBit resizing bug
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-                                Button(action: {
-                                    hideKeyboard()
-                                    self.mode.wrappedValue.dismiss()
-                                }) {
-                                    Label("ADD", systemImage: "chevron.left")
-                                })
+        .navigationBarItems(
+            leading:
+                Button(action: {
+                    hideKeyboard()
+                    self.mode.wrappedValue.dismiss()
+                }) {
+                    Label("ADD", systemImage: SFSymbols.back)
+                }
+        )
     }
     
     func searchResults(_ search: String)  {
         let query = search.lowercased()
         content = []
-        for result in searchDict {
-            if result.0.contains(query) {
-                content.append(result.1)
+        
+        for result in searchArray {
+            if result.topic.contains(query) {
+                content.append(result.contentType)
             }
         }
     }
 }
 
+
 struct SearchView_Previews: PreviewProvider {
+    
     static var previews: some View {
         SearchView(factory: ContentFactory())
     }

@@ -1,15 +1,22 @@
- //
- //  WebView.swift
- //  ADD
- //
- //  Created by Ignas Sireikis on 4/1/21.
- //
- 
- import SwiftUI
- import WebKit
- 
- 
- class SingleWebView: ObservableObject {
+//
+//  WebView.swift
+//  ADD
+//
+//  Created by Ignas Sireikis on 4/1/21.
+//
+
+import SwiftUI
+import WebKit
+
+
+
+class SingleWebView: ObservableObject {
+    
+    enum Constants {
+        
+        static let defaultFile = "www/Algorithms/Sort/Insertion Sort/Summary/InsertionSortSummary_1"
+    }
+    
     private var webView: WebView?
     
     static var cache = [URL:WKWebView]()
@@ -27,17 +34,18 @@
     
     // Pre-loading InsertionSortSummary_1, choice is arbitrary
     private func loadDefaultPage() {
-        let defaultFile = "www/Algorithms/Sort/Insertion Sort/Summary/InsertionSortSummary_1"
+        let defaultFile = Constants.defaultFile
         if let summaryURL = Bundle.main.url(forResource: defaultFile, withExtension: "html") {
             let defaultPage = URLRequest(url: summaryURL)
             webView = WebView(request: defaultPage)
             SingleWebView.cache[summaryURL] = WKWebView()
         }
     }
- }
- 
- // Displays .html files inside of ViewTemplates
- struct WebView: UIViewRepresentable {
+}
+
+// Displays .html files inside of ViewTemplates
+struct WebView: UIViewRepresentable {
+    
     var request: URLRequest
     
     mutating func changeRequestTo(_ url: URLRequest) {
@@ -54,11 +62,11 @@
         
         let webView = WKWebView()
         SingleWebView.cache[url] = webView
-
+        
         return webView
     }
     
     func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<WebView>) {
         uiView.load(request)
     }
- }
+}

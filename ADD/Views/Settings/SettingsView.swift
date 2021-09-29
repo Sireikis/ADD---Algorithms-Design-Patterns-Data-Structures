@@ -10,6 +10,7 @@ import MessageUI
 
 
 struct SettingsView: View {
+    
     @State var isShowingMailView = false
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var mailError = false
@@ -26,11 +27,21 @@ struct SettingsView: View {
                 Button(action: {
                     MFMailComposeViewController.canSendMail() ? isShowingMailView.toggle() : mailError.toggle()
                 }) {
-                    NavigationButton(description: "Submit Feedback", txtColor: .blue, image: "message.fill", imgForeground: .white, imgBackground: .green)
+                    NavigationButton(
+                        description: "Submit Feedback",
+                        txtColor: .blue,
+                        image: "message.fill",
+                        imgForeground: .white,
+                        imgBackground: .green)
                 }
                 
                 ZStack {
-                    NavigationButton(description: "Write A Review", txtColor: .blue, image: "star.fill", imgForeground: .white, imgBackground: .yellow)
+                    NavigationButton(
+                        description: "Write A Review",
+                        txtColor: .blue,
+                        image: "star.fill",
+                        imgForeground: .white,
+                        imgBackground: .yellow)
                     Link("", destination: url)
                 }
             }

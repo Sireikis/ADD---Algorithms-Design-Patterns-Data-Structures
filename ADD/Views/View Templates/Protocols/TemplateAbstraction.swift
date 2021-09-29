@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // Client + Abstraction
 protocol TemplateAbstraction {
     var implementor: Implementor { get set }

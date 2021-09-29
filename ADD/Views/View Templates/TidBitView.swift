@@ -9,10 +9,10 @@ import SwiftUI
 
 
 struct TidBitView: View, TemplateAbstraction {
+    
     @EnvironmentObject var singleWebView: SingleWebView
     var implementor: Implementor
     
-    // Any Implementor can be paired with this TabView
     init(_ i: Implementor) {
         implementor = i
     }
@@ -26,9 +26,10 @@ struct TidBitView: View, TemplateAbstraction {
     }
 }
 
+
 struct TidBitView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        
         let filePath = TidBits.whatAreAlgorithms.htmlFilePath
         let name = TidBits.whatAreAlgorithms.name
         let content = ConcreteTidBit(filePath: filePath, name: name)

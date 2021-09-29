@@ -9,7 +9,6 @@ import Foundation
 
 
 enum TidBits {
-    // .whatAreClassifications and .glossary not implemented
     
     // Main Page
     case whatIsADD, bigO
@@ -21,7 +20,6 @@ enum TidBits {
     case whatAreDataStructures, DSCategories
     
     var htmlFilePath: String {
-        
         switch self {
         // Main Page
         case .whatIsADD:
@@ -48,7 +46,6 @@ enum TidBits {
     }
     
     var name: String {
-        
         switch self {
         // Main Page
         case .whatIsADD:

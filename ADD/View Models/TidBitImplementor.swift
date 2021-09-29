@@ -7,9 +7,9 @@
 
 import Foundation
 
-
 // ViewModel, Concrete Implementor + Adapter
 class TidBitImplementor: Implementor {
+    
     private let instance: TidBit
     
     init(_ i: TidBit) {

@@ -7,9 +7,9 @@
 
 import Foundation
 
-
 // ViewModel, Concrete Implementor + Adapter
 class ContentImplementor: Implementor {
+    
     private let instance: ADDContent
     
     init(_ i: ADDContent) {

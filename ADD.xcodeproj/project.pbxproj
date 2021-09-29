@@ -16,6 +16,7 @@
 		7B0774292613B3A100FEDB85 /* ContentImplementor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0774282613B3A100FEDB85 /* ContentImplementor.swift */; };
 		7B07742D2613B57900FEDB85 /* TemplateAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07742C2613B57900FEDB85 /* TemplateAbstraction.swift */; };
 		7B0DF85926435BA700DAADF3 /* RefreshOnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DF85826435BA700DAADF3 /* RefreshOnAppearModifier.swift */; };
+		7B18824C27050A4E00564E5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18824B27050A4E00564E5B /* Constants.swift */; };
 		7B1BDEA326166B3A00427505 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDEA226166B3A00427505 /* WebView.swift */; };
 		7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */; };
 		7B3BBF79261E0FB9007207A3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */; };
@@ -56,6 +57,7 @@
 		7B0774282613B3A100FEDB85 /* ContentImplementor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImplementor.swift; sourceTree = "<group>"; };
 		7B07742C2613B57900FEDB85 /* TemplateAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAbstraction.swift; sourceTree = "<group>"; };
 		7B0DF85826435BA700DAADF3 /* RefreshOnAppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshOnAppearModifier.swift; sourceTree = "<group>"; };
+		7B18824B27050A4E00564E5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B1BDEA226166B3A00427505 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7B1FF1952617C24900F68656 /* FileChoiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileChoiceEnum.swift; sourceTree = "<group>"; };
 		7B3BBF78261E0FB9007207A3 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				7B0774032613B08400FEDB85 /* Views */,
 				7B07744A2613D37800FEDB85 /* View Models */,
 				7B07744C2613D38000FEDB85 /* Models */,
+				7B18824D27050A5A00564E5B /* Utilities */,
 				7B0773F72613ADA100FEDB85 /* Assets.xcassets */,
 				7B0773FC2613ADA100FEDB85 /* Info.plist */,
 				7B0773F92613ADA100FEDB85 /* Preview Content */,
@@ -205,6 +208,14 @@
 				7B0774252613B35D00FEDB85 /* Implementor.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7B18824D27050A5A00564E5B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7B18824B27050A4E00564E5B /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7B3BBF7B261E0FBC007207A3 /* Reusable UI Components */ = {
@@ -392,6 +403,7 @@
 				7B7B8FFC264F20C9009EBB89 /* SimpleContentSelectionView.swift in Sources */,
 				7B1FF1962617C24900F68656 /* FileChoiceEnum.swift in Sources */,
 				7BE5425A26279214000673E5 /* ContentCategoryEnum.swift in Sources */,
+				7B18824C27050A4E00564E5B /* Constants.swift in Sources */,
 				7BB65CEB261D158800369C00 /* DataStructuresMenu.swift in Sources */,
 				7BE5425426276D6A000673E5 /* TidBitImplementor.swift in Sources */,
 				7B7B8FEC264ED82B009EBB89 /* SearchView.swift in Sources */,

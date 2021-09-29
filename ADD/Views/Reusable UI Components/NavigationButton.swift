@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct NavigationButton: View {
+    
     var description: String
     var txtColor: Color = .black
     
@@ -30,7 +31,9 @@ struct NavigationButton: View {
     }
 }
 
+
 struct NavigationButton_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationButton(description: "test", image: "gear", imgBackground: .gray)
     }

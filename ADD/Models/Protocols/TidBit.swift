@@ -19,6 +19,7 @@ protocol TidBit {
 }
 
 extension TidBit {
+    
     func isFileAvailable(_ file: FileNumber) -> Bool {
         return tidBit[file] != nil
     }

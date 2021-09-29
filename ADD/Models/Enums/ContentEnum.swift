@@ -10,6 +10,7 @@ import SwiftUI
 
 
 enum ContentEnum: String, CaseIterable, Identifiable {
+    
     // Algorithms - Search
     case binarySearch, breadthFirstSearch, depthFirstSearch
     // Algorithms - Sort
@@ -32,46 +33,46 @@ enum ContentEnum: String, CaseIterable, Identifiable {
     var image: String {
         switch self {
         case .binarySearch, .breadthFirstSearch, .depthFirstSearch:
-            return "magnifyingglass"
+            return SFSymbols.search
         case .insertionSort, .selectionSort, .mergeSort, .quickSort:
-            return "arrow.up.arrow.down"
+            return SFSymbols.sort
         case .command, .observer, .strategy:
-            return "gearshape.2"
+            return SFSymbols.behavioral
         case .abstractFactory, .factoryMethod, .singleton:
-            return "lightbulb"
+            return SFSymbols.creational
         case .adapter, .bridge, .decorator, .proxy:
-            return "square.grid.3x1.below.line.grid.1x2"
+            return SFSymbols.structural
         case .array, .linkedList:
-            return "arrow.left.and.right"
+            return SFSymbols.linear
         case .binarySearchTree, .binaryTree:
-            return "leaf"
+            return SFSymbols.tree
         case .hashList, .hashTable:
-            return "grid"
+            return SFSymbols.hashBased
         case .adjacencyList:
-            return "squareshape.controlhandles.on.squareshape.controlhandles"
+            return SFSymbols.graph
         }
     }
     
     var imgForeground: Color {
         switch self {
         case .binarySearch, .breadthFirstSearch, .depthFirstSearch:
-            return .green
+            return ADDTheme.algorithmsTheme
         case .insertionSort, .selectionSort, .mergeSort, .quickSort:
-            return .green
+            return ADDTheme.algorithmsTheme
         case .command, .observer, .strategy:
-            return .blue
+            return ADDTheme.designPatternsTheme
         case .abstractFactory, .factoryMethod, .singleton:
-            return .blue
+            return ADDTheme.designPatternsTheme
         case .adapter, .bridge, .decorator, .proxy:
-            return .blue
+            return ADDTheme.designPatternsTheme
         case .array, .linkedList:
-            return .red
+            return ADDTheme.dataStructuresTheme
         case .binarySearchTree, .binaryTree:
-            return .red
+            return ADDTheme.dataStructuresTheme
         case .hashList, .hashTable:
-            return .red
+            return ADDTheme.dataStructuresTheme
         case .adjacencyList:
-            return .red
+            return ADDTheme.dataStructuresTheme
         }
     }
     
@@ -188,7 +189,6 @@ enum ContentEnum: String, CaseIterable, Identifiable {
 extension ContentEnum {
     
     var htmlFilePath: String {
-        
         switch self {
         // Algorithms - Search
         case .binarySearch:
@@ -259,7 +259,6 @@ extension ContentEnum {
     }
     
     var name: String {
-        
         switch self {
         // Algorithms - Search
         case .binarySearch:

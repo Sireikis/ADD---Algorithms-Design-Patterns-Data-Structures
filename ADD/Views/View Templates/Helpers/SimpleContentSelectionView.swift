@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-
 // Generates a view containing a list of the given content
 struct SimpleContentSelectionView: View {
+    
     let title: String
     let factory: ContentFactory
     let content: [ContentEnum]
@@ -34,7 +34,9 @@ struct SimpleContentSelectionView: View {
     }
 }
 
+
 struct BasicContentSelectionView_Previews: PreviewProvider {
+    
     static var previews: some View {
         SimpleContentSelectionView(title: "Basic", factory: ContentFactory(), content: [.abstractFactory])
     }

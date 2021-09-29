@@ -18,7 +18,6 @@ class ConcreteContent: ADDContent {
     var exampleProblems = [FileNumber:URLRequest]()
     
     init(filePath: String, name: String) {
-        
         self.filePath = filePath
         summaries = loadHTMLContentFor(path: "Summary/" + name + "Summary_")
         // Implemented Later

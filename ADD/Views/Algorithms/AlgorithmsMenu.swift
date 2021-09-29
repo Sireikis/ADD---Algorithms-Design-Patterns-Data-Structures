@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AlgorithmsMenu: View {
-    let headingWidth: CGFloat = 216
+    
     let factory: ContentFactory
     // Fixes selected link staying grey when navigating back.
     @State var selection: String?
@@ -25,31 +25,42 @@ struct AlgorithmsMenu: View {
             ScrollView(.horizontal) {
                 HStack {
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatAreAlgorithms)))) {
-                        Topic(description: "What are", botDescription: "Algorithms?", splitDescription: true,
-                              rectColor: .pink, txtColor: .white, size: size, rectWidth: size.width / 2, rectHeight: size.height / 7)
+                        Topic(
+                            description: "What are",
+                            botDescription: "Algorithms?",
+                            splitDescription: true,
+                            rectColor: .pink,
+                            txtColor: .white,
+                            size: size,
+                            rectWidth: size.width / TidBitUI.widthScalingFactor,
+                            rectHeight: size.height / TidBitUI.heightScalingFactor)
                     }
                 }
             }
             
             Section(header: Text("Algorithms")) {
                 NavigationLink(
-                    destination: SimpleContentSelectionView(title: "Search",
-                                                           factory: factory,
-                                                           content: [.binarySearch, .breadthFirstSearch, .depthFirstSearch]),
+                    destination:
+                        SimpleContentSelectionView(
+                            title: "Search",
+                            factory: factory,
+                            content: [.binarySearch, .breadthFirstSearch, .depthFirstSearch]),
                     tag: "Search",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Search", image: "magnifyingglass", imgForeground: .green)
+                    NavigationButton(description: "Search", image: SFSymbols.search, imgForeground: .green)
                 }
                 
                 NavigationLink(
-                    destination: SimpleContentSelectionView(title: "Sort",
-                                                           factory: factory,
-                                                           content: [.insertionSort, .mergeSort, .quickSort, .selectionSort]),
+                    destination:
+                        SimpleContentSelectionView(
+                            title: "Sort",
+                            factory: factory,
+                            content: [.insertionSort, .mergeSort, .quickSort, .selectionSort]),
                     tag: "Sort",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Sort", image: "arrow.up.arrow.down", imgForeground: .green)
+                    NavigationButton(description: "Sort", image: SFSymbols.sort, imgForeground: .green)
                 }
             }
         }
@@ -58,7 +69,9 @@ struct AlgorithmsMenu: View {
     }
 }
 
+
 struct AlgorithmsMenu_Previews: PreviewProvider {
+    
     static var previews: some View {
         AlgorithmsMenu(factory: ContentFactory())
     }
