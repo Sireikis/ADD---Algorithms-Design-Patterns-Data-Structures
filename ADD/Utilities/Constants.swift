@@ -10,11 +10,24 @@ import SwiftUI
 import UIKit
 
 
-enum ADDTheme {
+enum ADDColor {
     
-    static let algorithmsTheme: Color = .green
-    static let designPatternsTheme: Color = .blue
-    static let dataStructuresTheme: Color = .red
+    static let algorithms: Color = .green
+    static let designPatterns: Color = .blue
+    static let dataStructures: Color = .red
+    
+    static let topicText: Color = .white
+    static let topicOneRect: Color = .pink
+    static let topicTwoRect: Color = .green
+}
+
+enum ADDUI {
+    
+    enum Topic {
+        
+        static let widthScalingFactor: CGFloat = 2
+        static let heightScalingFactor: CGFloat = 7
+    }
 }
 
 enum SFSymbols {
@@ -40,10 +53,4 @@ enum SFSymbols {
     
     static let summary = "note.text"
     static let code = "curlybraces"
-}
-
-enum TidBitUI {
-    
-    static let widthScalingFactor: CGFloat = 2
-    static let heightScalingFactor: CGFloat = 7
 }

@@ -52,7 +52,7 @@ struct SearchView: View {
         ("hash list", .hashList),
         ("hash table", .hashTable),
         // Data Structures - Graph
-        ("adjacency list", .adjacencyList)
+        ("adjacency list", .adjacencyList),
     ]
     
     var body: some View {

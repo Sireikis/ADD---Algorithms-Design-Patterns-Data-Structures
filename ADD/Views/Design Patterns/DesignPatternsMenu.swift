@@ -29,11 +29,11 @@ struct DesignPatternsMenu: View {
                             description: "What are",
                             botDescription: "Design Patterns?",
                             splitDescription: true,
-                            rectColor: .pink,
-                            txtColor: .white,
+                            rectColor: ADDColor.topicOneRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                     
                     // Describes the difference between behavioral, creational, and structural
@@ -42,10 +42,11 @@ struct DesignPatternsMenu: View {
                             description: "What do these",
                             botDescription: "categories mean?",
                             splitDescription: true,
-                            rectColor: .green, txtColor: .white,
+                            rectColor: ADDColor.topicTwoRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                 }
             }
@@ -60,7 +61,7 @@ struct DesignPatternsMenu: View {
                     tag: "Behavioral",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Behavioral", image: SFSymbols.behavioral, imgForeground: .blue)
+                    NavigationButton(description: "Behavioral", image: SFSymbols.behavioral, imgForeground: ADDColor.designPatterns)
                 }
                 
                 NavigationLink(
@@ -72,7 +73,7 @@ struct DesignPatternsMenu: View {
                     tag: "Creational",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Creational", image: SFSymbols.creational, imgForeground: .blue)
+                    NavigationButton(description: "Creational", image: SFSymbols.creational, imgForeground: ADDColor.designPatterns)
                 }
                 
                 NavigationLink(
@@ -83,7 +84,7 @@ struct DesignPatternsMenu: View {
                     tag: "Structural",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Structural", image: SFSymbols.behavioral, imgForeground: .blue)
+                    NavigationButton(description: "Structural", image: SFSymbols.structural, imgForeground: ADDColor.designPatterns)
                 }
             }
         }

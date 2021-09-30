@@ -29,11 +29,11 @@ struct AlgorithmsMenu: View {
                             description: "What are",
                             botDescription: "Algorithms?",
                             splitDescription: true,
-                            rectColor: .pink,
-                            txtColor: .white,
+                            rectColor: ADDColor.topicOneRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                 }
             }
@@ -48,7 +48,7 @@ struct AlgorithmsMenu: View {
                     tag: "Search",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Search", image: SFSymbols.search, imgForeground: .green)
+                    NavigationButton(description: "Search", image: SFSymbols.search, imgForeground: ADDColor.algorithms)
                 }
                 
                 NavigationLink(
@@ -60,7 +60,7 @@ struct AlgorithmsMenu: View {
                     tag: "Sort",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Sort", image: SFSymbols.sort, imgForeground: .green)
+                    NavigationButton(description: "Sort", image: SFSymbols.sort, imgForeground: ADDColor.algorithms)
                 }
             }
         }

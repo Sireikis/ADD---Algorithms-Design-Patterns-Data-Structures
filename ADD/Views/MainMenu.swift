@@ -26,22 +26,22 @@ struct MainMenu: View {
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.whatIsADD)))) {
                         Topic(
                             description: "What is ADD?",
-                            rectColor: .pink,
-                            txtColor: .white,
+                            rectColor: ADDColor.topicOneRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                     
                     // A description of Big O
                     NavigationLink(destination: LazyView(TidBitView(factory.getTidBit(.bigO)))) {
                         Topic(
                             description: "Big O",
-                            rectColor: .green,
-                            txtColor: .white,
+                            rectColor: ADDColor.topicTwoRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                 }
             }
@@ -49,25 +49,25 @@ struct MainMenu: View {
             NavigationLink(destination: AlgorithmsMenu(factory: factory)) {
                 NavigationButton(
                     description: "Algorithms",
-                    txtColor: .green,
+                    txtColor: ADDColor.algorithms,
                     image: SFSymbols.algorithms,
-                    imgForeground: .green)
+                    imgForeground: ADDColor.algorithms)
             }
             
             NavigationLink(destination: DesignPatternsMenu(factory: factory)) {
                 NavigationButton(
                     description: "Design Patterns",
-                    txtColor: .blue,
+                    txtColor: ADDColor.designPatterns,
                     image: SFSymbols.designPatterns,
-                    imgForeground: .blue)
+                    imgForeground: ADDColor.designPatterns)
             }
             
             NavigationLink(destination: DataStructuresMenu(factory: factory)) {
                 NavigationButton(
                     description: "Data Structures",
-                    txtColor: .red,
+                    txtColor: ADDColor.dataStructures,
                     image: SFSymbols.dataStructures,
-                    imgForeground: .red)
+                    imgForeground: ADDColor.dataStructures)
             }
         }
         .navigationTitle("ADD")

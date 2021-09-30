@@ -29,11 +29,11 @@ struct DataStructuresMenu: View {
                             description: "What are",
                             botDescription: "Data Structures?",
                             splitDescription: true,
-                            rectColor: .pink,
-                            txtColor: .white,
+                            rectColor: ADDColor.topicOneRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                     
                     // Describes the difference between linear, tree, hash-based, and graph
@@ -42,11 +42,11 @@ struct DataStructuresMenu: View {
                             description: "What do these",
                             botDescription: "categories mean?",
                             splitDescription: true,
-                            rectColor: .green,
-                            txtColor: .white,
+                            rectColor: ADDColor.topicTwoRect,
+                            txtColor: ADDColor.topicText,
                             size: size,
-                            rectWidth: size.width / TidBitUI.widthScalingFactor,
-                            rectHeight: size.height / TidBitUI.heightScalingFactor)
+                            rectWidth: size.width / ADDUI.Topic.widthScalingFactor,
+                            rectHeight: size.height / ADDUI.Topic.heightScalingFactor)
                     }
                 }
             }
@@ -60,7 +60,7 @@ struct DataStructuresMenu: View {
                     tag: "Linear",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Linear", image: SFSymbols.linear, imgForeground: .red)
+                    NavigationButton(description: "Linear", image: SFSymbols.linear, imgForeground: ADDColor.dataStructures)
                 }
                 
                 NavigationLink(
@@ -71,7 +71,7 @@ struct DataStructuresMenu: View {
                     tag: "Tree",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Tree", image: SFSymbols.tree, imgForeground: .red)
+                    NavigationButton(description: "Tree", image: SFSymbols.tree, imgForeground: ADDColor.dataStructures)
                 }
                 
                 NavigationLink(
@@ -82,7 +82,7 @@ struct DataStructuresMenu: View {
                     tag: "Hash-based",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Hash-based", image: SFSymbols.hashBased, imgForeground: .red)
+                    NavigationButton(description: "Hash-based", image: SFSymbols.hashBased, imgForeground: ADDColor.dataStructures)
                 }
                 
                 NavigationLink(
@@ -93,7 +93,7 @@ struct DataStructuresMenu: View {
                     tag: "Graph",
                     selection: $selection
                 ) {
-                    NavigationButton(description: "Graph", image: SFSymbols.graph, imgForeground: .red)
+                    NavigationButton(description: "Graph", image: SFSymbols.graph, imgForeground: ADDColor.dataStructures)
                 }
             }
         }

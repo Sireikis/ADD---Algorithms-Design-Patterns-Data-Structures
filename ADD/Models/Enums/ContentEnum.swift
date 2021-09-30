@@ -56,23 +56,23 @@ enum ContentEnum: String, CaseIterable, Identifiable {
     var imgForeground: Color {
         switch self {
         case .binarySearch, .breadthFirstSearch, .depthFirstSearch:
-            return ADDTheme.algorithmsTheme
+            return ADDColor.algorithms
         case .insertionSort, .selectionSort, .mergeSort, .quickSort:
-            return ADDTheme.algorithmsTheme
+            return ADDColor.algorithms
         case .command, .observer, .strategy:
-            return ADDTheme.designPatternsTheme
+            return ADDColor.designPatterns
         case .abstractFactory, .factoryMethod, .singleton:
-            return ADDTheme.designPatternsTheme
+            return ADDColor.designPatterns
         case .adapter, .bridge, .decorator, .proxy:
-            return ADDTheme.designPatternsTheme
+            return ADDColor.designPatterns
         case .array, .linkedList:
-            return ADDTheme.dataStructuresTheme
+            return ADDColor.dataStructures
         case .binarySearchTree, .binaryTree:
-            return ADDTheme.dataStructuresTheme
+            return ADDColor.dataStructures
         case .hashList, .hashTable:
-            return ADDTheme.dataStructuresTheme
+            return ADDColor.dataStructures
         case .adjacencyList:
-            return ADDTheme.dataStructuresTheme
+            return ADDColor.dataStructures
         }
     }
     
